@@ -1,0 +1,532 @@
+{
+    "characters" : [
+        {
+            "name": "ターイル",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/ターイル.png"
+        },
+        {
+            "name": "ココア",
+            "role": "ディフェンダー",
+            "weapon": "斧",
+            "imageURL": "./img/ココア.png"
+        },
+        {
+            "name": "オーギュスト",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/オーギュスト.png"
+        },
+        {
+            "name": "ラヴィア・初夏の記憶",
+            "role": "アサルター",
+            "weapon": "斧",
+            "imageURL": "./img/ラヴィア・初夏の記憶.png"
+        },
+        {
+            "name": "アガタ",
+            "role": "ウォッチャー",
+            "weapon": "剣",
+            "imageURL": "./img/アガタ.png"
+        },
+        {
+            "name": "コヴァレ",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/コヴァレ.png"
+        },
+        {
+            "name": "ホーマ",
+            "role": "ブレイカー",
+            "weapon": "弓",
+            "imageURL": "./img/ホーマ.png"
+        },
+        {
+            "name": "サフィア",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/サフィア.png"
+        },
+        {
+            "name": "ルヴァタ",
+            "role": "ブレイカー",
+            "weapon": "杖",
+            "imageURL": "./img/ルヴァタ.png"
+        },
+        {
+            "name": "グロリア",
+            "role": "ウォッチャー",
+            "weapon": "槍",
+            "imageURL": "./img/グロリア.png"
+        },
+        {
+            "name": "パミーナ",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/パミーナ.png"
+        },
+        {
+            "name": "サフィア・夏時の約束",
+            "role": "ウォッチャー",
+            "weapon": "剣",
+            "imageURL": "./img/サフィア・夏時の約束.png"
+        },
+        {
+            "name": "トリスタ",
+            "role": "デストロイヤー",
+            "weapon": "斧",
+            "imageURL": "./img/トリスタ.png"
+        },
+        {
+            "name": "アカンベ",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/アカンベ.png"
+        },
+        {
+            "name": "イナンナ",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/イナンナ.png"
+        },
+        {
+            "name": "カリス",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/カリス.png"
+        },
+        {
+            "name": "モモ",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/モモ.png"
+        },
+        {
+            "name": "リラ",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/リラ.png"
+        },
+        {
+            "name": "エダ",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/エダ.png"
+        },
+        {
+            "name": "ノノヴィア",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/ノノヴィア.png"
+        },
+        {
+            "name": "シモーナ",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/シモーナ.png"
+        },
+        {
+            "name": "ヌンガル",
+            "role": "デストロイヤー",
+            "weapon": "弓",
+            "imageURL": "./img/ヌンガル.png"
+        },
+        {
+            "name": "ベラ",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/ベラ.png"
+        },
+        {
+            "name": "コル",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/コル.png"
+        },
+        {
+            "name": "ダンタリオン",
+            "role": "デストロイヤー",
+            "weapon": "剣",
+            "imageURL": "./img/ダンタリオン.png"
+        },
+        {
+            "name": "リリヴィア",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/リリヴィア.png"
+        },
+        {
+            "name": "ファカール",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/ファカール.png"
+        },
+        {
+            "name": "深淵の心",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/深淵の心.png"
+        },
+        {
+            "name": "アレクセイ",
+            "role": "ディフェンダー",
+            "weapon": "斧",
+            "imageURL": "./img/アレクセイ.png"
+        },
+        {
+            "name": "マグナス",
+            "role": "ディフェンダー",
+            "weapon": "斧",
+            "imageURL": "./img/マグナス.png"
+        },
+        {
+            "name": "マイサ",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/マイサ.png"
+        },
+        {
+            "name": "輝ける慈愛",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/輝ける慈愛.png"
+        },
+        {
+            "name": "ハスナ",
+            "role": "アサルター",
+            "weapon": "杖",
+            "imageURL": "./img/ハスナ.png"
+        },
+        {
+            "name": "静謐の戒め",
+            "role": "ディフェンダー",
+            "weapon": "槍",
+            "imageURL": "./img/静謐の戒め.png"
+        },
+        {
+            "name": "ガルシア",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/ガルシア.png"
+        },
+        {
+            "name": "王国の槍「烈嘯」",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/王国の槍「烈嘯」.png"
+        },
+        {
+            "name": "破断の旋風",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/破断の旋風.png"
+        },
+        {
+            "name": "ラヴィア",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/ラヴィア.png"
+        },
+        {
+            "name": "サマンサ",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/サマンサ.png"
+        },
+        {
+            "name": "レオニード",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/レオニード.png"
+        },
+        {
+            "name": "ザビエル",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/ザビエル.png"
+        },
+        {
+            "name": "ティードン",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/ティードン.png"
+        },
+        {
+            "name": "輝ける光の鞭",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/輝ける光の鞭.png"
+        },
+        {
+            "name": "狙撃教官「鋭い一閃」",
+            "role": "デストロイヤー",
+            "weapon": "弓",
+            "imageURL": "./img/狙撃教官「鋭い一閃」.png"
+        },
+        {
+            "name": "グズマン",
+            "role": "デストロイヤー",
+            "weapon": "斧",
+            "imageURL": "./img/グズマン.png"
+        },
+        {
+            "name": "イギー",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/イギー.png"
+        },
+        {
+            "name": "ミゲル",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/ミゲル.png"
+        },
+        {
+            "name": "癒しの手",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/癒しの手.png"
+        },
+        {
+            "name": "ナルギル",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/ナルギル.png"
+        },
+        {
+            "name": "軍医「口苦し」",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/軍医「口苦し」.png"
+        },
+        {
+            "name": "騎士連合・剣盾兵",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/騎士連合・剣盾兵.png"
+        },
+        {
+            "name": "フレア",
+            "role": "ウォッチャー",
+            "weapon": "斧",
+            "imageURL": "./img/フレア.png"
+        },
+        {
+            "name": "閃く刃",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/閃く刃.png"
+        },
+        {
+            "name": "ナイトレイヴン",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/ナイトレイヴン.png"
+        },
+        {
+            "name": "ウィルダ・斥候",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/ウィルダ・斥候.png"
+        },
+        {
+            "name": "炎の魔女",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/炎の魔女.png"
+        },
+        {
+            "name": "ライトニング",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/ライトニング.png"
+        },
+        {
+            "name": "スティンガー",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/スティンガー.png"
+        },
+        {
+            "name": "エンフォーサー",
+            "role": "デストロイヤー",
+            "weapon": "剣",
+            "imageURL": "./img/エンフォーサー.png"
+        },
+        {
+            "name": "王国軍・光の術師",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/王国軍・光の術師.png"
+        },
+        {
+            "name": "恩寵の閃光",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/恩寵の閃光.png"
+        },
+        {
+            "name": "バリスタ",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/バリスタ.png"
+        },
+        {
+            "name": "紅のハヤブサ",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/紅のハヤブサ.png"
+        },
+        {
+            "name": "テンペスト",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/テンペスト.png"
+        },
+        {
+            "name": "胡蝶",
+            "role": "ウォッチャー",
+            "weapon": "剣",
+            "imageURL": "./img/胡蝶.png"
+        },
+        {
+            "name": "法皇国・剣盾兵",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/法皇国・剣盾兵.png"
+        },
+        {
+            "name": "キャンドル",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/キャンドル.png"
+        },
+        {
+            "name": "法皇国・氷の術師",
+            "role": "ウォッチャー",
+            "weapon": "杖",
+            "imageURL": "./img/法皇国・氷の術師.png"
+        },
+        {
+            "name": "王国軍・長槍兵",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/王国軍・長槍兵.png"
+        },
+        {
+            "name": "闇の光・火の術師",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/闇の光・火の術師.png"
+        },
+        {
+            "name": "王国軍・弓兵",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/王国軍・弓兵.png"
+        },
+        {
+            "name": "無法者・斧盾兵",
+            "role": "ディフェンダー",
+            "weapon": "斧",
+            "imageURL": "./img/無法者・斧盾兵.png"
+        },
+        {
+            "name": "傭兵・長槍兵",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/傭兵・長槍兵.png"
+        },
+        {
+            "name": "傭兵・弓兵",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/傭兵・弓兵.png"
+        },
+        {
+            "name": "傭兵・刺客",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/傭兵・刺客.png"
+        },
+        {
+            "name": "鷹の目",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/鷹の目.png"
+        },
+        {
+            "name": "無法者・刺客",
+            "role": "アサルター",
+            "weapon": "剣",
+            "imageURL": "./img/無法者・刺客.png"
+        },
+        {
+            "name": "王国軍・火の術師",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/王国軍・火の術師.png"
+        },
+        {
+            "name": "王国軍・剣盾兵",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/王国軍・剣盾兵.png"
+        },
+        {
+            "name": "マイティ",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/マイティ.png"
+        },
+        {
+            "name": "法皇国・投槍兵",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/法皇国・投槍兵.png"
+        },
+        {
+            "name": "騎士連合・長槍兵",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/騎士連合・長槍兵.png"
+        },
+        {
+            "name": "傭兵・剣盾兵",
+            "role": "ディフェンダー",
+            "weapon": "剣",
+            "imageURL": "./img/傭兵・剣盾兵.png"
+        },
+        {
+            "name": "無法者・巨斧兵",
+            "role": "ブレイカー",
+            "weapon": "斧",
+            "imageURL": "./img/無法者・巨斧兵.png"
+        },
+        {
+            "name": "無法者・長槍兵",
+            "role": "ブレイカー",
+            "weapon": "槍",
+            "imageURL": "./img/無法者・長槍兵.png"
+        },
+        {
+            "name": "無法者・弩兵",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/無法者・弩兵.png"
+        },
+        {
+            "name": "無法者・弓兵",
+            "role": "ウォッチャー",
+            "weapon": "弓",
+            "imageURL": "./img/無法者・弓兵.png"
+        },
+        {
+            "name": "闇の光・氷の術師",
+            "role": "デストロイヤー",
+            "weapon": "杖",
+            "imageURL": "./img/闇の光・氷の術師.png"
+        }
+    ]
+}
