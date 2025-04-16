@@ -131,6 +131,18 @@
       if (e.target === modal) modal.style.display = 'none';
     });
 
+    // イベント登録
+    searchInput.addEventListener('input', applyFiltersAndSort);
+    roleFilter.addEventListener('change', applyFiltersAndSort);
+    sortOrder.addEventListener('change', applyFiltersAndSort);
+
+    // 初期表示
+    applyFiltersAndSort();
+    })
+    .catch(error => {
+      console.error('データの読み込みに失敗しました:', error);
+    });
+    
       function render() {
       const start = (currentPage - 1) * ITEMS_PER_PAGE;
       const end = start + ITEMS_PER_PAGE;
@@ -191,18 +203,6 @@
       `;
       modal.style.display = 'flex';
     }
-    // イベント登録
-    searchInput.addEventListener('input', applyFiltersAndSort);
-    roleFilter.addEventListener('change', applyFiltersAndSort);
-    sortOrder.addEventListener('change', applyFiltersAndSort);
-
-    // 初期表示
-    applyFiltersAndSort();
-      })
-      .catch(error => {
-        console.error('データの読み込みに失敗しました:', error);
-      });
-    
   </script>
 </body>
 </html>
