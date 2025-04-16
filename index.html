@@ -198,15 +198,16 @@
         return response.json()
       })
       .then((result) => {
-        Example(result); 
+        run(result); 
       })
       .catch((e) => {
         console.log(e)       
       })
    })
-    
+   function run(data) { 
     // 初期表示
     applyFiltersAndSort();
+   }
   </script>
 </body>
 </html>
