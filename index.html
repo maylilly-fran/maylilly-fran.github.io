@@ -105,9 +105,7 @@
     </div>
   </div>
 
-  <script>
-    const data = fetch('data.json');
-    
+  <script>    
     const ITEMS_PER_PAGE = 90;
     let currentPage = 1;
     let filteredData = structuredClone(data.characters);
@@ -195,6 +193,18 @@
     roleFilter.addEventListener('change', applyFiltersAndSort);
     sortOrder.addEventListener('change', applyFiltersAndSort);
 
+    fetch('data.json')
+      .then((response) => {
+        return response.json()
+      })
+      .then((result) => {
+        Example(result); 
+      })
+      .catch((e) => {
+        console.log(e)       
+      })
+   })
+    
     // 初期表示
     applyFiltersAndSort();
   </script>
