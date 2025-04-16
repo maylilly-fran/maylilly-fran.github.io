@@ -1,202 +1,218 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    input[type="text"], select {
-      padding: 6px;
-      font-size: 16px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 0fr));
-      gap: 15px;
-    }
-    .card {
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      text-align: center;
-      padding: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .pagination {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .pagination button {
-      padding: 5px 10px;
-      margin: 0 5px;
-    }
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
 
-    /* モーダルスタイル */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 400px;
-      text-align: center;
-      position: relative;
-    }
-    .modal-content img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    .close {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      font-size: 20px;
-      cursor: pointer;
-    }
-  </style>
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 6px;
+            font-size: 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 0fr));
+            gap: 15px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+
+        /* モーダルスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-
-  <div class="controls">
-    <input type="text" id="search-input" placeholder="名前で検索">
-    <select id="role-filter">
-      <option value="all">全ロール</option>
-      <option value="ブレイカー">ブレイカー</option>
-      <option value="ディフェンダー">ディフェンダー</option>
-      <option value="アサルター">アサルター</option>
-      <option value="ウォッチャー">ウォッチャー</option>
-      <option value="デストロイヤー">デストロイヤー</option>
-    </select>
-    <select id="sort-order">
-      <option value="default">並び順：デフォルト</option>
-    </select>
-  </div>
-
-  <div class="grid" id="product-grid"></div>
-  <div class="pagination" id="pagination"></div>
-
-  <!-- モーダル -->
-  <div class="modal" id="product-modal">
-    <div class="modal-content">
-      <span class="close" id="close-modal">&times;</span>
-      <div id="modal-body"></div>
+    <div class="controls">
+        <input type="text" id="search-input" placeholder="名前で検索">
+        <select id="role-filter">
+            <option value="all">全ロール</option>
+            <option value="ブレイカー">ブレイカー</option>
+            <option value="ディフェンダー">ディフェンダー</option>
+            <option value="アサルター">アサルター</option>
+            <option value="ウォッチャー">ウォッチャー</option>
+            <option value="デストロイヤー">デストロイヤー</option>
+        </select>
+        <select id="sort-order">
+            <option value="default">並び順：デフォルト</option>
+        </select>
     </div>
-  </div>
 
-  <script>
-    const data = await (await fetch('./data.json')).json();
-    
-    const ITEMS_PER_PAGE = 90;
-    let currentPage = 1;
-    let filteredData = structuredClone(data.characters);
+    <div class="grid" id="product-grid"></div>
+    <div class="pagination" id="pagination"></div>
 
-    const searchInput = document.getElementById('search-input');
-    const roleFilter = document.getElementById('role-filter');
-    const sortOrder = document.getElementById('sort-order');
-    const grid = document.getElementById('product-grid');
-    const pagination = document.getElementById('pagination');
-    const modal = document.getElementById('product-modal');
-    const modalBody = document.getElementById('modal-body');
-    const closeModal = document.getElementById('close-modal');
+    <!-- モーダル -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
 
-    function render() {
-      const start = (currentPage - 1) * ITEMS_PER_PAGE;
-      const end = start + ITEMS_PER_PAGE;
-      const pageItems = filteredData.slice(start, end);
+    <script>
+        fetch('./data.json')
+            .then(response => response.json())
+            .then(data => {
 
-      grid.innerHTML = '';
-      pageItems.forEach(character => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 90%">
-          <div style="font-size: small">${character.name}</div>
-        `;
-        card.addEventListener('click', () => showModal(character));
-        grid.appendChild(card);
-      });
+                const ITEMS_PER_PAGE = 90;
+                let currentPage = 1;
+                let filteredData = structuredClone(data.characters);
 
-      renderPagination();
-    }
+                const searchInput = document.getElementById('search-input');
+                const roleFilter = document.getElementById('role-filter');
+                const sortOrder = document.getElementById('sort-order');
+                const grid = document.getElementById('product-grid');
+                const pagination = document.getElementById('pagination');
+                const modal = document.getElementById('product-modal');
+                const modalBody = document.getElementById('modal-body');
+                const closeModal = document.getElementById('close-modal');
 
-    function renderPagination() {
-      const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-      pagination.innerHTML = '';
+                closeModal.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
 
-      for (let i = 1; i <= totalPages; i++) {
-        const btn = document.createElement('button');
-        btn.textContent = i;
-        if (i === currentPage) btn.disabled = true;
-        btn.addEventListener('click', () => {
-          currentPage = i;
-          render();
-        });
-        pagination.appendChild(btn);
-      }
-    }
+                window.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.style.display = 'none';
+                });
 
-    function applyFiltersAndSort() {
-      const role = roleFilter.value;
-      const sort = sortOrder.value;
-      const keyword = searchInput.value.toLowerCase();
-      
-      filteredData = data.characters.filter(character =>
-        (role === 'all' || character.role === role) &&
-        character.name.toLowerCase().includes(keyword)
-      );
-      
-      
-      currentPage = 1;
-      render();
-    }
+                function render() {
+                    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+                    const end = start + ITEMS_PER_PAGE;
+                    const pageItems = filteredData.slice(start, end);
 
-    function showModal(character) {
-      modalBody.innerHTML = `
-          <img src="${character.imageURL}" alt="${character.imageURL}">
-          <div>${character.name}</div>
-          <div>${character.role}</div>
-          <div>${character.weapon}</div>
-      `;
-      modal.style.display = 'flex';
-    }
+                    grid.innerHTML = '';
+                    pageItems.forEach(character => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.innerHTML = `
+                        <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 90%">
+                        <div style="font-size: small">${character.name}</div>
+                        `;
+                        card.addEventListener('click', () => showModal(character));
+                        grid.appendChild(card);
+                    });
 
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
+                    renderPagination();
+                }
 
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
+                function renderPagination() {
+                    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+                    pagination.innerHTML = '';
 
-    // イベント登録
-    searchInput.addEventListener('input', applyFiltersAndSort);
-    roleFilter.addEventListener('change', applyFiltersAndSort);
-    sortOrder.addEventListener('change', applyFiltersAndSort);
+                    for (let i = 1; i <= totalPages; i++) {
+                        const btn = document.createElement('button');
+                        btn.textContent = i;
+                        if (i === currentPage) btn.disabled = true;
+                        btn.addEventListener('click', () => {
+                            currentPage = i;
+                            render();
+                        });
+                        pagination.appendChild(btn);
+                    }
+                }
 
-    // 初期表示
-    applyFiltersAndSort();
-  </script>
+                function applyFiltersAndSort() {
+                    const role = roleFilter.value;
+                    const sort = sortOrder.value;
+                    const keyword = searchInput.value.toLowerCase();
+
+                    filteredData = data.characters.filter(character =>
+                        (role === 'all' || character.role === role) &&
+                        character.name.toLowerCase().includes(keyword)
+                    );
+
+                    currentPage = 1;
+                    render();
+                }
+
+                function showModal(character) {
+                    modalBody.innerHTML = `
+                    <img src="${character.imageURL}" alt="${character.imageURL}">
+                    <div>${character.name}</div>
+                    <div>${character.role}</div>
+                    <div>${character.weapon}</div>
+                    `;
+                    modal.style.display = 'flex';
+                }
+                // イベント登録
+                searchInput.addEventListener('input', applyFiltersAndSort);
+                roleFilter.addEventListener('change', applyFiltersAndSort);
+                sortOrder.addEventListener('change', applyFiltersAndSort);
+
+                // 初期表示
+                applyFiltersAndSort();
+            })
+            .catch(error => {
+                console.error('データの読み込みに失敗しました:', error);
+            });
+
+    </script>
 </body>
 </html>
