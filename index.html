@@ -105,7 +105,11 @@
     </div>
   </div>
 
-  <script>    
+  <script>
+    const data = fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+    
     const ITEMS_PER_PAGE = 90;
     let currentPage = 1;
     let filteredData = structuredClone(data.characters);
@@ -119,7 +123,27 @@
     const modalBody = document.getElementById('modal-body');
     const closeModal = document.getElementById('close-modal');
 
-    function render() {
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // イベント登録
+    searchInput.addEventListener('input', applyFiltersAndSort);
+    roleFilter.addEventListener('change', applyFiltersAndSort);
+    sortOrder.addEventListener('change', applyFiltersAndSort);
+
+    // 初期表示
+    applyFiltersAndSort();
+      })
+      .catch(error => {
+        console.error('データの読み込みに失敗しました:', error);
+      });
+    
+      function render() {
       const start = (currentPage - 1) * ITEMS_PER_PAGE;
       const end = start + ITEMS_PER_PAGE;
       const pageItems = filteredData.slice(start, end);
@@ -179,35 +203,6 @@
       `;
       modal.style.display = 'flex';
     }
-
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-
-    // イベント登録
-    searchInput.addEventListener('input', applyFiltersAndSort);
-    roleFilter.addEventListener('change', applyFiltersAndSort);
-    sortOrder.addEventListener('change', applyFiltersAndSort);
-
-    fetch('data.json')
-      .then((response) => {
-        return response.json()
-      })
-      .then((result) => {
-        run(result); 
-      })
-      .catch((e) => {
-        console.log(e)       
-      })
-   })
-   function run(data) { 
-    // 初期表示
-    applyFiltersAndSort();
-   }
   </script>
 </body>
 </html>
