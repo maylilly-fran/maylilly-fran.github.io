@@ -223,7 +223,7 @@
     <!-- モーダル2 -->
     <div class="modal" id="skill-modal">
         <div class="modal-content">
-            <div id="modal-body">
+                <span class="close" id="close-modal2">&times;</span>
                 <div id="skill-pict"></div>
             </div>
         </div>
@@ -247,7 +247,7 @@
                 const modal2 = document.getElementById('skill-modal');
                 const modalBody = document.getElementById('modal-body');
                 const closeModal = document.getElementById('close-modal');
-                const closeModal2 = document.getElementById('close-modal');
+                const closeModal2 = document.getElementById('close-modal2');
                 const tabButtons = document.querySelectorAll('.tab-button');
                 const tabContents = document.querySelectorAll('.tab-content');
 
@@ -379,6 +379,10 @@
                 closeModal.addEventListener('click', () => {
                     modal.style.display = 'none';
                     document.getElementById('common').innerHTML = ``;
+                });
+
+                closeModal2.addEventListener('click', () => {
+                    modal2.style.display = 'none';
                 });
 
                 window.addEventListener('click', (e) => {

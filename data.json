@@ -345,7 +345,7 @@
                 "initial": [
                     {
                         "name": "双爪",
-                        "imgURL": "./img/skillIMG/双爪",
+                        "imgURL": "./img/skillIMG/双爪.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -354,7 +354,7 @@
                     },
                     {
                         "name": "氷霜の地面",
-                        "imgURL": "./img/skillIMG/氷霜の地面",
+                        "imgURL": "./img/skillIMG/氷霜の地面.png",
                         "rangeImgURL": ".png",
                         "type": "スキル",
                         "cost": "3",
