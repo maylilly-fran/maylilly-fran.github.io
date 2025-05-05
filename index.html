@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <style>
@@ -25,6 +26,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 0fr));
             gap: 15px;
+            justify-content: center;
         }
 
         .card {
@@ -55,21 +57,23 @@
         .modal {
             display: none;
             position: fixed;
-            z-index: 10;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            overflow-y: auto;
             background-color: rgba(0, 0, 0, 0.5);
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-size: small;
         }
 
         .modal-content {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            width: 400px;
+            width: 60%;
             text-align: center;
             position: relative;
         }
@@ -85,6 +89,71 @@
             right: 10px;
             font-size: 20px;
             cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left,
+        .right {
+            flex: 1;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .left {
+            background-color: #ffffff;
+            border-right: 1px solid #ccc;
+        }
+
+        .right {
+            background-color: #ffffff;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #555;
+        }
+
+        .tab-button.active {
+            border-bottom: 2px solid #2563eb;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .skill {
+            width: 10%;
+            padding: 5px;
+        }
+
+        .imgtest {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .imgtest:hover {
+            transform: scale(1.03);
         }
     </style>
 </head>
@@ -112,7 +181,51 @@
     <div class="modal" id="product-modal">
         <div class="modal-content">
             <span class="close" id="close-modal">&times;</span>
-            <div id="modal-body"></div>
+            <div id="modal-body">
+                <div class="container">
+                    <div class="left">
+                        <div id="characterImg"></div>
+                        <div id="characterName"></div>
+                        <div id="characterRole"></div>
+                        <div id="characterWeapon"></div>
+                    </div>
+
+                    <div class="right">
+                        <div id="personalityImg"></div>
+                        <div id="personalityTitle"></div>
+                        <div id="common"></div>
+                        <div class="tab-buttons">
+                            <div class="tab-button active" data-tab="hoshi5">☆5</div>
+                            <div class="tab-button" data-tab="hoshi4">☆4</div>
+                            <div class="tab-button" data-tab="hoshi3">☆3</div>
+                            <div class="tab-button" data-tab="hoshi2">☆2</div>
+                            <div class="tab-button" data-tab="hoshi1">☆1</div>
+                        </div>
+                        <div class="tab-content active" id="hoshi5" style="text-align: left"></div>
+                        <div class="tab-content" id="hoshi4" style="text-align: left"></div>
+                        <div class="tab-content" id="hoshi3" style="text-align: left"></div>
+                        <div class="tab-content" id="hoshi2" style="text-align: left"></div>
+                        <div class="tab-content" id="hoshi1" style="text-align: left"></div>
+                    </div>
+                </div>
+                <div style="padding: 10px;">
+                    <div class="container">
+                        <div id="skill1"></div>
+                    </div>
+                    <div class="container">
+                        <div id="skill2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル2 -->
+    <div class="modal" id="skill-modal">
+        <div class="modal-content">
+            <div id="modal-body">
+                <div id="skill-pict"></div>
+            </div>
         </div>
     </div>
 
@@ -131,16 +244,12 @@
                 const grid = document.getElementById('product-grid');
                 const pagination = document.getElementById('pagination');
                 const modal = document.getElementById('product-modal');
+                const modal2 = document.getElementById('skill-modal');
                 const modalBody = document.getElementById('modal-body');
                 const closeModal = document.getElementById('close-modal');
-
-                closeModal.addEventListener('click', () => {
-                    modal.style.display = 'none';
-                });
-
-                window.addEventListener('click', (e) => {
-                    if (e.target === modal) modal.style.display = 'none';
-                });
+                const closeModal2 = document.getElementById('close-modal');
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
 
                 function render() {
                     const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -152,9 +261,9 @@
                         const card = document.createElement('div');
                         card.className = 'card';
                         card.innerHTML = `
-                        <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 90%">
-                        <div style="font-size: small">${character.name}</div>
-                        `;
+          <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 70%">
+          <div style="font-size: small">${character.name}</div>
+        `;
                         card.addEventListener('click', () => showModal(character));
                         grid.appendChild(card);
                     });
@@ -187,20 +296,96 @@
                         (role === 'all' || character.role === role) &&
                         character.name.toLowerCase().includes(keyword)
                     );
-
                     currentPage = 1;
                     render();
                 }
 
                 function showModal(character) {
-                    modalBody.innerHTML = `
-                    <img src="${character.imageURL}" alt="${character.imageURL}">
-                    <div>${character.name}</div>
-                    <div>${character.role}</div>
-                    <div>${character.weapon}</div>
-                    `;
+                    document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
+                    document.getElementById('characterName').innerHTML = `<h2>${character.name}</h2>`;
+                    document.getElementById('characterRole').innerHTML = `${character.role}`;
+                    document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
+                    document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+                    document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
+                    if (character.personality.common !== undefined) document.getElementById('common').innerHTML = `${character.personality.common}`;
+                    document.getElementById('hoshi5').innerHTML = `${character.personality.hoshi5}`;
+                    document.getElementById('hoshi4').innerHTML = `${character.personality.hoshi4}`;
+                    document.getElementById('hoshi3').innerHTML = `${character.personality.hoshi3}`;
+                    document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
+                    document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
+                    document.getElementById('skill1').innerHTML = `
+              <img id="detail1-1" class="skill" src="${character.skills.initial[0].imgURL}" alt="${character.skills.initial[0].imgURL}">
+              <img id="detail1-2" class="skill" src="${character.skills.RK1[0].imgURL}" alt="${character.skills.RK1[0].imgURL}">
+              <img id="detail1-3" class="skill" src="${character.skills.RK3[0].imgURL}" alt="${character.skills.RK3[0].imgURL}">
+              <img id="detail1-4" class="skill" src="${character.skills.RK5[0].imgURL}" alt="${character.skills.RK5[0].imgURL}">
+              <img id="detail1-5" class="skill" src="${character.skills.RK7[0].imgURL}" alt="${character.skills.RK7[0].imgURL}">
+              <img id="detail1-6" class="skill" src="${character.skills.RK9[0].imgURL}" alt="${character.skills.RK9[0].imgURL}">
+              <img id="detail1-7" class="skill" src="${character.skills.RK11[0].imgURL}" alt="${character.skills.RK11[0].imgURL}">
+            `;
+                    document.getElementById('detail1-1').addEventListener('click', () => showModal2(character, 'initial', 0));
+                    document.getElementById('detail1-2').addEventListener('click', () => showModal2(character, 'RK1', 0));
+                    document.getElementById('detail1-3').addEventListener('click', () => showModal2(character, 'RK3', 0));
+                    document.getElementById('detail1-4').addEventListener('click', () => showModal2(character, 'RK5', 0));
+                    document.getElementById('detail1-5').addEventListener('click', () => showModal2(character, 'RK7', 0));
+                    document.getElementById('detail1-6').addEventListener('click', () => showModal2(character, 'RK9', 0));
+                    document.getElementById('detail1-7').addEventListener('click', () => showModal2(character, 'RK11', 0));
+                    document.getElementById('skill2').innerHTML = `
+              <img id="detail2-1" class="skill" src="${character.skills.initial[1].imgURL}" alt="${character.skills.initial[1].imgURL}">
+              <img id="detail2-2" class="skill" src="${character.skills.RK1[1].imgURL}" alt="${character.skills.RK1[1].imgURL}">
+              <img id="detail2-3" class="skill" src="${character.skills.RK3[1].imgURL}" alt="${character.skills.RK3[1].imgURL}">
+              <img id="detail2-4" class="skill" src="${character.skills.RK5[1].imgURL}" alt="${character.skills.RK5[1].imgURL}">
+              <img id="detail2-5" class="skill" src="${character.skills.RK7[1].imgURL}" alt="${character.skills.RK7[1].imgURL}">
+              <img id="detail2-6" class="skill" src="${character.skills.RK9[1].imgURL}" alt="${character.skills.RK9[1].imgURL}">
+              <img id="detail2-7" class="skill" src="${character.skills.RK11[1].imgURL}" alt="${character.skills.RK11[1].imgURL}">
+            `;
+                    document.getElementById('detail2-1').addEventListener('click', () => showModal2(character, 'initial', 1));
+                    document.getElementById('detail2-2').addEventListener('click', () => showModal2(character, 'RK1', 1));
+                    document.getElementById('detail2-3').addEventListener('click', () => showModal2(character, 'RK3', 1));
+                    document.getElementById('detail2-4').addEventListener('click', () => showModal2(character, 'RK5', 1));
+                    document.getElementById('detail2-5').addEventListener('click', () => showModal2(character, 'RK7', 1));
+                    document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
+                    document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
+
                     modal.style.display = 'flex';
                 }
+
+                tabButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // タブボタンの切り替え
+                        tabButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // コンテンツの切り替え
+                        const target = btn.getAttribute('data-tab');
+                        tabContents.forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        document.getElementById(target).classList.add('active');
+                    });
+                });
+
+                function showModal2(character, key, index) {
+                    document.getElementById('skill-pict').innerHTML = `
+              <img class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">
+              <h2>${character.skills[key][index].name}</h2>
+              <div>タイプ：${character.skills[key][index].type}</div>
+              <div>コスト：${character.skills[key][index].cost}</div>
+              <div>CD：${character.skills[key][index].CD}</div>
+              <div>${character.skills[key][index].desc}</div>
+              `;
+                    modal2.style.display = 'flex';
+                }
+
+                closeModal.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    document.getElementById('common').innerHTML = ``;
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.style.display = 'none';
+                    if (e.target === modal2) modal2.style.display = 'none';
+                });
+
                 // イベント登録
                 searchInput.addEventListener('input', applyFiltersAndSort);
                 roleFilter.addEventListener('change', applyFiltersAndSort);
@@ -215,4 +400,5 @@
 
     </script>
 </body>
+
 </html>
