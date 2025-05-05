@@ -206,6 +206,7 @@
                         <div class="tab-content" id="hoshi3" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi2" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi1" style="text-align: left"></div>
+                        <div id="silhouette-skill"></div>
                     </div>
                 </div>
                 <div style="padding: 10px;">
@@ -317,6 +318,12 @@
                     document.getElementById('hoshi3').innerHTML = `${character.personality.hoshi3}`;
                     document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
                     document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
+                    if (Array.isArray(character.skills.silhouetteSkill) && character.skills.silhouetteSkill[0] && character.skills.silhouetteSkill[0].name !== undefined) {
+                        document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}"><br>シルエットスキル`;
+                        document.getElementById('silhouette-skill').addEventListener('click', () => showModal2(character, 'silhouetteSkill', 0));
+                    } else {
+                        document.getElementById('silhouette-skill').innerHTML = ``;
+                    }
                     document.getElementById('skill1').innerHTML = `
               <img id="detail1-1" class="skill" src="${character.skills.initial[0].imgURL}" alt="${character.skills.initial[0].imgURL}">
               <img id="detail1-2" class="skill" src="${character.skills.RK1[0].imgURL}" alt="${character.skills.RK1[0].imgURL}">
