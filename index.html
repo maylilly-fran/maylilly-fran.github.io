@@ -324,38 +324,39 @@
                     } else {
                         document.getElementById('silhouette-skill').innerHTML = ``;
                     }
-                    document.getElementById('skill1').innerHTML = `
+                    content = `
               <img id="detail1-1" class="skill" src="${character.skills.initial[0].imgURL}" alt="${character.skills.initial[0].imgURL}">
               <img id="detail1-2" class="skill" src="${character.skills.RK1[0].imgURL}" alt="${character.skills.RK1[0].imgURL}">
               <img id="detail1-3" class="skill" src="${character.skills.RK3[0].imgURL}" alt="${character.skills.RK3[0].imgURL}">
-              <img id="detail1-4" class="skill" src="${character.skills.RK5[0].imgURL}" alt="${character.skills.RK5[0].imgURL}">
-              <img id="detail1-5" class="skill" src="${character.skills.RK7[0].imgURL}" alt="${character.skills.RK7[0].imgURL}">
-              <img id="detail1-6" class="skill" src="${character.skills.RK9[0].imgURL}" alt="${character.skills.RK9[0].imgURL}">
-              <img id="detail1-7" class="skill" src="${character.skills.RK11[0].imgURL}" alt="${character.skills.RK11[0].imgURL}">
-            `;
+              <img id="detail1-4" class="skill" src="${character.skills.RK5[0].imgURL}" alt="${character.skills.RK5[0].imgURL}">`;
+                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) content += `<img id="detail1-5" class="skill" src="${character.skills.RK7[0].imgURL}" alt="${character.skills.RK7[0].imgURL}">`;
+                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) content += `<img id="detail1-6" class="skill" src="${character.skills.RK9[0].imgURL}" alt="${character.skills.RK9[0].imgURL}">`;
+                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) content += `<img id="detail1-7" class="skill" src="${character.skills.RK11[0].imgURL}" alt="${character.skills.RK11[0].imgURL}">`;
+                    document.getElementById('skill1').innerHTML = content
                     document.getElementById('detail1-1').addEventListener('click', () => showModal2(character, 'initial', 0));
                     document.getElementById('detail1-2').addEventListener('click', () => showModal2(character, 'RK1', 0));
                     document.getElementById('detail1-3').addEventListener('click', () => showModal2(character, 'RK3', 0));
                     document.getElementById('detail1-4').addEventListener('click', () => showModal2(character, 'RK5', 0));
-                    document.getElementById('detail1-5').addEventListener('click', () => showModal2(character, 'RK7', 0));
-                    document.getElementById('detail1-6').addEventListener('click', () => showModal2(character, 'RK9', 0));
-                    document.getElementById('detail1-7').addEventListener('click', () => showModal2(character, 'RK11', 0));
-                    document.getElementById('skill2').innerHTML = `
+                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) document.getElementById('detail1-5').addEventListener('click', () => showModal2(character, 'RK7', 0));
+                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) document.getElementById('detail1-6').addEventListener('click', () => showModal2(character, 'RK9', 0));
+                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) document.getElementById('detail1-7').addEventListener('click', () => showModal2(character, 'RK11', 0));
+
+                    content = `
               <img id="detail2-1" class="skill" src="${character.skills.initial[1].imgURL}" alt="${character.skills.initial[1].imgURL}">
               <img id="detail2-2" class="skill" src="${character.skills.RK1[1].imgURL}" alt="${character.skills.RK1[1].imgURL}">
               <img id="detail2-3" class="skill" src="${character.skills.RK3[1].imgURL}" alt="${character.skills.RK3[1].imgURL}">
-              <img id="detail2-4" class="skill" src="${character.skills.RK5[1].imgURL}" alt="${character.skills.RK5[1].imgURL}">
-              <img id="detail2-5" class="skill" src="${character.skills.RK7[1].imgURL}" alt="${character.skills.RK7[1].imgURL}">
-              <img id="detail2-6" class="skill" src="${character.skills.RK9[1].imgURL}" alt="${character.skills.RK9[1].imgURL}">
-              <img id="detail2-7" class="skill" src="${character.skills.RK11[1].imgURL}" alt="${character.skills.RK11[1].imgURL}">
-            `;
+              <img id="detail2-4" class="skill" src="${character.skills.RK5[1].imgURL}" alt="${character.skills.RK5[1].imgURL}">`;
+                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[1] && character.skills.RK7[1].name !== undefined) content += `<img id="detail2-5" class="skill" src="${character.skills.RK7[1].imgURL}" alt="${character.skills.RK7[1].imgURL}">`;
+                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) content += `<img id="detail2-6" class="skill" src="${character.skills.RK9[1].imgURL}" alt="${character.skills.RK9[1].imgURL}">`;
+                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) content += `<img id="detail2-7" class="skill" src="${character.skills.RK11[1].imgURL}" alt="${character.skills.RK11[1].imgURL}">`;
+                    document.getElementById('skill2').innerHTML = content
                     document.getElementById('detail2-1').addEventListener('click', () => showModal2(character, 'initial', 1));
                     document.getElementById('detail2-2').addEventListener('click', () => showModal2(character, 'RK1', 1));
                     document.getElementById('detail2-3').addEventListener('click', () => showModal2(character, 'RK3', 1));
                     document.getElementById('detail2-4').addEventListener('click', () => showModal2(character, 'RK5', 1));
-                    document.getElementById('detail2-5').addEventListener('click', () => showModal2(character, 'RK7', 1));
-                    document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
-                    document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
+                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[1] && character.skills.RK7[1].name !== undefined) document.getElementById('detail2-5').addEventListener('click', () => showModal2(character, 'RK7', 1));
+                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
+                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
 
                     modal.style.display = 'flex';
                 }
