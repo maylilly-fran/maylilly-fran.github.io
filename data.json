@@ -6185,7 +6185,7 @@
                     },
                     {
                         "name": "破甲の一撃(近距離",
-                        "imgURL": "./img/skillIMG/破甲の一撃(近距離.png",
+                        "imgURL": "./img/skillIMG/破甲の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
