@@ -973,7 +973,7 @@
                 "initial": [
                     {
                         "name": "水平射撃",
-                        "imgURL": "./img/skillIMG/水平射撃.png'",
+                        "imgURL": "./img/skillIMG/水平射撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -982,7 +982,7 @@
                     },
                     {
                         "name": "ノックバック射撃",
-                        "imgURL": "./img/skillIMG/ノックバック射撃.png'",
+                        "imgURL": "./img/skillIMG/ノックバック射撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -993,7 +993,7 @@
                 "RK1": [
                     {
                         "name": "旋回援助",
-                        "imgURL": "./img/skillIMG/旋回援助.png'",
+                        "imgURL": "./img/skillIMG/旋回援助.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -1002,7 +1002,7 @@
                     },
                     {
                         "name": "心が通じ合う選択",
-                        "imgURL": "./img/skillIMG/心が通じ合う選択.png'",
+                        "imgURL": "./img/skillIMG/心が通じ合う選択.png",
                         "rangeImgURL": ".png",
                         "type": "選択",
                         "cost": "0",
@@ -1013,7 +1013,7 @@
                 "RK3": [
                     {
                         "name": "シールドブレイク・強",
-                        "imgURL": "./img/skillIMG/シールドブレイク・強.png'",
+                        "imgURL": "./img/skillIMG/シールドブレイク・強.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1022,7 +1022,7 @@
                     },
                     {
                         "name": "共鳴",
-                        "imgURL": "./img/skillIMG/共鳴.png'",
+                        "imgURL": "./img/skillIMG/共鳴.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -1033,7 +1033,7 @@
                 "RK5": [
                     {
                         "name": "シャドウゲーム",
-                        "imgURL": "./img/skillIMG/シャドウゲーム.png'",
+                        "imgURL": "./img/skillIMG/シャドウゲーム.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1042,7 +1042,7 @@
                     },
                     {
                         "name": "脱兎",
-                        "imgURL": "./img/skillIMG/脱兎.png'",
+                        "imgURL": "./img/skillIMG/脱兎.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1053,7 +1053,7 @@
                 "RK7": [
                     {
                         "name": "拡散",
-                        "imgURL": "./img/skillIMG/拡散.png'",
+                        "imgURL": "./img/skillIMG/拡散.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -1062,7 +1062,7 @@
                     },
                     {
                         "name": "乱闘射手",
-                        "imgURL": "./img/skillIMG/乱闘射手.png'",
+                        "imgURL": "./img/skillIMG/乱闘射手.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -1073,7 +1073,7 @@
                 "RK9": [
                     {
                         "name": "纏わりナイフ",
-                        "imgURL": "./img/skillIMG/纏わりナイフ.png'",
+                        "imgURL": "./img/skillIMG/纏わりナイフ.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1082,7 +1082,7 @@
                     },
                     {
                         "name": "氷結の一撃(物理)",
-                        "imgURL": "./img/skillIMG/氷結の一撃(物理).png'",
+                        "imgURL": "./img/skillIMG/氷結の一撃(物理).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1093,7 +1093,7 @@
                 "RK11": [
                     {
                         "name": "刺貫く",
-                        "imgURL": "./img/skillIMG/刺貫く.png'",
+                        "imgURL": "./img/skillIMG/刺貫く.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -1102,7 +1102,7 @@
                     },
                     {
                         "name": "ハーシャラムカーニバル",
-                        "imgURL": "./img/skillIMG/ハーシャラムカーニバル.png'",
+                        "imgURL": "./img/skillIMG/ハーシャラムカーニバル.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -1130,7 +1130,7 @@
                 "initial": [
                     {
                         "name": "双剣撃",
-                        "imgURL": "./img/skillIMG/双剣撃.png'",
+                        "imgURL": "./img/skillIMG/双剣撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1139,7 +1139,7 @@
                     },
                     {
                         "name": "影閃撃",
-                        "imgURL": "./img/skillIMG/影閃撃.png'",
+                        "imgURL": "./img/skillIMG/影閃撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -1150,7 +1150,7 @@
                 "RK1": [
                     {
                         "name": "悪魔狩りの罠",
-                        "imgURL": "./img/skillIMG/悪魔狩りの罠.png'",
+                        "imgURL": "./img/skillIMG/悪魔狩りの罠.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -1159,7 +1159,7 @@
                     },
                     {
                         "name": "雷霆の矢",
-                        "imgURL": "./img/skillIMG/雷霆の矢.png'",
+                        "imgURL": "./img/skillIMG/雷霆の矢.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1170,7 +1170,7 @@
                 "RK3": [
                     {
                         "name": "御影歩",
-                        "imgURL": "./img/skillIMG/御影歩.png'",
+                        "imgURL": "./img/skillIMG/御影歩.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -1179,7 +1179,7 @@
                     },
                     {
                         "name": "フック",
-                        "imgURL": "./img/skillIMG/フック.png'",
+                        "imgURL": "./img/skillIMG/フック.png",
                         "rangeImgURL": ".png",
                         "type": "デバフ",
                         "cost": "0",
@@ -1190,7 +1190,7 @@
                 "RK5": [
                     {
                         "name": "防御・魔法",
-                        "imgURL": "./img/skillIMG/防御・魔法.png'",
+                        "imgURL": "./img/skillIMG/防御・魔法.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1199,7 +1199,7 @@
                     },
                     {
                         "name": "ミスティステップ",
-                        "imgURL": "./img/skillIMG/ミスティステップ.png'",
+                        "imgURL": "./img/skillIMG/ミスティステップ.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1210,7 +1210,7 @@
                 "RK7": [
                     {
                         "name": "制魔の姿",
-                        "imgURL": "./img/skillIMG/制魔の姿.png'",
+                        "imgURL": "./img/skillIMG/制魔の姿.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -1219,7 +1219,7 @@
                     },
                     {
                         "name": "魔法の薬",
-                        "imgURL": "./img/skillIMG/魔法の薬.png'",
+                        "imgURL": "./img/skillIMG/魔法の薬.png",
                         "rangeImgURL": ".png",
                         "type": "選択",
                         "cost": "-",
@@ -1230,7 +1230,7 @@
                 "RK9": [
                     {
                         "name": "狂熱の一撃(2回)",
-                        "imgURL": "./img/skillIMG/狂熱の一撃(2回).png'",
+                        "imgURL": "./img/skillIMG/狂熱の一撃(2回).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1239,7 +1239,7 @@
                     },
                     {
                         "name": "断脊刺突",
-                        "imgURL": "./img/skillIMG/断脊刺突.png'",
+                        "imgURL": "./img/skillIMG/断脊刺突.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1250,7 +1250,7 @@
                 "RK11": [
                     {
                         "name": "厄運の身代わり",
-                        "imgURL": "./img/skillIMG/厄運の身代わり.png'",
+                        "imgURL": "./img/skillIMG/厄運の身代わり.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1259,7 +1259,7 @@
                     },
                     {
                         "name": "禁忌皆無",
-                        "imgURL": "./img/skillIMG/禁忌皆無.png'",
+                        "imgURL": "./img/skillIMG/禁忌皆無.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -1287,7 +1287,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1296,7 +1296,7 @@
                     },
                     {
                         "name": "狩猟衝動",
-                        "imgURL": "./img/skillIMG/狩猟衝動.png'",
+                        "imgURL": "./img/skillIMG/狩猟衝動.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -1307,7 +1307,7 @@
                 "RK1": [
                     {
                         "name": "吊し人の清算",
-                        "imgURL": "./img/skillIMG/吊し人の清算.png'",
+                        "imgURL": "./img/skillIMG/吊し人の清算.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1316,7 +1316,7 @@
                     },
                     {
                         "name": "闇討ち",
-                        "imgURL": "./img/skillIMG/闇討ち.png'",
+                        "imgURL": "./img/skillIMG/闇討ち.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -1327,7 +1327,7 @@
                 "RK3": [
                     {
                         "name": "影無き刃",
-                        "imgURL": "./img/skillIMG/影無き刃.png'",
+                        "imgURL": "./img/skillIMG/影無き刃.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -1336,7 +1336,7 @@
                     },
                     {
                         "name": "戦術調整",
-                        "imgURL": "./img/skillIMG/戦術調整.png'",
+                        "imgURL": "./img/skillIMG/戦術調整.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -1347,7 +1347,7 @@
                 "RK5": [
                     {
                         "name": "影刃の追撃",
-                        "imgURL": "./img/skillIMG/影刃の追撃.png'",
+                        "imgURL": "./img/skillIMG/影刃の追撃.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1356,7 +1356,7 @@
                     },
                     {
                         "name": "緊急回避",
-                        "imgURL": "./img/skillIMG/緊急回避.png'",
+                        "imgURL": "./img/skillIMG/緊急回避.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1367,7 +1367,7 @@
                 "RK7": [
                     {
                         "name": "裏切り者一掃",
-                        "imgURL": "./img/skillIMG/裏切り者一掃.png'",
+                        "imgURL": "./img/skillIMG/裏切り者一掃.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "4",
@@ -1376,7 +1376,7 @@
                     },
                     {
                         "name": "吊し人指揮官",
-                        "imgURL": "./img/skillIMG/吊し人指揮官.png'",
+                        "imgURL": "./img/skillIMG/吊し人指揮官.png",
                         "rangeImgURL": ".png",
                         "type": "オーラ",
                         "cost": "0",
@@ -1387,7 +1387,7 @@
                 "RK9": [
                     {
                         "name": "封印の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/封印の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/封印の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1396,7 +1396,7 @@
                     },
                     {
                         "name": "連携攻撃",
-                        "imgURL": "./img/skillIMG/連携攻撃.png'",
+                        "imgURL": "./img/skillIMG/連携攻撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1407,7 +1407,7 @@
                 "RK11": [
                     {
                         "name": "破軍強襲刃",
-                        "imgURL": "./img/skillIMG/破軍強襲刃.png'",
+                        "imgURL": "./img/skillIMG/破軍強襲刃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -1416,7 +1416,7 @@
                     },
                     {
                         "name": "腐食武器",
-                        "imgURL": "./img/skillIMG/腐食武器.png'",
+                        "imgURL": "./img/skillIMG/腐食武器.png",
                         "rangeImgURL": ".png",
                         "type": "貫通ダメージ",
                         "cost": "1",
@@ -1455,7 +1455,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1464,7 +1464,7 @@
                     },
                     {
                         "name": "灼熱の瞳",
-                        "imgURL": "./img/skillIMG/灼熱の瞳.png'",
+                        "imgURL": "./img/skillIMG/灼熱の瞳.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "1",
@@ -1475,7 +1475,7 @@
                 "RK1": [
                     {
                         "name": "灼熱",
-                        "imgURL": "./img/skillIMG/灼熱.png'",
+                        "imgURL": "./img/skillIMG/灼熱.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1484,7 +1484,7 @@
                     },
                     {
                         "name": "ケロケロ",
-                        "imgURL": "./img/skillIMG/ケロケロ.png'",
+                        "imgURL": "./img/skillIMG/ケロケロ.png",
                         "rangeImgURL": ".png",
                         "type": "デバフ",
                         "cost": "0",
@@ -1495,7 +1495,7 @@
                 "RK3": [
                     {
                         "name": "紅蓮跳躍",
-                        "imgURL": "./img/skillIMG/紅蓮跳躍.png'",
+                        "imgURL": "./img/skillIMG/紅蓮跳躍.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1504,7 +1504,7 @@
                     },
                     {
                         "name": "焔の意志",
-                        "imgURL": "./img/skillIMG/焔の意志.png'",
+                        "imgURL": "./img/skillIMG/焔の意志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1515,7 +1515,7 @@
                 "RK5": [
                     {
                         "name": "燼火の壁",
-                        "imgURL": "./img/skillIMG/燼火の壁.png'",
+                        "imgURL": "./img/skillIMG/燼火の壁.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1524,7 +1524,7 @@
                     },
                     {
                         "name": "火渡り",
-                        "imgURL": "./img/skillIMG/火渡り.png'",
+                        "imgURL": "./img/skillIMG/火渡り.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1535,7 +1535,7 @@
                 "RK7": [
                     {
                         "name": "自由の炎翼",
-                        "imgURL": "./img/skillIMG/自由の炎翼.png'",
+                        "imgURL": "./img/skillIMG/自由の炎翼.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "-",
@@ -1544,7 +1544,7 @@
                     },
                     {
                         "name": "ENリジェン",
-                        "imgURL": "./img/skillIMG/ENリジェン.png'",
+                        "imgURL": "./img/skillIMG/ENリジェン.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1555,7 +1555,7 @@
                 "RK9": [
                     {
                         "name": "火傷の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/火傷の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/火傷の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1564,7 +1564,7 @@
                     },
                     {
                         "name": "炎の翼",
-                        "imgURL": "./img/skillIMG/炎の翼.png'",
+                        "imgURL": "./img/skillIMG/炎の翼.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1575,7 +1575,7 @@
                 "RK11": [
                     {
                         "name": "炎の翼・紅蓮涅槃",
-                        "imgURL": "./img/skillIMG/炎の翼・紅蓮涅槃.png'",
+                        "imgURL": "./img/skillIMG/炎の翼・紅蓮涅槃.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "5",
@@ -1584,7 +1584,7 @@
                     },
                     {
                         "name": "星落としの炎",
-                        "imgURL": "./img/skillIMG/星落としの炎.png'",
+                        "imgURL": "./img/skillIMG/星落としの炎.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "4",
@@ -1769,7 +1769,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1778,7 +1778,7 @@
                     },
                     {
                         "name": "高速連撃",
-                        "imgURL": "./img/skillIMG/高速連撃.png'",
+                        "imgURL": "./img/skillIMG/高速連撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -1789,7 +1789,7 @@
                 "RK1": [
                     {
                         "name": "破陣の槍",
-                        "imgURL": "./img/skillIMG/破陣の槍.png'",
+                        "imgURL": "./img/skillIMG/破陣の槍.png",
                         "rangeImgURL": ".png",
                         "type": "選択",
                         "cost": "-",
@@ -1798,7 +1798,7 @@
                     },
                     {
                         "name": "匹敵する者なし",
-                        "imgURL": "./img/skillIMG/匹敵する者なし.png'",
+                        "imgURL": "./img/skillIMG/匹敵する者なし.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -1809,7 +1809,7 @@
                 "RK3": [
                     {
                         "name": "勢い斬り",
-                        "imgURL": "./img/skillIMG/勢い斬り.png'",
+                        "imgURL": "./img/skillIMG/勢い斬り.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1818,7 +1818,7 @@
                     },
                     {
                         "name": "不動の姿",
-                        "imgURL": "./img/skillIMG/不動の姿.png'",
+                        "imgURL": "./img/skillIMG/不動の姿.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1829,7 +1829,7 @@
                 "RK5": [
                     {
                         "name": "浩然の気",
-                        "imgURL": "./img/skillIMG/浩然の気.png'",
+                        "imgURL": "./img/skillIMG/浩然の気.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1838,7 +1838,7 @@
                     },
                     {
                         "name": "正面防御",
-                        "imgURL": "./img/skillIMG/正面防御.png'",
+                        "imgURL": "./img/skillIMG/正面防御.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1849,7 +1849,7 @@
                 "RK7": [
                     {
                         "name": "シールドブレイク突き",
-                        "imgURL": "./img/skillIMG/シールドブレイク突き.png'",
+                        "imgURL": "./img/skillIMG/シールドブレイク突き.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -1858,7 +1858,7 @@
                     },
                     {
                         "name": "冲陣・無敵",
-                        "imgURL": "./img/skillIMG/冲陣・無敵.png'",
+                        "imgURL": "./img/skillIMG/冲陣・無敵.png",
                         "rangeImgURL": ".png",
                         "type": "物理攻撃",
                         "cost": "3",
@@ -1869,7 +1869,7 @@
                 "RK9": [
                     {
                         "name": "必中の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/必中の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/必中の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1878,7 +1878,7 @@
                     },
                     {
                         "name": "強力な一撃(近距離)",
-                        "imgURL": "./img/skillIMG/強力な一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/強力な一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1889,7 +1889,7 @@
                 "RK11": [
                     {
                         "name": "反撃斬り",
-                        "imgURL": "./img/skillIMG/反撃斬り.png'",
+                        "imgURL": "./img/skillIMG/反撃斬り.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -1898,7 +1898,7 @@
                     },
                     {
                         "name": "大至急",
-                        "imgURL": "./img/skillIMG/大至急.png'",
+                        "imgURL": "./img/skillIMG/大至急.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1926,7 +1926,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -1935,7 +1935,7 @@
                     },
                     {
                         "name": "強襲指令",
-                        "imgURL": "./img/skillIMG/強襲指令.png'",
+                        "imgURL": "./img/skillIMG/強襲指令.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -1946,7 +1946,7 @@
                 "RK1": [
                     {
                         "name": "荘厳",
-                        "imgURL": "./img/skillIMG/荘厳.png'",
+                        "imgURL": "./img/skillIMG/荘厳.png",
                         "rangeImgURL": ".png",
                         "type": "オーラ",
                         "cost": "-",
@@ -1955,7 +1955,7 @@
                     },
                     {
                         "name": "戦線配置",
-                        "imgURL": "./img/skillIMG/戦線配置.png'",
+                        "imgURL": "./img/skillIMG/戦線配置.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -1966,7 +1966,7 @@
                 "RK3": [
                     {
                         "name": "狙撃手掩護を",
-                        "imgURL": "./img/skillIMG/狙撃手掩護を.png'",
+                        "imgURL": "./img/skillIMG/狙撃手掩護を.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -1975,7 +1975,7 @@
                     },
                     {
                         "name": "用意周到",
-                        "imgURL": "./img/skillIMG/用意周到.png'",
+                        "imgURL": "./img/skillIMG/用意周到.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -1986,7 +1986,7 @@
                 "RK5": [
                     {
                         "name": "急所回避",
-                        "imgURL": "./img/skillIMG/急所回避.png'",
+                        "imgURL": "./img/skillIMG/急所回避.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -1995,7 +1995,7 @@
                     },
                     {
                         "name": "戦地回復",
-                        "imgURL": "./img/skillIMG/戦地回復.png'",
+                        "imgURL": "./img/skillIMG/戦地回復.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2006,7 +2006,7 @@
                 "RK7": [
                     {
                         "name": "緋色の記憶",
-                        "imgURL": "./img/skillIMG/緋色の記憶.png'",
+                        "imgURL": "./img/skillIMG/緋色の記憶.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -2015,7 +2015,7 @@
                     },
                     {
                         "name": "共に行こう",
-                        "imgURL": "./img/skillIMG/共に行こう.png'",
+                        "imgURL": "./img/skillIMG/共に行こう.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -2026,7 +2026,7 @@
                 "RK9": [
                     {
                         "name": "協同作戦",
-                        "imgURL": "./img/skillIMG/協同作戦.png'",
+                        "imgURL": "./img/skillIMG/協同作戦.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2035,7 +2035,7 @@
                     },
                     {
                         "name": "活力の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/活力の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/活力の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2046,7 +2046,7 @@
                 "RK11": [
                     {
                         "name": "機動隊！エース戦術",
-                        "imgURL": "./img/skillIMG/機動隊！エース戦術.png'",
+                        "imgURL": "./img/skillIMG/機動隊！エース戦術.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -2055,7 +2055,7 @@
                     },
                     {
                         "name": "新生",
-                        "imgURL": "./img/skillIMG/新生.png'",
+                        "imgURL": "./img/skillIMG/新生.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "2",
@@ -2094,7 +2094,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2103,7 +2103,7 @@
                     },
                     {
                         "name": "爆裂晶塵",
-                        "imgURL": "./img/skillIMG/爆裂晶塵.png'",
+                        "imgURL": "./img/skillIMG/爆裂晶塵.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -2114,7 +2114,7 @@
                 "RK1": [
                     {
                         "name": "激怒の追撃",
-                        "imgURL": "./img/skillIMG/激怒の追撃.png'",
+                        "imgURL": "./img/skillIMG/激怒の追撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -2123,7 +2123,7 @@
                     },
                     {
                         "name": "追撃ノックバック",
-                        "imgURL": "./img/skillIMG/追撃ノックバック.png'",
+                        "imgURL": "./img/skillIMG/追撃ノックバック.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -2134,7 +2134,7 @@
                 "RK3": [
                     {
                         "name": "熱血突進",
-                        "imgURL": "./img/skillIMG/熱血突進.png'",
+                        "imgURL": "./img/skillIMG/熱血突進.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -2143,7 +2143,7 @@
                     },
                     {
                         "name": "燃焼する血",
-                        "imgURL": "./img/skillIMG/燃焼する血.png'",
+                        "imgURL": "./img/skillIMG/燃焼する血.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -2154,7 +2154,7 @@
                 "RK5": [
                     {
                         "name": "ストリートスタイル",
-                        "imgURL": "./img/skillIMG/ストリートスタイル.png'",
+                        "imgURL": "./img/skillIMG/ストリートスタイル.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2163,7 +2163,7 @@
                     },
                     {
                         "name": "防御・矢",
-                        "imgURL": "./img/skillIMG/防御・矢.png'",
+                        "imgURL": "./img/skillIMG/防御・矢.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2174,7 +2174,7 @@
                 "RK7": [
                     {
                         "name": "一撃葬送",
-                        "imgURL": "./img/skillIMG/一撃葬送.png'",
+                        "imgURL": "./img/skillIMG/一撃葬送.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -2183,7 +2183,7 @@
                     },
                     {
                         "name": "ピンポイント爆破",
-                        "imgURL": "./img/skillIMG/ピンポイント爆破.png'",
+                        "imgURL": "./img/skillIMG/ピンポイント爆破.png",
                         "rangeImgURL": ".png",
                         "type": "デバフ",
                         "cost": "2",
@@ -2194,7 +2194,7 @@
                 "RK9": [
                     {
                         "name": "封印の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/封印の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/封印の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2203,7 +2203,7 @@
                     },
                     {
                         "name": "致命の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/致命の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/致命の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2214,7 +2214,7 @@
                 "RK11": [
                     {
                         "name": "家族",
-                        "imgURL": "./img/skillIMG/家族.png'",
+                        "imgURL": "./img/skillIMG/家族.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -2223,7 +2223,7 @@
                     },
                     {
                         "name": "壊滅ストーム",
-                        "imgURL": "./img/skillIMG/壊滅ストーム.png'",
+                        "imgURL": "./img/skillIMG/壊滅ストーム.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -2726,7 +2726,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2735,7 +2735,7 @@
                     },
                     {
                         "name": "厄運侵蝕",
-                        "imgURL": "./img/skillIMG/厄運侵蝕.png'",
+                        "imgURL": "./img/skillIMG/厄運侵蝕.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -2746,7 +2746,7 @@
                 "RK1": [
                     {
                         "name": "エナジービーム",
-                        "imgURL": "./img/skillIMG/エナジービーム.png'",
+                        "imgURL": "./img/skillIMG/エナジービーム.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "0",
@@ -2755,7 +2755,7 @@
                     },
                     {
                         "name": "フィールド",
-                        "imgURL": "./img/skillIMG/フィールド.png'",
+                        "imgURL": "./img/skillIMG/フィールド.png",
                         "rangeImgURL": ".png",
                         "type": "オーラ",
                         "cost": "-",
@@ -2766,7 +2766,7 @@
                 "RK3": [
                     {
                         "name": "侵蝕異能",
-                        "imgURL": "./img/skillIMG/侵蝕異能.png'",
+                        "imgURL": "./img/skillIMG/侵蝕異能.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -2775,7 +2775,7 @@
                     },
                     {
                         "name": "斥力運用",
-                        "imgURL": "./img/skillIMG/斥力運用.png'",
+                        "imgURL": "./img/skillIMG/斥力運用.png",
                         "rangeImgURL": ".png",
                         "type": "選択",
                         "cost": "-",
@@ -2786,7 +2786,7 @@
                 "RK5": [
                     {
                         "name": "侵蝕フィールド",
-                        "imgURL": "./img/skillIMG/侵蝕フィールド.png'",
+                        "imgURL": "./img/skillIMG/侵蝕フィールド.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2795,7 +2795,7 @@
                     },
                     {
                         "name": "防御・矢",
-                        "imgURL": "./img/skillIMG/防御・矢.png'",
+                        "imgURL": "./img/skillIMG/防御・矢.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2806,7 +2806,7 @@
                 "RK7": [
                     {
                         "name": "極闇の波動",
-                        "imgURL": "./img/skillIMG/極闇の波動.png'",
+                        "imgURL": "./img/skillIMG/極闇の波動.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -2815,7 +2815,7 @@
                     },
                     {
                         "name": "強靭",
-                        "imgURL": "./img/skillIMG/強靭.png'",
+                        "imgURL": "./img/skillIMG/強靭.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -2826,7 +2826,7 @@
                 "RK9": [
                     {
                         "name": "活力の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/活力の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/活力の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2835,7 +2835,7 @@
                     },
                     {
                         "name": "催眠の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/催眠の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/催眠の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2846,7 +2846,7 @@
                 "RK11": [
                     {
                         "name": "厄運の目覚",
-                        "imgURL": "./img/skillIMG/厄運の目覚.png'",
+                        "imgURL": "./img/skillIMG/厄運の目覚.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -2855,7 +2855,7 @@
                     },
                     {
                         "name": "生命呑込",
-                        "imgURL": "./img/skillIMG/生命呑込.png'",
+                        "imgURL": "./img/skillIMG/生命呑込.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -2883,7 +2883,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2892,7 +2892,7 @@
                     },
                     {
                         "name": "横暴な重撃",
-                        "imgURL": "./img/skillIMG/横暴な重撃.png'",
+                        "imgURL": "./img/skillIMG/横暴な重撃.png",
                         "rangeImgURL": ".png",
                         "type": "0",
                         "cost": "2",
@@ -2903,7 +2903,7 @@
                 "RK1": [
                     {
                         "name": "防御支援",
-                        "imgURL": "./img/skillIMG/防御支援.png'",
+                        "imgURL": "./img/skillIMG/防御支援.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -2912,7 +2912,7 @@
                     },
                     {
                         "name": "警察用投げ縄",
-                        "imgURL": "./img/skillIMG/警察用投げ縄.png'",
+                        "imgURL": "./img/skillIMG/警察用投げ縄.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -2923,7 +2923,7 @@
                 "RK3": [
                     {
                         "name": "預ける背中",
-                        "imgURL": "./img/skillIMG/預ける背中.png'",
+                        "imgURL": "./img/skillIMG/預ける背中.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -2932,7 +2932,7 @@
                     },
                     {
                         "name": "避難港",
-                        "imgURL": "./img/skillIMG/避難港.png'",
+                        "imgURL": "./img/skillIMG/避難港.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -2943,7 +2943,7 @@
                 "RK5": [
                     {
                         "name": "柔花",
-                        "imgURL": "./img/skillIMG/柔花.png'",
+                        "imgURL": "./img/skillIMG/柔花.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2952,7 +2952,7 @@
                     },
                     {
                         "name": "正面防御",
-                        "imgURL": "./img/skillIMG/正面防御.png'",
+                        "imgURL": "./img/skillIMG/正面防御.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -2963,7 +2963,7 @@
                 "RK7": [
                     {
                         "name": "緋色の夜",
-                        "imgURL": "./img/skillIMG/緋色の夜.png'",
+                        "imgURL": "./img/skillIMG/緋色の夜.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -2972,7 +2972,7 @@
                     },
                     {
                         "name": "雲影一掃",
-                        "imgURL": "./img/skillIMG/雲影一掃.png'",
+                        "imgURL": "./img/skillIMG/雲影一掃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -2983,7 +2983,7 @@
                 "RK9": [
                     {
                         "name": "解除の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -2992,7 +2992,7 @@
                     },
                     {
                         "name": "杖剣",
-                        "imgURL": "./img/skillIMG/杖剣.png'",
+                        "imgURL": "./img/skillIMG/杖剣.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3003,7 +3003,7 @@
                 "RK11": [
                     {
                         "name": "戦場通行",
-                        "imgURL": "./img/skillIMG/戦場通行.png'",
+                        "imgURL": "./img/skillIMG/戦場通行.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3012,7 +3012,7 @@
                     },
                     {
                         "name": "迎撃姿勢",
-                        "imgURL": "./img/skillIMG/迎撃姿勢.png'",
+                        "imgURL": "./img/skillIMG/迎撃姿勢.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3197,7 +3197,7 @@
                 "initial": [
                     {
                         "name": "双剣撃",
-                        "imgURL": "./img/skillIMG/双剣撃.png'",
+                        "imgURL": "./img/skillIMG/双剣撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3206,7 +3206,7 @@
                     },
                     {
                         "name": "千刃",
-                        "imgURL": "./img/skillIMG/千刃.png'",
+                        "imgURL": "./img/skillIMG/千刃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -3217,7 +3217,7 @@
                 "RK1": [
                     {
                         "name": "穢れたダガー",
-                        "imgURL": "./img/skillIMG/穢れたダガー.png'",
+                        "imgURL": "./img/skillIMG/穢れたダガー.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -3226,7 +3226,7 @@
                     },
                     {
                         "name": "機動",
-                        "imgURL": "./img/skillIMG/機動.png'",
+                        "imgURL": "./img/skillIMG/機動.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3237,7 +3237,7 @@
                 "RK3": [
                     {
                         "name": "魂を奪いし可憐な影",
-                        "imgURL": "./img/skillIMG/魂を奪いし可憐な影.png'",
+                        "imgURL": "./img/skillIMG/魂を奪いし可憐な影.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -3246,7 +3246,7 @@
                     },
                     {
                         "name": "ファントムステップ",
-                        "imgURL": "./img/skillIMG/ファントムステップ.png'",
+                        "imgURL": "./img/skillIMG/ファントムステップ.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -3257,7 +3257,7 @@
                 "RK5": [
                     {
                         "name": "防御・魔法",
-                        "imgURL": "./img/skillIMG/防御・魔法.png'",
+                        "imgURL": "./img/skillIMG/防御・魔法.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3266,7 +3266,7 @@
                     },
                     {
                         "name": "EN回復",
-                        "imgURL": "./img/skillIMG/EN回復.png'",
+                        "imgURL": "./img/skillIMG/EN回復.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3277,7 +3277,7 @@
                 "RK7": [
                     {
                         "name": "麻痺薬塗り",
-                        "imgURL": "./img/skillIMG/麻痺薬塗り.png'",
+                        "imgURL": "./img/skillIMG/麻痺薬塗り.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3286,7 +3286,7 @@
                     },
                     {
                         "name": "侵略如火",
-                        "imgURL": "./img/skillIMG/侵略如火.png'",
+                        "imgURL": "./img/skillIMG/侵略如火.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -3297,7 +3297,7 @@
                 "RK9": [
                     {
                         "name": "解除の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3306,7 +3306,7 @@
                     },
                     {
                         "name": "三連撃",
-                        "imgURL": "./img/skillIMG/三連撃.png'",
+                        "imgURL": "./img/skillIMG/三連撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3317,7 +3317,7 @@
                 "RK11": [
                     {
                         "name": "素晴らしき歌声",
-                        "imgURL": "./img/skillIMG/素晴らしき歌声.png'",
+                        "imgURL": "./img/skillIMG/素晴らしき歌声.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "4",
@@ -3326,7 +3326,7 @@
                     },
                     {
                         "name": "凶狼無形刃",
-                        "imgURL": "./img/skillIMG/凶狼無形刃.png'",
+                        "imgURL": "./img/skillIMG/凶狼無形刃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -3354,7 +3354,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3363,7 +3363,7 @@
                     },
                     {
                         "name": "氷槍",
-                        "imgURL": "./img/skillIMG/氷槍.png'",
+                        "imgURL": "./img/skillIMG/氷槍.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "1",
@@ -3374,7 +3374,7 @@
                 "RK1": [
                     {
                         "name": "氷風爆",
-                        "imgURL": "./img/skillIMG/氷風爆.png'",
+                        "imgURL": "./img/skillIMG/氷風爆.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "2",
@@ -3383,7 +3383,7 @@
                     },
                     {
                         "name": "氷錐術",
-                        "imgURL": "./img/skillIMG/氷錐術.png'",
+                        "imgURL": "./img/skillIMG/氷錐術.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "2",
@@ -3394,7 +3394,7 @@
                 "RK3": [
                     {
                         "name": "アイシングアサルト",
-                        "imgURL": "./img/skillIMG/アイシングアサルト.png'",
+                        "imgURL": "./img/skillIMG/アイシングアサルト.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "1",
@@ -3403,7 +3403,7 @@
                     },
                     {
                         "name": "氷を以て鎧となす",
-                        "imgURL": "./img/skillIMG/氷を以て鎧となす.png'",
+                        "imgURL": "./img/skillIMG/氷を以て鎧となす.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -3414,7 +3414,7 @@
                 "RK5": [
                     {
                         "name": "アイスクラッシュ",
-                        "imgURL": "./img/skillIMG/アイスクラッシュ.png'",
+                        "imgURL": "./img/skillIMG/アイスクラッシュ.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3423,7 +3423,7 @@
                     },
                     {
                         "name": "氷の庇護",
-                        "imgURL": "./img/skillIMG/氷の庇護.png'",
+                        "imgURL": "./img/skillIMG/氷の庇護.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3434,7 +3434,7 @@
                 "RK7": [
                     {
                         "name": "急凍術",
-                        "imgURL": "./img/skillIMG/急凍術.png'",
+                        "imgURL": "./img/skillIMG/急凍術.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "2",
@@ -3443,7 +3443,7 @@
                     },
                     {
                         "name": "騎士連合の戦旗",
-                        "imgURL": "./img/skillIMG/騎士連合の戦旗.png'",
+                        "imgURL": "./img/skillIMG/騎士連合の戦旗.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -3454,7 +3454,7 @@
                 "RK9": [
                     {
                         "name": "氷を以て剣となす",
-                        "imgURL": "./img/skillIMG/氷を以て剣となす.png'",
+                        "imgURL": "./img/skillIMG/氷を以て剣となす.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3463,7 +3463,7 @@
                     },
                     {
                         "name": "氷結の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/氷結の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/氷結の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3474,7 +3474,7 @@
                 "RK11": [
                     {
                         "name": "末世の寒冬",
-                        "imgURL": "./img/skillIMG/末世の寒冬.png'",
+                        "imgURL": "./img/skillIMG/末世の寒冬.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -3483,7 +3483,7 @@
                     },
                     {
                         "name": "生きる意志",
-                        "imgURL": "./img/skillIMG/生きる意志.png'",
+                        "imgURL": "./img/skillIMG/生きる意志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -3511,7 +3511,7 @@
                 "initial": [
                     {
                         "name": "水平射撃",
-                        "imgURL": "./img/skillIMG/水平射撃.png'",
+                        "imgURL": "./img/skillIMG/水平射撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3520,7 +3520,7 @@
                     },
                     {
                         "name": "強力射撃",
-                        "imgURL": "./img/skillIMG/強力射撃.png'",
+                        "imgURL": "./img/skillIMG/強力射撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -3531,7 +3531,7 @@
                 "RK1": [
                     {
                         "name": "集中",
-                        "imgURL": "./img/skillIMG/集中.png'",
+                        "imgURL": "./img/skillIMG/集中.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3540,7 +3540,7 @@
                     },
                     {
                         "name": "引き絞る",
-                        "imgURL": "./img/skillIMG/引き絞る.png'",
+                        "imgURL": "./img/skillIMG/引き絞る.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "-",
@@ -3551,7 +3551,7 @@
                 "RK3": [
                     {
                         "name": "致命の照準",
-                        "imgURL": "./img/skillIMG/致命の照準.png'",
+                        "imgURL": "./img/skillIMG/致命の照準.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -3560,7 +3560,7 @@
                     },
                     {
                         "name": "狙撃態勢",
-                        "imgURL": "./img/skillIMG/狙撃態勢.png'",
+                        "imgURL": "./img/skillIMG/狙撃態勢.png",
                         "rangeImgURL": ".png",
                         "type": "攻撃態勢支援",
                         "cost": "1",
@@ -3571,7 +3571,7 @@
                 "RK5": [
                     {
                         "name": "狙撃手の直感",
-                        "imgURL": "./img/skillIMG/狙撃手の直感.png'",
+                        "imgURL": "./img/skillIMG/狙撃手の直感.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3580,7 +3580,7 @@
                     },
                     {
                         "name": "高地優勢",
-                        "imgURL": "./img/skillIMG/高地優勢.png'",
+                        "imgURL": "./img/skillIMG/高地優勢.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3591,7 +3591,7 @@
                 "RK7": [
                     {
                         "name": "重貫通矢",
-                        "imgURL": "./img/skillIMG/重貫通矢.png'",
+                        "imgURL": "./img/skillIMG/重貫通矢.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3600,7 +3600,7 @@
                     },
                     {
                         "name": "使命感",
-                        "imgURL": "./img/skillIMG/使命感.png'",
+                        "imgURL": "./img/skillIMG/使命感.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3611,7 +3611,7 @@
                 "RK9": [
                     {
                         "name": "致命の一撃(遠距離)",
-                        "imgURL": "./img/skillIMG/致命の一撃(遠距離).png'",
+                        "imgURL": "./img/skillIMG/致命の一撃(遠距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3620,7 +3620,7 @@
                     },
                     {
                         "name": "マーキング弾",
-                        "imgURL": "./img/skillIMG/マーキング弾.png'",
+                        "imgURL": "./img/skillIMG/マーキング弾.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3631,7 +3631,7 @@
                 "RK11": [
                     {
                         "name": "高速装填",
-                        "imgURL": "./img/skillIMG/高速装填.png'",
+                        "imgURL": "./img/skillIMG/高速装填.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -3640,7 +3640,7 @@
                     },
                     {
                         "name": "鷹の目",
-                        "imgURL": "./img/skillIMG/鷹の目.png'",
+                        "imgURL": "./img/skillIMG/鷹の目.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -3668,7 +3668,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3677,7 +3677,7 @@
                     },
                     {
                         "name": "シュッシュッシュッ！",
-                        "imgURL": "./img/skillIMG/シュッシュッシュッ！.png'",
+                        "imgURL": "./img/skillIMG/シュッシュッシュッ！.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -3688,7 +3688,7 @@
                 "RK1": [
                     {
                         "name": "ファイア・ウォール",
-                        "imgURL": "./img/skillIMG/ファイア・ウォール.png'",
+                        "imgURL": "./img/skillIMG/ファイア・ウォール.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -3697,7 +3697,7 @@
                     },
                     {
                         "name": "何かないかな〜",
-                        "imgURL": "./img/skillIMG/何かないかな〜.png'",
+                        "imgURL": "./img/skillIMG/何かないかな〜.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -3708,7 +3708,7 @@
                 "RK3": [
                     {
                         "name": "攻撃増幅",
-                        "imgURL": "./img/skillIMG/攻撃増幅.png'",
+                        "imgURL": "./img/skillIMG/攻撃増幅.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -3717,7 +3717,7 @@
                     },
                     {
                         "name": "ENリジェン",
-                        "imgURL": "./img/skillIMG/ENリジェン.png'",
+                        "imgURL": "./img/skillIMG/ENリジェン.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3728,7 +3728,7 @@
                 "RK5": [
                     {
                         "name": "火渡り",
-                        "imgURL": "./img/skillIMG/火渡り.png'",
+                        "imgURL": "./img/skillIMG/火渡り.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3737,7 +3737,7 @@
                     },
                     {
                         "name": "カワイ子ちゃん",
-                        "imgURL": "./img/skillIMG/カワイ子ちゃん.png'",
+                        "imgURL": "./img/skillIMG/カワイ子ちゃん.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3748,7 +3748,7 @@
                 "RK7": [
                     {
                         "name": "インフェルノメテオ",
-                        "imgURL": "./img/skillIMG/インフェルノメテオ.png'",
+                        "imgURL": "./img/skillIMG/インフェルノメテオ.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "4",
@@ -3757,7 +3757,7 @@
                     },
                     {
                         "name": "これ試してみて！",
-                        "imgURL": "./img/skillIMG/これ試してみて！.png'",
+                        "imgURL": "./img/skillIMG/これ試してみて！.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "2",
@@ -3768,7 +3768,7 @@
                 "RK9": [
                     {
                         "name": "火傷の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/火傷の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/火傷の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3777,7 +3777,7 @@
                     },
                     {
                         "name": "ガチャン！",
-                        "imgURL": "./img/skillIMG/ガチャン！.png'",
+                        "imgURL": "./img/skillIMG/ガチャン！.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3788,7 +3788,7 @@
                 "RK11": [
                     {
                         "name": "どどどどんと！",
-                        "imgURL": "./img/skillIMG/どどどどんと！.png'",
+                        "imgURL": "./img/skillIMG/どどどどんと！.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "5",
@@ -3797,7 +3797,7 @@
                     },
                     {
                         "name": "救急",
-                        "imgURL": "./img/skillIMG/救急.png'",
+                        "imgURL": "./img/skillIMG/救急.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "2",
@@ -3825,7 +3825,7 @@
                 "initial": [
                     {
                         "name": "双剣撃",
-                        "imgURL": "./img/skillIMG/双剣撃.png'",
+                        "imgURL": "./img/skillIMG/双剣撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3834,7 +3834,7 @@
                     },
                     {
                         "name": "スティング",
-                        "imgURL": "./img/skillIMG/スティング.png'",
+                        "imgURL": "./img/skillIMG/スティング.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -3845,7 +3845,7 @@
                 "RK1": [
                     {
                         "name": "不意打ち",
-                        "imgURL": "./img/skillIMG/不意打ち.png'",
+                        "imgURL": "./img/skillIMG/不意打ち.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3854,7 +3854,7 @@
                     },
                     {
                         "name": "シャドーステップ",
-                        "imgURL": "./img/skillIMG/シャドーステップ.png'",
+                        "imgURL": "./img/skillIMG/シャドーステップ.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -3865,7 +3865,7 @@
                 "RK3": [
                     {
                         "name": "急襲",
-                        "imgURL": "./img/skillIMG/急襲.png'",
+                        "imgURL": "./img/skillIMG/急襲.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -3874,7 +3874,7 @@
                     },
                     {
                         "name": "仮面",
-                        "imgURL": "./img/skillIMG/仮面.png'",
+                        "imgURL": "./img/skillIMG/仮面.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "1",
@@ -3885,7 +3885,7 @@
                 "RK5": [
                     {
                         "name": "不気味なステップ",
-                        "imgURL": "./img/skillIMG/不気味なステップ.png'",
+                        "imgURL": "./img/skillIMG/不気味なステップ.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3894,7 +3894,7 @@
                     },
                     {
                         "name": "カウンター",
-                        "imgURL": "./img/skillIMG/カウンター.png'",
+                        "imgURL": "./img/skillIMG/カウンター.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -3905,7 +3905,7 @@
                 "RK7": [
                     {
                         "name": "刺客の素質",
-                        "imgURL": "./img/skillIMG/刺客の素質.png'",
+                        "imgURL": "./img/skillIMG/刺客の素質.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -3914,7 +3914,7 @@
                     },
                     {
                         "name": "死の匂い",
-                        "imgURL": "./img/skillIMG/死の匂い.png'",
+                        "imgURL": "./img/skillIMG/死の匂い.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -3925,7 +3925,7 @@
                 "RK9": [
                     {
                         "name": "ダークアサシン",
-                        "imgURL": "./img/skillIMG/ダークアサシン.png'",
+                        "imgURL": "./img/skillIMG/ダークアサシン.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3934,7 +3934,7 @@
                     },
                     {
                         "name": "会心の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/会心の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/会心の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3945,7 +3945,7 @@
                 "RK11": [
                     {
                         "name": "抹殺",
-                        "imgURL": "./img/skillIMG/抹殺.png'",
+                        "imgURL": "./img/skillIMG/抹殺.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -3954,7 +3954,7 @@
                     },
                     {
                         "name": "姿なし闇影",
-                        "imgURL": "./img/skillIMG/姿なし闇影.png'",
+                        "imgURL": "./img/skillIMG/姿なし闇影.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -3982,7 +3982,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -3991,7 +3991,7 @@
                     },
                     {
                         "name": "曙光",
-                        "imgURL": "./img/skillIMG/曙光.png'",
+                        "imgURL": "./img/skillIMG/曙光.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -4002,7 +4002,7 @@
                 "RK1": [
                     {
                         "name": "戦闘回復",
-                        "imgURL": "./img/skillIMG/戦闘回復.png'",
+                        "imgURL": "./img/skillIMG/戦闘回復.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4011,7 +4011,7 @@
                     },
                     {
                         "name": "抜刀",
-                        "imgURL": "./img/skillIMG/抜刀.png'",
+                        "imgURL": "./img/skillIMG/抜刀.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4022,7 +4022,7 @@
                 "RK3": [
                     {
                         "name": "夜明け",
-                        "imgURL": "./img/skillIMG/夜明け.png'",
+                        "imgURL": "./img/skillIMG/夜明け.png",
                         "rangeImgURL": ".png",
                         "type": "混合ダメージ",
                         "cost": "2",
@@ -4031,7 +4031,7 @@
                     },
                     {
                         "name": "精気抜けの重撃",
-                        "imgURL": "./img/skillIMG/精気抜けの重撃.png'",
+                        "imgURL": "./img/skillIMG/精気抜けの重撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -4042,7 +4042,7 @@
                 "RK5": [
                     {
                         "name": "王者の気迫",
-                        "imgURL": "./img/skillIMG/王者の気迫.png'",
+                        "imgURL": "./img/skillIMG/王者の気迫.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4051,7 +4051,7 @@
                     },
                     {
                         "name": "頑強",
-                        "imgURL": "./img/skillIMG/頑強.png'",
+                        "imgURL": "./img/skillIMG/頑強.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4062,7 +4062,7 @@
                 "RK7": [
                     {
                         "name": "壊滅ストーム",
-                        "imgURL": "./img/skillIMG/壊滅ストーム.png'",
+                        "imgURL": "./img/skillIMG/壊滅ストーム.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -4071,7 +4071,7 @@
                     },
                     {
                         "name": "イリヤのために！",
-                        "imgURL": "./img/skillIMG/イリヤのために！.png'",
+                        "imgURL": "./img/skillIMG/イリヤのために！.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -4082,7 +4082,7 @@
                 "RK9": [
                     {
                         "name": "ホワイトソード",
-                        "imgURL": "./img/skillIMG/ホワイトソード.png'",
+                        "imgURL": "./img/skillIMG/ホワイトソード.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4091,7 +4091,7 @@
                     },
                     {
                         "name": "破盾の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/破盾の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/破盾の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4102,7 +4102,7 @@
                 "RK11": [
                     {
                         "name": "同胞の遺志",
-                        "imgURL": "./img/skillIMG/同胞の遺志.png'",
+                        "imgURL": "./img/skillIMG/同胞の遺志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4111,7 +4111,7 @@
                     },
                     {
                         "name": "イリヤの夜明け",
-                        "imgURL": "./img/skillIMG/イリヤの夜明け.png'",
+                        "imgURL": "./img/skillIMG/イリヤの夜明け.png",
                         "rangeImgURL": ".png",
                         "type": "混合ダメージ",
                         "cost": "4",
@@ -4139,7 +4139,7 @@
                 "initial": [
                     {
                         "name": "曲射",
-                        "imgURL": "./img/skillIMG/曲射.png'",
+                        "imgURL": "./img/skillIMG/曲射.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4148,7 +4148,7 @@
                     },
                     {
                         "name": "穿雲箭",
-                        "imgURL": "./img/skillIMG/穿雲箭.png'",
+                        "imgURL": "./img/skillIMG/穿雲箭.png",
                         "rangeImgURL": ".png",
                         "type": "0",
                         "cost": "3",
@@ -4159,7 +4159,7 @@
                 "RK1": [
                     {
                         "name": "遊撃",
-                        "imgURL": "./img/skillIMG/遊撃.png'",
+                        "imgURL": "./img/skillIMG/遊撃.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -4168,7 +4168,7 @@
                     },
                     {
                         "name": "一点集中",
-                        "imgURL": "./img/skillIMG/一点集中.png'",
+                        "imgURL": "./img/skillIMG/一点集中.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -4179,7 +4179,7 @@
                 "RK3": [
                     {
                         "name": "風神の矢",
-                        "imgURL": "./img/skillIMG/風神の矢.png'",
+                        "imgURL": "./img/skillIMG/風神の矢.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -4188,7 +4188,7 @@
                     },
                     {
                         "name": "風の加護",
-                        "imgURL": "./img/skillIMG/風の加護.png'",
+                        "imgURL": "./img/skillIMG/風の加護.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4199,7 +4199,7 @@
                 "RK5": [
                     {
                         "name": "疾風ステップ",
-                        "imgURL": "./img/skillIMG/疾風ステップ.png'",
+                        "imgURL": "./img/skillIMG/疾風ステップ.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4208,7 +4208,7 @@
                     },
                     {
                         "name": "サバイバル・マスター",
-                        "imgURL": "./img/skillIMG/サバイバル・マスター.png'",
+                        "imgURL": "./img/skillIMG/サバイバル・マスター.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4219,7 +4219,7 @@
                 "RK7": [
                     {
                         "name": "メテオレイン",
-                        "imgURL": "./img/skillIMG/メテオレイン.png'",
+                        "imgURL": "./img/skillIMG/メテオレイン.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -4228,7 +4228,7 @@
                     },
                     {
                         "name": "血の共鳴",
-                        "imgURL": "./img/skillIMG/血の共鳴.png'",
+                        "imgURL": "./img/skillIMG/血の共鳴.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -4239,7 +4239,7 @@
                 "RK9": [
                     {
                         "name": "感染の一撃(遠距離)",
-                        "imgURL": "./img/skillIMG/感染の一撃(遠距離).png'",
+                        "imgURL": "./img/skillIMG/感染の一撃(遠距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4248,7 +4248,7 @@
                     },
                     {
                         "name": "疾風直射",
-                        "imgURL": "./img/skillIMG/疾風直射.png'",
+                        "imgURL": "./img/skillIMG/疾風直射.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4259,7 +4259,7 @@
                 "RK11": [
                     {
                         "name": "風神の矢・疾風破",
-                        "imgURL": "./img/skillIMG/風神の矢・疾風破.png'",
+                        "imgURL": "./img/skillIMG/風神の矢・疾風破.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -4268,7 +4268,7 @@
                     },
                     {
                         "name": "ゴッドアロー",
-                        "imgURL": "./img/skillIMG/ゴッドアロー.png'",
+                        "imgURL": "./img/skillIMG/ゴッドアロー.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4296,7 +4296,7 @@
                 "initial": [
                     {
                         "name": "曲射",
-                        "imgURL": "./img/skillIMG/曲射.png'",
+                        "imgURL": "./img/skillIMG/曲射.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4305,7 +4305,7 @@
                     },
                     {
                         "name": "足狙い",
-                        "imgURL": "./img/skillIMG/足狙い.png'",
+                        "imgURL": "./img/skillIMG/足狙い.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -4316,7 +4316,7 @@
                 "RK1": [
                     {
                         "name": "集中",
-                        "imgURL": "./img/skillIMG/集中.png'",
+                        "imgURL": "./img/skillIMG/集中.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4325,7 +4325,7 @@
                     },
                     {
                         "name": "クライミング",
-                        "imgURL": "./img/skillIMG/クライミング.png'",
+                        "imgURL": "./img/skillIMG/クライミング.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "-",
@@ -4336,7 +4336,7 @@
                 "RK3": [
                     {
                         "name": "精確射撃",
-                        "imgURL": "./img/skillIMG/精確射撃.png'",
+                        "imgURL": "./img/skillIMG/精確射撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "0",
@@ -4345,7 +4345,7 @@
                     },
                     {
                         "name": "鈴蘭を守る矢",
-                        "imgURL": "./img/skillIMG/鈴蘭を守る矢.png'",
+                        "imgURL": "./img/skillIMG/鈴蘭を守る矢.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -4356,7 +4356,7 @@
                 "RK5": [
                     {
                         "name": "目には目を",
-                        "imgURL": "./img/skillIMG/目には目を.png'",
+                        "imgURL": "./img/skillIMG/目には目を.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4365,7 +4365,7 @@
                     },
                     {
                         "name": "脱兎",
-                        "imgURL": "./img/skillIMG/脱兎.png'",
+                        "imgURL": "./img/skillIMG/脱兎.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4376,7 +4376,7 @@
                 "RK7": [
                     {
                         "name": "穿雲箭",
-                        "imgURL": "./img/skillIMG/穿雲箭.png'",
+                        "imgURL": "./img/skillIMG/穿雲箭.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -4385,7 +4385,7 @@
                     },
                     {
                         "name": "警戒射撃",
-                        "imgURL": "./img/skillIMG/警戒射撃.png'",
+                        "imgURL": "./img/skillIMG/警戒射撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -4396,7 +4396,7 @@
                 "RK9": [
                     {
                         "name": "連射",
-                        "imgURL": "./img/skillIMG/連射.png'",
+                        "imgURL": "./img/skillIMG/連射.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4405,7 +4405,7 @@
                     },
                     {
                         "name": "致命の一撃(曲射)",
-                        "imgURL": "./img/skillIMG/致命の一撃(曲射).png'",
+                        "imgURL": "./img/skillIMG/致命の一撃(曲射).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4416,7 +4416,7 @@
                 "RK11": [
                     {
                         "name": "疾風怒濤乱射",
-                        "imgURL": "./img/skillIMG/疾風怒濤乱射.png'",
+                        "imgURL": "./img/skillIMG/疾風怒濤乱射.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -4425,7 +4425,7 @@
                     },
                     {
                         "name": "警戒心",
-                        "imgURL": "./img/skillIMG/警戒心.png'",
+                        "imgURL": "./img/skillIMG/警戒心.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4616,7 +4616,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4625,7 +4625,7 @@
                     },
                     {
                         "name": "山崩し",
-                        "imgURL": "./img/skillIMG/山崩し.png'",
+                        "imgURL": "./img/skillIMG/山崩し.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -4636,7 +4636,7 @@
                 "RK1": [
                     {
                         "name": "攻撃態勢",
-                        "imgURL": "./img/skillIMG/攻撃態勢.png'",
+                        "imgURL": "./img/skillIMG/攻撃態勢.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -4645,7 +4645,7 @@
                     },
                     {
                         "name": "不屈",
-                        "imgURL": "./img/skillIMG/不屈.png'",
+                        "imgURL": "./img/skillIMG/不屈.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4656,7 +4656,7 @@
                 "RK3": [
                     {
                         "name": "強力な投擲",
-                        "imgURL": "./img/skillIMG/強力な投擲.png'",
+                        "imgURL": "./img/skillIMG/強力な投擲.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -4665,7 +4665,7 @@
                     },
                     {
                         "name": "必勝の雄叫び",
-                        "imgURL": "./img/skillIMG/必勝の雄叫び.png'",
+                        "imgURL": "./img/skillIMG/必勝の雄叫び.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4676,7 +4676,7 @@
                 "RK5": [
                     {
                         "name": "血に餓えた巨斧",
-                        "imgURL": "./img/skillIMG/血に餓えた巨斧.png'",
+                        "imgURL": "./img/skillIMG/血に餓えた巨斧.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4685,7 +4685,7 @@
                     },
                     {
                         "name": "硬化",
-                        "imgURL": "./img/skillIMG/硬化.png'",
+                        "imgURL": "./img/skillIMG/硬化.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4696,7 +4696,7 @@
                 "RK7": [
                     {
                         "name": "粉砕打撃",
-                        "imgURL": "./img/skillIMG/粉砕打撃.png'",
+                        "imgURL": "./img/skillIMG/粉砕打撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "0",
@@ -4705,7 +4705,7 @@
                     },
                     {
                         "name": "鉄と血の意志",
-                        "imgURL": "./img/skillIMG/鉄と血の意志.png'",
+                        "imgURL": "./img/skillIMG/鉄と血の意志.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -4716,7 +4716,7 @@
                 "RK9": [
                     {
                         "name": "強力な振り回し",
-                        "imgURL": "./img/skillIMG/強力な振り回し.png'",
+                        "imgURL": "./img/skillIMG/強力な振り回し.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4725,7 +4725,7 @@
                     },
                     {
                         "name": "狂熱の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4736,7 +4736,7 @@
                 "RK11": [
                     {
                         "name": "鋭い刃",
-                        "imgURL": "./img/skillIMG/鋭い刃.png'",
+                        "imgURL": "./img/skillIMG/鋭い刃.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4745,7 +4745,7 @@
                     },
                     {
                         "name": "鋼の戦車",
-                        "imgURL": "./img/skillIMG/鋼の戦車.png'",
+                        "imgURL": "./img/skillIMG/鋼の戦車.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -4773,7 +4773,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4782,7 +4782,7 @@
                     },
                     {
                         "name": "押し蹴り",
-                        "imgURL": "./img/skillIMG/押し蹴り.png'",
+                        "imgURL": "./img/skillIMG/押し蹴り.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -4793,7 +4793,7 @@
                 "RK1": [
                     {
                         "name": "守護",
-                        "imgURL": "./img/skillIMG/守護.png'",
+                        "imgURL": "./img/skillIMG/守護.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4802,7 +4802,7 @@
                     },
                     {
                         "name": "防御支援",
-                        "imgURL": "./img/skillIMG/防御支援.png'",
+                        "imgURL": "./img/skillIMG/防御支援.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4813,7 +4813,7 @@
                 "RK3": [
                     {
                         "name": "みんな頑張れ！",
-                        "imgURL": "./img/skillIMG/みんな頑張れ！.png'",
+                        "imgURL": "./img/skillIMG/みんな頑張れ！.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -4822,7 +4822,7 @@
                     },
                     {
                         "name": "マイサの突撃",
-                        "imgURL": "./img/skillIMG/マイサの突撃.png'",
+                        "imgURL": "./img/skillIMG/マイサの突撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -4833,7 +4833,7 @@
                 "RK5": [
                     {
                         "name": "根性アップ",
-                        "imgURL": "./img/skillIMG/根性アップ.png'",
+                        "imgURL": "./img/skillIMG/根性アップ.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4842,7 +4842,7 @@
                     },
                     {
                         "name": "ブロック反撃",
-                        "imgURL": "./img/skillIMG/ブロック反撃.png'",
+                        "imgURL": "./img/skillIMG/ブロック反撃.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -4853,7 +4853,7 @@
                 "RK7": [
                     {
                         "name": "鈴蘭の戦旗",
-                        "imgURL": "./img/skillIMG/鈴蘭の戦旗.png'",
+                        "imgURL": "./img/skillIMG/鈴蘭の戦旗.png",
                         "rangeImgURL": ".png",
                         "type": "リーダーのオーラ",
                         "cost": "-",
@@ -4862,7 +4862,7 @@
                     },
                     {
                         "name": "包帯",
-                        "imgURL": "./img/skillIMG/包帯.png'",
+                        "imgURL": "./img/skillIMG/包帯.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "0",
@@ -4873,7 +4873,7 @@
                 "RK9": [
                     {
                         "name": "破甲の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/破甲の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/破甲の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4882,7 +4882,7 @@
                     },
                     {
                         "name": "強力な一撃(近距離)",
-                        "imgURL": "./img/skillIMG/強力な一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/強力な一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4893,7 +4893,7 @@
                 "RK11": [
                     {
                         "name": "マイサの連撃",
-                        "imgURL": "./img/skillIMG/マイサの連撃.png'",
+                        "imgURL": "./img/skillIMG/マイサの連撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -4902,7 +4902,7 @@
                     },
                     {
                         "name": "隙なし",
-                        "imgURL": "./img/skillIMG/隙なし.png'",
+                        "imgURL": "./img/skillIMG/隙なし.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -4936,7 +4936,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -4945,7 +4945,7 @@
                     },
                     {
                         "name": "腐敗凋零",
-                        "imgURL": "./img/skillIMG/腐敗凋零.png'",
+                        "imgURL": "./img/skillIMG/腐敗凋零.png",
                         "rangeImgURL": ".png",
                         "type": "デバフ",
                         "cost": "1",
@@ -4956,7 +4956,7 @@
                 "RK1": [
                     {
                         "name": "催眠",
-                        "imgURL": "./img/skillIMG/催眠.png'",
+                        "imgURL": "./img/skillIMG/催眠.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "2",
@@ -4965,7 +4965,7 @@
                     },
                     {
                         "name": "興奮状態",
-                        "imgURL": "./img/skillIMG/興奮状態.png'",
+                        "imgURL": "./img/skillIMG/興奮状態.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -4976,7 +4976,7 @@
                 "RK3": [
                     {
                         "name": "激しい香り",
-                        "imgURL": "./img/skillIMG/激しい香り.png'",
+                        "imgURL": "./img/skillIMG/激しい香り.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "2",
@@ -4985,7 +4985,7 @@
                     },
                     {
                         "name": "香り道追跡",
-                        "imgURL": "./img/skillIMG/香り道追跡.png'",
+                        "imgURL": "./img/skillIMG/香り道追跡.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -4996,7 +4996,7 @@
                 "RK5": [
                     {
                         "name": "花のように柔らかい骨",
-                        "imgURL": "./img/skillIMG/花のように柔らかい骨.png'",
+                        "imgURL": "./img/skillIMG/花のように柔らかい骨.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5005,7 +5005,7 @@
                     },
                     {
                         "name": "怒りの炎",
-                        "imgURL": "./img/skillIMG/怒りの炎.png'",
+                        "imgURL": "./img/skillIMG/怒りの炎.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5016,7 +5016,7 @@
                 "RK7": [
                     {
                         "name": "急襲",
-                        "imgURL": "./img/skillIMG/急襲.png'",
+                        "imgURL": "./img/skillIMG/急襲.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -5025,7 +5025,7 @@
                     },
                     {
                         "name": "香りで人を知る",
-                        "imgURL": "./img/skillIMG/香りで人を知る.png'",
+                        "imgURL": "./img/skillIMG/香りで人を知る.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -5036,7 +5036,7 @@
                 "RK9": [
                     {
                         "name": "催眠の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/催眠の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/催眠の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5045,7 +5045,7 @@
                     },
                     {
                         "name": "淡い残り香",
-                        "imgURL": "./img/skillIMG/淡い残り香.png'",
+                        "imgURL": "./img/skillIMG/淡い残り香.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5056,7 +5056,7 @@
                 "RK11": [
                     {
                         "name": "香りの代償",
-                        "imgURL": "./img/skillIMG/香りの代償.png'",
+                        "imgURL": "./img/skillIMG/香りの代償.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "4",
@@ -5065,7 +5065,7 @@
                     },
                     {
                         "name": "生命呑込",
-                        "imgURL": "./img/skillIMG/生命呑込.png'",
+                        "imgURL": "./img/skillIMG/生命呑込.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -5268,7 +5268,7 @@
                 "initial": [
                     {
                         "name": "重斬",
-                        "imgURL": "./img/skillIMG/重斬.png'",
+                        "imgURL": "./img/skillIMG/重斬.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5277,7 +5277,7 @@
                     },
                     {
                         "name": "烈風突入",
-                        "imgURL": "./img/skillIMG/烈風突入.png'",
+                        "imgURL": "./img/skillIMG/烈風突入.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -5288,7 +5288,7 @@
                 "RK1": [
                     {
                         "name": "攻撃支援",
-                        "imgURL": "./img/skillIMG/攻撃支援.png'",
+                        "imgURL": "./img/skillIMG/攻撃支援.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5297,7 +5297,7 @@
                     },
                     {
                         "name": "強靭",
-                        "imgURL": "./img/skillIMG/強靭.png'",
+                        "imgURL": "./img/skillIMG/強靭.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5308,7 +5308,7 @@
                 "RK3": [
                     {
                         "name": "貫通打撃",
-                        "imgURL": "./img/skillIMG/貫通打撃.png'",
+                        "imgURL": "./img/skillIMG/貫通打撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "0",
@@ -5317,7 +5317,7 @@
                     },
                     {
                         "name": "もう一杯！",
-                        "imgURL": "./img/skillIMG/もう一杯！.png'",
+                        "imgURL": "./img/skillIMG/もう一杯！.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "1",
@@ -5328,7 +5328,7 @@
                 "RK5": [
                     {
                         "name": "どきな！",
-                        "imgURL": "./img/skillIMG/どきな！.png'",
+                        "imgURL": "./img/skillIMG/どきな！.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5337,7 +5337,7 @@
                     },
                     {
                         "name": "守護の心",
-                        "imgURL": "./img/skillIMG/守護の心.png'",
+                        "imgURL": "./img/skillIMG/守護の心.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5348,7 +5348,7 @@
                 "RK7": [
                     {
                         "name": "ドレインストライク",
-                        "imgURL": "./img/skillIMG/ドレインストライク.png'",
+                        "imgURL": "./img/skillIMG/ドレインストライク.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -5357,7 +5357,7 @@
                     },
                     {
                         "name": "鈴蘭の剣",
-                        "imgURL": "./img/skillIMG/鈴蘭の剣.png'",
+                        "imgURL": "./img/skillIMG/鈴蘭の剣.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -5368,7 +5368,7 @@
                 "RK9": [
                     {
                         "name": "致命の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/致命の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/致命の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5377,7 +5377,7 @@
                     },
                     {
                         "name": "解除の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5388,7 +5388,7 @@
                 "RK11": [
                     {
                         "name": "烈風回転斬り",
-                        "imgURL": "./img/skillIMG/烈風回転斬り.png'",
+                        "imgURL": "./img/skillIMG/烈風回転斬り.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -5397,7 +5397,7 @@
                     },
                     {
                         "name": "同胞の遺志",
-                        "imgURL": "./img/skillIMG/同胞の遺志.png'",
+                        "imgURL": "./img/skillIMG/同胞の遺志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5436,7 +5436,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5445,7 +5445,7 @@
                     },
                     {
                         "name": "心の癒し",
-                        "imgURL": "./img/skillIMG/心の癒し.png'",
+                        "imgURL": "./img/skillIMG/心の癒し.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "-",
@@ -5456,7 +5456,7 @@
                 "RK1": [
                     {
                         "name": "ENリジェン",
-                        "imgURL": "./img/skillIMG/ENリジェン.png'",
+                        "imgURL": "./img/skillIMG/ENリジェン.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5465,7 +5465,7 @@
                     },
                     {
                         "name": "審判の光",
-                        "imgURL": "./img/skillIMG/審判の光.png'",
+                        "imgURL": "./img/skillIMG/審判の光.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -5476,7 +5476,7 @@
                 "RK3": [
                     {
                         "name": "聖光の恩恵",
-                        "imgURL": "./img/skillIMG/聖光の恩恵.png'",
+                        "imgURL": "./img/skillIMG/聖光の恩恵.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "1",
@@ -5485,7 +5485,7 @@
                     },
                     {
                         "name": "パニッシュメント",
-                        "imgURL": "./img/skillIMG/パニッシュメント.png'",
+                        "imgURL": "./img/skillIMG/パニッシュメント.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "0",
@@ -5496,7 +5496,7 @@
                 "RK5": [
                     {
                         "name": "敬虔な信仰",
-                        "imgURL": "./img/skillIMG/敬虔な信仰.png'",
+                        "imgURL": "./img/skillIMG/敬虔な信仰.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5505,7 +5505,7 @@
                     },
                     {
                         "name": "防御・飛散",
-                        "imgURL": "./img/skillIMG/防御・飛散.png'",
+                        "imgURL": "./img/skillIMG/防御・飛散.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5516,7 +5516,7 @@
                 "RK7": [
                     {
                         "name": "法皇国の戦旗",
-                        "imgURL": "./img/skillIMG/法皇国の戦旗.png'",
+                        "imgURL": "./img/skillIMG/法皇国の戦旗.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -5525,7 +5525,7 @@
                     },
                     {
                         "name": "世間を浄化する光",
-                        "imgURL": "./img/skillIMG/世間を浄化する光.png'",
+                        "imgURL": "./img/skillIMG/世間を浄化する光.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "1",
@@ -5536,7 +5536,7 @@
                 "RK9": [
                     {
                         "name": "活力の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/活力の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/活力の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5545,7 +5545,7 @@
                     },
                     {
                         "name": "仁心撃(魔法)",
-                        "imgURL": "./img/skillIMG/仁心撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/仁心撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5556,7 +5556,7 @@
                 "RK11": [
                     {
                         "name": "サンクチュアリー",
-                        "imgURL": "./img/skillIMG/サンクチュアリー.png'",
+                        "imgURL": "./img/skillIMG/サンクチュアリー.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -5565,7 +5565,7 @@
                     },
                     {
                         "name": "守られし者",
-                        "imgURL": "./img/skillIMG/守られし者.png'",
+                        "imgURL": "./img/skillIMG/守られし者.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5593,7 +5593,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5602,7 +5602,7 @@
                     },
                     {
                         "name": "全力の槍騎兵突進",
-                        "imgURL": "./img/skillIMG/全力の槍騎兵突進.png'",
+                        "imgURL": "./img/skillIMG/全力の槍騎兵突進.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -5613,7 +5613,7 @@
                 "RK1": [
                     {
                         "name": "庇護の光",
-                        "imgURL": "./img/skillIMG/庇護の光.png'",
+                        "imgURL": "./img/skillIMG/庇護の光.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -5622,7 +5622,7 @@
                     },
                     {
                         "name": "現地警戒",
-                        "imgURL": "./img/skillIMG/現地警戒.png'",
+                        "imgURL": "./img/skillIMG/現地警戒.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -5633,7 +5633,7 @@
                 "RK3": [
                     {
                         "name": "突進姿勢",
-                        "imgURL": "./img/skillIMG/突進姿勢.png'",
+                        "imgURL": "./img/skillIMG/突進姿勢.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -5642,7 +5642,7 @@
                     },
                     {
                         "name": "テンプルナイト",
-                        "imgURL": "./img/skillIMG/テンプルナイト.png'",
+                        "imgURL": "./img/skillIMG/テンプルナイト.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5653,7 +5653,7 @@
                 "RK5": [
                     {
                         "name": "エンデュランス",
-                        "imgURL": "./img/skillIMG/エンデュランス.png'",
+                        "imgURL": "./img/skillIMG/エンデュランス.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5662,7 +5662,7 @@
                     },
                     {
                         "name": "守護の約束",
-                        "imgURL": "./img/skillIMG/守護の約束.png'",
+                        "imgURL": "./img/skillIMG/守護の約束.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5673,7 +5673,7 @@
                 "RK7": [
                     {
                         "name": "突進追撃",
-                        "imgURL": "./img/skillIMG/突進追撃.png'",
+                        "imgURL": "./img/skillIMG/突進追撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "0",
@@ -5682,7 +5682,7 @@
                     },
                     {
                         "name": "列陣如林",
-                        "imgURL": "./img/skillIMG/列陣如林.png'",
+                        "imgURL": "./img/skillIMG/列陣如林.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -5693,7 +5693,7 @@
                 "RK9": [
                     {
                         "name": "必中の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/必中の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/必中の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5702,7 +5702,7 @@
                     },
                     {
                         "name": "活力の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/活力の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/活力の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5713,7 +5713,7 @@
                 "RK11": [
                     {
                         "name": "光栄の槍騎兵突進",
-                        "imgURL": "./img/skillIMG/光栄の槍騎兵突進.png'",
+                        "imgURL": "./img/skillIMG/光栄の槍騎兵突進.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -5722,7 +5722,7 @@
                     },
                     {
                         "name": "受け身",
-                        "imgURL": "./img/skillIMG/受け身.png'",
+                        "imgURL": "./img/skillIMG/受け身.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5750,7 +5750,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5759,7 +5759,7 @@
                     },
                     {
                         "name": "一掃打撃",
-                        "imgURL": "./img/skillIMG/一掃打撃.png'",
+                        "imgURL": "./img/skillIMG/一掃打撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -5770,7 +5770,7 @@
                 "RK1": [
                     {
                         "name": "戦闘狂熱",
-                        "imgURL": "./img/skillIMG/戦闘狂熱.png'",
+                        "imgURL": "./img/skillIMG/戦闘狂熱.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5779,7 +5779,7 @@
                     },
                     {
                         "name": "捨て身",
-                        "imgURL": "./img/skillIMG/捨て身.png'",
+                        "imgURL": "./img/skillIMG/捨て身.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5790,7 +5790,7 @@
                 "RK3": [
                     {
                         "name": "同胞の遺志",
-                        "imgURL": "./img/skillIMG/同胞の遺志.png'",
+                        "imgURL": "./img/skillIMG/同胞の遺志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5799,7 +5799,7 @@
                     },
                     {
                         "name": "大乱戦",
-                        "imgURL": "./img/skillIMG/大乱戦.png'",
+                        "imgURL": "./img/skillIMG/大乱戦.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -5810,7 +5810,7 @@
                 "RK5": [
                     {
                         "name": "負けない意志",
-                        "imgURL": "./img/skillIMG/負けない意志.png'",
+                        "imgURL": "./img/skillIMG/負けない意志.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5819,7 +5819,7 @@
                     },
                     {
                         "name": "活力アップ",
-                        "imgURL": "./img/skillIMG/活力アップ.png'",
+                        "imgURL": "./img/skillIMG/活力アップ.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5830,7 +5830,7 @@
                 "RK7": [
                     {
                         "name": "王国の槍",
-                        "imgURL": "./img/skillIMG/王国の槍.png'",
+                        "imgURL": "./img/skillIMG/王国の槍.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -5839,7 +5839,7 @@
                     },
                     {
                         "name": "イリヤの戦旗",
-                        "imgURL": "./img/skillIMG/イリヤの戦旗.png'",
+                        "imgURL": "./img/skillIMG/イリヤの戦旗.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -5850,7 +5850,7 @@
                 "RK9": [
                     {
                         "name": "溜めの一撃(近距離)",
-                        "imgURL": "./img/skillIMG/溜めの一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/溜めの一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5859,7 +5859,7 @@
                     },
                     {
                         "name": "狂熱の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5870,7 +5870,7 @@
                 "RK11": [
                     {
                         "name": "コメットストライク",
-                        "imgURL": "./img/skillIMG/コメットストライク.png'",
+                        "imgURL": "./img/skillIMG/コメットストライク.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "5",
@@ -5879,7 +5879,7 @@
                     },
                     {
                         "name": "無双",
-                        "imgURL": "./img/skillIMG/無双.png'",
+                        "imgURL": "./img/skillIMG/無双.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -5907,7 +5907,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -5916,7 +5916,7 @@
                     },
                     {
                         "name": "防御態勢",
-                        "imgURL": "./img/skillIMG/防御態勢.png'",
+                        "imgURL": "./img/skillIMG/防御態勢.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -5927,7 +5927,7 @@
                 "RK1": [
                     {
                         "name": "威嚇",
-                        "imgURL": "./img/skillIMG/威嚇.png'",
+                        "imgURL": "./img/skillIMG/威嚇.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5936,7 +5936,7 @@
                     },
                     {
                         "name": "スタンの重撃",
-                        "imgURL": "./img/skillIMG/スタンの重撃.png'",
+                        "imgURL": "./img/skillIMG/スタンの重撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -5947,7 +5947,7 @@
                 "RK3": [
                     {
                         "name": "凶暴な一撃",
-                        "imgURL": "./img/skillIMG/凶暴な一撃.png'",
+                        "imgURL": "./img/skillIMG/凶暴な一撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -5956,7 +5956,7 @@
                     },
                     {
                         "name": "攪乱戦術",
-                        "imgURL": "./img/skillIMG/攪乱戦術.png'",
+                        "imgURL": "./img/skillIMG/攪乱戦術.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -5967,7 +5967,7 @@
                 "RK5": [
                     {
                         "name": "大盾",
-                        "imgURL": "./img/skillIMG/大盾.png'",
+                        "imgURL": "./img/skillIMG/大盾.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5976,7 +5976,7 @@
                     },
                     {
                         "name": "カウンター",
-                        "imgURL": "./img/skillIMG/カウンター.png'",
+                        "imgURL": "./img/skillIMG/カウンター.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -5987,7 +5987,7 @@
                 "RK7": [
                     {
                         "name": "陣形指揮",
-                        "imgURL": "./img/skillIMG/陣形指揮.png'",
+                        "imgURL": "./img/skillIMG/陣形指揮.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -5996,7 +5996,7 @@
                     },
                     {
                         "name": "裁きの盾",
-                        "imgURL": "./img/skillIMG/裁きの盾.png'",
+                        "imgURL": "./img/skillIMG/裁きの盾.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -6007,7 +6007,7 @@
                 "RK9": [
                     {
                         "name": "強力な一撃(近距離)",
-                        "imgURL": "./img/skillIMG/強力な一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/強力な一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6016,7 +6016,7 @@
                     },
                     {
                         "name": "氷結の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/氷結の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/氷結の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6027,7 +6027,7 @@
                 "RK11": [
                     {
                         "name": "絶対防御の盾",
-                        "imgURL": "./img/skillIMG/絶対防御の盾.png'",
+                        "imgURL": "./img/skillIMG/絶対防御の盾.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "3",
@@ -6036,7 +6036,7 @@
                     },
                     {
                         "name": "生きる意志",
-                        "imgURL": "./img/skillIMG/生きる意志.png'",
+                        "imgURL": "./img/skillIMG/生きる意志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -6390,7 +6390,7 @@
                 "initial": [
                     {
                         "name": "水平射撃",
-                        "imgURL": "./img/skillIMG/水平射撃.png'",
+                        "imgURL": "./img/skillIMG/水平射撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6399,7 +6399,7 @@
                     },
                     {
                         "name": "猛烈キック",
-                        "imgURL": "./img/skillIMG/猛烈キック.png'",
+                        "imgURL": "./img/skillIMG/猛烈キック.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -6410,7 +6410,7 @@
                 "RK1": [
                     {
                         "name": "回復禁止",
-                        "imgURL": "./img/skillIMG/回復禁止.png'",
+                        "imgURL": "./img/skillIMG/回復禁止.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6419,7 +6419,7 @@
                     },
                     {
                         "name": "直感",
-                        "imgURL": "./img/skillIMG/直感.png'",
+                        "imgURL": "./img/skillIMG/直感.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6430,7 +6430,7 @@
                 "RK3": [
                     {
                         "name": "爆裂射撃",
-                        "imgURL": "./img/skillIMG/爆裂射撃.png'",
+                        "imgURL": "./img/skillIMG/爆裂射撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -6439,7 +6439,7 @@
                     },
                     {
                         "name": "手厚い報酬",
-                        "imgURL": "./img/skillIMG/手厚い報酬.png'",
+                        "imgURL": "./img/skillIMG/手厚い報酬.png",
                         "rangeImgURL": ".png",
                         "type": "デバフ",
                         "cost": "0",
@@ -6450,7 +6450,7 @@
                 "RK5": [
                     {
                         "name": "護身の剃刀",
-                        "imgURL": "./img/skillIMG/護身の剃刀.png'",
+                        "imgURL": "./img/skillIMG/護身の剃刀.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6459,7 +6459,7 @@
                     },
                     {
                         "name": "高地優勢",
-                        "imgURL": "./img/skillIMG/高地優勢.png'",
+                        "imgURL": "./img/skillIMG/高地優勢.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6470,7 +6470,7 @@
                 "RK7": [
                     {
                         "name": "目潰しの粉",
-                        "imgURL": "./img/skillIMG/目潰しの粉.png'",
+                        "imgURL": "./img/skillIMG/目潰しの粉.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -6479,7 +6479,7 @@
                     },
                     {
                         "name": "漂泊の果て",
-                        "imgURL": "./img/skillIMG/漂泊の果て.png'",
+                        "imgURL": "./img/skillIMG/漂泊の果て.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -6490,7 +6490,7 @@
                 "RK9": [
                     {
                         "name": "不潔な刃",
-                        "imgURL": "./img/skillIMG/不潔な刃.png'",
+                        "imgURL": "./img/skillIMG/不潔な刃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6499,7 +6499,7 @@
                     },
                     {
                         "name": "焼夷弾",
-                        "imgURL": "./img/skillIMG/焼夷弾.png'",
+                        "imgURL": "./img/skillIMG/焼夷弾.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6510,7 +6510,7 @@
                 "RK11": [
                     {
                         "name": "誘惑の罠",
-                        "imgURL": "./img/skillIMG/誘惑の罠.png'",
+                        "imgURL": "./img/skillIMG/誘惑の罠.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "1",
@@ -6519,7 +6519,7 @@
                     },
                     {
                         "name": "クリメイション",
-                        "imgURL": "./img/skillIMG/クリメイション.png'",
+                        "imgURL": "./img/skillIMG/クリメイション.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -6553,7 +6553,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6562,7 +6562,7 @@
                     },
                     {
                         "name": "ノックバック連撃",
-                        "imgURL": "./img/skillIMG/ノックバック連撃.png'",
+                        "imgURL": "./img/skillIMG/ノックバック連撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -6573,7 +6573,7 @@
                 "RK1": [
                     {
                         "name": "急速援護",
-                        "imgURL": "./img/skillIMG/急速援護.png'",
+                        "imgURL": "./img/skillIMG/急速援護.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -6582,7 +6582,7 @@
                     },
                     {
                         "name": "腹部打撃",
-                        "imgURL": "./img/skillIMG/腹部打撃.png'",
+                        "imgURL": "./img/skillIMG/腹部打撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "0",
@@ -6593,7 +6593,7 @@
                 "RK3": [
                     {
                         "name": "照射をマーキング",
-                        "imgURL": "./img/skillIMG/照射をマーキング.png'",
+                        "imgURL": "./img/skillIMG/照射をマーキング.png",
                         "rangeImgURL": ".png",
                         "type": "デバフ",
                         "cost": "0",
@@ -6602,7 +6602,7 @@
                     },
                     {
                         "name": "チャージソード",
-                        "imgURL": "./img/skillIMG/チャージソード.png'",
+                        "imgURL": "./img/skillIMG/チャージソード.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6613,7 +6613,7 @@
                 "RK5": [
                     {
                         "name": "緊急回避モジュール",
-                        "imgURL": "./img/skillIMG/緊急回避モジュール.png'",
+                        "imgURL": "./img/skillIMG/緊急回避モジュール.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6622,7 +6622,7 @@
                     },
                     {
                         "name": "カウンター",
-                        "imgURL": "./img/skillIMG/カウンター.png'",
+                        "imgURL": "./img/skillIMG/カウンター.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6633,7 +6633,7 @@
                 "RK7": [
                     {
                         "name": "疾走如風",
-                        "imgURL": "./img/skillIMG/疾走如風.png'",
+                        "imgURL": "./img/skillIMG/疾走如風.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -6642,7 +6642,7 @@
                     },
                     {
                         "name": "背水の陣",
-                        "imgURL": "./img/skillIMG/背水の陣.png'",
+                        "imgURL": "./img/skillIMG/背水の陣.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -6653,7 +6653,7 @@
                 "RK9": [
                     {
                         "name": "沈黙の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/沈黙の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/沈黙の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6662,7 +6662,7 @@
                     },
                     {
                         "name": "致命の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/致命の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/致命の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6673,7 +6673,7 @@
                 "RK11": [
                     {
                         "name": "絶対領域",
-                        "imgURL": "./img/skillIMG/絶対領域.png'",
+                        "imgURL": "./img/skillIMG/絶対領域.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "2",
@@ -6682,7 +6682,7 @@
                     },
                     {
                         "name": "ゼロ距離全力放射",
-                        "imgURL": "./img/skillIMG/ゼロ距離全力放射.png'",
+                        "imgURL": "./img/skillIMG/ゼロ距離全力放射.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -6722,7 +6722,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6731,7 +6731,7 @@
                     },
                     {
                         "name": "ヒーリングアタック",
-                        "imgURL": "./img/skillIMG/ヒーリングアタック.png'",
+                        "imgURL": "./img/skillIMG/ヒーリングアタック.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -6742,7 +6742,7 @@
                 "RK1": [
                     {
                         "name": "プレッシャーの重撃",
-                        "imgURL": "./img/skillIMG/プレッシャーの重撃.png'",
+                        "imgURL": "./img/skillIMG/プレッシャーの重撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -6751,7 +6751,7 @@
                     },
                     {
                         "name": "祝福",
-                        "imgURL": "./img/skillIMG/祝福.png'",
+                        "imgURL": "./img/skillIMG/祝福.png",
                         "rangeImgURL": ".png",
                         "type": "回復",
                         "cost": "3",
@@ -6762,7 +6762,7 @@
                 "RK3": [
                     {
                         "name": "貢献",
-                        "imgURL": "./img/skillIMG/貢献.png'",
+                        "imgURL": "./img/skillIMG/貢献.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6771,7 +6771,7 @@
                     },
                     {
                         "name": "サバイバル",
-                        "imgURL": "./img/skillIMG/サバイバル.png'",
+                        "imgURL": "./img/skillIMG/サバイバル.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6782,7 +6782,7 @@
                 "RK5": [
                     {
                         "name": "戦地回復",
-                        "imgURL": "./img/skillIMG/戦地回復.png'",
+                        "imgURL": "./img/skillIMG/戦地回復.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6791,7 +6791,7 @@
                     },
                     {
                         "name": "正面防御",
-                        "imgURL": "./img/skillIMG/正面防御.png'",
+                        "imgURL": "./img/skillIMG/正面防御.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6802,7 +6802,7 @@
                 "RK7": [
                     {
                         "name": "騎士連合の戦旗",
-                        "imgURL": "./img/skillIMG/騎士連合の戦旗.png'",
+                        "imgURL": "./img/skillIMG/騎士連合の戦旗.png",
                         "rangeImgURL": ".png",
                         "type": "陣営オーラ",
                         "cost": "-",
@@ -6811,7 +6811,7 @@
                     },
                     {
                         "name": "雷霆の一撃",
-                        "imgURL": "./img/skillIMG/雷霆の一撃.png'",
+                        "imgURL": "./img/skillIMG/雷霆の一撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -6822,7 +6822,7 @@
                 "RK9": [
                     {
                         "name": "狂熱の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6831,7 +6831,7 @@
                     },
                     {
                         "name": "仁心撃(近距離)",
-                        "imgURL": "./img/skillIMG/仁心撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/仁心撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6865,7 +6865,7 @@
                 "initial": [
                     {
                         "name": "エネルギー波",
-                        "imgURL": "./img/skillIMG/エネルギー波.png'",
+                        "imgURL": "./img/skillIMG/エネルギー波.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6874,7 +6874,7 @@
                     },
                     {
                         "name": "侵蝕の闇",
-                        "imgURL": "./img/skillIMG/侵蝕の闇.png'",
+                        "imgURL": "./img/skillIMG/侵蝕の闇.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "2",
@@ -6885,7 +6885,7 @@
                 "RK1": [
                     {
                         "name": "侵蝕術",
-                        "imgURL": "./img/skillIMG/侵蝕術.png'",
+                        "imgURL": "./img/skillIMG/侵蝕術.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "1",
@@ -6894,7 +6894,7 @@
                     },
                     {
                         "name": "生命呑込",
-                        "imgURL": "./img/skillIMG/生命呑込.png'",
+                        "imgURL": "./img/skillIMG/生命呑込.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -6905,7 +6905,7 @@
                 "RK3": [
                     {
                         "name": "侵蝕",
-                        "imgURL": "./img/skillIMG/侵蝕.png'",
+                        "imgURL": "./img/skillIMG/侵蝕.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6914,7 +6914,7 @@
                     },
                     {
                         "name": "吊し人の清算",
-                        "imgURL": "./img/skillIMG/吊し人の清算.png'",
+                        "imgURL": "./img/skillIMG/吊し人の清算.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -6925,7 +6925,7 @@
                 "RK5": [
                     {
                         "name": "闇の庇護",
-                        "imgURL": "./img/skillIMG/闇の庇護.png'",
+                        "imgURL": "./img/skillIMG/闇の庇護.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6934,7 +6934,7 @@
                     },
                     {
                         "name": "怒りの目",
-                        "imgURL": "./img/skillIMG/怒りの目.png'",
+                        "imgURL": "./img/skillIMG/怒りの目.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -6945,7 +6945,7 @@
                 "RK7": [
                     {
                         "name": "極闇の波動",
-                        "imgURL": "./img/skillIMG/極闇の波動.png'",
+                        "imgURL": "./img/skillIMG/極闇の波動.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "3",
@@ -6954,7 +6954,7 @@
                     },
                     {
                         "name": "極闇韻滅",
-                        "imgURL": "./img/skillIMG/極闇韻滅.png'",
+                        "imgURL": "./img/skillIMG/極闇韻滅.png",
                         "rangeImgURL": ".png",
                         "type": "魔法ダメージ",
                         "cost": "4",
@@ -6965,7 +6965,7 @@
                 "RK9": [
                     {
                         "name": "催眠の一撃(魔法)",
-                        "imgURL": "./img/skillIMG/催眠の一撃(魔法).png'",
+                        "imgURL": "./img/skillIMG/催眠の一撃(魔法).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -6974,7 +6974,7 @@
                     },
                     {
                         "name": "溜めの一撃(遠距離)",
-                        "imgURL": "./img/skillIMG/溜めの一撃(遠距離).png'",
+                        "imgURL": "./img/skillIMG/溜めの一撃(遠距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7125,7 +7125,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7134,7 +7134,7 @@
                     },
                     {
                         "name": "幻影のサイクロン",
-                        "imgURL": "./img/skillIMG/幻影のサイクロン.png'",
+                        "imgURL": "./img/skillIMG/幻影のサイクロン.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -7145,7 +7145,7 @@
                 "RK1": [
                     {
                         "name": "生きる意志",
-                        "imgURL": "./img/skillIMG/生きる意志.png'",
+                        "imgURL": "./img/skillIMG/生きる意志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -7154,7 +7154,7 @@
                     },
                     {
                         "name": "騎士の栄光",
-                        "imgURL": "./img/skillIMG/騎士の栄光.png'",
+                        "imgURL": "./img/skillIMG/騎士の栄光.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -7165,7 +7165,7 @@
                 "RK3": [
                     {
                         "name": "クリティカル指揮",
-                        "imgURL": "./img/skillIMG/クリティカル指揮.png'",
+                        "imgURL": "./img/skillIMG/クリティカル指揮.png",
                         "rangeImgURL": ".png",
                         "type": "オーラ",
                         "cost": "-",
@@ -7174,7 +7174,7 @@
                     },
                     {
                         "name": "興奮状態",
-                        "imgURL": "./img/skillIMG/興奮状態.png'",
+                        "imgURL": "./img/skillIMG/興奮状態.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7185,7 +7185,7 @@
                 "RK5": [
                     {
                         "name": "正面防御",
-                        "imgURL": "./img/skillIMG/正面防御.png'",
+                        "imgURL": "./img/skillIMG/正面防御.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7194,7 +7194,7 @@
                     },
                     {
                         "name": "硬化",
-                        "imgURL": "./img/skillIMG/硬化.png'",
+                        "imgURL": "./img/skillIMG/硬化.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7205,7 +7205,7 @@
                 "RK7": [
                     {
                         "name": "疾風乱舞",
-                        "imgURL": "./img/skillIMG/疾風乱舞.png'",
+                        "imgURL": "./img/skillIMG/疾風乱舞.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -7214,7 +7214,7 @@
                     },
                     {
                         "name": "ライトニング",
-                        "imgURL": "./img/skillIMG/ライトニング.png'",
+                        "imgURL": "./img/skillIMG/ライトニング.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7225,7 +7225,7 @@
                 "RK9": [
                     {
                         "name": "破甲の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/破甲の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/破甲の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7234,7 +7234,7 @@
                     },
                     {
                         "name": "狂熱の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/狂熱の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7262,7 +7262,7 @@
                 "initial": [
                     {
                         "name": "双剣撃",
-                        "imgURL": "./img/skillIMG/双剣撃.png'",
+                        "imgURL": "./img/skillIMG/双剣撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7271,7 +7271,7 @@
                     },
                     {
                         "name": "闇討ち",
-                        "imgURL": "./img/skillIMG/闇討ち.png'",
+                        "imgURL": "./img/skillIMG/闇討ち.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -7282,7 +7282,7 @@
                 "RK1": [
                     {
                         "name": "穢れたダガー",
-                        "imgURL": "./img/skillIMG/穢れたダガー.png'",
+                        "imgURL": "./img/skillIMG/穢れたダガー.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -7291,7 +7291,7 @@
                     },
                     {
                         "name": "スティング",
-                        "imgURL": "./img/skillIMG/スティング.png'",
+                        "imgURL": "./img/skillIMG/スティング.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -7302,7 +7302,7 @@
                 "RK3": [
                     {
                         "name": "興奮状態",
-                        "imgURL": "./img/skillIMG/興奮状態.png'",
+                        "imgURL": "./img/skillIMG/興奮状態.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7311,7 +7311,7 @@
                     },
                     {
                         "name": "吊し人の清算",
-                        "imgURL": "./img/skillIMG/吊し人の清算.png'",
+                        "imgURL": "./img/skillIMG/吊し人の清算.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7322,7 +7322,7 @@
                 "RK5": [
                     {
                         "name": "緊急回避",
-                        "imgURL": "./img/skillIMG/緊急回避.png'",
+                        "imgURL": "./img/skillIMG/緊急回避.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7331,7 +7331,7 @@
                     },
                     {
                         "name": "カウンター",
-                        "imgURL": "./img/skillIMG/カウンター.png'",
+                        "imgURL": "./img/skillIMG/カウンター.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7342,7 +7342,7 @@
                 "RK7": [
                     {
                         "name": "晶塵瓶",
-                        "imgURL": "./img/skillIMG/晶塵瓶.png'",
+                        "imgURL": "./img/skillIMG/晶塵瓶.png",
                         "rangeImgURL": ".png",
                         "type": "貫通ダメージ",
                         "cost": "1",
@@ -7351,7 +7351,7 @@
                     },
                     {
                         "name": "破軍強靭刃",
-                        "imgURL": "./img/skillIMG/破軍強靭刃.png'",
+                        "imgURL": "./img/skillIMG/破軍強靭刃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -7362,7 +7362,7 @@
                 "RK9": [
                     {
                         "name": "無力化の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/無力化の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/無力化の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7371,7 +7371,7 @@
                     },
                     {
                         "name": "沈黙の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/沈黙の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/沈黙の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7548,7 +7548,7 @@
                 "initial": [
                     {
                         "name": "水平射撃",
-                        "imgURL": "./img/skillIMG/水平射撃.png'",
+                        "imgURL": "./img/skillIMG/水平射撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7557,7 +7557,7 @@
                     },
                     {
                         "name": "強力射撃",
-                        "imgURL": "./img/skillIMG/強力射撃.png'",
+                        "imgURL": "./img/skillIMG/強力射撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -7568,7 +7568,7 @@
                 "RK1": [
                     {
                         "name": "貫通矢",
-                        "imgURL": "./img/skillIMG/貫通矢.png'",
+                        "imgURL": "./img/skillIMG/貫通矢.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7577,7 +7577,7 @@
                     },
                     {
                         "name": "騎士の栄光",
-                        "imgURL": "./img/skillIMG/騎士の栄光.png'",
+                        "imgURL": "./img/skillIMG/騎士の栄光.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -7588,7 +7588,7 @@
                 "RK3": [
                     {
                         "name": "バリスタ",
-                        "imgURL": "./img/skillIMG/バリスタ.png'",
+                        "imgURL": "./img/skillIMG/バリスタ.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "1",
@@ -7597,7 +7597,7 @@
                     },
                     {
                         "name": "拡散",
-                        "imgURL": "./img/skillIMG/拡散.png'",
+                        "imgURL": "./img/skillIMG/拡散.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -7608,7 +7608,7 @@
                 "RK5": [
                     {
                         "name": "防御・物理",
-                        "imgURL": "./img/skillIMG/防御・物理.png'",
+                        "imgURL": "./img/skillIMG/防御・物理.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7617,7 +7617,7 @@
                     },
                     {
                         "name": "高地優勢",
-                        "imgURL": "./img/skillIMG/高地優勢.png'",
+                        "imgURL": "./img/skillIMG/高地優勢.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7628,7 +7628,7 @@
                 "RK7": [
                     {
                         "name": "重貫通矢",
-                        "imgURL": "./img/skillIMG/重貫通矢.png'",
+                        "imgURL": "./img/skillIMG/重貫通矢.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7637,7 +7637,7 @@
                     },
                     {
                         "name": "城崩し",
-                        "imgURL": "./img/skillIMG/城崩し.png'",
+                        "imgURL": "./img/skillIMG/城崩し.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "4",
@@ -7648,7 +7648,7 @@
                 "RK9": [
                     {
                         "name": "強力な一撃(遠距離)",
-                        "imgURL": "./img/skillIMG/強力な一撃(遠距離).png'",
+                        "imgURL": "./img/skillIMG/強力な一撃(遠距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7657,7 +7657,7 @@
                     },
                     {
                         "name": "会心の一撃(遠距離)",
-                        "imgURL": "./img/skillIMG/会心の一撃(遠距離).png'",
+                        "imgURL": "./img/skillIMG/会心の一撃(遠距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7691,7 +7691,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7700,7 +7700,7 @@
                     },
                     {
                         "name": "ノックバック打撃",
-                        "imgURL": "./img/skillIMG/ノックバック打撃.png'",
+                        "imgURL": "./img/skillIMG/ノックバック打撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -7711,7 +7711,7 @@
                 "RK1": [
                     {
                         "name": "騎士精神",
-                        "imgURL": "./img/skillIMG/騎士精神.png'",
+                        "imgURL": "./img/skillIMG/騎士精神.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7720,7 +7720,7 @@
                     },
                     {
                         "name": "勢い斬り",
-                        "imgURL": "./img/skillIMG/勢い斬り.png'",
+                        "imgURL": "./img/skillIMG/勢い斬り.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -7731,7 +7731,7 @@
                 "RK3": [
                     {
                         "name": "テンペスト強襲",
-                        "imgURL": "./img/skillIMG/テンペスト強襲.png'",
+                        "imgURL": "./img/skillIMG/テンペスト強襲.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -7740,7 +7740,7 @@
                     },
                     {
                         "name": "騎士の栄光",
-                        "imgURL": "./img/skillIMG/騎士の栄光.png'",
+                        "imgURL": "./img/skillIMG/騎士の栄光.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -7751,7 +7751,7 @@
                 "RK5": [
                     {
                         "name": "EN回復",
-                        "imgURL": "./img/skillIMG/EN回復.png'",
+                        "imgURL": "./img/skillIMG/EN回復.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7760,7 +7760,7 @@
                     },
                     {
                         "name": "嵐の脅威",
-                        "imgURL": "./img/skillIMG/嵐の脅威.png'",
+                        "imgURL": "./img/skillIMG/嵐の脅威.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -7771,7 +7771,7 @@
                 "RK7": [
                     {
                         "name": "生きる意志",
-                        "imgURL": "./img/skillIMG/生きる意志.png'",
+                        "imgURL": "./img/skillIMG/生きる意志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -7780,7 +7780,7 @@
                     },
                     {
                         "name": "ワンツー連撃",
-                        "imgURL": "./img/skillIMG/ワンツー連撃.png'",
+                        "imgURL": "./img/skillIMG/ワンツー連撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -7791,7 +7791,7 @@
                 "RK9": [
                     {
                         "name": "解除の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/解除の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -7800,7 +7800,7 @@
                     },
                     {
                         "name": "溜めの一撃(近距離)",
-                        "imgURL": "./img/skillIMG/溜めの一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/溜めの一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -8049,7 +8049,7 @@
                 "initial": [
                     {
                         "name": "斬撃",
-                        "imgURL": "./img/skillIMG/斬撃.png'",
+                        "imgURL": "./img/skillIMG/斬撃.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -8058,7 +8058,7 @@
                     },
                     {
                         "name": "チェーンストライク",
-                        "imgURL": "./img/skillIMG/チェーンストライク.png'",
+                        "imgURL": "./img/skillIMG/チェーンストライク.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "3",
@@ -8069,7 +8069,7 @@
                 "RK1": [
                     {
                         "name": "騎士の栄光",
-                        "imgURL": "./img/skillIMG/騎士の栄光.png'",
+                        "imgURL": "./img/skillIMG/騎士の栄光.png",
                         "rangeImgURL": ".png",
                         "type": "支援",
                         "cost": "0",
@@ -8078,7 +8078,7 @@
                     },
                     {
                         "name": "一掃打撃",
-                        "imgURL": "./img/skillIMG/一掃打撃.png'",
+                        "imgURL": "./img/skillIMG/一掃打撃.png",
                         "rangeImgURL": ".png",
                         "type": "物理ダメージ",
                         "cost": "2",
@@ -8089,7 +8089,7 @@
                 "RK3": [
                     {
                         "name": "騎士精神",
-                        "imgURL": "./img/skillIMG/騎士精神.png'",
+                        "imgURL": "./img/skillIMG/騎士精神.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -8098,7 +8098,7 @@
                     },
                     {
                         "name": "勢い斬り",
-                        "imgURL": "./img/skillIMG/勢い斬り.png'",
+                        "imgURL": "./img/skillIMG/勢い斬り.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "-",
@@ -8109,7 +8109,7 @@
                 "RK5": [
                     {
                         "name": "カウンター",
-                        "imgURL": "./img/skillIMG/カウンター.png'",
+                        "imgURL": "./img/skillIMG/カウンター.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -8118,7 +8118,7 @@
                     },
                     {
                         "name": "怒りの炎",
-                        "imgURL": "./img/skillIMG/怒りの炎.png'",
+                        "imgURL": "./img/skillIMG/怒りの炎.png",
                         "rangeImgURL": ".png",
                         "type": "リアクション",
                         "cost": "-",
@@ -8129,7 +8129,7 @@
                 "RK7": [
                     {
                         "name": "生きる意志",
-                        "imgURL": "./img/skillIMG/生きる意志.png'",
+                        "imgURL": "./img/skillIMG/生きる意志.png",
                         "rangeImgURL": ".png",
                         "type": "パッシブ",
                         "cost": "0",
@@ -8138,7 +8138,7 @@
                     },
                     {
                         "name": "攻撃指揮",
-                        "imgURL": "./img/skillIMG/攻撃指揮.png'",
+                        "imgURL": "./img/skillIMG/攻撃指揮.png",
                         "rangeImgURL": ".png",
                         "type": "オーラ",
                         "cost": "-",
@@ -8149,7 +8149,7 @@
                 "RK9": [
                     {
                         "name": "溜めの一撃(近距離)",
-                        "imgURL": "./img/skillIMG/溜めの一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/溜めの一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -8158,7 +8158,7 @@
                     },
                     {
                         "name": "破盾の一撃(近距離)",
-                        "imgURL": "./img/skillIMG/破盾の一撃(近距離).png'",
+                        "imgURL": "./img/skillIMG/破盾の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
