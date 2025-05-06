@@ -51,6 +51,7 @@
         .pagination button {
             padding: 5px 10px;
             margin: 0 5px;
+            background-color: burlywood;
         }
 
         /* モーダルスタイル */
@@ -402,12 +403,9 @@
                     if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
 
                     document.getElementById('toggleBtn').addEventListener('click', () => {
-                        if (!isPlayerReady) {
-                            log.console("foo");
-                            return;
-                        }
+                        if (!isPlayerReady) return;
                         if (character.youtubeId === undefined) {
-                            log.console("hoge");
+                            const videoId = '';
                             return;
                         }
                         const videoId = character.youtubeId;
