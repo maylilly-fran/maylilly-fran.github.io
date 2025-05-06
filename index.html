@@ -401,13 +401,15 @@
                     if (Array.isArray(character.skills.RK7) && character.skills.RK7[1] && character.skills.RK7[1].name !== undefined) document.getElementById('detail2-5').addEventListener('click', () => showModal2(character, 'RK7', 1));
                     if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
                     if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
-
+                
+                    if (character.youtubeId === undefined) {
+                        document.getElementById('toggleBtn').style.display = "none";
+                    } else { 
+                        document.getElementById('toggleBtn').style.display = "inline";
+                    }
                     document.getElementById('toggleBtn').addEventListener('click', () => {
                         if (!isPlayerReady) return;
-                        if (character.youtubeId === undefined) {
-                            const videoId = '';
-                            return;
-                        }
+                        
                         const videoId = character.youtubeId;
                         const toggleBtn = document.getElementById('toggleBtn');
 
