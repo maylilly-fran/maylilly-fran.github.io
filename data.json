@@ -3655,6 +3655,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ベラ.png",
+            "youtubeId": "kLUh5szvixE",
             "personality": {
                 "title": "【うちは天才じゃん！】",
                 "imageURL": "./img/skillIMG/うちは天才じゃん！.png",
@@ -5894,6 +5895,7 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ティードン.png",
+            "youtubeId": "T8bxO-h9f9o",
             "personality": {
                 "title": "【百戦の盾】",
                 "imageURL": "./img/skillIMG/百戦の盾.png",
@@ -6184,7 +6186,7 @@
                         "desc": "通常攻撃：100%の物理ダメージを与える。攻撃前、シールドブレイクLv.1を獲得する。"
                     },
                     {
-                        "name": "破甲の一撃(近距離",
+                        "name": "破甲の一撃(近距離)",
                         "imgURL": "./img/skillIMG/破甲の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",

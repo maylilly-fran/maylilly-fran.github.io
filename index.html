@@ -155,6 +155,32 @@
         .imgtest:hover {
             transform: scale(1.03);
         }
+
+        button {
+            font-size: 0.5rem;
+            padding: 5px 10px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #player {
+            display: none;
+            /* 音声のみ再生なので非表示 */
+        }
     </style>
 </head>
 
@@ -188,6 +214,8 @@
                         <div id="characterName"></div>
                         <div id="characterRole"></div>
                         <div id="characterWeapon"></div>
+                        <button id="toggleBtn">▶</button>
+                        <div id="player"></div>
                     </div>
 
                     <div class="right">
@@ -301,6 +329,13 @@
                     render();
                 }
 
+                let player;
+                let isPlayerReady = false;
+                let isPlaying = false;
+                function onYouTubeIframeAPIReady() {
+                    isPlayerReady = true;
+                }
+
                 function showModal(character) {
                     document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
                     document.getElementById('characterName').innerHTML = `<h2>${character.name}</h2>`;
@@ -358,8 +393,52 @@
                     if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
                     if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
 
+                    document.getElementById('toggleBtn').addEventListener('click', () => {
+                        if (!isPlayerReady) return;
+                        if (character.youtubeId === undefined) return;
+
+                        const videoId = character.youtubeId;
+                        const toggleBtn = document.getElementById('toggleBtn');
+
+                        if (!player) {
+                            player = new YT.Player('player', {
+                                height: '0',
+                                width: '0',
+                                videoId: videoId,
+                                events: {
+                                    'onReady': (event) => {
+                                        event.target.playVideo();
+                                        isPlaying = true;
+                                        toggleBtn.textContent = '■';
+                                    }
+                                },
+                                playerVars: {
+                                    autoplay: 0,
+                                    controls: 0
+                                }
+                            });
+                        } else {
+                            if (isPlaying) {
+                                player.stopVideo();
+                                isPlaying = false;
+                                toggleBtn.textContent = '▶';
+                            } else {
+                                player.loadVideoById(videoId);
+                                player.playVideo();
+                                isPlaying = true;
+                                toggleBtn.textContent = '■';
+                            }
+                        }
+                    });
+
                     modal.style.display = 'flex';
                 }
+
+                // YouTube IFrame APIの読み込み
+                const tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                const firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
                 tabButtons.forEach(btn => {
                     btn.addEventListener('click', () => {
