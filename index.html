@@ -401,8 +401,10 @@
 
                     document.getElementById('toggleBtn').addEventListener('click', () => {
                         if (!isPlayerReady) return;
-                        if (character.youtubeId === undefined) return;
-
+                        if (character.youtubeId === undefined) { 
+                            log.console("hoge");
+                            return;
+                        }
                         const videoId = character.youtubeId;
                         const toggleBtn = document.getElementById('toggleBtn');
 
