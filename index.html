@@ -259,6 +259,12 @@
     </div>
 
     <script>
+        // YouTube IFrame APIの読み込み
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
         fetch('./data.json')
             .then(response => response.json())
             .then(data => {
@@ -434,11 +440,6 @@
                     modal.style.display = 'flex';
                 }
 
-                // YouTube IFrame APIの読み込み
-                const tag = document.createElement('script');
-                tag.src = "https://www.youtube.com/iframe_api";
-                const firstScriptTag = document.getElementsByTagName('script')[0];
-                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
                 tabButtons.forEach(btn => {
                     btn.addEventListener('click', () => {
