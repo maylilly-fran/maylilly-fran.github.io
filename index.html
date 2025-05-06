@@ -265,6 +265,13 @@
         const firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+        let player;
+        let isPlayerReady = false;
+        let isPlaying = false;
+        function onYouTubeIframeAPIReady() {
+            isPlayerReady = true;
+        }
+
         fetch('./data.json')
             .then(response => response.json())
             .then(data => {
@@ -335,12 +342,7 @@
                     render();
                 }
 
-                let player;
-                let isPlayerReady = false;
-                let isPlaying = false;
-                function onYouTubeIframeAPIReady() {
-                    isPlayerReady = true;
-                }
+
 
                 function showModal(character) {
                     document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
@@ -400,8 +402,11 @@
                     if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
 
                     document.getElementById('toggleBtn').addEventListener('click', () => {
-                        if (!isPlayerReady) return;
-                        if (character.youtubeId === undefined) { 
+                        if (!isPlayerReady) {
+                            log.console("foo");
+                            return;
+                        }
+                        if (character.youtubeId === undefined) {
                             log.console("hoge");
                             return;
                         }
