@@ -157,30 +157,57 @@
             transform: scale(1.03);
         }
 
-        button {
-            font-size: 0.5rem;
+        .audio-wrapper {
+            width: 300px;
+            height: 80px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .fake-audio-ui {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle {
+            width: 16px;
+            height: 16px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        button,
+        input[type="text"] {
+            margin-top: 5px;
             padding: 5px 10px;
-            background-color: #FF0000;
-            color: white;
             border: none;
-            border-radius: 50px;
+            border-radius: 20px;
+            font-size: 10px;
+        }
+
+        button {
+            background-color: #ff0040;
+            color: white;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         button:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
-        }
-
-        button:active {
-            transform: scale(0.98);
+            background-color: #b30000;
         }
 
         #player {
             display: none;
-            /* 音声のみ再生なので非表示 */
         }
     </style>
 </head>
@@ -215,7 +242,7 @@
                         <div id="characterName"></div>
                         <div id="characterRole"></div>
                         <div id="characterWeapon"></div>
-                        <button id="toggleBtn">▶</button>
+                        <button id="toggleButton" onclick="toggleAudio()" disabled>▶</button>
                         <div id="player"></div>
                     </div>
 
@@ -259,18 +286,14 @@
     </div>
     </div>
 
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        // YouTube IFrame APIの読み込み
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
         let player;
-        let isPlayerReady = false;
         let isPlaying = false;
+        let currentVideoId = '';
+
         function onYouTubeIframeAPIReady() {
-            isPlayerReady = true;
+            // 初期では何も読み込まない
         }
 
         fetch('./data.json')
@@ -344,8 +367,35 @@
                 }
 
 
+                function loadNewVideo(character) {
+                    currentVideoId = character.youtubeId;
+
+                    if (player) {
+                        player.loadVideoById(currentVideoId);
+                    } else {
+                        player = new YT.Player('player', {
+                            height: '0',
+                            width: '0',
+                            videoId: currentVideoId,
+                            playerVars: {
+                                autoplay: 0,
+                                controls: 0,
+                                modestbranding: 1,
+                                loop: 1,
+                                playlist: currentVideoId,
+                                rel: 0
+                            },
+                            events: {
+                                onReady: () => {
+                                    document.getElementById('toggleButton').disabled = false;
+                                }
+                            }
+                        });
+                    }
+                }
 
                 function showModal(character) {
+                    if (character.youtubeId !== undefined) loadNewVideo(character);
                     document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
                     document.getElementById('characterName').innerHTML = `<h2>${character.name}</h2>`;
                     document.getElementById('characterRole').innerHTML = `${character.role}`;
@@ -401,52 +451,24 @@
                     if (Array.isArray(character.skills.RK7) && character.skills.RK7[1] && character.skills.RK7[1].name !== undefined) document.getElementById('detail2-5').addEventListener('click', () => showModal2(character, 'RK7', 1));
                     if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
                     if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
-                
-                    if (character.youtubeId === undefined) {
-                        document.getElementById('toggleBtn').style.display = "none";
-                    } else { 
-                        document.getElementById('toggleBtn').style.display = "inline";
-                    }
-                    document.getElementById('toggleBtn').addEventListener('click', () => {
-                        if (!isPlayerReady) return;
-                        
-                        const videoId = character.youtubeId;
-                        const toggleBtn = document.getElementById('toggleBtn');
-
-                        if (!player) {
-                            player = new YT.Player('player', {
-                                height: '1',
-                                width: '1',
-                                videoId: videoId,
-                                events: {
-                                    'onReady': (event) => {
-                                        event.target.playVideo();
-                                        isPlaying = true;
-                                        toggleBtn.textContent = '■';
-                                    }
-                                },
-                                playerVars: {
-                                    autoplay: 0,
-                                    controls: 0
-                                }
-                            });
-                        } else {
-                            if (isPlaying) {
-                                player.stopVideo();
-                                isPlaying = false;
-                                toggleBtn.textContent = '▶';
-                            } else {
-                                player.loadVideoById(videoId);
-                                player.playVideo();
-                                isPlaying = true;
-                                toggleBtn.textContent = '■';
-                            }
-                        }
-                    });
 
                     modal.style.display = 'flex';
                 }
 
+                function toggleAudio() {
+                    if (!player || typeof player.getPlayerState !== 'function') return;
+                    const state = player.getPlayerState();
+
+                    if (state !== YT.PlayerState.PLAYING) {
+                        player.playVideo();
+                        isPlaying = true;
+                        document.getElementById('toggleButton').textContent = '■';
+                    } else {
+                        player.pauseVideo();
+                        isPlaying = false;
+                        document.getElementById('toggleButton').textContent = '▶';
+                    }
+                }
 
                 tabButtons.forEach(btn => {
                     btn.addEventListener('click', () => {
