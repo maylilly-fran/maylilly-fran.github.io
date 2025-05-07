@@ -455,21 +455,6 @@
                     modal.style.display = 'flex';
                 }
 
-                function toggleAudio() {
-                    if (!player || typeof player.getPlayerState !== 'function') return;
-                    const state = player.getPlayerState();
-
-                    if (state !== YT.PlayerState.PLAYING) {
-                        player.playVideo();
-                        isPlaying = true;
-                        document.getElementById('toggleButton').textContent = '■';
-                    } else {
-                        player.pauseVideo();
-                        isPlaying = false;
-                        document.getElementById('toggleButton').textContent = '▶';
-                    }
-                }
-
                 tabButtons.forEach(btn => {
                     btn.addEventListener('click', () => {
                         // タブボタンの切り替え
@@ -530,6 +515,21 @@
             .catch(error => {
                 console.error('データの読み込みに失敗しました:', error);
             });
+
+        function toggleAudio() {
+            if (!player || typeof player.getPlayerState !== 'function') return;
+            const state = player.getPlayerState();
+
+            if (state !== YT.PlayerState.PLAYING) {
+                player.playVideo();
+                isPlaying = true;
+                document.getElementById('toggleButton').textContent = '■';
+            } else {
+                player.pauseVideo();
+                isPlaying = false;
+                document.getElementById('toggleButton').textContent = '▶';
+            }
+        }
     </script>
 </body>
 
