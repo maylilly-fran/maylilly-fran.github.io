@@ -366,7 +366,6 @@
                     render();
                 }
 
-
                 function loadNewVideo(character) {
                     currentVideoId = character.youtubeId;
 
@@ -374,8 +373,8 @@
                         player.loadVideoById(currentVideoId);
                     } else {
                         player = new YT.Player('player', {
-                            height: '0',
-                            width: '0',
+                            height: '1',
+                            width: '1',
                             videoId: currentVideoId,
                             playerVars: {
                                 autoplay: 0,
