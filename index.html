@@ -108,239 +108,245 @@
         let currentVideoId = '';
 
         let selectedCategories = [];
-        
+
         function onYouTubeIframeAPIReady() {
             // 初期では何も読み込まない
         }
+        let data;
 
         fetch('./data.json')
             .then(response => response.json())
-            .then(data => {
+            .then(jdata => {
+                data = jdata
+            })
+            .catch(error => {
+                console.error('データの読み込みに失敗しました:', error);
+            });
 
-                const categories = data.skilltags;
-                
-                const ITEMS_PER_PAGE = 90;
-                let currentPage = 1;
-                let filteredData = structuredClone(data.characters);
+        const categories = data.skilltags;
 
-                const searchInput = document.getElementById('search-input');
-                const roleFilter = document.getElementById('role-filter');
-                const sortOrder = document.getElementById('sort-order');
-                const grid = document.getElementById('product-grid');
-                const pagination = document.getElementById('pagination');
-                const modal = document.getElementById('product-modal');
-                const modal2 = document.getElementById('skill-modal');
-                const modal3 = document.getElementById('categoryModal');
-                const modalBody = document.getElementById('modal-body');
-                const closeModal = document.getElementById('close-modal');
-                const closeModal2 = document.getElementById('close-modal2');
-                const closeModal3 = document.getElementById('close-modal3');
-                const tabButtons = document.querySelectorAll('.tab-button');
-                const tabContents = document.querySelectorAll('.tab-content');
+        const ITEMS_PER_PAGE = 90;
+        let currentPage = 1;
+        let filteredData = structuredClone(data.characters);
 
-                function render() {
-                    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-                    const end = start + ITEMS_PER_PAGE;
-                    const pageItems = filteredData.slice(start, end);
+        const searchInput = document.getElementById('search-input');
+        const roleFilter = document.getElementById('role-filter');
+        const sortOrder = document.getElementById('sort-order');
+        const grid = document.getElementById('product-grid');
+        const pagination = document.getElementById('pagination');
+        const modal = document.getElementById('product-modal');
+        const modal2 = document.getElementById('skill-modal');
+        const modal3 = document.getElementById('categoryModal');
+        const modalBody = document.getElementById('modal-body');
+        const closeModal = document.getElementById('close-modal');
+        const closeModal2 = document.getElementById('close-modal2');
+        const closeModal3 = document.getElementById('close-modal3');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-                    grid.innerHTML = '';
-                    pageItems.forEach(character => {
-                        const card = document.createElement('div');
-                        card.className = 'card';
-                        card.innerHTML = `
+        function render() {
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageItems = filteredData.slice(start, end);
+
+            grid.innerHTML = '';
+            pageItems.forEach(character => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
           <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 70%">
           <div style="font-size: small">${character.name}</div>
         `;
-                        card.addEventListener('click', () => showModal(character));
-                        grid.appendChild(card);
-                    });
+                card.addEventListener('click', () => showModal(character));
+                grid.appendChild(card);
+            });
 
-                    renderPagination();
-                }
+            renderPagination();
+        }
 
-                function renderPagination() {
-                    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-                    pagination.innerHTML = '';
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+            pagination.innerHTML = '';
 
-                    for (let i = 1; i <= totalPages; i++) {
-                        const btn = document.createElement('button');
-                        btn.textContent = i;
-                        if (i === currentPage) btn.disabled = true;
-                        btn.addEventListener('click', () => {
-                            currentPage = i;
-                            render();
-                        });
-                        pagination.appendChild(btn);
-                    }
-                }
-
-                function applyFiltersAndSort() {
-                    const role = roleFilter.value;
-                    const sort = sortOrder.value;
-                    const keyword = searchInput.value.toLowerCase();
-
-                    filteredData = data.characters.filter(character =>
-                        (role === 'all' || character.role === role) &&
-                        character.name.toLowerCase().includes(keyword) &&
-                        (selectedCategories.length === 0 || skillTagCheck(character))
-                    );
-                    currentPage = 1;
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                if (i === currentPage) btn.disabled = true;
+                btn.addEventListener('click', () => {
+                    currentPage = i;
                     render();
-                }
+                });
+                pagination.appendChild(btn);
+            }
+        }
 
-                function skillTagCheck(character) {
-                    let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+        function applyFiltersAndSort() {
+            const role = roleFilter.value;
+            const sort = sortOrder.value;
+            const keyword = searchInput.value.toLowerCase();
 
-                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
-                        flg = flg ||
-                            (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                            (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-                    }
-                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
-                        flg = flg ||
-                            (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                            (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-                    }
-                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
-                        flg = flg ||
-                            (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                            (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-                    }
-                    return flg;
-                }
+            filteredData = data.characters.filter(character =>
+                (role === 'all' || character.role === role) &&
+                character.name.toLowerCase().includes(keyword) &&
+                (selectedCategories.length === 0 || skillTagCheck(character))
+            );
+            currentPage = 1;
+            render();
+        }
 
-                function renderCategoryList() {
-                    const filter = categorySearch.value.toLowerCase();
-                    categoryList.innerHTML = categories
-                        .filter(cat => cat.toLowerCase().includes(filter))
-                        .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
-                }
+        function skillTagCheck(character) {
+            let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
 
-                function toggleCategory(cat) {
-                    const index = selectedCategories.indexOf(cat);
-                    if (index >= 0) {
-                        selectedCategories.splice(index, 1);
-                    } else {
-                        selectedCategories.push(cat);
-                    }
-                    renderCategoryList();
-                    applyFiltersAndSort();
-                }
+            if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            return flg;
+        }
 
-                function clearAllCategories() {
-                    selectedCategories = [];
-                    renderCategoryList();
-                    applyFiltersAndSort()
-                }
+        function renderCategoryList() {
+            const filter = categorySearch.value.toLowerCase();
+            categoryList.innerHTML = categories
+                .filter(cat => cat.toLowerCase().includes(filter))
+                .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
+        }
 
-                function loadNewVideo(character) {
-                    currentVideoId = character.youtubeId;
+        function toggleCategory(cat) {
+            const index = selectedCategories.indexOf(cat);
+            if (index >= 0) {
+                selectedCategories.splice(index, 1);
+            } else {
+                selectedCategories.push(cat);
+            }
+            renderCategoryList();
+            applyFiltersAndSort();
+        }
 
-                    if (player) {
-                        player.loadVideoById(currentVideoId);
-                    } else {
-                        player = new YT.Player('player', {
-                            height: '1',
-                            width: '1',
-                            videoId: currentVideoId,
-                            playerVars: {
-                                autoplay: 0,
-                                controls: 0,
-                                modestbranding: 1,
-                                loop: 1,
-                                playlist: currentVideoId,
-                                rel: 0
-                            },
-                            events: {
-                                onReady: () => {
-                                    document.getElementById('toggleButton').disabled = false;
-                                }
-                            }
-                        });
-                    }
-                }
+        function clearAllCategories() {
+            selectedCategories = [];
+            renderCategoryList();
+            applyFiltersAndSort()
+        }
 
-                function showModal(character) {
-                    if (character.youtubeId !== undefined) {
-                        document.getElementById('toggleButton').style = "";
-                        loadNewVideo(character);
-                    } else document.getElementById('toggleButton').style = "display: none;";
-                    document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
-                    document.getElementById('characterName').innerHTML = `<h2>${character.name}</h2>`;
-                    document.getElementById('characterRole').innerHTML = `${character.role}`;
-                    document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
-                    document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
-                    document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
-                    if (character.personality.common !== undefined) {
-                        document.getElementById('common').innerHTML = `${character.personality.common}`;
-                    } else {
-                        document.getElementById('common').innerHTML = ``;
-                    }
-                    document.getElementById('hoshi5').innerHTML = `${character.personality.hoshi5}`;
-                    document.getElementById('hoshi4').innerHTML = `${character.personality.hoshi4}`;
-                    document.getElementById('hoshi3').innerHTML = `${character.personality.hoshi3}`;
-                    document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
-                    document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
-                    if (Array.isArray(character.skills.silhouetteSkill) && character.skills.silhouetteSkill[0] && character.skills.silhouetteSkill[0].name !== undefined) {
-                        document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}"><br>シルエットスキル`;
-                        document.getElementById('silhouette-skill').addEventListener('click', () => showModal2(character, 'silhouetteSkill', 0));
-                    } else {
-                        document.getElementById('silhouette-skill').innerHTML = ``;
-                    }
+        function loadNewVideo(character) {
+            currentVideoId = character.youtubeId;
 
-                    let content = '';
-                    ranks = ['initial', 'RK1', 'RK3', 'RK5', 'RK7', 'RK9', 'RK11'];
-                    ranks.forEach(rank => content = addSkillContent(character, content, rank, 0));
-                    document.getElementById('skill1').innerHTML = content;
-                    ranks.forEach(rank => addSkillContentSettings(character, rank, 0));
-
-                    content = '';
-                    ranks.forEach(rank => content = addSkillContent(character, content, rank, 1));
-                    document.getElementById('skill2').innerHTML = content;
-                    ranks.forEach(rank => addSkillContentSettings(character, rank, 1));
-                    modal.style.display = 'flex';
-                }
-
-                function addSkillContent(character, content, key, index) {
-                    if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
-                        content += `<img id="${key}-${index}" class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">`;
-                    }
-                    return content;
-                }
-
-                function addSkillContentSettings(character, key, index) {
-                    if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
-                        document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                        if (character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) {
-                            document.getElementById(key + '-' + index).style = "background-color: lightcoral";
+            if (player) {
+                player.loadVideoById(currentVideoId);
+            } else {
+                player = new YT.Player('player', {
+                    height: '1',
+                    width: '1',
+                    videoId: currentVideoId,
+                    playerVars: {
+                        autoplay: 0,
+                        controls: 0,
+                        modestbranding: 1,
+                        loop: 1,
+                        playlist: currentVideoId,
+                        rel: 0
+                    },
+                    events: {
+                        onReady: () => {
+                            document.getElementById('toggleButton').disabled = false;
                         }
                     }
-                }
-
-                tabButtons.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        // タブボタンの切り替え
-                        tabButtons.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-
-                        // コンテンツの切り替え
-                        const target = btn.getAttribute('data-tab');
-                        tabContents.forEach(content => {
-                            content.classList.remove('active');
-                        });
-                        document.getElementById(target).classList.add('active');
-                    });
                 });
+            }
+        }
 
-                function showModal2(character, key, index) {
-                    document.getElementById('skill-pict').innerHTML = `
+        function showModal(character) {
+            if (character.youtubeId !== undefined) {
+                document.getElementById('toggleButton').style = "";
+                loadNewVideo(character);
+            } else document.getElementById('toggleButton').style = "display: none;";
+            document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
+            document.getElementById('characterName').innerHTML = `<h2>${character.name}</h2>`;
+            document.getElementById('characterRole').innerHTML = `${character.role}`;
+            document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
+            document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+            document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
+            if (character.personality.common !== undefined) {
+                document.getElementById('common').innerHTML = `${character.personality.common}`;
+            } else {
+                document.getElementById('common').innerHTML = ``;
+            }
+            document.getElementById('hoshi5').innerHTML = `${character.personality.hoshi5}`;
+            document.getElementById('hoshi4').innerHTML = `${character.personality.hoshi4}`;
+            document.getElementById('hoshi3').innerHTML = `${character.personality.hoshi3}`;
+            document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
+            document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
+            if (Array.isArray(character.skills.silhouetteSkill) && character.skills.silhouetteSkill[0] && character.skills.silhouetteSkill[0].name !== undefined) {
+                document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}"><br>シルエットスキル`;
+                document.getElementById('silhouette-skill').addEventListener('click', () => showModal2(character, 'silhouetteSkill', 0));
+            } else {
+                document.getElementById('silhouette-skill').innerHTML = ``;
+            }
+
+            let content = '';
+            ranks = ['initial', 'RK1', 'RK3', 'RK5', 'RK7', 'RK9', 'RK11'];
+            ranks.forEach(rank => content = addSkillContent(character, content, rank, 0));
+            document.getElementById('skill1').innerHTML = content;
+            ranks.forEach(rank => addSkillContentSettings(character, rank, 0));
+
+            content = '';
+            ranks.forEach(rank => content = addSkillContent(character, content, rank, 1));
+            document.getElementById('skill2').innerHTML = content;
+            ranks.forEach(rank => addSkillContentSettings(character, rank, 1));
+            modal.style.display = 'flex';
+        }
+
+        function addSkillContent(character, content, key, index) {
+            if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
+                content += `<img id="${key}-${index}" class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">`;
+            }
+            return content;
+        }
+
+        function addSkillContentSettings(character, key, index) {
+            if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
+                document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
+                if (character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) {
+                    document.getElementById(key + '-' + index).style = "background-color: lightcoral";
+                }
+            }
+        }
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // タブボタンの切り替え
+                tabButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // コンテンツの切り替え
+                const target = btn.getAttribute('data-tab');
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        function showModal2(character, key, index) {
+            document.getElementById('skill-pict').innerHTML = `
               <img class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">
               <h2>${character.skills[key][index].name}</h2>
               <div>タイプ：${character.skills[key][index].type}</div>
@@ -348,58 +354,54 @@
               <div>CD：${character.skills[key][index].CD}</div>
               <div>${character.skills[key][index].desc}</div>
               `;
-                    modal2.style.display = 'flex';
-                }
+            modal2.style.display = 'flex';
+        }
 
-                closeModal.addEventListener('click', () => {
-                    modal.style.display = 'none';
-                    document.getElementById('toggleButton').textContent = '▶';
-                    isPlaying = false;
-                    player.pauseVideo();
-                });
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.getElementById('toggleButton').textContent = '▶';
+            isPlaying = false;
+            player.pauseVideo();
+        });
 
-                closeModal2.addEventListener('click', () => {
-                    modal2.style.display = 'none';
-                });
+        closeModal2.addEventListener('click', () => {
+            modal2.style.display = 'none';
+        });
 
-                closeModal3.addEventListener('click', () => {
-                    modal3.style.display = 'none';
-                });
+        closeModal3.addEventListener('click', () => {
+            modal3.style.display = 'none';
+        });
 
-                window.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.style.display = 'none';
-                        document.getElementById('toggleButton').textContent = '▶';
-                        isPlaying = false;
-                        player.pauseVideo();
-                    }
-                    if (e.target === modal2) modal2.style.display = 'none';
-                });
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.getElementById('toggleButton').textContent = '▶';
+                isPlaying = false;
+                player.pauseVideo();
+            }
+            if (e.target === modal2) modal2.style.display = 'none';
+        });
 
-                window.addEventListener('touchend', (e) => {
-                    if (e.target.classList.contains('modal')) {
-                        e.target.style.display = 'none';
-                        document.getElementById('toggleButton').textContent = '▶';
-                        isPlaying = false;
-                        player.pauseVideo();
-                    }
-                    if (e.target.classList.contains('modal2')) {
-                        e.target.style.display = 'none';
-                    }
-                }, { passive: true });
+        window.addEventListener('touchend', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+                document.getElementById('toggleButton').textContent = '▶';
+                isPlaying = false;
+                player.pauseVideo();
+            }
+            if (e.target.classList.contains('modal2')) {
+                e.target.style.display = 'none';
+            }
+        }, { passive: true });
 
-                // イベント登録
-                searchInput.addEventListener('input', applyFiltersAndSort);
-                roleFilter.addEventListener('change', applyFiltersAndSort);
-                sortOrder.addEventListener('change', applyFiltersAndSort);
+        // イベント登録
+        searchInput.addEventListener('input', applyFiltersAndSort);
+        roleFilter.addEventListener('change', applyFiltersAndSort);
+        sortOrder.addEventListener('change', applyFiltersAndSort);
 
-                // 初期表示
-                renderCategoryList();
-                applyFiltersAndSort();
-            })
-            .catch(error => {
-                console.error('データの読み込みに失敗しました:', error);
-            });
+        // 初期表示
+        renderCategoryList();
+        applyFiltersAndSort();
 
         function openModal(id) {
             document.getElementById(id).style.display = "flex";
@@ -421,10 +423,10 @@
         }
 
         function clearAllCategories() {
-                    selectedCategories = [];
-                    renderCategoryList();
-                    applyFiltersAndSort()
-                }
+            selectedCategories = [];
+            renderCategoryList();
+            applyFiltersAndSort()
+        }
     </script>
 </body>
 
