@@ -107,6 +107,7 @@
         let isPlaying = false;
         let currentVideoId = '';
 
+        let data;
         let selectedCategories = [];
 
         function onYouTubeIframeAPIReady() {
@@ -116,7 +117,7 @@
         async function loadData() {
             try {
                 const response = await fetch('./data.json');
-                const data = await response.json();
+                data = await response.json();
 
                 const ITEMS_PER_PAGE = 90;
                 let currentPage = 1;
@@ -137,91 +138,6 @@
                 const closeModal3 = document.getElementById('close-modal3');
                 const tabButtons = document.querySelectorAll('.tab-button');
                 const tabContents = document.querySelectorAll('.tab-content');
-
-                function render() {
-                    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-                    const end = start + ITEMS_PER_PAGE;
-                    const pageItems = filteredData.slice(start, end);
-
-                    grid.innerHTML = '';
-                    pageItems.forEach(character => {
-                        const card = document.createElement('div');
-                        card.className = 'card';
-                        card.innerHTML = `
-          <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 70%">
-          <div style="font-size: small">${character.name}</div>
-        `;
-                        card.addEventListener('click', () => showModal(character));
-                        grid.appendChild(card);
-                    });
-
-                    renderPagination();
-                }
-
-                function renderPagination() {
-                    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-                    pagination.innerHTML = '';
-
-                    for (let i = 1; i <= totalPages; i++) {
-                        const btn = document.createElement('button');
-                        btn.textContent = i;
-                        if (i === currentPage) btn.disabled = true;
-                        btn.addEventListener('click', () => {
-                            currentPage = i;
-                            render();
-                        });
-                        pagination.appendChild(btn);
-                    }
-                }
-
-                function applyFiltersAndSort() {
-                    const role = roleFilter.value;
-                    const sort = sortOrder.value;
-                    const keyword = searchInput.value.toLowerCase();
-
-                    filteredData = data.characters.filter(character =>
-                        (role === 'all' || character.role === role) &&
-                        character.name.toLowerCase().includes(keyword) &&
-                        (selectedCategories.length === 0 || skillTagCheck(character))
-                    );
-                    currentPage = 1;
-                    render();
-                }
-
-                function skillTagCheck(character) {
-                    let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                        (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-
-                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
-                        flg = flg ||
-                            (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                            (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-                    }
-                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
-                        flg = flg ||
-                            (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                            (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-                    }
-                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
-                        flg = flg ||
-                            (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                            (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-                    }
-                    return flg;
-                }
-
-                function renderCategoryList() {
-                    const filter = categorySearch.value.toLowerCase();
-                    categoryList.innerHTML = categories
-                        .filter(cat => cat.toLowerCase().includes(filter))
-                        .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
-                }
 
                 function loadNewVideo(character) {
                     currentVideoId = character.youtubeId;
@@ -402,6 +318,91 @@
                 isPlaying = false;
                 document.getElementById('toggleButton').textContent = '▶';
             }
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                if (i === currentPage) btn.disabled = true;
+                btn.addEventListener('click', () => {
+                    currentPage = i;
+                    render();
+                });
+                pagination.appendChild(btn);
+            }
+        }
+
+        function skillTagCheck(character) {
+            let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+
+            if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            return flg;
+        }
+
+        function render() {
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageItems = filteredData.slice(start, end);
+
+            grid.innerHTML = '';
+            pageItems.forEach(character => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+          <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 70%">
+          <div style="font-size: small">${character.name}</div>
+        `;
+                card.addEventListener('click', () => showModal(character));
+                grid.appendChild(card);
+            });
+
+            renderPagination();
+        }
+
+        function applyFiltersAndSort() {
+            const role = roleFilter.value;
+            const sort = sortOrder.value;
+            const keyword = searchInput.value.toLowerCase();
+
+            filteredData = data.characters.filter(character =>
+                (role === 'all' || character.role === role) &&
+                character.name.toLowerCase().includes(keyword) &&
+                (selectedCategories.length === 0 || skillTagCheck(character))
+            );
+            currentPage = 1;
+            render();
+        }
+
+        function renderCategoryList() {
+            const filter = categorySearch.value.toLowerCase();
+            categoryList.innerHTML = categories
+                .filter(cat => cat.toLowerCase().includes(filter))
+                .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
         }
 
         function toggleCategory(cat) {
