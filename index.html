@@ -107,6 +107,8 @@
         let isPlaying = false;
         let currentVideoId = '';
 
+        let selectedCategories = [];
+        
         function onYouTubeIframeAPIReady() {
             // 初期では何も読み込まない
         }
@@ -116,7 +118,7 @@
             .then(data => {
 
                 const categories = data.skilltags;
-                let selectedCategories = [];
+                
                 const ITEMS_PER_PAGE = 90;
                 let currentPage = 1;
                 let filteredData = structuredClone(data.characters);
@@ -392,6 +394,7 @@
                 sortOrder.addEventListener('change', applyFiltersAndSort);
 
                 // 初期表示
+                renderCategoryList();
                 applyFiltersAndSort();
             })
             .catch(error => {
@@ -416,6 +419,12 @@
                 document.getElementById('toggleButton').textContent = '▶';
             }
         }
+
+        function clearAllCategories() {
+                    selectedCategories = [];
+                    renderCategoryList();
+                    applyFiltersAndSort()
+                }
     </script>
 </body>
 
