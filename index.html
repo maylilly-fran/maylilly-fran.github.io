@@ -223,23 +223,6 @@
                         .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
                 }
 
-                function toggleCategory(cat) {
-                    const index = selectedCategories.indexOf(cat);
-                    if (index >= 0) {
-                        selectedCategories.splice(index, 1);
-                    } else {
-                        selectedCategories.push(cat);
-                    }
-                    renderCategoryList();
-                    applyFiltersAndSort();
-                }
-
-                function clearAllCategories() {
-                    selectedCategories = [];
-                    renderCategoryList();
-                    applyFiltersAndSort()
-                }
-
                 function loadNewVideo(character) {
                     currentVideoId = character.youtubeId;
 
@@ -421,10 +404,25 @@
             }
         }
 
+        function toggleCategory(cat) {
+            const index = selectedCategories.indexOf(cat);
+            if (index >= 0) {
+                selectedCategories.splice(index, 1);
+            } else {
+                selectedCategories.push(cat);
+            }
+            renderCategoryList();
+            applyFiltersAndSort();
+        }
+
         function clearAllCategories() {
             selectedCategories = [];
             renderCategoryList();
             applyFiltersAndSort()
+        }
+
+        function reloadPage() {
+            location.reload();
         }
     </script>
 </body>
