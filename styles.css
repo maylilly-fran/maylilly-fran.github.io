@@ -71,6 +71,7 @@ select {
     width: 60%;
     text-align: center;
     position: relative;
+    overflow: auto;
 }
 
 .modal-content img {
