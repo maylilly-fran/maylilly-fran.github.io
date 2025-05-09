@@ -364,10 +364,6 @@
                     modal3.style.display = 'none';
                 });
 
-                function openModal(id) {
-                    document.getElementById(id).style.display = "flex";
-                }
-
                 window.addEventListener('click', (e) => {
                     if (e.target === modal) {
                         modal.style.display = 'none';
@@ -401,6 +397,10 @@
             .catch(error => {
                 console.error('データの読み込みに失敗しました:', error);
             });
+
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
 
         function toggleAudio() {
             if (!player || typeof player.getPlayerState !== 'function') return;
