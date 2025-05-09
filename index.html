@@ -3,213 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: sans-serif;
-            padding: 20px;
-        }
-
-        .controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"],
-        select {
-            padding: 6px;
-            font-size: 16px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 0fr));
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            text-align: center;
-            padding: 10px;
-            font-size: 20px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-        }
-
-        .pagination {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .pagination button {
-            padding: 5px 10px;
-            margin: 0 5px;
-            background-color: burlywood;
-        }
-
-        /* モーダルスタイル */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            font-size: small;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 60%;
-            text-align: center;
-            position: relative;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .close {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .left,
-        .right {
-            flex: 1;
-            padding: 20px;
-            overflow: auto;
-        }
-
-        .left {
-            background-color: #ffffff;
-            border-right: 1px solid #ccc;
-        }
-
-        .right {
-            background-color: #ffffff;
-        }
-
-        .tab-buttons {
-            display: flex;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 15px;
-        }
-
-        .tab-button {
-            flex: 1;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            color: #555;
-        }
-
-        .tab-button.active {
-            border-bottom: 2px solid #2563eb;
-            color: #2563eb;
-            font-weight: bold;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .skill {
-            width: 10%;
-            padding: 5px;
-        }
-
-        .imgtest {
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .imgtest:hover {
-            transform: scale(1.03);
-        }
-
-        .audio-wrapper {
-            width: 300px;
-            height: 80px;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .fake-audio-ui {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .circle {
-            width: 16px;
-            height: 16px;
-            background-color: red;
-            border-radius: 50%;
-        }
-
-        .text {
-            font-size: 14px;
-            color: #333;
-        }
-
-        button,
-        input[type="text"] {
-            margin-top: 5px;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 20px;
-            font-size: 10px;
-        }
-
-        button {
-            background-color: #ff0040;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #b30000;
-        }
-
-        #player {
-            display: none;
-        }
-    </style>
     <title>鈴蘭の剣:フランなツール</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -217,10 +10,12 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="controls">
+        <button class="reloadBtn" onclick="reloadPage()">🔄</button>
         <input type="text" id="search-input" placeholder="名前で検索">
         <select id="role-filter">
             <option value="all">全ロール</option>
@@ -233,6 +28,7 @@
         <select id="sort-order">
             <option value="default">並び順：デフォルト</option>
         </select>
+        <button class="skillbtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
     </div>
 
     <div class="grid" id="product-grid"></div>
@@ -291,6 +87,18 @@
             <div id="skill-pict"></div>
         </div>
     </div>
+
+    <!-- モーダル3 -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <span class="close" id="close-modal3">&times;</span>
+            <h3>スキルを選択</h3>
+            <div style="margin: 0.5rem 0;">
+                <input type="text" id="categorySearch" placeholder="スキル検索" oninput="renderCategoryList()">
+                <button style="background-color: deeppink;" onclick="clearAllCategories()">全解除</button>
+            </div>
+            <div id="categoryList"></div>
+        </div>
     </div>
 
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -307,6 +115,8 @@
             .then(response => response.json())
             .then(data => {
 
+                const categories = data.skilltags;
+                let selectedCategories = [];
                 const ITEMS_PER_PAGE = 90;
                 let currentPage = 1;
                 let filteredData = structuredClone(data.characters);
@@ -318,9 +128,11 @@
                 const pagination = document.getElementById('pagination');
                 const modal = document.getElementById('product-modal');
                 const modal2 = document.getElementById('skill-modal');
+                const modal3 = document.getElementById('categoryModal');
                 const modalBody = document.getElementById('modal-body');
                 const closeModal = document.getElementById('close-modal');
                 const closeModal2 = document.getElementById('close-modal2');
+                const closeModal3 = document.getElementById('close-modal3');
                 const tabButtons = document.querySelectorAll('.tab-button');
                 const tabContents = document.querySelectorAll('.tab-content');
 
@@ -367,10 +179,63 @@
 
                     filteredData = data.characters.filter(character =>
                         (role === 'all' || character.role === role) &&
-                        character.name.toLowerCase().includes(keyword)
+                        character.name.toLowerCase().includes(keyword) &&
+                        (selectedCategories.length === 0 || skillTagCheck(character))
                     );
                     currentPage = 1;
                     render();
+                }
+
+                function skillTagCheck(character) {
+                    let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                        (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+
+                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
+                        flg = flg ||
+                            (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                            (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+                    }
+                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
+                        flg = flg ||
+                            (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                            (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+                    }
+                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
+                        flg = flg ||
+                            (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                            (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+                    }
+                    return flg;
+                }
+
+                function renderCategoryList() {
+                    const filter = categorySearch.value.toLowerCase();
+                    categoryList.innerHTML = categories
+                        .filter(cat => cat.toLowerCase().includes(filter))
+                        .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
+                }
+
+                function toggleCategory(cat) {
+                    const index = selectedCategories.indexOf(cat);
+                    if (index >= 0) {
+                        selectedCategories.splice(index, 1);
+                    } else {
+                        selectedCategories.push(cat);
+                    }
+                    renderCategoryList();
+                    applyFiltersAndSort();
+                }
+
+                function clearAllCategories() {
+                    selectedCategories = [];
+                    renderCategoryList();
+                    applyFiltersAndSort()
                 }
 
                 function loadNewVideo(character) {
@@ -427,41 +292,34 @@
                     } else {
                         document.getElementById('silhouette-skill').innerHTML = ``;
                     }
-                    content = `
-              <img id="detail1-1" class="skill" src="${character.skills.initial[0].imgURL}" alt="${character.skills.initial[0].imgURL}">
-              <img id="detail1-2" class="skill" src="${character.skills.RK1[0].imgURL}" alt="${character.skills.RK1[0].imgURL}">
-              <img id="detail1-3" class="skill" src="${character.skills.RK3[0].imgURL}" alt="${character.skills.RK3[0].imgURL}">
-              <img id="detail1-4" class="skill" src="${character.skills.RK5[0].imgURL}" alt="${character.skills.RK5[0].imgURL}">`;
-                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) content += `<img id="detail1-5" class="skill" src="${character.skills.RK7[0].imgURL}" alt="${character.skills.RK7[0].imgURL}">`;
-                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) content += `<img id="detail1-6" class="skill" src="${character.skills.RK9[0].imgURL}" alt="${character.skills.RK9[0].imgURL}">`;
-                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) content += `<img id="detail1-7" class="skill" src="${character.skills.RK11[0].imgURL}" alt="${character.skills.RK11[0].imgURL}">`;
-                    document.getElementById('skill1').innerHTML = content
-                    document.getElementById('detail1-1').addEventListener('click', () => showModal2(character, 'initial', 0));
-                    document.getElementById('detail1-2').addEventListener('click', () => showModal2(character, 'RK1', 0));
-                    document.getElementById('detail1-3').addEventListener('click', () => showModal2(character, 'RK3', 0));
-                    document.getElementById('detail1-4').addEventListener('click', () => showModal2(character, 'RK5', 0));
-                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) document.getElementById('detail1-5').addEventListener('click', () => showModal2(character, 'RK7', 0));
-                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) document.getElementById('detail1-6').addEventListener('click', () => showModal2(character, 'RK9', 0));
-                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) document.getElementById('detail1-7').addEventListener('click', () => showModal2(character, 'RK11', 0));
 
-                    content = `
-              <img id="detail2-1" class="skill" src="${character.skills.initial[1].imgURL}" alt="${character.skills.initial[1].imgURL}">
-              <img id="detail2-2" class="skill" src="${character.skills.RK1[1].imgURL}" alt="${character.skills.RK1[1].imgURL}">
-              <img id="detail2-3" class="skill" src="${character.skills.RK3[1].imgURL}" alt="${character.skills.RK3[1].imgURL}">
-              <img id="detail2-4" class="skill" src="${character.skills.RK5[1].imgURL}" alt="${character.skills.RK5[1].imgURL}">`;
-                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[1] && character.skills.RK7[1].name !== undefined) content += `<img id="detail2-5" class="skill" src="${character.skills.RK7[1].imgURL}" alt="${character.skills.RK7[1].imgURL}">`;
-                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) content += `<img id="detail2-6" class="skill" src="${character.skills.RK9[1].imgURL}" alt="${character.skills.RK9[1].imgURL}">`;
-                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) content += `<img id="detail2-7" class="skill" src="${character.skills.RK11[1].imgURL}" alt="${character.skills.RK11[1].imgURL}">`;
-                    document.getElementById('skill2').innerHTML = content
-                    document.getElementById('detail2-1').addEventListener('click', () => showModal2(character, 'initial', 1));
-                    document.getElementById('detail2-2').addEventListener('click', () => showModal2(character, 'RK1', 1));
-                    document.getElementById('detail2-3').addEventListener('click', () => showModal2(character, 'RK3', 1));
-                    document.getElementById('detail2-4').addEventListener('click', () => showModal2(character, 'RK5', 1));
-                    if (Array.isArray(character.skills.RK7) && character.skills.RK7[1] && character.skills.RK7[1].name !== undefined) document.getElementById('detail2-5').addEventListener('click', () => showModal2(character, 'RK7', 1));
-                    if (Array.isArray(character.skills.RK9) && character.skills.RK9[1] && character.skills.RK9[1].name !== undefined) document.getElementById('detail2-6').addEventListener('click', () => showModal2(character, 'RK9', 1));
-                    if (Array.isArray(character.skills.RK11) && character.skills.RK11[1] && character.skills.RK11[1].name !== undefined) document.getElementById('detail2-7').addEventListener('click', () => showModal2(character, 'RK11', 1));
+                    let content = '';
+                    ranks = ['initial', 'RK1', 'RK3', 'RK5', 'RK7', 'RK9', 'RK11'];
+                    ranks.forEach(rank => content = addSkillContent(character, content, rank, 0));
+                    document.getElementById('skill1').innerHTML = content;
+                    ranks.forEach(rank => addSkillContentSettings(character, rank, 0));
 
+                    content = '';
+                    ranks.forEach(rank => content = addSkillContent(character, content, rank, 1));
+                    document.getElementById('skill2').innerHTML = content;
+                    ranks.forEach(rank => addSkillContentSettings(character, rank, 1));
                     modal.style.display = 'flex';
+                }
+
+                function addSkillContent(character, content, key, index) {
+                    if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
+                        content += `<img id="${key}-${index}" class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">`;
+                    }
+                    return content;
+                }
+
+                function addSkillContentSettings(character, key, index) {
+                    if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
+                        document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
+                        if (character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) {
+                            document.getElementById(key + '-' + index).style = "background-color: lightcoral";
+                        }
+                    }
                 }
 
                 tabButtons.forEach(btn => {
@@ -501,6 +359,14 @@
                 closeModal2.addEventListener('click', () => {
                     modal2.style.display = 'none';
                 });
+
+                closeModal3.addEventListener('click', () => {
+                    modal3.style.display = 'none';
+                });
+
+                function openModal(id) {
+                    document.getElementById(id).style.display = "flex";
+                }
 
                 window.addEventListener('click', (e) => {
                     if (e.target === modal) {
