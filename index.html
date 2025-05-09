@@ -397,33 +397,34 @@
                 renderCategoryList();
                 applyFiltersAndSort();
 
-                function openModal(id) {
-                    document.getElementById(id).style.display = "flex";
-                }
 
-                function toggleAudio() {
-                    if (!player || typeof player.getPlayerState !== 'function') return;
-                    const state = player.getPlayerState();
-
-                    if (state !== YT.PlayerState.PLAYING) {
-                        player.playVideo();
-                        isPlaying = true;
-                        document.getElementById('toggleButton').textContent = '■';
-                    } else {
-                        player.pauseVideo();
-                        isPlaying = false;
-                        document.getElementById('toggleButton').textContent = '▶';
-                    }
-                }
-
-                function clearAllCategories() {
-                    selectedCategories = [];
-                    renderCategoryList();
-                    applyFiltersAndSort()
-                }
             } catch (error) {
                 console.error('データの読み込みに失敗しました:', error);
             }
+        }
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function toggleAudio() {
+            if (!player || typeof player.getPlayerState !== 'function') return;
+            const state = player.getPlayerState();
+
+            if (state !== YT.PlayerState.PLAYING) {
+                player.playVideo();
+                isPlaying = true;
+                document.getElementById('toggleButton').textContent = '■';
+            } else {
+                player.pauseVideo();
+                isPlaying = false;
+                document.getElementById('toggleButton').textContent = '▶';
+            }
+        }
+
+        function clearAllCategories() {
+            selectedCategories = [];
+            renderCategoryList();
+            applyFiltersAndSort()
         }
     </script>
 </body>
