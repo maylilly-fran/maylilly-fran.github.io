@@ -1,4 +1,37 @@
 {
+    "roles": [
+        "ブレイカー",
+        "ディフェンダー",
+        "アサルター",
+        "ウォッチャー",
+        "デストロイヤー"
+    ],
+    "rarities": [
+        "レジェンド",
+        "エピック",
+        "レア",
+        "コモン"
+    ],
+    "weapons": [
+        "剣",
+        "斧",
+        "槍",
+        "杖",
+        "弓"
+    ],
+    "camps": [
+        "法皇国",
+        "鈴蘭の剣",
+        "漂泊者",
+        "騎士連合",
+        "ウィルダ",
+        "イリア",
+        "疾走如風",
+        "列陣如林",
+        "侵略如火",
+        "不動如山",
+        "緋色の夜"
+    ],
     "skilltags": [
         "HPドレイン",
         "Lv.1バフ",
@@ -278,6 +311,11 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ターイル.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【歴史学者】",
                 "imageURL": "./img/skillIMG/歴史学者.png",
@@ -478,6 +516,11 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ココア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "ウィルダ",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【朝食の幸福感】",
                 "imageURL": "./img/skillIMG/朝食の幸福感.png",
@@ -687,6 +730,11 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/オーギュスト.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "騎士連合",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【神怒剣】",
                 "imageURL": "./img/skillIMG/神怒剣.png",
@@ -892,6 +940,12 @@
             "role": "アサルター",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ラヴィア・初夏の記憶.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "侵略如火",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【活発な明るい太陽】",
                 "imageURL": "./img/skillIMG/活発な明るい太陽.png",
@@ -1107,6 +1161,11 @@
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/アガタ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【銀狼の女王】",
                 "imageURL": "./img/skillIMG/銀狼の女王.png",
@@ -1316,6 +1375,12 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/コヴァレ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "不動如山",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【名簿】",
                 "imageURL": "./img/skillIMG/名簿.png",
@@ -1554,6 +1619,10 @@
             "role": "ブレイカー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ホーマ.png",
+            "camps": [
+                "漂泊者",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【ベストパートナー】",
                 "imageURL": "./img/skillIMG/ベストパートナー.png",
@@ -1761,6 +1830,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/エストラ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【悪魔狩り】",
                 "imageURL": "./img/skillIMG/悪魔狩り.png",
@@ -1977,6 +2051,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/サフィア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【薔薇に棘あり】",
                 "imageURL": "./img/skillIMG/薔薇に棘あり.png",
@@ -2200,6 +2279,11 @@
             "role": "ディフェンダー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/フラビア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【豊穣】",
                 "imageURL": "./img/skillIMG/豊穣.png",
@@ -2357,6 +2441,11 @@
             "role": "ブレイカー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ルヴァタ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【涅槃の不死鳥】",
                 "imageURL": "./img/skillIMG/涅槃の不死鳥.png",
@@ -2579,6 +2668,11 @@
             "role": "ウォッチャー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/グロリア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "騎士連合",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【正義の旗】",
                 "imageURL": "./img/skillIMG/正義の旗.png",
@@ -2790,6 +2884,12 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/パミーナ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "不動如山",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【剛猛の華】",
                 "imageURL": "./img/skillIMG/剛猛の華.png",
@@ -2994,6 +3094,12 @@
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/サフィア・夏時の約束.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "列陣如林",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【薔薇に棘あり】",
                 "imageURL": "./img/skillIMG/薔薇に棘あり.png",
@@ -3199,6 +3305,12 @@
             "role": "デストロイヤー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/トリスタ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "騎士連合",
+                "侵略如火",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【血色の怒り】",
                 "imageURL": "./img/skillIMG/血色の怒り.png",
@@ -3411,6 +3523,11 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/アカンベ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【国の商人】",
                 "imageURL": "./img/skillIMG/国の商人.png",
@@ -3488,11 +3605,7 @@
                         "type": "選択",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "選択：金のために死す、重賞の下から選択して使用する。",
-                        "collectTitle1": "金のために死す",
-                        "collectDesc1": "[即時]、ターゲットパネルで金貨をまき散らし、その範囲3マス以内の敵全体および[暗影の親衛隊]を一箇所に集めて、敵に[▽移動Lv.2]、[▽魔防Lv.2]や[✗援護]を付与し、2ターン継続。",
-                        "collectTitle2": "重賞の下",
-                        "collectDesc2": "自身範囲3マス以内の他の味方に1ptのENを回復させ、アクティブスキルCDを1ターン短縮する。[△攻撃Lv.2]、[△物防Lv.2]や[△魔防Lv.2]を獲得する。ターゲットが召喚物である場合、追加で[△攻撃Lv.4]を獲得し、すべての効果が2ターン継続。",
+                        "desc": "選択：金のために死す、重賞の下から選択して使用する。<br>金のために死す<br>[即時]、ターゲットパネルで金貨をまき散らし、その範囲3マス以内の敵全体および[暗影の親衛隊]を一箇所に集めて、敵に[▽移動Lv.2]、[▽魔防Lv.2]や[✗援護]を付与し、2ターン継続。<br>重賞の下<br>自身範囲3マス以内の他の味方に1ptのENを回復させ、アクティブスキルCDを1ターン短縮する。[△攻撃Lv.2]、[△物防Lv.2]や[△魔防Lv.2]を獲得する。ターゲットが召喚物である場合、追加で[△攻撃Lv.4]を獲得し、すべての効果が2ターン継続。",
                         "tags": [
                             "重賞の下",
                             "金のために死す",
@@ -3630,6 +3743,12 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/イナンナ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "鈴蘭の剣",
+                "イリア",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【イリヤの真珠】",
                 "imageURL": "./img/skillIMG/イリヤの真珠.png",
@@ -3832,6 +3951,11 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/カリス.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【光のお告げ】",
                 "imageURL": "./img/skillIMG/光のお告げ.png",
@@ -4052,6 +4176,12 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/モモ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "鈴蘭の剣",
+                "ウィルダ",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【厄運の共鳴】",
                 "imageURL": "./img/skillIMG/厄運の共鳴.png",
@@ -4254,6 +4384,12 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/リラ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "列陣如林",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【イチハツの姿】",
                 "imageURL": "./img/skillIMG/イチハツの姿.png",
@@ -4458,6 +4594,12 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/エダ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "イリア",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【星火燎原】",
                 "imageURL": "./img/skillIMG/星火燎原.png",
@@ -4653,6 +4795,12 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ノノヴィア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "鈴蘭の剣",
+                "ウィルダ",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【謎の歌姫】",
                 "imageURL": "./img/skillIMG/謎の歌姫.png",
@@ -4844,6 +4992,11 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/シモーナ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "騎士連合",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【冬来たる】",
                 "imageURL": "./img/skillIMG/冬来たる.png",
@@ -5061,6 +5214,11 @@
             "role": "デストロイヤー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ヌンガル.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【晶石クロスボウ】",
                 "imageURL": "./img/skillIMG/晶石クロスボウ.png",
@@ -5259,6 +5417,12 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ベラ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "鈴蘭の剣",
+                "侵略如火"
+            ],
             "youtubeId": "kLUh5szvixE",
             "personality": {
                 "title": "【うちは天才じゃん！】",
@@ -5454,6 +5618,12 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/コル.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "漂泊者",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【殺し屋の本能】",
                 "imageURL": "./img/skillIMG/殺し屋の本能.png",
@@ -5657,6 +5827,11 @@
             "role": "デストロイヤー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ダンタリオン.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【王たる者の道】",
                 "imageURL": "./img/skillIMG/王たる者の道.png",
@@ -5847,6 +6022,11 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/リリヴィア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "ウィルダ",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【ウィルダの守護者】",
                 "imageURL": "./img/skillIMG/ウィルダの守護者.png",
@@ -6043,6 +6223,12 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ファカール.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "鈴蘭の剣",
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【ファカールの執念】",
                 "imageURL": "./img/skillIMG/ファカールの執念.png",
@@ -6242,6 +6428,11 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/深淵の心.png",
+            "rarity": "エピック",
+            "camps": [
+                "漂泊者",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【ふさがった心】",
                 "imageURL": "./img/skillIMG/ふさがった心.png",
@@ -6413,6 +6604,11 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/アレクセイ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【蛮熊の血統】",
                 "imageURL": "./img/skillIMG/蛮熊の血統.png",
@@ -6621,6 +6817,11 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/マグナス.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【歴戦の猛将】",
                 "imageURL": "./img/skillIMG/歴戦の猛将.png",
@@ -6812,6 +7013,11 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/マイサ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "鈴蘭の剣",
+                "イリア"
+            ],
             "personality": {
                 "title": "【鈴蘭の盾】",
                 "imageURL": "./img/skillIMG/鈴蘭の盾.png",
@@ -7003,6 +7209,11 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/輝ける慈愛.png",
+            "rarity": "エピック",
+            "camps": [
+                "法皇国",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【エンジェル】",
                 "imageURL": "./img/skillIMG/エンジェル.png",
@@ -7166,6 +7377,11 @@
             "role": "アサルター",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ハスナ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【暗香つきまとい】",
                 "imageURL": "./img/skillIMG/暗香つきまとい.png",
@@ -7367,6 +7583,11 @@
             "role": "ディフェンダー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/静謐の戒め.png",
+            "rarity": "エピック",
+            "camps": [
+                "法皇国",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【厳禁】",
                 "imageURL": "./img/skillIMG/厳禁.png",
@@ -7530,6 +7751,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ガルシア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【処刑人】",
                 "imageURL": "./img/skillIMG/処刑人.png",
@@ -7733,6 +7959,12 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/王国の槍「烈嘯」.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "侵略如火",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【金切り声】",
                 "imageURL": "./img/skillIMG/金切り声.png",
@@ -7916,6 +8148,12 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/破断の旋風.png",
+            "rarity": "エピック",
+            "camps": [
+                "鈴蘭の剣",
+                "漂泊者",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【嵐の神斧】",
                 "imageURL": "./img/skillIMG/嵐の神斧.png",
@@ -8087,6 +8325,12 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ラヴィア.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "鈴蘭の剣",
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【がぶ飲み】",
                 "imageURL": "./img/skillIMG/がぶ飲み.png",
@@ -8303,6 +8547,11 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/サマンサ.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【敬虔の祈り】",
                 "imageURL": "./img/skillIMG/敬虔の祈り.png",
@@ -8485,6 +8734,11 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/レオニード.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【恐れなき突撃】",
                 "imageURL": "./img/skillIMG/恐れなき突撃.png",
@@ -8688,6 +8942,11 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/ザビエル.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【一騎当千】",
                 "imageURL": "./img/skillIMG/一騎当千.png",
@@ -8878,6 +9137,11 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ティードン.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "騎士連合",
+                "不動如山"
+            ],
             "youtubeId": "T8bxO-h9f9o",
             "personality": {
                 "title": "【百戦の盾】",
@@ -9091,6 +9355,11 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/輝ける光の鞭.png",
+            "rarity": "エピック",
+            "camps": [
+                "法皇国",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【輝ける光の鞭】",
                 "imageURL": "./img/skillIMG/輝ける光の鞭.png",
@@ -9269,6 +9538,12 @@
             "role": "デストロイヤー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/狙撃教官「鋭い一閃」.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "疾走如風",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【闇の閃光】",
                 "imageURL": "./img/skillIMG/闇の閃光.png",
@@ -9442,6 +9717,11 @@
             "role": "デストロイヤー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/グズマン.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "漂泊者",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【不死の形骸】",
                 "imageURL": "./img/skillIMG/不死の形骸.png",
@@ -9649,6 +9929,11 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/イギー.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "ウィルダ",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【グレイヴォルフ】",
                 "imageURL": "./img/skillIMG/グレイヴォルフ.png",
@@ -9853,6 +10138,12 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ミゲル.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "法皇国",
+                "漂泊者",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【ハンティング】",
                 "imageURL": "./img/skillIMG/ハンティング.png",
@@ -10056,6 +10347,10 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/癒しの手.png",
+            "rarity": "エピック",
+            "camps": [
+                "不動如山"
+            ],
             "personality": {
                 "title": "【志願者】",
                 "imageURL": "./img/skillIMG/志願者.png",
@@ -10220,6 +10515,11 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ナルギル.png",
+            "rarity": "レジェンド",
+            "camps": [
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【晶石戦術篭手】",
                 "imageURL": "./img/skillIMG/晶石戦術篭手.png",
@@ -10424,6 +10724,12 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/軍医「口苦し」.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "列陣如林",
+                "緋色の夜"
+            ],
             "personality": {
                 "title": "【苦薬】",
                 "imageURL": "./img/skillIMG/苦薬.png",
@@ -10597,6 +10903,10 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/騎士連合・剣盾兵.png",
+            "rarity": "レア",
+            "camps": [
+                "騎士連合"
+            ],
             "personality": {
                 "title": "【集中防御】",
                 "imageURL": "./img/skillIMG/集中防御.png",
@@ -10752,6 +11062,11 @@
             "role": "ウォッチャー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/フレア.png",
+            "rarity": "エピック",
+            "camps": [
+                "騎士連合",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【眩い光】",
                 "imageURL": "./img/skillIMG/眩い光.png",
@@ -10910,6 +11225,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/閃く刃.png",
+            "rarity": "エピック",
+            "camps": [
+                "法皇国",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【祝福の剣】",
                 "imageURL": "./img/skillIMG/祝福の剣.png",
@@ -11081,6 +11401,11 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ナイトレイヴン.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【謎の意志】",
                 "imageURL": "./img/skillIMG/謎の意志.png",
@@ -11263,6 +11588,10 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ウィルダ・斥候.png",
+            "rarity": "レア",
+            "camps": [
+                "ウィルダ"
+            ],
             "personality": {
                 "title": "【空中奇襲】",
                 "imageURL": "./img/skillIMG/空中奇襲.png",
@@ -11405,6 +11734,11 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/炎の魔女.png",
+            "rarity": "エピック",
+            "camps": [
+                "漂泊者",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【炎の魔女】",
                 "imageURL": "./img/skillIMG/炎の魔女.png",
@@ -11575,6 +11909,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ライトニング.png",
+            "rarity": "エピック",
+            "camps": [
+                "騎士連合",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【見下し】",
                 "imageURL": "./img/skillIMG/見下し.png",
@@ -11742,6 +12081,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/スティンガー.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【狩りの意志】",
                 "imageURL": "./img/skillIMG/狩りの意志.png",
@@ -11915,6 +12259,11 @@
             "role": "デストロイヤー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/エンフォーサー.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【強い意志】",
                 "imageURL": "./img/skillIMG/強い意志.png",
@@ -12086,6 +12435,10 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/王国軍・光の術師.png",
+            "rarity": "レア",
+            "camps": [
+                "イリア"
+            ],
             "personality": {
                 "title": "【慈愛の翼】",
                 "imageURL": "./img/skillIMG/慈愛の翼.png",
@@ -12227,6 +12580,11 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/恩寵の閃光.png",
+            "rarity": "エピック",
+            "camps": [
+                "法皇国",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【祝福の弩】",
                 "imageURL": "./img/skillIMG/祝福の弩.png",
@@ -12385,6 +12743,11 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/バリスタ.png",
+            "rarity": "エピック",
+            "camps": [
+                "騎士連合",
+                "侵略如火"
+            ],
             "personality": {
                 "title": "【エネルギーチャージ】",
                 "imageURL": "./img/skillIMG/エネルギーチャージ.png",
@@ -12554,6 +12917,11 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/紅のハヤブサ.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【戦場のゴースト】",
                 "imageURL": "./img/skillIMG/戦場のゴースト.png",
@@ -12720,6 +13088,11 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/テンペスト.png",
+            "rarity": "エピック",
+            "camps": [
+                "騎士連合",
+                "不動如山"
+            ],
             "personality": {
                 "title": "【テンペスト】",
                 "imageURL": "./img/skillIMG/テンペスト.png",
@@ -12885,6 +13258,11 @@
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/胡蝶.png",
+            "rarity": "エピック",
+            "camps": [
+                "ウィルダ",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【胡蝶の舞】",
                 "imageURL": "./img/skillIMG/胡蝶の舞.png",
@@ -13049,6 +13427,10 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/法皇国・剣盾兵.png",
+            "rarity": "レア",
+            "camps": [
+                "法皇国"
+            ],
             "personality": {
                 "title": "【祝福の盾】",
                 "imageURL": "./img/skillIMG/祝福の盾.png",
@@ -13201,6 +13583,11 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/キャンドル.png",
+            "rarity": "エピック",
+            "camps": [
+                "イリア",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【キャンドル】",
                 "imageURL": "./img/skillIMG/キャンドル.png",
@@ -13372,6 +13759,10 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/法皇国・氷の術師.png",
+            "rarity": "レア",
+            "camps": [
+                "法皇国"
+            ],
             "personality": {
                 "title": "【庇護の氷】",
                 "imageURL": "./img/skillIMG/庇護の氷.png",
@@ -13526,6 +13917,10 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/王国軍・長槍兵.png",
+            "rarity": "レア",
+            "camps": [
+                "イリア"
+            ],
             "personality": {
                 "title": "【同胞の槍】",
                 "imageURL": "./img/skillIMG/同胞の槍.png",
@@ -13666,6 +14061,10 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/闇の光・火の術師.png",
+            "rarity": "レア",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【絶望の炎】",
                 "imageURL": "./img/skillIMG/絶望の炎.png",
@@ -13814,6 +14213,10 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/王国軍・弓兵.png",
+            "rarity": "レア",
+            "camps": [
+                "イリア"
+            ],
             "personality": {
                 "title": "【集中射撃】",
                 "imageURL": "./img/skillIMG/集中射撃.png",
@@ -13956,6 +14359,10 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/無法者・斧盾兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【襲撃の盾】",
                 "imageURL": "./img/skillIMG/襲撃の盾.png",
@@ -14098,6 +14505,10 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/傭兵・長槍兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【毅然の槍】",
                 "imageURL": "./img/skillIMG/毅然の槍.png",
@@ -14243,6 +14654,10 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/傭兵・弓兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【埋伏の矢】",
                 "imageURL": "./img/skillIMG/埋伏の矢.png",
@@ -14388,6 +14803,10 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/傭兵・刺客.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【埋伏の刃】",
                 "imageURL": "./img/skillIMG/埋伏の刃.png",
@@ -14526,6 +14945,11 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/鷹の目.png",
+            "rarity": "エピック",
+            "camps": [
+                "ウィルダ",
+                "疾走如風"
+            ],
             "personality": {
                 "title": "【ハイランド・アーチャー】",
                 "imageURL": "./img/skillIMG/ハイランド・アーチャー.png",
@@ -14705,6 +15129,10 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/無法者・刺客.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【襲撃の刃】",
                 "imageURL": "./img/skillIMG/襲撃の刃.png",
@@ -14851,6 +15279,10 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/王国軍・火の術師.png",
+            "rarity": "レア",
+            "camps": [
+                "イリア"
+            ],
             "personality": {
                 "title": "【同胞の怒り火】",
                 "imageURL": "./img/skillIMG/同胞の怒り火.png",
@@ -14996,6 +15428,10 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/王国軍・剣盾兵.png",
+            "rarity": "レア",
+            "camps": [
+                "イリア"
+            ],
             "personality": {
                 "title": "【同胞の盾】",
                 "imageURL": "./img/skillIMG/同胞の盾.png",
@@ -15136,6 +15572,11 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/マイティ.png",
+            "rarity": "エピック",
+            "camps": [
+                "騎士連合",
+                "列陣如林"
+            ],
             "personality": {
                 "title": "【神威】",
                 "imageURL": "./img/skillIMG/神威.png",
@@ -15299,6 +15740,10 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/法皇国・投槍兵.png",
+            "rarity": "レア",
+            "camps": [
+                "法皇国"
+            ],
             "personality": {
                 "title": "【祝福の槍】",
                 "imageURL": "./img/skillIMG/祝福の槍.png",
@@ -15447,6 +15892,10 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/騎士連合・長槍兵.png",
+            "rarity": "レア",
+            "camps": [
+                "騎士連合"
+            ],
             "personality": {
                 "title": "【突撃の槍】",
                 "imageURL": "./img/skillIMG/突撃の槍.png",
@@ -15588,6 +16037,10 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/傭兵・剣盾兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【毅然の盾】",
                 "imageURL": "./img/skillIMG/毅然の盾.png",
@@ -15737,6 +16190,10 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/無法者・巨斧兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【豪快の斧】",
                 "imageURL": "./img/skillIMG/豪快の斧.png",
@@ -15874,6 +16331,10 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/無法者・長槍兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【襲撃の槍】",
                 "imageURL": "./img/skillIMG/襲撃の槍.png",
@@ -16012,6 +16473,10 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/無法者・弩兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【弱点狙撃】",
                 "imageURL": "./img/skillIMG/弱点狙撃.png",
@@ -16149,6 +16614,10 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/無法者・弓兵.png",
+            "rarity": "コモン",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【牽制射撃】",
                 "imageURL": "./img/skillIMG/牽制射撃.png",
@@ -16301,6 +16770,10 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/闇の光・氷の術師.png",
+            "rarity": "レア",
+            "camps": [
+                "漂泊者"
+            ],
             "personality": {
                 "title": "【絶望の氷】",
                 "imageURL": "./img/skillIMG/絶望の氷.png",

@@ -194,6 +194,21 @@ select {
     cursor: pointer;
 }
 
+.filterbtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.filterbtn:hover{
+    background-color: dodgerblue;
+}
+
 button {
     background-color: #ff0040;
     color: white;
