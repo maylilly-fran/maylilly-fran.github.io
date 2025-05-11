@@ -216,7 +216,12 @@
             document.getElementById('characterRole').innerHTML = `${character.role}`;
             document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
             document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
-            document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+            if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag)))) {
+                document.getElementById('personalityImg').innerHTML = `<img style="width: 30%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+            } else {
+                document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+            }
+            
             document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
             if (character.personality.common !== undefined) {
                 document.getElementById('common').innerHTML = `${character.personality.common}`;
@@ -397,6 +402,10 @@
                 flg = flg ||
                     (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
                     (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            }
+            if (Array.isArray(character.personality.tags)) {
+                flg = flg ||
+                    (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag)));
             }
             return flg;
         }
