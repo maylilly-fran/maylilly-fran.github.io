@@ -86,11 +86,11 @@
     <div class="modal" id="categoryModal">
         <div class="modal-content">
             <span class="close" id="close-modal3">&times;</span>
-            <h3>スキル説明文からフィルタ</h3>
+            <h3>📒スキル説明文からフィルタ</h3>
             <input type="text" id="descSearch" placeholder="フィルタする文言を入力" oninput="applyFiltersAndSort()">
-            <h3>スキルを選択</h3>
+            <h3>📎スキルタグを選択してフィルタ</h3>
             <div style="margin: 0.5rem 0;">
-                <input type="text" id="categorySearch" placeholder="スキル検索" oninput="renderCategoryList()">
+                <input type="text" id="categorySearch" placeholder="スキルタグ検索" oninput="renderCategoryList()">
                 <button style="background-color: deeppink;" onclick="clearAllCategories()">リセット</button>
             </div>
             <div id="categoryList"></div>
@@ -219,7 +219,12 @@
             document.getElementById('characterRole').innerHTML = `${character.role}`;
             document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
             document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
-            if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag)))) {
+            if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+               ((character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase()))) ) {
                 document.getElementById('personalityImg').innerHTML = `<img style="width: 30%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
             } else {
                 document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
@@ -263,11 +268,12 @@
             return content;
         }
 
-        function addSkillContentSettings(character, key, index) {
+        function addSkillContentSettings(character,key, index) {
             if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
                 document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                if ( (character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                     ( character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 && character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase())) ) {
+                if (( character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    ( character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 && 
+                      character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()) ) ) {
                     document.getElementById(key + '-' + index).style = "background-color: lightcoral";
                 }
             }
