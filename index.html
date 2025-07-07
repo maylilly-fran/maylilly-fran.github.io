@@ -86,6 +86,8 @@
     <div class="modal" id="categoryModal">
         <div class="modal-content">
             <span class="close" id="close-modal3">&times;</span>
+            <h3>スキル説明文からフィルタ</h3>
+            <input type="text" id="descSearch" placeholder="フィルタする文言を入力" oninput="applyFiltersAndSort()">
             <h3>スキルを選択</h3>
             <div style="margin: 0.5rem 0;">
                 <input type="text" id="categorySearch" placeholder="スキル検索" oninput="renderCategoryList()">
@@ -149,6 +151,7 @@
         const closeModal4 = document.getElementById('close-modal4');
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabContents = document.querySelectorAll('.tab-content');
+        const descSearch = document.getElementById('descSearch');
         const ITEMS_PER_PAGE = 90;
         let currentPage = 1;
 
@@ -263,7 +266,8 @@
         function addSkillContentSettings(character, key, index) {
             if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
                 document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                if (character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) {
+                if ( (character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                     ( character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 && character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase())) ) {
                     document.getElementById(key + '-' + index).style = "background-color: lightcoral";
                 }
             }
@@ -410,6 +414,34 @@
             return flg;
         }
 
+        function skillDescCheck(character, words) {
+            let flg = (character?.skills?.initial[0]?.desc.length !== 0 && character?.skills?.initial[0]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.initial[1]?.desc.length !== 0 && character?.skills?.initial[1]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.RK1[0]?.desc.length !== 0 && character?.skills?.RK1[0]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.RK1[1]?.desc.length !== 0 && character?.skills?.RK1[1]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.RK3[0]?.desc.length !== 0 && character?.skills?.RK3[0]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.RK3[1]?.desc.length !== 0 && character?.skills?.RK3[1]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.RK5[0]?.desc.length !== 0 && character?.skills?.RK5[0]?.desc.toLowerCase().includes(words)) ||
+                (character?.skills?.RK5[1]?.desc.length !== 0 && character?.skills?.RK5[1]?.desc.toLowerCase().includes(words));
+            
+            if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK7[0]?.desc.length !== 0 && character?.skills?.RK7[0]?.desc.toLowerCase().includes(words)) ||
+                    (character?.skills?.RK7[1]?.desc.length !== 0 && character?.skills?.RK7[1]?.desc.toLowerCase().includes(words));
+            }
+            if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK9[0]?.desc.length !== 0 && character?.skills?.RK9[0]?.desc.toLowerCase().includes(words)) ||
+                    (character?.skills?.RK9[1]?.desc.length !== 0 && character?.skills?.RK9[1]?.desc.toLowerCase().includes(words));
+            }
+            if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
+                flg = flg ||
+                    (character?.skills?.RK11[0]?.desc.length !== 0 && character?.skills?.RK11[0]?.desc.toLowerCase().includes(words)) ||
+                    (character?.skills?.RK11[1]?.desc.length !== 0 && character?.skills?.RK11[1]?.desc.toLowerCase().includes(words));
+            }
+            return flg;
+        }
+
         function render() {
             const start = (currentPage - 1) * ITEMS_PER_PAGE;
             const end = start + ITEMS_PER_PAGE;
@@ -433,6 +465,7 @@
         function applyFiltersAndSort() {
             const sort = sortOrder.value;
             const keyword = searchInput.value.toLowerCase();
+            const dKeyword = descSearch.value.toLowerCase();
 
             filteredData = data.characters.filter(character =>
                 (selectedRoles.length === 0 || selectedRoles.includes(character.role)) &&
@@ -440,7 +473,8 @@
                 (selectedWeapons.length === 0 || selectedWeapons.includes(character.weapon)) &&
                 (selectedRarities.length === 0 || selectedRarities.includes(character.rarity)) &&
                 character.name.toLowerCase().includes(keyword) &&
-                (selectedCategories.length === 0 || skillTagCheck(character))
+                (selectedCategories.length === 0 || skillTagCheck(character)) &&
+                (dKeyword.length === 0 || skillDescCheck(character,dKeyword))
             );
             currentPage = 1;
             render();
