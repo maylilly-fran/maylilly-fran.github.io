@@ -309,6 +309,7 @@
     "characters": [
         {
             "name": "ターイル",
+            "speed": "288",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ターイル.png",
@@ -514,6 +515,7 @@
         },
         {
             "name": "ココア",
+            "speed": "221",
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ココア.png",
@@ -731,6 +733,7 @@
         },
         {
             "name": "オーギュスト",
+            "speed": "209",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/オーギュスト.png",
@@ -942,6 +945,7 @@
         },
         {
             "name": "ラヴィア・初夏の記憶",
+            "speed": "180",
             "role": "アサルター",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ラヴィア・初夏の記憶.png",
@@ -1164,6 +1168,7 @@
         },
         {
             "name": "アガタ",
+            "speed": "151",
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/アガタ.png",
@@ -1381,6 +1386,7 @@
         },
         {
             "name": "コヴァレ",
+            "speed": "272",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/コヴァレ.png",
@@ -1625,6 +1631,7 @@
         },
         {
             "name": "ホーマ",
+            "speed": "210",
             "role": "ブレイカー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ホーマ.png",
@@ -1839,6 +1846,7 @@
         },
         {
             "name": "エストラ",
+            "speed": "168",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/エストラ.png",
@@ -2060,6 +2068,7 @@
         },
         {
             "name": "アイサ",
+            "speed": "222",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/アイサ.png",
@@ -2226,6 +2235,7 @@
         },
         {
             "name": "サフィア",
+            "speed": "179",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/サフィア.png",
@@ -2454,6 +2464,7 @@
         },
         {
             "name": "フラビア",
+            "speed": "224",
             "role": "ディフェンダー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/フラビア.png",
@@ -2616,6 +2627,7 @@
         },
         {
             "name": "アフラ",
+            "speed": "275",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/アフラ.png",
@@ -2778,6 +2790,7 @@
         },
         {
             "name": "ルヴァタ",
+            "speed": "208",
             "role": "ブレイカー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ルヴァタ.png",
@@ -3005,6 +3018,7 @@
         },
         {
             "name": "グロリア",
+            "speed": "215",
             "role": "ウォッチャー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/グロリア.png",
@@ -3222,6 +3236,7 @@
         },
         {
             "name": "パミーナ",
+            "speed": "198",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/パミーナ.png",
@@ -3434,6 +3449,7 @@
         },
         {
             "name": "サフィア・夏時の約束",
+            "speed": "219",
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/サフィア・夏時の約束.png",
@@ -3652,6 +3668,7 @@
         },
         {
             "name": "トリスタ",
+            "speed": "185",
             "role": "デストロイヤー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/トリスタ.png",
@@ -3874,6 +3891,7 @@
         },
         {
             "name": "アカンベ",
+            "speed": "123",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/アカンベ.png",
@@ -4095,6 +4113,7 @@
         },
         {
             "name": "イナンナ",
+            "speed": "65",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/イナンナ.png",
@@ -4303,6 +4322,7 @@
         },
         {
             "name": "カリス",
+            "speed": "126",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/カリス.png",
@@ -4528,6 +4548,7 @@
         },
         {
             "name": "ニーティア",
+            "speed": "158",
             "role": "アサルター",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ニーティア.png",
@@ -4694,6 +4715,7 @@
         },
         {
             "name": "流星団",
+            "speed": "218",
             "role": "ウォッチャー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/流星団.png",
@@ -4898,6 +4920,7 @@
         },
         {
             "name": "モモ",
+            "speed": "132",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/モモ.png",
@@ -5107,6 +5130,7 @@
         },
         {
             "name": "リラ",
+            "speed": "233",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/リラ.png",
@@ -5317,6 +5341,7 @@
         },
         {
             "name": "エダ",
+            "speed": "93",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/エダ.png",
@@ -5518,6 +5543,7 @@
         },
         {
             "name": "ノノヴィア",
+            "speed": "159",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ノノヴィア.png",
@@ -5715,6 +5741,7 @@
         },
         {
             "name": "シモーナ",
+            "speed": "271",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/シモーナ.png",
@@ -5938,6 +5965,7 @@
         },
         {
             "name": "ヌンガル",
+            "speed": "106",
             "role": "デストロイヤー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ヌンガル.png",
@@ -6141,6 +6169,7 @@
         },
         {
             "name": "ベラ",
+            "speed": "122",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ベラ.png",
@@ -6342,6 +6371,7 @@
         },
         {
             "name": "コル",
+            "speed": "163",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/コル.png",
@@ -6551,6 +6581,7 @@
         },
         {
             "name": "ダンタリオン",
+            "speed": "175",
             "role": "デストロイヤー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ダンタリオン.png",
@@ -6747,6 +6778,7 @@
         },
         {
             "name": "リリヴィア",
+            "speed": "118",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/リリヴィア.png",
@@ -6948,6 +6980,7 @@
         },
         {
             "name": "ファカール",
+            "speed": "105",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ファカール.png",
@@ -7153,6 +7186,7 @@
         },
         {
             "name": "深淵の心",
+            "speed": "270",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/深淵の心.png",
@@ -7329,6 +7363,7 @@
         },
         {
             "name": "アレクセイ",
+            "speed": "228",
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/アレクセイ.png",
@@ -7543,6 +7578,7 @@
         },
         {
             "name": "マグナス",
+            "speed": "231",
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/マグナス.png",
@@ -7739,6 +7775,7 @@
         },
         {
             "name": "マイサ",
+            "speed": "243",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/マイサ.png",
@@ -7940,6 +7977,7 @@
         },
         {
             "name": "輝ける慈愛",
+            "speed": "80",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/輝ける慈愛.png",
@@ -8108,6 +8146,7 @@
         },
         {
             "name": "ハスナ",
+            "speed": "151",
             "role": "アサルター",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ハスナ.png",
@@ -8314,6 +8353,7 @@
         },
         {
             "name": "静謐の戒め",
+            "speed": "236",
             "role": "ディフェンダー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/静謐の戒め.png",
@@ -8485,6 +8525,7 @@
         },
         {
             "name": "ガルシア",
+            "speed": "176",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ガルシア.png",
@@ -8693,6 +8734,7 @@
         },
         {
             "name": "王国の槍「烈嘯」",
+            "speed": "207",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/王国の槍「烈嘯」.png",
@@ -8882,6 +8924,7 @@
         },
         {
             "name": "破断の旋風",
+            "speed": "202",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/破断の旋風.png",
@@ -9059,6 +9102,7 @@
         },
         {
             "name": "ラヴィア",
+            "speed": "204",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ラヴィア.png",
@@ -9286,6 +9330,7 @@
         },
         {
             "name": "サマンサ",
+            "speed": "78",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/サマンサ.png",
@@ -9473,6 +9518,7 @@
         },
         {
             "name": "レオニード",
+            "speed": "195",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/レオニード.png",
@@ -9683,6 +9729,7 @@
         },
         {
             "name": "ザビエル",
+            "speed": "193",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/ザビエル.png",
@@ -9879,6 +9926,7 @@
         },
         {
             "name": "ティードン",
+            "speed": "235",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ティードン.png",
@@ -10097,6 +10145,7 @@
         },
         {
             "name": "輝ける光の鞭",
+            "speed": "127",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/輝ける光の鞭.png",
@@ -10280,6 +10329,7 @@
         },
         {
             "name": "狙撃教官「鋭い一閃」",
+            "speed": "110",
             "role": "デストロイヤー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/狙撃教官「鋭い一閃」.png",
@@ -10459,6 +10509,7 @@
         },
         {
             "name": "グズマン",
+            "speed": "180",
             "role": "デストロイヤー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/グズマン.png",
@@ -10671,6 +10722,7 @@
         },
         {
             "name": "イギー",
+            "speed": "187",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/イギー.png",
@@ -10880,6 +10932,7 @@
         },
         {
             "name": "ミゲル",
+            "speed": "111",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ミゲル.png",
@@ -11090,6 +11143,7 @@
         },
         {
             "name": "癒しの手",
+            "speed": "78",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/癒しの手.png",
@@ -11258,6 +11312,7 @@
         },
         {
             "name": "ナルギル",
+            "speed": "232",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ナルギル.png",
@@ -11471,6 +11526,7 @@
         },
         {
             "name": "軍医「口苦し」",
+            "speed": "80",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/軍医「口苦し」.png",
@@ -11650,6 +11706,7 @@
         },
         {
             "name": "騎士連合・剣盾兵",
+            "speed": "236",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/騎士連合・剣盾兵.png",
@@ -11809,6 +11866,7 @@
         },
         {
             "name": "フレア",
+            "speed": "211",
             "role": "ウォッチャー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/フレア.png",
@@ -11972,6 +12030,7 @@
         },
         {
             "name": "閃く刃",
+            "speed": "153",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/閃く刃.png",
@@ -12148,6 +12207,7 @@
         },
         {
             "name": "ナイトレイヴン",
+            "speed": "121",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ナイトレイヴン.png",
@@ -12335,6 +12395,7 @@
         },
         {
             "name": "ウィルダ・斥候",
+            "speed": "165",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ウィルダ・斥候.png",
@@ -12481,6 +12542,7 @@
         },
         {
             "name": "炎の魔女",
+            "speed": "119",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/炎の魔女.png",
@@ -12656,6 +12718,7 @@
         },
         {
             "name": "ライトニング",
+            "speed": "166",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ライトニング.png",
@@ -12828,6 +12891,7 @@
         },
         {
             "name": "スティンガー",
+            "speed": "155",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/スティンガー.png",
@@ -13006,6 +13070,7 @@
         },
         {
             "name": "エンフォーサー",
+            "speed": "182",
             "role": "デストロイヤー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/エンフォーサー.png",
@@ -13182,6 +13247,7 @@
         },
         {
             "name": "王国軍・光の術師",
+            "speed": "79",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/王国軍・光の術師.png",
@@ -13327,6 +13393,7 @@
         },
         {
             "name": "恩寵の閃光",
+            "speed": "94",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/恩寵の閃光.png",
@@ -13493,6 +13560,7 @@
         },
         {
             "name": "バリスタ",
+            "speed": "94",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/バリスタ.png",
@@ -13669,6 +13737,7 @@
         },
         {
             "name": "紅のハヤブサ",
+            "speed": "156",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/紅のハヤブサ.png",
@@ -13840,6 +13909,7 @@
         },
         {
             "name": "テンペスト",
+            "speed": "191",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/テンペスト.png",
@@ -14014,6 +14084,7 @@
         },
         {
             "name": "胡蝶",
+            "speed": "210",
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/胡蝶.png",
@@ -14183,6 +14254,7 @@
         },
         {
             "name": "法皇国・剣盾兵",
+            "speed": "244",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/法皇国・剣盾兵.png",
@@ -14340,6 +14412,7 @@
         },
         {
             "name": "キャンドル",
+            "speed": "93",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/キャンドル.png",
@@ -14516,6 +14589,7 @@
         },
         {
             "name": "法皇国・氷の術師",
+            "speed": "270",
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/法皇国・氷の術師.png",
@@ -14675,6 +14749,7 @@
         },
         {
             "name": "王国軍・長槍兵",
+            "speed": "188",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/王国軍・長槍兵.png",
@@ -14822,6 +14897,7 @@
         },
         {
             "name": "闇の光・火の術師",
+            "speed": "120",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/闇の光・火の術師.png",
@@ -14974,6 +15050,7 @@
         },
         {
             "name": "王国軍・弓兵",
+            "speed": "98",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/王国軍・弓兵.png",
@@ -15120,6 +15197,7 @@
         },
         {
             "name": "無法者・斧盾兵",
+            "speed": "230",
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/無法者・斧盾兵.png",
@@ -15269,6 +15347,7 @@
         },
         {
             "name": "傭兵・長槍兵",
+            "speed": "190",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/傭兵・長槍兵.png",
@@ -15421,6 +15500,7 @@
         },
         {
             "name": "傭兵・弓兵",
+            "speed": "100",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/傭兵・弓兵.png",
@@ -15570,6 +15650,7 @@
         },
         {
             "name": "傭兵・刺客",
+            "speed": "160",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/傭兵・刺客.png",
@@ -15712,6 +15793,7 @@
         },
         {
             "name": "鷹の目",
+            "speed": "104",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/鷹の目.png",
@@ -15896,6 +15978,7 @@
         },
         {
             "name": "無法者・刺客",
+            "speed": "162",
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/無法者・刺客.png",
@@ -16046,6 +16129,7 @@
         },
         {
             "name": "王国軍・火の術師",
+            "speed": "119",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/王国軍・火の術師.png",
@@ -16195,6 +16279,7 @@
         },
         {
             "name": "王国軍・剣盾兵",
+            "speed": "239",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/王国軍・剣盾兵.png",
@@ -16340,6 +16425,7 @@
         },
         {
             "name": "マイティ",
+            "speed": "198",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/マイティ.png",
@@ -16508,6 +16594,7 @@
         },
         {
             "name": "法皇国・投槍兵",
+            "speed": "185",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/法皇国・投槍兵.png",
@@ -16661,6 +16748,7 @@
         },
         {
             "name": "騎士連合・長槍兵",
+            "speed": "186",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/騎士連合・長槍兵.png",
@@ -16807,6 +16895,7 @@
         },
         {
             "name": "傭兵・剣盾兵",
+            "speed": "240",
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/傭兵・剣盾兵.png",
@@ -16960,6 +17049,7 @@
         },
         {
             "name": "無法者・巨斧兵",
+            "speed": "205",
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/無法者・巨斧兵.png",
@@ -17101,6 +17191,7 @@
         },
         {
             "name": "無法者・長槍兵",
+            "speed": "192",
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/無法者・長槍兵.png",
@@ -17246,6 +17337,7 @@
         },
         {
             "name": "無法者・弩兵",
+            "speed": "96",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/無法者・弩兵.png",
@@ -17390,6 +17482,7 @@
         },
         {
             "name": "無法者・弓兵",
+            "speed": "102",
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/無法者・弓兵.png",
@@ -17546,6 +17639,7 @@
         },
         {
             "name": "闇の光・氷の術師",
+            "speed": "130",
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/闇の光・氷の術師.png",

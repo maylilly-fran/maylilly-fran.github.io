@@ -19,6 +19,8 @@
         <input type="text" id="search-input" placeholder="名前で検索">
         <select id="sort-order">
             <option value="default">並び順：デフォルト</option>
+            <option value="speed-asc">素早さ(降順)</option>
+            <option value="speed-desc">素早さ(昇順)</option>
         </select>
         <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
         <button class="skillbtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
@@ -489,6 +491,10 @@
                 (selectedCategories.length === 0 || skillTagCheck(character)) &&
                 (dKeyword.length === 0 || skillDescCheck(character,dKeyword))
             );
+
+            if (sort === 'speed-asc') filteredData.sort((a, b) => a.speed - b.speed);
+            if (sort === 'speed-desc') filteredData.sort((a, b) => b.speed - a.speed);
+
             currentPage = 1;
             render();
         }
