@@ -19,8 +19,8 @@
         <input type="text" id="search-input" placeholder="名前で検索">
         <select id="sort-order">
             <option value="default">並び順：デフォルト</option>
-            <option value="speed-asc">素早さ(降順)</option>
-            <option value="speed-desc">素早さ(昇順)</option>
+            <option value="speed-desc">素早さ(降順)</option>
+            <option value="speed-asc">素早さ(昇順)</option>
         </select>
         <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
         <button class="skillbtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
@@ -41,6 +41,7 @@
                         <div id="characterRole"></div>
                         <div id="characterWeapon"></div>
                         <div id="characterCamp"></div>
+                        <div id="characterSpeed"></div>
                         <button id="toggleButton" onclick="toggleAudio()" disabled>▶</button>
                         <div id="player"></div>
                     </div>
@@ -221,6 +222,7 @@
             document.getElementById('characterRole').innerHTML = `${character.role}`;
             document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
             document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
+            document.getElementById('characterSpeed').innerHTML = `素早さ : ${character.speed}`;
             if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag))) ||
                ((character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
                (character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
