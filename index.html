@@ -224,11 +224,11 @@
             document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
             document.getElementById('characterSpeed').innerHTML = `素早さ : ${character.speed}`;
             if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-               ((character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase()))) ) {
+               ((descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (descSearch.value.length !== 0 && character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+               (descSearch.value.length !== 0 && character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase()))) ) {
                 document.getElementById('personalityImg').innerHTML = `<img style="width: 30%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
             } else {
                 document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
