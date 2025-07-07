@@ -445,6 +445,13 @@
                     (character?.skills?.RK11[0]?.desc.length !== 0 && character?.skills?.RK11[0]?.desc.toLowerCase().includes(words)) ||
                     (character?.skills?.RK11[1]?.desc.length !== 0 && character?.skills?.RK11[1]?.desc.toLowerCase().includes(words));
             }
+            flg = flg ||
+                (character?.personality?.hoshi5?.toLowerCase().includes(words)) ||
+                (character?.personality?.hoshi4?.toLowerCase().includes(words)) ||
+                (character?.personality?.hoshi3?.toLowerCase().includes(words)) ||
+                (character?.personality?.hoshi2?.toLowerCase().includes(words)) ||
+                (character?.personality?.hoshi1?.toLowerCase().includes(words));
+            
             return flg;
         }
 
