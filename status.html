@@ -22,6 +22,21 @@
     .characterbtn:hover {
         background-color: #407577;
     }
+    
+    .movebtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .movebtn:hover {
+        background-color: #535353;
+    }
 </style>
 
 <body class="bg-gray-100 p-6">
@@ -30,6 +45,7 @@
         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
             <button class="characterbtn" onclick="location.href='index.html'">キャラクタ一覧へ</button>
+            <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button>
             <input id="searchInput" type="text" placeholder="検索..." class="mb-4 px-4 py-2 w-full border rounded">
         </div>
 
@@ -53,20 +69,27 @@
         function renderTable(data) {
             const body = document.getElementById('csv-body');
             body.innerHTML = data.map(row => `
-        <tr class="hover:bg-gray-100 cursor-move">
-          ${row.map((cell, colIndex) => {
+        <tr class="${sortableEnabled ? 'hover:bg-gray-100 cursor-move' : 'hover:bg-gray-100 cursor-default'}">
+            ${row.map((cell, colIndex) => {
                 const content = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2)
                     ? `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`
                     : cell;
                 return `<td class="border-t px-4 py-2 whitespace-nowrap"><b>${content}</b></td>`;
             }).join('')}
         </tr>
-      `).join('');
+    `).join('');
 
-            Sortable.create(body, {
-                animation: 150,
-                ghostClass: 'bg-yellow-100',
-            });
+            if (sortableInstance) {
+                sortableInstance.destroy();
+                sortableInstance = null;
+            }
+
+            if (sortableEnabled) {
+                sortableInstance = Sortable.create(body, {
+                    animation: 150,
+                    ghostClass: 'bg-yellow-100',
+                });
+            }
         }
 
         function sortTableByColumn(colIndex) {
@@ -124,6 +147,15 @@
 
         function reloadPage() {
             location.reload();
+        }
+
+        let sortableInstance = null;
+        let sortableEnabled = false;
+
+        function toggleSortable() {
+            sortableEnabled = !sortableEnabled;
+            document.getElementById("toggleSortBtn").innerText = sortableEnabled ? "行並び替えON" : "行並び替えOFF";
+            renderTable(originalData);
         }
     </script>
 
