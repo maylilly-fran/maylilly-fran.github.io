@@ -22,7 +22,7 @@
     .characterbtn:hover {
         background-color: #407577;
     }
-    
+
     .movebtn {
         margin-top: 5px;
         padding: 5px 10px;
@@ -46,7 +46,7 @@
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
             <button class="characterbtn" onclick="location.href='index.html'">キャラクタ一覧へ</button>
             <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button>
-            <input id="searchInput" type="text" placeholder="検索..." class="mb-4 px-4 py-2 w-full border rounded">
+            <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]" class="mb-4 px-4 py-2 w-full border rounded">
         </div>
 
         <div class="overflow-x-auto">
@@ -118,10 +118,19 @@
         }
 
         function applyFilterAndRender() {
-            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            const keywordInput = document.getElementById('searchInput').value.toLowerCase();
+            const keywords = keywordInput.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
+
+            if (keywords.length === 0) {
+                renderTable(originalData);
+                return;
+            }
             const filtered = originalData.filter(row =>
-                row.some(cell => cell.toLowerCase().includes(keyword))
+                keywords.some(keyword =>
+                    row.some(cell => cell.toLowerCase().includes(keyword))
+                )
             );
+
             renderTable(filtered);
         }
 
