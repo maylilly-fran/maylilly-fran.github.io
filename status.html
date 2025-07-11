@@ -37,6 +37,21 @@
     .movebtn:hover {
         background-color: #535353;
     }
+
+    .highlightbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .highlightbtn:hover {
+        background-color: #535353;
+    }
 </style>
 
 <body class="bg-gray-100 p-6">
@@ -46,7 +61,9 @@
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
             <button class="characterbtn" onclick="location.href='index.html'">キャラクタ一覧へ</button>
             <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button>
-            <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]" class="mb-4 px-4 py-2 w-full border rounded">
+            <button class="highlightbtn" onclick="toggleHighlight()" id="toggleHighlightBtn">フィルタモード</button>
+            <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
+                class="mb-4 px-4 py-2 w-full border rounded">
         </div>
 
         <div class="overflow-x-auto">
@@ -62,22 +79,28 @@
     <script>
         let originalData = [];
         let headers = [];
+        let highlight = [];
         let sortState = { column: null, ascending: true };
         const imageColumnIndex = 1; // ← 画像列のインデックス（0始まり）
         const imageColumnIndex2 = 2;
 
         function renderTable(data) {
             const body = document.getElementById('csv-body');
-            body.innerHTML = data.map(row => `
-        <tr class="${sortableEnabled ? 'hover:bg-gray-100 cursor-move' : 'hover:bg-gray-100 cursor-default'}">
+
+            body.innerHTML = data.map((row, rowIndex) => {
+                const isHighlighted = highlight.includes(rowIndex);
+                const rowClass = `${sortableEnabled ? 'cursor-move' : 'cursor-default'} hover:bg-gray-100 ${isHighlighted ? 'bg-yellow-100' : ''}`;
+
+                return `
+        <tr class="${rowClass}">
             ${row.map((cell, colIndex) => {
-                const content = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2)
-                    ? `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`
-                    : cell;
-                return `<td class="border-t px-4 py-2 whitespace-nowrap"><b>${content}</b></td>`;
-            }).join('')}
-        </tr>
-    `).join('');
+                    const content = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2)
+                        ? `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`
+                        : cell;
+                    return `<td class="border-t px-4 py-2 whitespace-nowrap"><b>${content}</b></td>`;
+                }).join('')}
+        </tr>`;
+            }).join('');
 
             if (sortableInstance) {
                 sortableInstance.destroy();
@@ -122,16 +145,26 @@
             const keywords = keywordInput.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
 
             if (keywords.length === 0) {
+                highlight = [];
                 renderTable(originalData);
                 return;
             }
-            const filtered = originalData.filter(row =>
-                keywords.some(keyword =>
-                    row.some(cell => cell.toLowerCase().includes(keyword))
-                )
-            );
 
-            renderTable(filtered);
+            const filteredWithIndex = originalData
+                .map((row, index) => ({ row, index }))
+                .filter(item =>
+                    keywords.some(keyword =>
+                        item.row.some(cell => cell.toLowerCase().includes(keyword))
+                    )
+                );
+            const filtered = filteredWithIndex.map(item => item.row);
+            highlight = filteredWithIndex.map(item => item.index);
+
+            if(highlightEnabled) renderTable(originalData);
+            else {
+                highlight = [];
+                renderTable(filtered);
+            }
         }
 
         fetch('status.csv')
@@ -160,11 +193,17 @@
 
         let sortableInstance = null;
         let sortableEnabled = false;
-
         function toggleSortable() {
             sortableEnabled = !sortableEnabled;
             document.getElementById("toggleSortBtn").innerText = sortableEnabled ? "行並び替えON" : "行並び替えOFF";
-            renderTable(originalData);
+            applyFilterAndRender();
+        }
+
+        let highlightEnabled = false;
+        function toggleHighlight() {
+            highlightEnabled = !highlightEnabled;
+            document.getElementById("toggleHighlightBtn").innerText = highlightEnabled ? "ハイライトモード" : "フィルタモード";
+            applyFilterAndRender();
         }
     </script>
 
