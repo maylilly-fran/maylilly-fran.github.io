@@ -152,19 +152,66 @@
 
             const filteredWithIndex = originalData
                 .map((row, index) => ({ row, index }))
-                .filter(item =>
-                    keywords.some(keyword =>
-                        item.row.some(cell => cell.toLowerCase().includes(keyword))
-                    )
-                );
+                .filter(item => {
+                    for(const keyword of keywords){
+                        let targetColumns = wordCheck(keyword);
+                        for(const colIndex of targetColumns){
+                            const cell = item.row[colIndex];
+                            if(colIndex === 0 || colIndex === 2){
+                                if(cell && cell.toLowerCase().includes(keyword)) return true;
+                            } else {
+                                if(cell && gtltCheck(keyword,Number(cell))) return true;
+                            }
+                        }
+                    }
+                    return false;
+                });
+
             const filtered = filteredWithIndex.map(item => item.row);
             highlight = filteredWithIndex.map(item => item.index);
 
-            if(highlightEnabled) renderTable(originalData);
+            if (highlightEnabled) renderTable(originalData);
             else {
                 highlight = [];
                 renderTable(filtered);
             }
+        }
+
+        function gtltCheck(keyword,cell){
+            const words = keyword.split(':');
+            if(words[1] === "gt"){
+                return Number(words[2]) <= cell;
+            } else if(words[1] === "lt"){
+                return cell <= Number(words[2]);
+            } else false;
+        }
+
+        function wordCheck(keyword){
+            const targetWords =["hp:gt:","hp:lt:","atk:gt:","atk:lt:","def:gt:","def:lt:","matk:gt:","matk:lt:","mdef:gt:","mdef:lt","hpmax:gt:","hpmax:lt:","atkmax:gt:","atkmax:lt:","defmax:gt:","defmax:lt:","matkmax:gt:","matkmax:lt:","mdefmax:gt:","mdefmax:lt:","speed:gt:","speed:lt:"];
+            const idx = targetWords.findIndex(prefix => keyword.startsWith(prefix))
+            if(idx === 0 || idx === 1) {
+                return [3];
+            } else if(idx === 2 || idx === 3){
+                return [4]
+            } else if(idx === 4 || idx === 5){
+                return [5]
+            } else if(idx === 6 || idx === 7){
+                return [6]
+            } else if(idx === 8 || idx === 9){
+                return [7]
+            } else if(idx === 10 || idx === 11){
+                return [8]
+            } else if(idx === 12 || idx === 13){
+                return [9]
+            } else if(idx === 14 || idx === 15){
+                return [10]
+            } else if(idx === 16 || idx === 17){
+                return [11]
+            } else if(idx === 18 || idx === 19){
+                return [12]
+            } else if(idx === 20 || idx === 21){
+                return [13]
+            } else return [0,2];
         }
 
         fetch('status.csv')
