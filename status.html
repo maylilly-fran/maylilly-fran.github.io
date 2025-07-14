@@ -21,7 +21,7 @@
             <button class="highlightbtn" onclick="toggleHighlight()" id="toggleHighlightBtn">フィルタモード</button>
         </div>
         <div class="controls2">
-            <input id="ltInput" type="number" min="0" step="1" style="text-align: center;"/> ≦ 
+            <input id="ltInput" type="number" min="0" step="1" style="text-align: center;" /> ≦
             <select id="gtltFilter" style="border-radius: 10px; text-align: center;">
                 <option value="hp">HP</option>
                 <option value="atk">物攻</option>
@@ -35,7 +35,7 @@
                 <option value="mdefmax">魔防MAX</option>
                 <option value="speed">素早さ</option>
             </select>≦
-            <input id="gtInput" type="number" min="0" step="1" style="text-align: center;"/>
+            <input id="gtInput" type="number" min="0" step="1" style="text-align: center;" />
             <select id="or-and" style="border-radius: 10px; text-align: center; margin-left: 10px;">
                 <option value="and">AND</option>
                 <option value="or">OR</option>
@@ -142,23 +142,25 @@
                 .map((row, index) => ({ row, index }))
                 .filter(item => {
                     let flg = false;
-                    for (const keyword of keywords) {
-                        let targetColumns = wordCheck(keyword);
-                        for (const colIndex of targetColumns) {
-                            const cell = item.row[colIndex];
-                            if (colIndex === 0 || colIndex === 2) {
-                                if (cell && cell.toLowerCase().includes(keyword)) flg = true;
-                            } else {
-                                if (cell && gtltCheck(keyword, Number(cell))) flg = true;
+                    if (keywords.length !== 0) {
+                        for (const keyword of keywords) {
+                            let targetColumns = wordCheck(keyword);
+                            for (const colIndex of targetColumns) {
+                                const cell = item.row[colIndex];
+                                if (colIndex === 0 || colIndex === 2) {
+                                    if (cell && cell.toLowerCase().includes(keyword)) flg = true;
+                                } else {
+                                    if (cell && gtltCheck(keyword, Number(cell))) flg = true;
+                                }
                             }
                         }
-                    }
+                    } else flg = true;
                     let ltFlg = true;
                     let gtFlg = true;
-                    if(ltValue !== "") ltFlg = Number(ltValue) <= Number(item.row[getIndex()]);
-                    if(gtValue !== "") gtFlg = Number(item.row[getIndex()]) <= Number(gtValue);
+                    if (ltValue !== "") ltFlg = Number(ltValue) <= Number(item.row[getIndex()]);
+                    if (gtValue !== "") gtFlg = Number(item.row[getIndex()]) <= Number(gtValue);
 
-                    if(document.getElementById('or-and').value === "or") return flg || (ltFlg && gtFlg);
+                    if (document.getElementById('or-and').value === "or") return flg || (ltFlg && gtFlg);
                     return flg && ltFlg && gtFlg;
                 });
 
@@ -172,19 +174,19 @@
             }
         }
 
-        function getIndex(){
+        function getIndex() {
             const val = document.getElementById('gtltFilter').value;
-            if(val === "hp") return 3;
-            if(val === "atk") return 4;
-            if(val === "def") return 5;
-            if(val === "matk") return 6;
-            if(val === "mdef") return 7;
-            if(val === "hpmax") return 8;
-            if(val === "atkmax") return 9;
-            if(val === "defmax") return 10;
-            if(val === "matkmax") return 11;
-            if(val === "mdefmax") return 12;
-            if(val === "speed") return 13;
+            if (val === "hp") return 3;
+            if (val === "atk") return 4;
+            if (val === "def") return 5;
+            if (val === "matk") return 6;
+            if (val === "mdef") return 7;
+            if (val === "hpmax") return 8;
+            if (val === "atkmax") return 9;
+            if (val === "defmax") return 10;
+            if (val === "matkmax") return 11;
+            if (val === "mdefmax") return 12;
+            if (val === "speed") return 13;
         }
 
         function gtltCheck(keyword, cell) {
@@ -277,8 +279,8 @@
             let text = "";
             if (inheritanceEnabled) {
                 filtered.map(row => {
-                    row.map((cell,colIndex) => {
-                        if(colIndex === 0) text += cell + " ";
+                    row.map((cell, colIndex) => {
+                        if (colIndex === 0) text += cell + " ";
                     });
                 });
                 localStorage.setItem("text", text);
