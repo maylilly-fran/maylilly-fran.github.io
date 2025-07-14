@@ -1,0 +1,86 @@
+    .characterbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .characterbtn:hover {
+        background-color: #407577;
+    }
+
+    .movebtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .movebtn:hover {
+        background-color: #535353;
+    }
+
+    .highlightbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .highlightbtn:hover {
+        background-color: #535353;
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .controls2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .reloadBtn {
+        background-color: #7cdbff;
+        border-radius: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-top: 5px;
+        border: none;
+    }
+
+    .reloadBtn:hover {
+        background-color: #16a7f052;
+    }
+
+    .statusInheritanceBtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .statusInheritanceBtn:hover {
+        background-color: #535353;
+    }

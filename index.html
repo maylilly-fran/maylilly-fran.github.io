@@ -14,19 +14,44 @@
 </head>
 
 <body>
-    <div class="controls">
-        <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-        <button class="statusbtn" onclick="location.href='status.html'">ステータス一覧へ</button>
-    </div>
-    <div class="controls">
-        <input type="text" id="search-input" placeholder="名前で検索">
-        <select id="sort-order">
-            <option value="default">並び順：デフォルト</option>
-            <option value="speed-desc">素早さ(降順)</option>
-            <option value="speed-asc">素早さ(昇順)</option>
-        </select>
-        <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
-        <button class="skillbtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
+    <div style="margin-left: 30px;">
+        <div class="controls">
+            <button class="reloadBtn" onclick="reloadPage()">🔄</button>
+            <button class="statusbtn" onclick="goToNextPage()">ステータス一覧へ</button>
+            <button class="statusInheritanceBtn" id="statusInheritanceBtn"
+                onclick="toggleInheritance()">データ引継ぎOFF</button>
+        </div>
+        <div class="controls">
+            <select id="sort-order" style="border-radius: 10px;">
+                <option value="default">並び順：デフォルト</option>
+                <option value="speed-desc">素早さ(降順)</option>
+                <option value="speed-asc">素早さ(昇順)</option>
+                <option value="hp-desc">HP(降順)</option>
+                <option value="hp-asc">HP(昇順)</option>
+                <option value="atk-desc">物攻(降順)</option>
+                <option value="atk-asc">物攻(昇順)</option>
+                <option value="def-desc">物防(降順)</option>
+                <option value="def-asc">物防(昇順)</option>
+                <option value="matk-desc">魔攻(降順)</option>
+                <option value="matk-asc">魔攻(昇順)</option>
+                <option value="mdef-desc">魔防(降順)</option>
+                <option value="mdef-asc">魔防(昇順)</option>
+                <option value="hpmax-desc">HPMAX(降順)</option>
+                <option value="hpmax-asc">HPMAX(昇順)</option>
+                <option value="atkmax-desc">物攻MAX(降順)</option>
+                <option value="atkmax-asc">物攻MAX(昇順)</option>
+                <option value="defmax-desc">物防MAX(降順)</option>
+                <option value="defmax-asc">物防MAX(昇順)</option>
+                <option value="matkmax-desc">魔攻MAX(降順)</option>
+                <option value="matkmax-asc">魔攻MAX(昇順)</option>
+                <option value="mdefmax-desc">魔防MAX(降順)</option>
+                <option value="mdefmax-asc">魔防MAX(昇順)</option>
+            </select>
+            <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
+            <button class="skillbtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
+        </div>
+        <input type="text" id="search-input" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
+            style="margin-bottom: 12px; width:50%">
     </div>
 
     <div class="grid" id="product-grid"></div>
@@ -141,8 +166,12 @@
         let rarities;
         let filteredData;
 
+        const params = new URLSearchParams(location.search);
+        const value = localStorage.getItem("text");
+        document.getElementById('search-input').value = value;
+        localStorage.removeItem("text");
+
         const searchInput = document.getElementById('search-input');
-        const roleFilter = document.getElementById('role-filter');
         const sortOrder = document.getElementById('sort-order');
         const grid = document.getElementById('product-grid');
         const pagination = document.getElementById('pagination');
@@ -484,7 +513,8 @@
 
         function applyFiltersAndSort() {
             const sort = sortOrder.value;
-            const keyword = searchInput.value.toLowerCase();
+            const keywordInput = searchInput.value.toLowerCase();
+            const keywords = keywordInput.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
             const dKeyword = descSearch.value.toLowerCase();
 
             filteredData = data.characters.filter(character =>
@@ -492,13 +522,33 @@
                 (selectedCamps.length === 0 || character.camps.some(camp => selectedCamps.includes(camp))) &&
                 (selectedWeapons.length === 0 || selectedWeapons.includes(character.weapon)) &&
                 (selectedRarities.length === 0 || selectedRarities.includes(character.rarity)) &&
-                character.name.toLowerCase().includes(keyword) &&
+                (keywords.length === 0 || keywords.some(keyword => character.name.includes(keyword))) &&
                 (selectedCategories.length === 0 || skillTagCheck(character)) &&
                 (dKeyword.length === 0 || skillDescCheck(character,dKeyword))
             );
 
             if (sort === 'speed-asc') filteredData.sort((a, b) => a.speed - b.speed);
             if (sort === 'speed-desc') filteredData.sort((a, b) => b.speed - a.speed);
+            if (sort === 'hp-asc') filteredData.sort((a, b) => a.hp - b.hp);
+            if (sort === 'hp-desc') filteredData.sort((a, b) => b.hp - a.hp);
+            if (sort === 'atk-asc') filteredData.sort((a, b) => a.atk - b.atk);
+            if (sort === 'atk-desc') filteredData.sort((a, b) => b.atk - a.atk);
+            if (sort === 'def-asc') filteredData.sort((a, b) => a.def - b.def);
+            if (sort === 'def-desc') filteredData.sort((a, b) => b.def - a.def);
+            if (sort === 'matk-asc') filteredData.sort((a, b) => a.matk - b.matk);
+            if (sort === 'matk-desc') filteredData.sort((a, b) => b.matk - a.matk);
+            if (sort === 'mdef-asc') filteredData.sort((a, b) => a.mdef - b.mdef);
+            if (sort === 'mdef-desc') filteredData.sort((a, b) => b.mdef - a.mdef);
+            if (sort === 'hpmax-asc') filteredData.sort((a, b) => a.hpmax - b.hpmax);
+            if (sort === 'hpmax-desc') filteredData.sort((a, b) => b.hpmax - a.hpmax);
+            if (sort === 'atkmax-asc') filteredData.sort((a, b) => a.atkmax - b.atkmax);
+            if (sort === 'atkmax-desc') filteredData.sort((a, b) => b.atkmax - a.atkmax);
+            if (sort === 'defmax-asc') filteredData.sort((a, b) => a.defmax - b.defmax);
+            if (sort === 'defmax-desc') filteredData.sort((a, b) => b.defmax - a.defmax);
+            if (sort === 'matkmax-asc') filteredData.sort((a, b) => a.matkmax - b.matkmax);
+            if (sort === 'matkmax-desc') filteredData.sort((a, b) => b.matkmax - a.matkmax);
+            if (sort === 'mdefmax-asc') filteredData.sort((a, b) => a.mdefmax - b.mdefmax);
+            if (sort === 'mdefmax-desc') filteredData.sort((a, b) => b.mdefmax - a.mdefmax);
 
             currentPage = 1;
             render();
@@ -569,6 +619,23 @@
 
             renderfilterList();
             applyFiltersAndSort();
+        }
+
+        let inheritanceEnabled = false;
+        function toggleInheritance() {
+            inheritanceEnabled = !inheritanceEnabled;
+            document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
+        }
+
+        function goToNextPage() {
+            let text = "";
+            if (inheritanceEnabled) {
+                filteredData.forEach(character => {
+                    text += character.name + " ";
+                });
+                localStorage.setItem("text", text);
+            }
+            location.href = `status.html`;
         }
 
         function clearAllCategories() {

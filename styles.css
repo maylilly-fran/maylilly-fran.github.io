@@ -224,6 +224,21 @@ select {
     background-color: #407577;
 }
 
+.statusInheritanceBtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.statusInheritanceBtn:hover {
+    background-color: #535353;
+}
+
 button {
     background-color: #ff0040;
     color: white;
@@ -252,12 +267,15 @@ button:hover {
     color: white;
 }
 
-.reloadBtn {
-    background-color: white;
+.reloadBtn{
+    background-color: #7cdbff;
+    border-radius: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 5px;
     border: none;
-    font-size: 16px;
 }
 
 .reloadBtn:hover {
-    background-color: #3fb9f652;
+    background-color: #16a7f052;
 }
