@@ -85,8 +85,8 @@
                         : cell;
                     const cellAttrs = isImageCol
                         ? ''
-                        : `contenteditable="true" data-row="${rowIndex}" data-col="${colIndex}" onblur="updateCell(this)"`;
-                    return `<td class="${cellClass}" ${cellAttrs}><b>${content}</b></td>`;
+                        : `contenteditable="true" data-row="${rowIndex}" data-col="${colIndex}" onblur="updateCell(this,'${row[0]}')" style="font-weight: bold;"`;
+                    return `<td class="${cellClass}" ${cellAttrs}>${content}</td>`;
                 }).join('') + `</tr>`;
             }).join('');
 
@@ -103,8 +103,10 @@
             }
         }
 
-        function updateCell(td) {
-            const rowIndex = Number(td.dataset.row);
+        function updateCell(td,name) {
+            let idx;
+            originalData.forEach((row,index) => { if(row[0] === name) idx = index; });
+            const rowIndex = Number(idx);
             const colIndex = Number(td.dataset.col);
             const newValue = td.innerText.replace(/\n/g, '').trim();
             originalData[rowIndex][colIndex] = newValue;
