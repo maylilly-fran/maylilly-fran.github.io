@@ -43,6 +43,21 @@
         background-color: #535353;
     }
 
+    .addColumnBtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .addColumnBtn:hover {
+        background-color: #535353;
+    }
+
     .controls {
         display: flex;
         flex-wrap: wrap;

@@ -10,7 +10,6 @@
 </head>
 
 <body class="bg-gray-100 p-6">
-
     <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
         <div class="controls">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
@@ -19,7 +18,9 @@
                 onclick="toggleInheritance()">データ引継ぎOFF</button>
             <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button>
             <button class="highlightbtn" onclick="toggleHighlight()" id="toggleHighlightBtn">フィルタモード</button>
+            <button class="addColumnBtn" onclick="addColumn()">列を追加</button>
         </div>
+
         <div class="controls2">
             <input id="ltInput" type="number" min="0" step="1" style="text-align: center;" /> ≦
             <select id="gtltFilter" style="border-radius: 10px; text-align: center;">
@@ -34,13 +35,14 @@
                 <option value="matkmax">魔攻MAX</option>
                 <option value="mdefmax">魔防MAX</option>
                 <option value="speed">素早さ</option>
-            </select>≦
+            </select> ≦
             <input id="gtInput" type="number" min="0" step="1" style="text-align: center;" />
             <select id="or-and" style="border-radius: 10px; text-align: center; margin-left: 10px;">
                 <option value="and">AND</option>
                 <option value="or">OR</option>
             </select>
         </div>
+
         <div class="controls2">
             <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
                 class="mb-4 px-4 py-2 w-full border rounded">
@@ -62,7 +64,7 @@
         let headers = [];
         let highlight = [];
         let sortState = { column: null, ascending: true };
-        const imageColumnIndex = 1; // ← 画像列のインデックス（0始まり）
+        const imageColumnIndex = 1;
         const imageColumnIndex2 = 2;
 
         const params = new URLSearchParams(location.search);
@@ -72,20 +74,20 @@
 
         function renderTable(data) {
             const body = document.getElementById('csv-body');
-
             body.innerHTML = data.map((row, rowIndex) => {
                 const isHighlighted = highlight.includes(rowIndex);
                 const rowClass = `${sortableEnabled ? 'cursor-move' : 'cursor-default'} hover:bg-gray-100 ${isHighlighted ? 'bg-yellow-100' : ''}`;
-
-                return `
-        <tr class="${rowClass}">
-            ${row.map((cell, colIndex) => {
-                    const content = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2)
+                return `<tr class="${rowClass}">` + row.map((cell, colIndex) => {
+                    const isImageCol = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2);
+                    const cellClass = `border-t px-4 py-2 whitespace-nowrap ${isImageCol ? '' : 'cursor-text'}`;
+                    const content = isImageCol
                         ? `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`
                         : cell;
-                    return `<td class="border-t px-4 py-2 whitespace-nowrap"><b>${content}</b></td>`;
-                }).join('')}
-        </tr>`;
+                    const cellAttrs = isImageCol
+                        ? ''
+                        : `contenteditable="true" data-row="${rowIndex}" data-col="${colIndex}" onblur="updateCell(this)"`;
+                    return `<td class="${cellClass}" ${cellAttrs}><b>${content}</b></td>`;
+                }).join('') + `</tr>`;
             }).join('');
 
             if (sortableInstance) {
@@ -99,6 +101,13 @@
                     ghostClass: 'bg-yellow-100',
                 });
             }
+        }
+
+        function updateCell(td) {
+            const rowIndex = Number(td.dataset.row);
+            const colIndex = Number(td.dataset.col);
+            const newValue = td.innerText.replace(/\n/g, '').trim();
+            originalData[rowIndex][colIndex] = newValue;
         }
 
         function sortTableByColumn(colIndex) {
@@ -138,31 +147,30 @@
                 return;
             }
 
-            let filteredWithIndex = originalData
-                .map((row, index) => ({ row, index }))
-                .filter(item => {
-                    let flg = false;
-                    if (keywords.length !== 0) {
-                        for (const keyword of keywords) {
-                            let targetColumns = wordCheck(keyword);
-                            for (const colIndex of targetColumns) {
-                                const cell = item.row[colIndex];
-                                if (colIndex === 0 || colIndex === 2) {
-                                    if (cell && cell.toLowerCase().includes(keyword)) flg = true;
-                                } else {
-                                    if (cell && gtltCheck(keyword, Number(cell))) flg = true;
-                                }
+            let filteredWithIndex = originalData.map((row, index) => ({ row, index })).filter(item => {
+                let flg = false;
+                if (keywords.length !== 0) {
+                    for (const keyword of keywords) {
+                        let targetColumns = wordCheck(keyword);
+                        for (const colIndex of targetColumns) {
+                            const cell = item.row[colIndex];
+                            if (colIndex === 0 || colIndex === 2) {
+                                if (cell && cell.toLowerCase().includes(keyword)) flg = true;
+                            } else {
+                                if (cell && gtltCheck(keyword, Number(cell))) flg = true;
                             }
                         }
-                    } else flg = true;
-                    let ltFlg = true;
-                    let gtFlg = true;
-                    if (ltValue !== "") ltFlg = Number(ltValue) <= Number(item.row[getIndex()]);
-                    if (gtValue !== "") gtFlg = Number(item.row[getIndex()]) <= Number(gtValue);
+                    }
+                } else flg = true;
 
-                    if (document.getElementById('or-and').value === "or") return flg || (ltFlg && gtFlg);
-                    return flg && ltFlg && gtFlg;
-                });
+                let ltFlg = true, gtFlg = true;
+                if (ltValue !== "") ltFlg = Number(ltValue) <= Number(item.row[getIndex()]);
+                if (gtValue !== "") gtFlg = Number(item.row[getIndex()]) <= Number(gtValue);
+
+                return document.getElementById('or-and').value === "or"
+                    ? flg || (ltFlg && gtFlg)
+                    : flg && ltFlg && gtFlg;
+            });
 
             filtered = filteredWithIndex.map(item => item.row);
             highlight = filteredWithIndex.map(item => item.index);
@@ -176,79 +184,31 @@
 
         function getIndex() {
             const val = document.getElementById('gtltFilter').value;
-            if (val === "hp") return 3;
-            if (val === "atk") return 4;
-            if (val === "def") return 5;
-            if (val === "matk") return 6;
-            if (val === "mdef") return 7;
-            if (val === "hpmax") return 8;
-            if (val === "atkmax") return 9;
-            if (val === "defmax") return 10;
-            if (val === "matkmax") return 11;
-            if (val === "mdefmax") return 12;
-            if (val === "speed") return 13;
+            const map = {
+                hp: 3, atk: 4, def: 5, matk: 6, mdef: 7,
+                hpmax: 8, atkmax: 9, defmax: 10, matkmax: 11, mdefmax: 12,
+                speed: 13
+            };
+            return map[val];
         }
 
         function gtltCheck(keyword, cell) {
             const words = keyword.split(':');
-            if (words[1] === "gt") {
-                return Number(words[2]) <= cell;
-            } else if (words[1] === "lt") {
-                return cell <= Number(words[2]);
-            } else false;
+            if (words[1] === "gt") return Number(words[2]) <= cell;
+            if (words[1] === "lt") return cell <= Number(words[2]);
+            return false;
         }
 
         function wordCheck(keyword) {
-            const targetWords = ["hp:gt:", "hp:lt:", "atk:gt:", "atk:lt:", "def:gt:", "def:lt:", "matk:gt:", "matk:lt:", "mdef:gt:", "mdef:lt", "hpmax:gt:", "hpmax:lt:", "atkmax:gt:", "atkmax:lt:", "defmax:gt:", "defmax:lt:", "matkmax:gt:", "matkmax:lt:", "mdefmax:gt:", "mdefmax:lt:", "speed:gt:", "speed:lt:"];
-            const idx = targetWords.findIndex(prefix => keyword.startsWith(prefix))
-            if (idx === 0 || idx === 1) {
-                return [3];
-            } else if (idx === 2 || idx === 3) {
-                return [4]
-            } else if (idx === 4 || idx === 5) {
-                return [5]
-            } else if (idx === 6 || idx === 7) {
-                return [6]
-            } else if (idx === 8 || idx === 9) {
-                return [7]
-            } else if (idx === 10 || idx === 11) {
-                return [8]
-            } else if (idx === 12 || idx === 13) {
-                return [9]
-            } else if (idx === 14 || idx === 15) {
-                return [10]
-            } else if (idx === 16 || idx === 17) {
-                return [11]
-            } else if (idx === 18 || idx === 19) {
-                return [12]
-            } else if (idx === 20 || idx === 21) {
-                return [13]
-            } else return [0, 2];
+            const targetWords = ["hp", "atk", "def", "matk", "mdef", "hpmax", "atkmax", "defmax", "matkmax", "mdefmax", "speed"];
+            for (let i = 0; i < targetWords.length; i++) {
+                const base = targetWords[i];
+                if (keyword.startsWith(`${base}:gt:`) || keyword.startsWith(`${base}:lt:`)) {
+                    return [getIndex()];
+                }
+            }
+            return [0, 2];
         }
-
-        fetch('status.csv')
-            .then(res => {
-                if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
-                return res.text();
-            })
-            .then(csv => {
-                const lines = csv.trim().split('\n').map(l => l.split(','));
-                headers = lines[0];
-                originalData = lines.slice(1);
-                updateHeaderIndicators();
-                applyFilterAndRender();
-            })
-            .catch(err => {
-                document.getElementById('csv-body').innerHTML = `
-          <tr><td class="p-4 text-red-500" colspan="100%">${err.message}</td></tr>
-        `;
-            });
-
-        document.getElementById('searchInput').addEventListener('input', applyFilterAndRender);
-        document.getElementById('ltInput').addEventListener('input', applyFilterAndRender);
-        document.getElementById('gtInput').addEventListener('input', applyFilterAndRender);
-        document.getElementById('gtltFilter').addEventListener('change', applyFilterAndRender);
-        document.getElementById('or-and').addEventListener('change', applyFilterAndRender);
 
         function reloadPage() {
             location.reload();
@@ -278,8 +238,8 @@
         function goToNextPage() {
             let text = "";
             if (inheritanceEnabled) {
-                filtered.map(row => {
-                    row.map((cell, colIndex) => {
+                filtered.forEach(row => {
+                    row.forEach((cell, colIndex) => {
                         if (colIndex === 0) text += cell + " ";
                     });
                 });
@@ -287,8 +247,39 @@
             }
             location.href = `index.html`;
         }
-    </script>
 
+        function addColumn() {
+            const newHeader = prompt("新しい列の名前を入力してください:");
+            if (!newHeader) return;
+            headers.push(newHeader);
+            for (let row of originalData) row.push("");
+            updateHeaderIndicators();
+            applyFilterAndRender();
+        }
+
+        // CSV 読み込み
+        fetch('status.csv')
+            .then(res => {
+                if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
+                return res.text();
+            })
+            .then(csv => {
+                const lines = csv.trim().split('\n').map(l => l.split(','));
+                headers = lines[0];
+                originalData = lines.slice(1);
+                updateHeaderIndicators();
+                applyFilterAndRender();
+            })
+            .catch(err => {
+                document.getElementById('csv-body').innerHTML = `<tr><td class="p-4 text-red-500" colspan="100%">${err.message}</td></tr>`;
+            });
+
+        document.getElementById('searchInput').addEventListener('input', applyFilterAndRender);
+        document.getElementById('ltInput').addEventListener('input', applyFilterAndRender);
+        document.getElementById('gtInput').addEventListener('input', applyFilterAndRender);
+        document.getElementById('gtltFilter').addEventListener('change', applyFilterAndRender);
+        document.getElementById('or-and').addEventListener('change', applyFilterAndRender);
+    </script>
 </body>
 
 </html>
