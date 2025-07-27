@@ -288,7 +288,7 @@
             }
             if (Array.isArray(character.skills.EX) && character.skills.EX[0] && character.skills.EX[0].name !== undefined) {
                 document.getElementById('ex-skill').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[0].imgURL}" alt="${character.skills.EX[0].imgURL}"  style="width: 50%"><br>専属EXスキル`;
-                //document.getElementById('ex-skill').addEventListener('click', () => showModal2(character, 'exSkill', 0));
+                document.getElementById('ex-skill').addEventListener('click', () => showModal2(character, 'EX', 0));
             } else {
                 document.getElementById('ex-skill').innerHTML = ``;
             }
