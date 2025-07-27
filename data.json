@@ -882,7 +882,7 @@
                         ]
                     },
                     {
-                        "name": "破甲の一撃(近距離))",
+                        "name": "破甲の一撃(近距離)",
                         "imgURL": "./img/skillIMG/破甲の一撃(近距離).png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
@@ -6832,6 +6832,17 @@
                         "CD": "0",
                         "desc": "回復：単体回復。ターゲットのHPを80%回復させる。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "どっか～ん！",
+                        "imgURL": "./img/skillIMG/どっか～ん！.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
+                    }
                 ]
             }
         },
@@ -7051,6 +7062,17 @@
                         "tags": [
                             "回避"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "駆ける孤刃",
+                        "imgURL": "./img/skillIMG/駆ける孤刃.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }
@@ -7470,6 +7492,17 @@
                             "✗援護",
                             "遮断"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "風纏いの矢",
+                        "imgURL": "./img/skillIMG/風纏いの矢.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }
@@ -8448,10 +8481,10 @@
                         "name": "鈴蘭の戦旗",
                         "imgURL": "./img/skillIMG/鈴蘭の戦旗.png",
                         "rangeImgURL": ".png",
-                        "type": "リーダーのオーラ",
+                        "type": "陣営オーラ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "リーダーのオーラ：フィールド上のすべての陣営が<鈴蘭の剣>の味方の攻撃力+10%、防御力+20%。"
+                        "desc": "陣営オーラ：フィールド上のすべての陣営が<鈴蘭の剣>の味方の攻撃力+10%、防御力+20%。"
                     },
                     {
                         "name": "包帯",
@@ -8517,6 +8550,17 @@
                             "被ダメージ軽減Lv.4",
                             "干渉"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "私にお任せを！",
+                        "imgURL": "./img/skillIMG/私にお任せを！.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }
@@ -9315,6 +9359,17 @@
                             "孤立"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "取り巻く鮮血",
+                        "imgURL": "./img/skillIMG/取り巻く鮮血.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
+                    }
                 ]
             }
         },
@@ -9941,6 +9996,17 @@
                             "能力値デバフ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "烈風狂舞",
+                        "imgURL": "./img/skillIMG/烈風狂舞.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
+                    }
                 ]
             }
         },
@@ -10138,6 +10204,17 @@
                         "tags": [
                             "バフ"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "敬虔なる庇護の祈り",
+                        "imgURL": "./img/skillIMG/敬虔なる庇護の祈り.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }
@@ -10567,6 +10644,17 @@
                             "受け身"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "先陣",
+                        "imgURL": "./img/skillIMG/先陣.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
+                    }
                 ]
             }
         },
@@ -10795,6 +10883,17 @@
                         "tags": [
                             "瀕死"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "鉄則の盾",
+                        "imgURL": "./img/skillIMG/鉄則の盾.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }
@@ -11403,6 +11502,17 @@
                             "意志"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "深淵の囁き",
+                        "imgURL": "./img/skillIMG/深淵の囁き.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
+                    }
                 ]
             }
         },
@@ -11622,6 +11732,17 @@
                             "受け身",
                             "突撃"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "狩猟の時",
+                        "imgURL": "./img/skillIMG/狩猟の時.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }
@@ -11843,6 +11964,17 @@
                         "tags": [
                             "火属性"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "烈意の重撃",
+                        "imgURL": "./img/skillIMG/烈意の重撃.png",
+                        "rangeImgURL": ".png",
+                        "type": "-",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "-"
                     }
                 ]
             }

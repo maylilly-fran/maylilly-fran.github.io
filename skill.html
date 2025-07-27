@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>【鈴蘭の剣】フランなツール</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <style>
+    .characterbtn {
+      margin-top: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 20px;
+      font-size: 15px;
+      background-color: cadetblue;
+      color: white;
+      cursor: pointer;
+    }
+
+    .characterbtn:hover {
+      background-color: #407577;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <button class="reloadBtn" onclick="reloadPage()">🔄</button>
+      <button class="characterbtn" onclick="location.href='index.html'">キャラクタ一覧へ</button>
+      <button class="characterbtn" onclick="toggleSortable()" id="toggleSortBtn">並び替えOFF</button>
+      <input id="searchInput" type="text" placeholder="検索..." class="mb-4 px-4 py-2 w-full border rounded">
+    </div>
+
+    <!-- ✅ ヘッダー固定に必要な max-height + overflow -->
+    <div class="overflow-auto" style="max-height: 80vh;">
+      <table id="csv-table" class="table-auto min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <!-- ✅ sticky header -->
+        <thead class="bg-gray-200 text-gray-700 sticky top-0 z-10">
+          <tr id="csv-header" class="text-left cursor-pointer"></tr>
+        </thead>
+        <tbody id="csv-body" class="text-gray-800"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let originalData = [];
+    let headers = [];
+    let sortState = { column: null, ascending: true };
+    let sortableInstance = null;
+    let sortableEnabled = false;
+    const imageColumnIndex = 1;
+    const imageColumnIndex2 = 2;
+
+    function renderTable(data) {
+      const body = document.getElementById('csv-body');
+      body.innerHTML = data.map(row => `
+        <tr class="${sortableEnabled ? 'hover:bg-gray-100 cursor-move' : 'hover:bg-gray-100 cursor-default'}">
+          ${row.map((cell, colIndex) => {
+            const content = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2)
+              ? `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`
+              : cell;
+            return `<td class="border-t px-4 py-2 whitespace-nowrap"><b>${content}</b></td>`;
+          }).join('')}
+        </tr>
+      `).join('');
+
+      if (sortableInstance) {
+        sortableInstance.destroy();
+        sortableInstance = null;
+      }
+
+      if (sortableEnabled) {
+        sortableInstance = Sortable.create(body, {
+          animation: 150,
+          ghostClass: 'bg-yellow-100',
+        });
+      }
+    }
+
+    function sortTableByColumn(colIndex) {
+      const ascending = sortState.column === colIndex ? !sortState.ascending : true;
+      sortState = { column: colIndex, ascending };
+
+      originalData.sort((a, b) => {
+        const aVal = a[colIndex] ?? '';
+        const bVal = b[colIndex] ?? '';
+        return ascending
+          ? aVal.localeCompare(bVal, 'ja', { numeric: true })
+          : bVal.localeCompare(aVal, 'ja', { numeric: true });
+      });
+
+      applyFilterAndRender();
+      updateHeaderIndicators();
+    }
+
+    function updateHeaderIndicators() {
+      const headerRow = headers.map((title, index) => {
+        const isSorted = sortState.column === index;
+        const arrow = isSorted ? (sortState.ascending ? '▲' : '▼') : '';
+        return `<th onclick="sortTableByColumn(${index})" class="px-4 py-2 whitespace-nowrap hover:bg-gray-300">${title} ${arrow}</th>`;
+      }).join('');
+      document.getElementById('csv-header').innerHTML = headerRow;
+    }
+
+    function applyFilterAndRender() {
+      const keyword = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = originalData.filter(row =>
+        row.some(cell => cell.toLowerCase().includes(keyword))
+      );
+      renderTable(filtered);
+    }
+
+    function toggleSortable() {
+      sortableEnabled = !sortableEnabled;
+      document.getElementById("toggleSortBtn").innerText = sortableEnabled ? "並び替えON" : "並び替えOFF";
+      renderTable(originalData);
+    }
+
+    function reloadPage() {
+      location.reload();
+    }
+
+    fetch('status.csv')
+      .then(res => {
+        if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
+        return res.text();
+      })
+      .then(csv => {
+        const lines = csv.trim().split('\n').map(l => l.split(','));
+        headers = lines[0];
+        originalData = lines.slice(1);
+        updateHeaderIndicators();
+        renderTable(originalData);
+      })
+      .catch(err => {
+        document.getElementById('csv-body').innerHTML = `
+          <tr><td class="p-4 text-red-500" colspan="100%">${err.message}</td></tr>
+        `;
+      });
+
+    document.getElementById('searchInput').addEventListener('input', applyFilterAndRender);
+  </script>
+
+</body>
+
+</html>

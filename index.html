@@ -90,7 +90,10 @@
                         <div class="tab-content" id="hoshi3" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi2" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi1" style="text-align: left"></div>
-                        <div id="silhouette-skill"></div>
+                        <div class="container" style="margin-top: 20px;">
+                            <div id="silhouette-skill"></div>
+                            <div id="ex-skill"></div>
+                        </div>
                     </div>
                 </div>
                 <div style="padding: 10px;">
@@ -278,10 +281,16 @@
             document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
             document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
             if (Array.isArray(character.skills.silhouetteSkill) && character.skills.silhouetteSkill[0] && character.skills.silhouetteSkill[0].name !== undefined) {
-                document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}"><br>シルエットスキル`;
+                document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}" style="width: 50%"><br>シルエットスキル`;
                 document.getElementById('silhouette-skill').addEventListener('click', () => showModal2(character, 'silhouetteSkill', 0));
             } else {
                 document.getElementById('silhouette-skill').innerHTML = ``;
+            }
+            if (Array.isArray(character.skills.EX) && character.skills.EX[0] && character.skills.EX[0].name !== undefined) {
+                document.getElementById('ex-skill').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[0].imgURL}" alt="${character.skills.EX[0].imgURL}"  style="width: 50%"><br>専属EXスキル`;
+                //document.getElementById('ex-skill').addEventListener('click', () => showModal2(character, 'exSkill', 0));
+            } else {
+                document.getElementById('ex-skill').innerHTML = ``;
             }
 
             let content = '';
