@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>マス目表示</title>
+    <style>
+        canvas {
+            border: 1px solid #222;
+            display: block;
+            margin: 20px auto;
+            background-color: #1a1e2a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        html,
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gridCanvas" width="300" height="300"></canvas>
+    <div style="display: none; justify-content: center;">
+        <input id="min" style="margin: 10px; text-align: center;" />
+        <input id="max" style="margin: 10px; text-align: center;" />
+        <input id="range" style="margin: 10px; text-align: center;" />
+    </div>
+    <div style="display: none; justify-content: center;">
+        Square<input id="square" type="checkbox" style="margin-right: 10px;" />
+        SquareR<input id="squareR" type="checkbox" style="margin-right: 10px;" />
+        Rect<input id="rect" type="checkbox" style="margin-right: 10px;" />
+        Line<input id="line" type="checkbox" style="margin-right: 10px;" />
+        LineR<input id="lineR" type="checkbox" />
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gridCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const rows = 31;
+        const cols = 31;
+        const cellSize = 10;
+        const centerRow = Math.floor(rows / 2);
+        const centerCol = Math.floor(cols / 2);
+
+        let highlightRange = { min: 1, max: 1 };
+        let range = 0;
+        let useSquareRange = false;
+        let useSquareRRange = false;
+        let useRectRange = false;
+        let useLineRange = false;
+        let useLineRRange = false;
+
+        document.getElementById('min').value = 1;
+        document.getElementById('max').value = 1;
+        document.getElementById('range').value = 0;
+
+        function manhattanDistance(r1, c1, r2, c2) {
+            return Math.abs(r1 - r2) + Math.abs(c1 - c2);
+        }
+
+        function isInHighlightRange(i, j) {
+            const dist = manhattanDistance(i, j, centerRow, centerCol);
+            return dist >= highlightRange.min && dist <= highlightRange.max;
+        }
+
+        function isInRangeFromOrigin(i, j, originRow, originCol, rangeMin, rangeMax) {
+            const dist = manhattanDistance(i, j, originRow, originCol);
+            return dist >= rangeMin && dist <= rangeMax;
+        }
+
+        function isInSquareRange(i, j, originRow, originCol, size) {
+            return (
+                i >= originRow - size &&
+                i <= originRow + size &&
+                j >= originCol - size &&
+                j <= originCol + size
+            );
+        }
+
+        function isInCustomRectRange(i, j, originRow, originCol, width, height) {
+            const halfW = Math.floor(width / 2);
+
+            const bottomRow = originRow;  // 下辺が起点
+            const topRow = originRow - height + 1;  // 上に伸びる
+
+            const leftCol = originCol - halfW;
+            const rightCol = originCol + (width - 1) - halfW;
+
+            return (
+                i >= topRow && i <= bottomRow &&
+                j >= leftCol && j <= rightCol
+            );
+        }
+
+        function isInLineRange(i, j, originRow, originCol, minSize, size, selecter) {
+            const rowDiff = Math.abs(i - originRow);
+            const colDiff = Math.abs(j - originCol);
+            if (selecter) {
+                if (i >= originRow) return false;
+            }
+            return (
+                (i === originRow && colDiff >= minSize && colDiff <= size) ||
+                (j === originCol && rowDiff >= minSize && rowDiff <= size)
+            );
+        }
+
+        function findFarthestCell() {
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    if (manhattanDistance(i, j, centerRow, centerCol) === highlightRange.max) {
+                        return { r: i, c: j };
+                    }
+                }
+            }
+            return null;
+        }
+
+        function drawGrid() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.save();
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.transform(1, 0, -0.275, 0.65, 0, 0);
+            ctx.rotate(Math.PI / 7);
+
+            ctx.strokeStyle = 'rgba(200, 200, 200, 0.1)';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([2, 4]);
+
+            const farthest = findFarthestCell();
+
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    const x = (j - centerCol) * cellSize;
+                    const y = (i - centerRow) * cellSize;
+
+                    if (i === centerRow && j === centerCol) {
+                        ctx.fillStyle = '#ff9900';
+                        ctx.fillRect(x, y, cellSize, cellSize);
+                    } else if (useLineRange) {
+                        if (isInLineRange(i, j, centerCol, centerRow, highlightRange.min, highlightRange.max, false)) {
+                            ctx.fillStyle = '#ff7f50';
+                            ctx.fillRect(x, y, cellSize, cellSize);
+                        }
+                    } else if (useSquareRange) {
+                        if (isInSquareRange(i, j, centerCol, centerRow, highlightRange.max)) {
+                            ctx.fillStyle = '#ff7f50';
+                            ctx.fillRect(x, y, cellSize, cellSize);
+                        }
+                    } else if (isInHighlightRange(i, j)) {
+                        ctx.fillStyle = '#ff7f50';
+                        ctx.fillRect(x, y, cellSize, cellSize);
+                    }
+
+                    // 🔽 range 塗り処理
+                    if (range >= 0 && farthest) {
+                        // 🔀 フラグによる分岐処理
+                        if (useSquareRRange) {
+                            // ✅ 四角範囲で塗りつぶす
+                            if (isInSquareRange(i, j, farthest.r, farthest.c, range)) {
+                                ctx.fillStyle = '#ffd45c';
+                                ctx.fillRect(x, y, cellSize, cellSize);
+                            }
+                        } else if (useRectRange) {
+                            // ✅ 長方形範囲で塗りつぶす
+                            if (isInCustomRectRange(i, j, farthest.r, farthest.c, Math.floor(range / 10), range % 10)) {
+                                ctx.fillStyle = '#ffd45c';
+                                ctx.fillRect(x, y, cellSize, cellSize);
+                            }
+                        } else if (useLineRRange) {
+                            // ✅ 直線範囲で塗りつぶす
+                            if (isInLineRange(i, j, centerCol, centerRow, Math.floor(range / 10), range % 10, true)) {
+                                ctx.fillStyle = '#ffd45c';
+                                ctx.fillRect(x, y, cellSize, cellSize);
+                            }
+                        } else {
+                            // ✅ 従来通りマンハッタン距離で塗る
+                            if (isInRangeFromOrigin(i, j, farthest.r, farthest.c, 1, range)) {
+                                ctx.fillStyle = '#ffd45c';
+                                ctx.fillRect(x, y, cellSize, cellSize);
+                            }
+                        }
+                        // 最遠マスを描画
+                        if (i === farthest.r && j === farthest.c && useRectRange === false && useLineRRange === false) {
+                            if (range === 0) {
+                                ctx.fillStyle = '#ffd45c';
+                            } else {
+                                ctx.fillStyle = '#ff9900';
+                            }
+                            ctx.fillRect(x, y, cellSize, cellSize);
+                        }
+
+                    }
+
+                    ctx.strokeRect(x, y, cellSize, cellSize);
+                }
+            }
+
+            ctx.restore();
+        }
+
+        drawGrid();
+
+        document.getElementById('min').addEventListener('input', setValue);
+        document.getElementById('max').addEventListener('input', setValue);
+        document.getElementById('range').addEventListener('input', setValue);
+        document.getElementById('square').addEventListener('change', setValue);
+        document.getElementById('squareR').addEventListener('change', setValue);
+        document.getElementById('rect').addEventListener('change', setValue);
+        document.getElementById('line').addEventListener('change', setValue);
+        document.getElementById('lineR').addEventListener('change', setValue);
+
+        function setValue() {
+            if (Number(document.getElementById('min').value) <= Number(document.getElementById('max').value)) {
+                highlightRange = {
+                    min: Number(document.getElementById('min').value),
+                    max: Number(document.getElementById('max').value)
+                };
+                range = Number(document.getElementById('range').value);
+                useSquareRange = document.getElementById('square').checked;
+                useSquareRRange = document.getElementById('squareR').checked;
+                useRectRange = document.getElementById('rect').checked;
+                useLineRange = document.getElementById('line').checked;
+                useLineRRange = document.getElementById('lineR').checked;
+                drawGrid();
+            }
+        }
+
+    </script>
+</body>
+
+</html>

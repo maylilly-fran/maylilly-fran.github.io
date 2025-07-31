@@ -310,6 +310,7 @@
     "characters": [
         {
             "name": "ターイル",
+            "No": "76",
             "hp": "345",
             "atk": "138",
             "def": "56",
@@ -324,6 +325,8 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ターイル.png",
+            "imageURL2": "./img/characterPortraitIMG/ターイル.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ターイル覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -521,11 +524,23 @@
                             "篭中の夢"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ルトフィ",
+            "No": "95",
             "hp": "380",
             "atk": "208",
             "def": "59",
@@ -540,6 +555,8 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ルトフィ.png",
+            "imageURL2": "./img/characterPortraitIMG/ルトフィ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ルトフィ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -667,8 +684,8 @@
                         "desc": "通常攻撃：単体攻撃。100%の物理ダメージを与え、ランダムなLv.2能力値デバフ2個を付与し、2ターン継続する。その間敵が攻撃をした場合、回避を発動し、さらに追撃し、40%の物理ダメージを与え、自身は1マス後退する。"
                     },
                     {
-                        "name": "暗駒",
-                        "imgURL": "./img/skillIMG/暗駒.png",
+                        "name": "暗棋",
+                        "imgURL": "./img/skillIMG/暗棋.png",
                         "rangeImgURL": ".png",
                         "type": "通常攻撃",
                         "cost": "-",
@@ -695,11 +712,23 @@
                         "CD": "0",
                         "desc": "デバフ：ターゲット地点1輪以内のすべての敵に2スタックの着火を付与し、パネルを燃焼に変える。すべての効果は2ターン継続する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ココア",
+            "No": "77",
             "hp": "425",
             "atk": "196",
             "def": "98",
@@ -714,6 +743,8 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ココア.png",
+            "imageURL2": "./img/characterPortraitIMG/ココア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ココア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "ウィルダ",
@@ -923,11 +954,23 @@
                             "弁当"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "オーギュスト",
+            "No": "74",
             "hp": "400",
             "atk": "225",
             "def": "89",
@@ -942,6 +985,8 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/オーギュスト.png",
+            "imageURL2": "./img/characterPortraitIMG/オーギュスト.jpg",
+            "imageURL3": "./img/characterPortraitIMG/オーギュスト覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "騎士連合",
@@ -1145,11 +1190,23 @@
                             "怒り"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戦陣の豪壮",
+                        "imgURL": "./img/skillIMG/戦陣の豪壮.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "ラヴィア・初夏の記憶",
+            "No": "82",
             "hp": "372",
             "atk": "215",
             "def": "59",
@@ -1164,6 +1221,8 @@
             "role": "アサルター",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ラヴィア・初夏の記憶.png",
+            "imageURL2": "./img/characterPortraitIMG/ラヴィア・初夏の記憶.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ラヴィア・初夏の記憶覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -1378,11 +1437,23 @@
                             "スタミナ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戦陣の豪壮",
+                        "imgURL": "./img/skillIMG/戦陣の豪壮.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "アガタ",
+            "No": "75",
             "hp": "372",
             "atk": "208",
             "def": "74",
@@ -1397,6 +1468,8 @@
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/アガタ.png",
+            "imageURL2": "./img/characterPortraitIMG/アガタ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/アガタ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -1606,11 +1679,23 @@
                             "健康"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "全盛態勢",
+                        "imgURL": "./img/skillIMG/全盛態勢.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、 無傷状態の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、 無傷状態の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、 無傷状態の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "コヴァレ",
+            "No": "87",
             "hp": "345",
             "atk": "136",
             "def": "73",
@@ -1625,6 +1710,8 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/コヴァレ.png",
+            "imageURL2": "./img/characterPortraitIMG/コヴァレ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/コヴァレ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -1861,11 +1948,23 @@
                             "即時"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ホーマ",
+            "No": "81",
             "hp": "353",
             "atk": "217",
             "def": "70",
@@ -1880,6 +1979,8 @@
             "role": "ブレイカー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ホーマ.png",
+            "imageURL2": "./img/characterPortraitIMG/ホーマ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ホーマ覚醒.jpg",
             "camps": [
                 "漂泊者",
                 "侵略如火"
@@ -2087,11 +2188,23 @@
                             "✗パッシブスキル"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "高所制圧の道",
+                        "imgURL": "./img/skillIMG/高所制圧の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。高地攻撃時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。高地攻撃時、ダメージ+10%。<br>パッシブ：Lv.1効果、高地攻撃時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "エストラ",
+            "No": "89",
             "hp": "370",
             "atk": "225",
             "def": "65",
@@ -2106,6 +2219,8 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/エストラ.png",
+            "imageURL2": "./img/characterPortraitIMG/エストラ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/エストラ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -2319,11 +2434,23 @@
                         "CD": "2",
                         "desc": "物理ダメージ：単体攻撃。リアクションスキルを無視し、まずターゲットに40%のダメージを与える。その後、ターゲットに100%のダメージを与える。攻撃前、ターゲットのENが1Pt不足ごとに、与ダメージが130%にアップし、最大190%までアップする。敵を倒した時、自身がENが3Pt回復する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "アイサ",
+            "No": "92",
             "hp": "377",
             "atk": "221",
             "def": "70",
@@ -2338,6 +2465,8 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/アイサ.png",
+            "imageURL2": "./img/characterPortraitIMG/アイサ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/アイサ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -2496,11 +2625,23 @@
                         "CD": "-",
                         "desc": "パッシブ：反撃最大射程+2マス。反撃時、物理ダメージ+50%、追加で反撃回数+2。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "サフィア",
+            "No": "50",
             "hp": "380",
             "atk": "198",
             "def": "73",
@@ -2515,6 +2656,8 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/サフィア.png",
+            "imageURL2": "./img/characterPortraitIMG/サフィア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/サフィア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -2735,11 +2878,23 @@
                             "吊し人のマーク"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "全盛態勢",
+                        "imgURL": "./img/skillIMG/全盛態勢.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、 無傷状態の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、 無傷状態の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、 無傷状態の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "フラビア",
+            "No": "90",
             "hp": "374",
             "atk": "154",
             "def": "92",
@@ -2754,6 +2909,8 @@
             "role": "ディフェンダー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/フラビア.png",
+            "imageURL2": "./img/characterPortraitIMG/フラビア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/フラビア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -2908,11 +3065,23 @@
                         "CD": "-",
                         "desc": "パッシブ：フラビア存在時：植物の友攻撃と防御能力値+8%、被ダメージｰ40%。行動終了時、自身範囲2マス以内のすべてのパネルを花畑に変え、2ターン継続し、さらに植物の友を自身のそばにワープさせる。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "アフラ",
+            "No": "93",
             "hp": "389",
             "atk": "158",
             "def": "74",
@@ -2927,6 +3096,8 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/アフラ.png",
+            "imageURL2": "./img/characterPortraitIMG/アフラ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/アフラ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -3081,11 +3252,23 @@
                         "CD": "0",
                         "desc": "回復：ターゲット範囲2マス以内の味方全員を30%回復させる。回復量は魔攻値の60%、1個のデバフを解除する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ルヴァタ",
+            "No": "88",
             "hp": "340",
             "atk": "138",
             "def": "57",
@@ -3100,6 +3283,8 @@
             "role": "ブレイカー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ルヴァタ.png",
+            "imageURL2": "./img/characterPortraitIMG/ルヴァタ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ルヴァタ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -3319,11 +3504,23 @@
                             "燃焼"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "火力打撃の道",
+                        "imgURL": "./img/skillIMG/火力打撃の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+8%、最大24%。<br>パッシブ：Lv.2効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+4%、最大12%。<br>パッシブ：Lv.1効果、1つのターゲットに命中するごとに、ダメージ+4%、最大12%。"
+                    }
                 ]
             }
         },
         {
             "name": "グロリア",
+            "No": "48",
             "hp": "382",
             "atk": "203",
             "def": "71",
@@ -3338,6 +3535,8 @@
             "role": "ウォッチャー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/グロリア.png",
+            "imageURL2": "./img/characterPortraitIMG/グロリア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/グロリア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "騎士連合",
@@ -3547,11 +3746,23 @@
                             "物理シールド"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "パミーナ",
+            "No": "83",
             "hp": "408",
             "atk": "200",
             "def": "100",
@@ -3566,6 +3777,8 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/パミーナ.png",
+            "imageURL2": "./img/characterPortraitIMG/パミーナ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/パミーナ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -3770,11 +3983,23 @@
                             "健康"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "サフィア・夏時の約束",
+            "No": "86",
             "hp": "389",
             "atk": "208",
             "def": "69",
@@ -3789,6 +4014,8 @@
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/サフィア・夏時の約束.png",
+            "imageURL2": "./img/characterPortraitIMG/サフィア・夏時の約束.jpg",
+            "imageURL3": "./img/characterPortraitIMG/サフィア・夏時の約束覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -3999,11 +4226,23 @@
                             "機動隊マーク"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戮力協心",
+                        "imgURL": "./img/skillIMG/戮力協心.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "トリスタ",
+            "No": "84",
             "hp": "430",
             "atk": "247",
             "def": "73",
@@ -4018,6 +4257,8 @@
             "role": "デストロイヤー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/トリスタ.png",
+            "imageURL2": "./img/characterPortraitIMG/トリスタ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/トリスタ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "騎士連合",
@@ -4232,11 +4473,23 @@
                             "能力値デバフ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "アカンベ",
+            "No": "79",
             "hp": "389",
             "atk": "157",
             "def": "80",
@@ -4251,6 +4504,8 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/アカンベ.png",
+            "imageURL2": "./img/characterPortraitIMG/アカンベ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/アカンベ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -4464,11 +4719,23 @@
                             "防御貫通"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戮力協心",
+                        "imgURL": "./img/skillIMG/戮力協心.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "イナンナ",
+            "No": "64",
             "hp": "355",
             "atk": "140",
             "def": "50",
@@ -4483,6 +4750,8 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/イナンナ.png",
+            "imageURL2": "./img/characterPortraitIMG/イナンナ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/イナンナ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "鈴蘭の剣",
@@ -4683,11 +4952,23 @@
                             "個性"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "カリス",
+            "No": "78",
             "hp": "372",
             "atk": "116",
             "def": "66",
@@ -4702,6 +4983,8 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/カリス.png",
+            "imageURL2": "./img/characterPortraitIMG/カリス.jpg",
+            "imageURL3": "./img/characterPortraitIMG/カリス覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -4919,11 +5202,23 @@
                             "▽魔防Lv.3"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "ニーティア",
+            "No": "94",
             "hp": "372",
             "atk": "225",
             "def": "80",
@@ -4938,6 +5233,8 @@
             "role": "アサルター",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ニーティア.png",
+            "imageURL2": "./img/characterPortraitIMG/ニーティア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ニーティア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "騎士連合",
@@ -5096,11 +5393,23 @@
                         "CD": "1",
                         "desc": "支援：即時、矢乱舞を獲得する。効果：維持状態時、EN2ptを消費する。個性中の魔攻の加算割合が1.5倍になる。アクティブ通常攻撃後、追加で通常攻撃射程内の最も近くにいるターゲットに通常攻撃を行う。その時の追加の通常攻撃ダメージは10%にダウンする。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "流星団",
+            "No": "91",
             "hp": "404",
             "atk": "200",
             "def": "77",
@@ -5115,6 +5424,8 @@
             "role": "ウォッチャー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/流星団.png",
+            "imageURL2": "./img/characterPortraitIMG/流星団.jpg",
+            "imageURL3": "./img/characterPortraitIMG/流星団覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -5311,11 +5622,23 @@
                             "即時"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "全盛態勢",
+                        "imgURL": "./img/skillIMG/全盛態勢.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、 無傷状態の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、 無傷状態の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、 無傷状態の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "モモ",
+            "No": "65",
             "hp": "387",
             "atk": "163",
             "def": "55",
@@ -5330,6 +5653,8 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/モモ.png",
+            "imageURL2": "./img/characterPortraitIMG/モモ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/モモ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "鈴蘭の剣",
@@ -5531,11 +5856,23 @@
                             "HPドレイン"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "機動援助の道",
+                        "imgURL": "./img/skillIMG/機動援助の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。自身のターン以外の時のダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。自身のターン以外の時のダメージ+10%。<br>パッシブ：Lv.1効果、自身のターン以外の時のダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "リラ",
+            "No": "85",
             "hp": "365",
             "atk": "221",
             "def": "78",
@@ -5550,6 +5887,8 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/リラ.png",
+            "imageURL2": "./img/characterPortraitIMG/リラ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/リラ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -5752,11 +6091,23 @@
                         "CD": "-",
                         "desc": "パッシブ：自身魔防値の40%を物攻値に付加し、戦闘開始時、HP+10%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戮力協心",
+                        "imgURL": "./img/skillIMG/戮力協心.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "エダ",
+            "No": "67",
             "hp": "300",
             "atk": "201",
             "def": "63",
@@ -5771,6 +6122,8 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/エダ.png",
+            "imageURL2": "./img/characterPortraitIMG/エダ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/エダ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -5964,11 +6317,23 @@
                         "CD": "0",
                         "desc": "物理ダメージ：単体攻撃。自身十字範囲内の敵1体を選択し、120%のダメージを与える。ターゲットとの距離が1マス離れる(隣接マスは0マス扱い)ごとに、ダメージ+10%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "機動援助の道",
+                        "imgURL": "./img/skillIMG/機動援助の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。自身のターン以外の時のダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。自身のターン以外の時のダメージ+10%。<br>パッシブ：Lv.1効果、自身のターン以外の時のダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ノノヴィア",
+            "No": "57",
             "hp": "380",
             "atk": "204",
             "def": "63",
@@ -5983,6 +6348,8 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ノノヴィア.png",
+            "imageURL2": "./img/characterPortraitIMG/ノノヴィア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ノノヴィア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "鈴蘭の剣",
@@ -6172,11 +6539,23 @@
                             "負傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "シモーナ",
+            "No": "71",
             "hp": "332",
             "atk": "155",
             "def": "73",
@@ -6191,6 +6570,8 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/シモーナ.png",
+            "imageURL2": "./img/characterPortraitIMG/シモーナ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/シモーナ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "騎士連合",
@@ -6406,11 +6787,23 @@
                             "瀕死"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "相性勝利の道",
+                        "imgURL": "./img/skillIMG/相性勝利の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、有利ロールの敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ヌンガル",
+            "No": "72",
             "hp": "350",
             "atk": "236",
             "def": "66",
@@ -6425,6 +6818,8 @@
             "role": "デストロイヤー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ヌンガル.png",
+            "imageURL2": "./img/characterPortraitIMG/ヌンガル.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ヌンガル覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -6620,11 +7015,23 @@
                             "高地"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ベラ",
+            "No": "52",
             "hp": "365",
             "atk": "169",
             "def": "67",
@@ -6639,6 +7046,8 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ベラ.png",
+            "imageURL2": "./img/characterPortraitIMG/ベラ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ベラ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -6835,19 +7244,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "火力打撃の道",
+                        "imgURL": "./img/skillIMG/火力打撃の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+8%、最大24%。<br>パッシブ：Lv.2効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+4%、最大12%。<br>パッシブ：Lv.1効果、1つのターゲットに命中するごとに、ダメージ+4%、最大12%。"
+                    },
+                    {
                         "name": "どっか～ん！",
                         "imgURL": "./img/skillIMG/どっか～ん！.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、ダメージ+15%。火傷または着火を所持しているキャラクターに対して、ダメージ+15%。同時に有効化できる。<br>パッシブ：Lv.2効果、ダメージ+10%。火傷または着火を所持しているキャラクターに対して、ダメージ+10%。同時に有効化できる。<br>パッシブ：Lv.1効果、ダメージ+10%。"
                     }
                 ]
             }
         },
         {
             "name": "コル",
+            "No": "63",
             "hp": "353",
             "atk": "210",
             "def": "67",
@@ -6862,6 +7281,8 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/コル.png",
+            "imageURL2": "./img/characterPortraitIMG/コル.jpg",
+            "imageURL3": "./img/characterPortraitIMG/コル覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -7066,19 +7487,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "暗影奇襲の道",
+                        "imgURL": "./img/skillIMG/暗影奇襲の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。背面攻撃時、追加ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。背面攻撃時、追加ダメージ+10%。<br>パッシブ：Lv.1効果、背面攻撃時、追加ダメージ+10%。"
+                    },
+                    {
                         "name": "駆ける孤刃",
                         "imgURL": "./img/skillIMG/駆ける孤刃.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、ダメージ、クリダメ+15%。スキル抹殺消費EN-1pt。スキル死の匂いのEN回復条件が以下の内容に変化する：任意の敵が倒される。<br>パッシブ：Lv.2効果、自身範囲2マス以内に味方がいない時、ダメージ、クリダメ+15%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に味方がいない時、ダメージ、クリダメ+15%。"
                     }
                 ]
             }
         },
         {
             "name": "ダンタリオン",
+            "No": "56",
             "hp": "415",
             "atk": "243",
             "def": "86",
@@ -7093,6 +7524,8 @@
             "role": "デストロイヤー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ダンタリオン.png",
+            "imageURL2": "./img/characterPortraitIMG/ダンタリオン.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ダンタリオン覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -7281,11 +7714,23 @@
                             "バフ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "リリヴィア",
+            "No": "60",
             "hp": "317",
             "atk": "192",
             "def": "63",
@@ -7300,6 +7745,8 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/リリヴィア.png",
+            "imageURL2": "./img/characterPortraitIMG/リリヴィア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/リリヴィア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "ウィルダ",
@@ -7496,19 +7943,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "高所制圧の道",
+                        "imgURL": "./img/skillIMG/高所制圧の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。高地攻撃時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。高地攻撃時、ダメージ+10%。<br>パッシブ：Lv.1効果、高地攻撃時、ダメージ+10%。"
+                    },
+                    {
                         "name": "風纏いの矢",
                         "imgURL": "./img/skillIMG/風纏いの矢.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、ターゲットとの距離が4以上の時、攻撃力+30%。単体攻撃後、ターゲットに追加で3スタックの感染を付与する。<br>パッシブ：Lv.2効果、ターゲットとの距離が4以上の時、攻撃力+20%。単体攻撃後、ターゲットに追加で2スタックの感染を付与する。<br>パッシブ：Lv.1効果、ターゲットとの距離が4以上の時、攻撃力+20%。"
                     }
                 ]
             }
         },
         {
             "name": "ファカール",
+            "No": "61",
             "hp": "317",
             "atk": "200",
             "def": "58",
@@ -7523,6 +7980,8 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ファカール.png",
+            "imageURL2": "./img/characterPortraitIMG/ファカール.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ファカール覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "鈴蘭の剣",
@@ -7720,11 +8179,23 @@
                         "CD": "-",
                         "desc": "パッシブ：自身のターン以外に追加でクリティカル発生率+45%、クリダメ+30%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "深淵の心",
+            "No": "35",
             "hp": "292",
             "atk": "119",
             "def": "48",
@@ -7739,6 +8210,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/深淵の心.png",
+            "imageURL2": "./img/characterPortraitIMG/深淵の心.jpg",
             "rarity": "エピック",
             "camps": [
                 "漂泊者",
@@ -7907,11 +8379,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：80%の魔法ダメージを与え、追加で1ptのENを回復する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "アレクセイ",
+            "No": "62",
             "hp": "395",
             "atk": "217",
             "def": "86",
@@ -7926,6 +8410,8 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/アレクセイ.png",
+            "imageURL2": "./img/characterPortraitIMG/アレクセイ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/アレクセイ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -8132,11 +8618,23 @@
                             "反撃"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "機動援助の道",
+                        "imgURL": "./img/skillIMG/機動援助の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。自身のターン以外の時のダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。自身のターン以外の時のダメージ+10%。<br>パッシブ：Lv.1効果、自身のターン以外の時のダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "マグナス",
+            "No": "68",
             "hp": "370",
             "atk": "215",
             "def": "101",
@@ -8151,6 +8649,8 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/マグナス.png",
+            "imageURL2": "./img/characterPortraitIMG/マグナス.jpg",
+            "imageURL3": "./img/characterPortraitIMG/マグナス覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -8339,11 +8839,23 @@
                         "CD": "0",
                         "desc": "物理ダメージ：単体攻撃。自身の物防値300%のダメージを与える。最大で物攻値200%。攻撃前、自身の物攻値20%を物防値に追加し、2ターン継続する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "マイサ",
+            "No": "53",
             "hp": "417",
             "atk": "200",
             "def": "93",
@@ -8358,6 +8870,8 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/マイサ.png",
+            "imageURL2": "./img/characterPortraitIMG/マイサ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/マイサ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "鈴蘭の剣",
@@ -8554,19 +9068,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    },
+                    {
                         "name": "私にお任せを！",
                         "imgURL": "./img/skillIMG/私にお任せを！.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、攻撃と防御能力値+20%。回復効果+40%を与える。アクティブスキル発動後、すべてのスキルCDが1ターン減少する。1ターンで最大1回発動する。<br>パッシブ：Lv.2効果、攻撃と防御能力値+20%。回復効果+40%を与える。<br>パッシブ：Lv.1効果、攻撃と防御能力値+20%。"
                     }
                 ]
             }
         },
         {
             "name": "輝ける慈愛",
+            "No": "27",
             "hp": "272",
             "atk": "107",
             "def": "49",
@@ -8581,6 +9105,7 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/輝ける慈愛.png",
+            "imageURL2": "./img/characterPortraitIMG/輝ける慈愛.jpg",
             "rarity": "エピック",
             "camps": [
                 "法皇国",
@@ -8741,11 +9266,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：80%の魔法ダメージを与え、次回の回復効果+15%、2ターン継続する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ハスナ",
+            "No": "80",
             "hp": "395",
             "atk": "158",
             "def": "73",
@@ -8760,6 +9297,8 @@
             "role": "アサルター",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ハスナ.png",
+            "imageURL2": "./img/characterPortraitIMG/ハスナ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ハスナ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -8958,11 +9497,23 @@
                             "HPドレイン"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "静謐の戒め",
+            "No": "30",
             "hp": "344",
             "atk": "168",
             "def": "61",
@@ -8977,6 +9528,7 @@
             "role": "ディフェンダー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/静謐の戒め.png",
+            "imageURL2": "./img/characterPortraitIMG/静謐の戒め.jpg",
             "rarity": "エピック",
             "camps": [
                 "法皇国",
@@ -9140,11 +9692,23 @@
                             "▽魔防Lv.1"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ガルシア",
+            "No": "66",
             "hp": "362",
             "atk": "211",
             "def": "70",
@@ -9159,6 +9723,8 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ガルシア.png",
+            "imageURL2": "./img/characterPortraitIMG/ガルシア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ガルシア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -9362,19 +9928,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "相性勝利の道",
+                        "imgURL": "./img/skillIMG/相性勝利の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、有利ロールの敵を攻撃する時、ダメージ+10%。"
+                    },
+                    {
                         "name": "取り巻く鮮血",
                         "imgURL": "./img/skillIMG/取り巻く鮮血.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、1スタックにつき回転加速、攻撃と防御能力値+3%。さらに回転加速が解除不可になる。孤立された敵を攻撃する時、スキル倍率+30%。<br>パッシブ：Lv.2効果、1スタックにつき回転加速、攻撃と防御能力値+2%。さらに回転加速が解除不可になる。<br>パッシブ：Lv.1効果、1スタックにつき回転加速、攻撃と防御能力値+1%。さらに回転加速が解除不可になる。"
                     }
                 ]
             }
         },
         {
             "name": "王国の槍「烈嘯」",
+            "No": "47",
             "hp": "334",
             "atk": "185",
             "def": "69",
@@ -9389,6 +9965,7 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/王国の槍「烈嘯」.png",
+            "imageURL2": "./img/characterPortraitIMG/王国の槍「烈嘯」.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -9570,11 +10147,23 @@
                             "貫通ダメージ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "破断の旋風",
+            "No": "32",
             "hp": "325",
             "atk": "188",
             "def": "61",
@@ -9589,6 +10178,7 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/破断の旋風.png",
+            "imageURL2": "./img/characterPortraitIMG/破断の旋風.jpg",
             "rarity": "エピック",
             "camps": [
                 "鈴蘭の剣",
@@ -9758,11 +10348,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：110%の物理ダメージを与える。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "火力打撃の道",
+                        "imgURL": "./img/skillIMG/火力打撃の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+8%、最大24%。<br>パッシブ：Lv.2効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+4%、最大12%。<br>パッシブ：Lv.1効果、1つのターゲットに命中するごとに、ダメージ+4%、最大12%。"
+                    }
                 ]
             }
         },
         {
             "name": "ラヴィア",
+            "No": "55",
             "hp": "404",
             "atk": "226",
             "def": "70",
@@ -9777,6 +10379,8 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/ラヴィア.png",
+            "imageURL2": "./img/characterPortraitIMG/ラヴィア.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ラヴィア覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "鈴蘭の剣",
@@ -9999,19 +10603,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "逆境奮迅",
+                        "imgURL": "./img/skillIMG/逆境奮迅.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、負傷状態の時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、負傷状態の時、ダメージ+10%、被ダメージ-10%。<br>パッシブ：Lv.1効果、負傷状態の時、ダメージ+5%、被ダメージ-5%。"
+                    },
+                    {
                         "name": "烈風狂舞",
                         "imgURL": "./img/skillIMG/烈風狂舞.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、ブロックを無視する。ほろ酔いを所持している時、攻撃力・クリダメ・スキル倍率+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、ブロックを無視する。ほろ酔いを所持している時、攻撃力・スキル倍率+15%、被ダメージ-15%。<br>パッシブ：Lv.1効果、ブロックを無視する。ほろ酔いを所持している時、攻撃力+15%、被ダメージ-15%。"
                     }
                 ]
             }
         },
         {
             "name": "サマンサ",
+            "No": "51",
             "hp": "330",
             "atk": "131",
             "def": "59",
@@ -10026,6 +10640,8 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/サマンサ.png",
+            "imageURL2": "./img/characterPortraitIMG/サマンサ.jpg",
+            "imageURL3": "./img/characterPortraitIMG/サマンサ覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -10208,19 +10824,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    },
+                    {
                         "name": "敬虔なる庇護の祈り",
                         "imgURL": "./img/skillIMG/敬虔なる庇護の祈り.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、魔攻+15%。個性オーラ範囲+2マス。アクティブ回復スキルを使用、または個性での回復が発動した場合、自身のすべてのスキルCDが1ターン減少する。1ターンで最大2回発動する。<br>パッシブ：Lv.2効果、魔攻+12%。個性オーラ範囲+2マス。<br>パッシブ：Lv.1効果、魔攻+10%。個性オーラ範囲+1マス。"
                     }
                 ]
             }
         },
         {
             "name": "レオニード",
+            "No": "70",
             "hp": "415",
             "atk": "215",
             "def": "73",
@@ -10235,6 +10861,8 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/レオニード.png",
+            "imageURL2": "./img/characterPortraitIMG/レオニード.jpg",
+            "imageURL3": "./img/characterPortraitIMG/レオニード覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -10437,11 +11065,23 @@
                         "CD": "-",
                         "desc": "パッシブ：近接物理攻撃を受ける前、ターゲットに向きを変え、自身の物攻の20%を物防に追加する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ザビエル",
+            "No": "54",
             "hp": "389",
             "atk": "226",
             "def": "80",
@@ -10456,6 +11096,8 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/ザビエル.png",
+            "imageURL2": "./img/characterPortraitIMG/ザビエル.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ザビエル覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -10647,19 +11289,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "火力打撃の道",
+                        "imgURL": "./img/skillIMG/火力打撃の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+8%、最大24%。<br>パッシブ：Lv.2効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+4%、最大12%。<br>パッシブ：Lv.1効果、1つのターゲットに命中するごとに、ダメージ+4%、最大12%。"
+                    },
+                    {
                         "name": "先陣",
                         "imgURL": "./img/skillIMG/先陣.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、スキル王国の槍CD-3ターン。基礎能力値と比べて、素早さが100pt以上増加してる時、ダメージ+20%、被ダメージ-20%。<br>パッシブ：Lv.2効果、スキル王国の槍CD-2ターン。基礎能力値と比べて、素早さが100pt以上増加してる時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.1効果、スキル王国の槍CD-1ターン。基礎能力値と比べて、素早さが100pt以上増加してる時、ダメージ+10%、被ダメージ-10%。"
                     }
                 ]
             }
         },
         {
             "name": "ティードン",
+            "No": "59",
             "hp": "412",
             "atk": "201",
             "def": "103",
@@ -10674,6 +11326,8 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ティードン.png",
+            "imageURL2": "./img/characterPortraitIMG/ティードン.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ティードン覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "騎士連合",
@@ -10887,19 +11541,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    },
+                    {
                         "name": "鉄則の盾",
                         "imgURL": "./img/skillIMG/鉄則の盾.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、攻撃し、自身の30%物理シールド値の貫通ダメージを与える。毎ターン警戒発動回数+1。警戒発動時、行動が中断されない。<br>パッシブ：Lv.2効果、攻撃し、自身の20%物理シールド値の貫通ダメージを与える。毎ターン警戒発動回数+1。<br>パッシブ：Lv.1効果、攻撃し、自身の10%物理シールド値の貫通ダメージを与える。毎ターン警戒発動回数+1。"
                     }
                 ]
             }
         },
         {
             "name": "輝ける光の鞭",
+            "No": "41",
             "hp": "309",
             "atk": "130",
             "def": "61",
@@ -10914,6 +11578,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/輝ける光の鞭.png",
+            "imageURL2": "./img/characterPortraitIMG/輝ける光の鞭.jpg",
             "rarity": "エピック",
             "camps": [
                 "法皇国",
@@ -11089,11 +11754,23 @@
                             "バフ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "逆境奮迅",
+                        "imgURL": "./img/skillIMG/逆境奮迅.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、負傷状態の時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、負傷状態の時、ダメージ+10%、被ダメージ-10%。<br>パッシブ：Lv.1効果、負傷状態の時、ダメージ+5%、被ダメージ-5%。"
+                    }
                 ]
             }
         },
         {
             "name": "狙撃教官「鋭い一閃」",
+            "No": "45",
             "hp": "284",
             "atk": "188",
             "def": "58",
@@ -11108,6 +11785,7 @@
             "role": "デストロイヤー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/狙撃教官「鋭い一閃」.png",
+            "imageURL2": "./img/characterPortraitIMG/狙撃教官「鋭い一閃」.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -11279,11 +11957,23 @@
                             "曲射"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "グズマン",
+            "No": "58",
             "hp": "434",
             "atk": "241",
             "def": "86",
@@ -11298,6 +11988,8 @@
             "role": "デストロイヤー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/グズマン.png",
+            "imageURL2": "./img/characterPortraitIMG/グズマン.jpg",
+            "imageURL3": "./img/characterPortraitIMG/グズマン覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
@@ -11505,19 +12197,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "逆境奮迅",
+                        "imgURL": "./img/skillIMG/逆境奮迅.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、負傷状態の時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、負傷状態の時、ダメージ+10%、被ダメージ-10%。<br>パッシブ：Lv.1効果、負傷状態の時、ダメージ+5%、被ダメージ-5%。"
+                    },
+                    {
                         "name": "深淵の囁き",
                         "imgURL": "./img/skillIMG/深淵の囁き.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、範囲ダメージ+40%。使用スキルスピリットドレイン時、攻撃が中断されず、さらに挑発を獲得し、このスキルのCDが2ターン減少する。<br>パッシブ：Lv.2効果、範囲ダメージ+30%。使用スキルスピリットドレイン時、攻撃が中断されず、このスキルのCDが1ターン減少する。<br>パッシブ：Lv.1効果、範囲ダメージ+30%。"
                     }
                 ]
             }
         },
         {
             "name": "イギー",
+            "No": "69",
             "hp": "387",
             "atk": "226",
             "def": "73",
@@ -11532,6 +12234,8 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/イギー.png",
+            "imageURL2": "./img/characterPortraitIMG/イギー.jpg",
+            "imageURL3": "./img/characterPortraitIMG/イギー覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "ウィルダ",
@@ -11736,19 +12440,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "高所制圧の道",
+                        "imgURL": "./img/skillIMG/高所制圧の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。高地攻撃時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。高地攻撃時、ダメージ+10%。<br>パッシブ：Lv.1効果、高地攻撃時、ダメージ+10%。"
+                    },
+                    {
                         "name": "狩猟の時",
                         "imgURL": "./img/skillIMG/狩猟の時.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、ブロックを無視する。スキル狩りの準備の効果の持続ターン+1。 狩りの準備を所持している時、クリティカル発生率、クリダメ+15%。さらに、アクティブ攻撃後、3マス再移動できる。<br>パッシブ：Lv.2効果、ブロックを無視する。スキル狩りの準備の効果の持続ターン+1。 狩りの準備を所持している時、クリダメ+15%。<br>パッシブ：Lv.1効果、ブロックを無視する。スキル狩りの準備の効果の持続ターン+1。 狩りの準備を所持している時、クリダメ+10%。"
                     }
                 ]
             }
         },
         {
             "name": "ミゲル",
+            "No": "49",
             "hp": "315",
             "atk": "189",
             "def": "66",
@@ -11763,6 +12477,8 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/ミゲル.png",
+            "imageURL2": "./img/characterPortraitIMG/ミゲル.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ミゲル覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "法皇国",
@@ -11968,19 +12684,29 @@
                 ],
                 "EX": [
                     {
+                        "name": "戦陣の豪壮",
+                        "imgURL": "./img/skillIMG/戦陣の豪壮.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+4%、被ダメージ-4%。"
+                    },
+                    {
                         "name": "烈意の重撃",
                         "imgURL": "./img/skillIMG/烈意の重撃.png",
                         "rangeImgURL": ".png",
-                        "type": "-",
+                        "type": "パッシブ",
                         "cost": "-",
                         "CD": "-",
-                        "desc": "-"
+                        "desc": "パッシブ：Lv.3効果、物攻+20%。範囲攻撃時、パネルを燃焼に変える。2ターン継続する。<br>パッシブ：Lv.2効果、物攻+10%。範囲攻撃時、パネルを燃焼に変える。2ターン継続する。<br>パッシブ：Lv.1効果、物攻+10%。"
                     }
                 ]
             }
         },
         {
             "name": "癒しの手",
+            "No": "29",
             "hp": "276",
             "atk": "107",
             "def": "47",
@@ -11995,6 +12721,7 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/癒しの手.png",
+            "imageURL2": "./img/characterPortraitIMG/癒しの手.jpg",
             "rarity": "エピック",
             "camps": [
                 "不動如山"
@@ -12155,11 +12882,23 @@
                             "負傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ナルギル",
+            "No": "73",
             "hp": "365",
             "atk": "219",
             "def": "96",
@@ -12174,6 +12913,8 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ナルギル.png",
+            "imageURL2": "./img/characterPortraitIMG/ナルギル.jpg",
+            "imageURL3": "./img/characterPortraitIMG/ナルギル覚醒.jpg",
             "rarity": "レジェンド",
             "camps": [
                 "イリア",
@@ -12379,11 +13120,23 @@
                             "▽素早さLv.1"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "軍医「口苦し」",
+            "No": "46",
             "hp": "284",
             "atk": "105",
             "def": "58",
@@ -12398,6 +13151,7 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/軍医「口苦し」.png",
+            "imageURL2": "./img/characterPortraitIMG/軍医「口苦し」.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -12569,11 +13323,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：80%の魔法ダメージを与える。ターゲットに▽攻撃Lv. 1を付与し、2ターン継続する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "騎士連合・剣盾兵",
+            "No": "18",
             "hp": "330",
             "atk": "160",
             "def": "76",
@@ -12588,6 +13354,7 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/騎士連合・剣盾兵.png",
+            "imageURL2": "./img/characterPortraitIMG/騎士連合・剣盾兵.jpg",
             "rarity": "レア",
             "camps": [
                 "騎士連合"
@@ -12739,11 +13506,23 @@
                             "虚弱Lv.2"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "フレア",
+            "No": "40",
             "hp": "278",
             "atk": "168",
             "def": "58",
@@ -12758,6 +13537,7 @@
             "role": "ウォッチャー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/フレア.png",
+            "imageURL2": "./img/characterPortraitIMG/フレア.jpg",
             "rarity": "エピック",
             "camps": [
                 "騎士連合",
@@ -12913,11 +13693,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：100%の物理ダメージを与え、次回の回復効果+15%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "閃く刃",
+            "No": "42",
             "hp": "313",
             "atk": "171",
             "def": "52",
@@ -12932,6 +13724,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/閃く刃.png",
+            "imageURL2": "./img/characterPortraitIMG/閃く刃.jpg",
             "rarity": "エピック",
             "camps": [
                 "法皇国",
@@ -13100,11 +13893,23 @@
                             "✗回避"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "ナイトレイヴン",
+            "No": "44",
             "hp": "325",
             "atk": "124",
             "def": "53",
@@ -13119,6 +13924,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/ナイトレイヴン.png",
+            "imageURL2": "./img/characterPortraitIMG/ナイトレイヴン.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -13298,11 +14104,23 @@
                             "曲射"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "火力打撃の道",
+                        "imgURL": "./img/skillIMG/火力打撃の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+8%、最大24%。<br>パッシブ：Lv.2効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+4%、最大12%。<br>パッシブ：Lv.1効果、1つのターゲットに命中するごとに、ダメージ+4%、最大12%。"
+                    }
                 ]
             }
         },
         {
             "name": "ウィルダ・斥候",
+            "No": "14",
             "hp": "289",
             "atk": "168",
             "def": "50",
@@ -13317,6 +14135,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ウィルダ・斥候.png",
+            "imageURL2": "./img/characterPortraitIMG/ウィルダ・斥候.jpg",
             "rarity": "レア",
             "camps": [
                 "ウィルダ"
@@ -13455,11 +14274,23 @@
                             "負傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "全盛態勢",
+                        "imgURL": "./img/skillIMG/全盛態勢.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、 無傷状態の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、 無傷状態の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、 無傷状態の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "炎の魔女",
+            "No": "31",
             "hp": "292",
             "atk": "135",
             "def": "45",
@@ -13474,6 +14305,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/炎の魔女.png",
+            "imageURL2": "./img/characterPortraitIMG/炎の魔女.jpg",
             "rarity": "エピック",
             "camps": [
                 "漂泊者",
@@ -13641,11 +14473,23 @@
                             "火傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "ライトニング",
+            "No": "43",
             "hp": "320",
             "atk": "170",
             "def": "66",
@@ -13660,6 +14504,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/ライトニング.png",
+            "imageURL2": "./img/characterPortraitIMG/ライトニング.jpg",
             "rarity": "エピック",
             "camps": [
                 "騎士連合",
@@ -13824,11 +14669,23 @@
                             "HPドレイン"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "スティンガー",
+            "No": "33",
             "hp": "315",
             "atk": "170",
             "def": "55",
@@ -13843,6 +14700,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/スティンガー.png",
+            "imageURL2": "./img/characterPortraitIMG/スティンガー.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -14013,11 +14871,23 @@
                             "負傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戦陣の豪壮",
+                        "imgURL": "./img/skillIMG/戦陣の豪壮.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "エンフォーサー",
+            "No": "34",
             "hp": "346",
             "atk": "199",
             "def": "71",
@@ -14032,6 +14902,7 @@
             "role": "デストロイヤー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/エンフォーサー.png",
+            "imageURL2": "./img/characterPortraitIMG/エンフォーサー.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -14200,11 +15071,23 @@
                             "▽攻撃Lv.1"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "王国軍・光の術師",
+            "No": "19",
             "hp": "263",
             "atk": "106",
             "def": "50",
@@ -14219,6 +15102,7 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/王国軍・光の術師.png",
+            "imageURL2": "./img/characterPortraitIMG/王国軍・光の術師.jpg",
             "rarity": "レア",
             "camps": [
                 "イリア"
@@ -14356,11 +15240,23 @@
                             "△魔防Lv.2"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戮力協心",
+                        "imgURL": "./img/skillIMG/戮力協心.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "恩寵の閃光",
+            "No": "36",
             "hp": "264",
             "atk": "155",
             "def": "50",
@@ -14375,6 +15271,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/恩寵の閃光.png",
+            "imageURL2": "./img/characterPortraitIMG/恩寵の閃光.jpg",
             "rarity": "エピック",
             "camps": [
                 "法皇国",
@@ -14533,11 +15430,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：100%の物理ダメージを与える。攻撃前、クリティカル発生率+15%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "バリスタ",
+            "No": "39",
             "hp": "261",
             "atk": "163",
             "def": "49",
@@ -14552,6 +15461,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/バリスタ.png",
+            "imageURL2": "./img/characterPortraitIMG/バリスタ.jpg",
             "rarity": "エピック",
             "camps": [
                 "騎士連合",
@@ -14720,11 +15630,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：100%の物理ダメージを与える。攻撃前、クリティカル発生率+15%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "相性勝利の道",
+                        "imgURL": "./img/skillIMG/相性勝利の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、有利ロールの敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "紅のハヤブサ",
+            "No": "28",
             "hp": "315",
             "atk": "173",
             "def": "55",
@@ -14739,6 +15661,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/紅のハヤブサ.png",
+            "imageURL2": "./img/characterPortraitIMG/紅のハヤブサ.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -14902,11 +15825,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：110%の物理ダメージを与える。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "相性勝利の道",
+                        "imgURL": "./img/skillIMG/相性勝利の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、有利ロールの敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "テンペスト",
+            "No": "26",
             "hp": "320",
             "atk": "185",
             "def": "66",
@@ -14921,6 +15856,7 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/テンペスト.png",
+            "imageURL2": "./img/characterPortraitIMG/テンペスト.jpg",
             "rarity": "エピック",
             "camps": [
                 "騎士連合",
@@ -15087,11 +16023,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：100%の物理ダメージを与える。次回のスキルダメージ+15%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "全盛態勢",
+                        "imgURL": "./img/skillIMG/全盛態勢.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、 無傷状態の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、 無傷状態の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、 無傷状態の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "胡蝶",
+            "No": "24",
             "hp": "306",
             "atk": "177",
             "def": "50",
@@ -15106,6 +16054,7 @@
             "role": "ウォッチャー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/胡蝶.png",
+            "imageURL2": "./img/characterPortraitIMG/胡蝶.jpg",
             "rarity": "エピック",
             "camps": [
                 "ウィルダ",
@@ -15267,11 +16216,23 @@
                         "CD": "-",
                         "desc": "通常攻撃：100%の物理ダメージを与え、追加で1ptのENを回復する。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "法皇国・剣盾兵",
+            "No": "13",
             "hp": "330",
             "atk": "160",
             "def": "68",
@@ -15286,6 +16247,7 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/法皇国・剣盾兵.png",
+            "imageURL2": "./img/characterPortraitIMG/法皇国・剣盾兵.jpg",
             "rarity": "レア",
             "camps": [
                 "法皇国"
@@ -15435,11 +16397,23 @@
                             "苦行"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "キャンドル",
+            "No": "25",
             "hp": "282",
             "atk": "105",
             "def": "56",
@@ -15454,6 +16428,7 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/キャンドル.png",
+            "imageURL2": "./img/characterPortraitIMG/キャンドル.jpg",
             "rarity": "エピック",
             "camps": [
                 "イリア",
@@ -15622,11 +16597,23 @@
                             "HPドレイン"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戮力協心",
+                        "imgURL": "./img/skillIMG/戮力協心.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "法皇国・氷の術師",
+            "No": "11",
             "hp": "256",
             "atk": "108",
             "def": "43",
@@ -15641,6 +16628,7 @@
             "role": "ウォッチャー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/法皇国・氷の術師.png",
+            "imageURL2": "./img/characterPortraitIMG/法皇国・氷の術師.jpg",
             "rarity": "レア",
             "camps": [
                 "法皇国"
@@ -15792,11 +16780,23 @@
                             "氷属性"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "磐石の如し不動の体",
+                        "imgURL": "./img/skillIMG/磐石の如し不動の体.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、HP+15%、被貫通ダメージ-20%。<br>パッシブ：Lv.2効果、HP+10%、被貫通ダメージ-20%。<br>パッシブ：Lv.1効果、HP+10%、被貫通ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "王国軍・長槍兵",
+            "No": "22",
             "hp": "310",
             "atk": "173",
             "def": "63",
@@ -15811,6 +16811,7 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/王国軍・長槍兵.png",
+            "imageURL2": "./img/characterPortraitIMG/王国軍・長槍兵.jpg",
             "rarity": "レア",
             "camps": [
                 "イリア"
@@ -15950,11 +16951,23 @@
                             "即時"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戮力協心",
+                        "imgURL": "./img/skillIMG/戮力協心.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲3マス以内に3人以上の味方がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "闇の光・火の術師",
+            "No": "16",
             "hp": "276",
             "atk": "127",
             "def": "43",
@@ -15969,6 +16982,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/闇の光・火の術師.png",
+            "imageURL2": "./img/characterPortraitIMG/闇の光・火の術師.jpg",
             "rarity": "レア",
             "camps": [
                 "漂泊者"
@@ -16113,11 +17127,23 @@
                             "火傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "逆境奮迅",
+                        "imgURL": "./img/skillIMG/逆境奮迅.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、負傷状態の時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、負傷状態の時、ダメージ+10%、被ダメージ-10%。<br>パッシブ：Lv.1効果、負傷状態の時、ダメージ+5%、被ダメージ-5%。"
+                    }
                 ]
             }
         },
         {
             "name": "王国軍・弓兵",
+            "No": "21",
             "hp": "245",
             "atk": "151",
             "def": "48",
@@ -16132,6 +17158,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/王国軍・弓兵.png",
+            "imageURL2": "./img/characterPortraitIMG/王国軍・弓兵.jpg",
             "rarity": "レア",
             "camps": [
                 "イリア"
@@ -16270,11 +17297,23 @@
                             "援護攻撃"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "相性勝利の道",
+                        "imgURL": "./img/skillIMG/相性勝利の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。有利ロールの敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、有利ロールの敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "無法者・斧盾兵",
+            "No": "6",
             "hp": "296",
             "atk": "163",
             "def": "65",
@@ -16289,6 +17328,7 @@
             "role": "ディフェンダー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/無法者・斧盾兵.png",
+            "imageURL2": "./img/characterPortraitIMG/無法者・斧盾兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -16430,11 +17470,23 @@
                             "貫通ダメージ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "傭兵・長槍兵",
+            "No": "8",
             "hp": "291",
             "atk": "169",
             "def": "60",
@@ -16449,6 +17501,7 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/傭兵・長槍兵.png",
+            "imageURL2": "./img/characterPortraitIMG/傭兵・長槍兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -16593,11 +17646,23 @@
                             "▽物防Lv.1"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "逆境奮迅",
+                        "imgURL": "./img/skillIMG/逆境奮迅.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、負傷状態の時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、負傷状態の時、ダメージ+10%、被ダメージ-10%。<br>パッシブ：Lv.1効果、負傷状態の時、ダメージ+5%、被ダメージ-5%。"
+                    }
                 ]
             }
         },
         {
             "name": "傭兵・弓兵",
+            "No": "7",
             "hp": "236",
             "atk": "141",
             "def": "49",
@@ -16612,6 +17677,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/傭兵・弓兵.png",
+            "imageURL2": "./img/characterPortraitIMG/傭兵・弓兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -16753,11 +17819,23 @@
                             "▽物防Lv.2"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "高所制圧の道",
+                        "imgURL": "./img/skillIMG/高所制圧の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。高地攻撃時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。高地攻撃時、ダメージ+10%。<br>パッシブ：Lv.1効果、高地攻撃時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "傭兵・刺客",
+            "No": "9",
             "hp": "281",
             "atk": "155",
             "def": "49",
@@ -16772,6 +17850,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/傭兵・刺客.png",
+            "imageURL2": "./img/characterPortraitIMG/傭兵・刺客.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -16906,11 +17985,23 @@
                         "CD": "-",
                         "desc": "パッシブ：アクティブ攻撃後、さらに移動できる。移動距離は残り移動力によって決まる。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "剛勇破陣の道",
+                        "imgURL": "./img/skillIMG/剛勇破陣の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+15%。<br>パッシブ：Lv.2効果、攻撃力+5%。健康状態の敵を攻撃する時、ダメージ+10%。<br>パッシブ：Lv.1効果、健康状態の敵を攻撃する時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "鷹の目",
+            "No": "38",
             "hp": "259",
             "atk": "162",
             "def": "44",
@@ -16925,6 +18016,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/鷹の目.png",
+            "imageURL2": "./img/characterPortraitIMG/鷹の目.jpg",
             "rarity": "エピック",
             "camps": [
                 "ウィルダ",
@@ -17101,11 +18193,23 @@
                             "曲射"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "無法者・刺客",
+            "No": "5",
             "hp": "285",
             "atk": "159",
             "def": "45",
@@ -17120,6 +18224,7 @@
             "role": "アサルター",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/無法者・刺客.png",
+            "imageURL2": "./img/characterPortraitIMG/無法者・刺客.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -17262,11 +18367,23 @@
                             "負傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "暗影奇襲の道",
+                        "imgURL": "./img/skillIMG/暗影奇襲の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。背面攻撃時、追加ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。背面攻撃時、追加ダメージ+10%。<br>パッシブ：Lv.1効果、背面攻撃時、追加ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "王国軍・火の術師",
+            "No": "20",
             "hp": "291",
             "atk": "129",
             "def": "53",
@@ -17281,6 +18398,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/王国軍・火の術師.png",
+            "imageURL2": "./img/characterPortraitIMG/王国軍・火の術師.jpg",
             "rarity": "レア",
             "camps": [
                 "イリア"
@@ -17422,11 +18540,23 @@
                             "能力値デバフ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "火力打撃の道",
+                        "imgURL": "./img/skillIMG/火力打撃の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+8%、最大24%。<br>パッシブ：Lv.2効果、攻撃力+5%。1つのターゲットに命中するごとに、ダメージ+4%、最大12%。<br>パッシブ：Lv.1効果、1つのターゲットに命中するごとに、ダメージ+4%、最大12%。"
+                    }
                 ]
             }
         },
         {
             "name": "王国軍・剣盾兵",
+            "No": "23",
             "hp": "334",
             "atk": "157",
             "def": "73",
@@ -17441,6 +18571,7 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/王国軍・剣盾兵.png",
+            "imageURL2": "./img/characterPortraitIMG/王国軍・剣盾兵.jpg",
             "rarity": "レア",
             "camps": [
                 "イリア"
@@ -17578,11 +18709,23 @@
                             "即時"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "不滅の庇護の願い",
+                        "imgURL": "./img/skillIMG/不滅の庇護の願い.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、魔防+20%、被魔法ダメージ-20%。<br>パッシブ：Lv.2効果、魔防+20%、被魔法ダメージ-10%。<br>パッシブ：Lv.1効果、魔防+10%、被魔法ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "マイティ",
+            "No": "37",
             "hp": "334",
             "atk": "185",
             "def": "69",
@@ -17597,6 +18740,7 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/マイティ.png",
+            "imageURL2": "./img/characterPortraitIMG/マイティ.jpg",
             "rarity": "エピック",
             "camps": [
                 "騎士連合",
@@ -17757,11 +18901,23 @@
                             "シールド"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "戦陣の豪壮",
+                        "imgURL": "./img/skillIMG/戦陣の豪壮.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身範囲2マス以内に2体以上の敵がいる時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "法皇国・投槍兵",
+            "No": "12",
             "hp": "305",
             "atk": "173",
             "def": "58",
@@ -17776,6 +18932,7 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/法皇国・投槍兵.png",
+            "imageURL2": "./img/characterPortraitIMG/法皇国・投槍兵.jpg",
             "rarity": "レア",
             "camps": [
                 "法皇国"
@@ -17921,11 +19078,23 @@
                             "健康"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "蓄力強襲",
+                        "imgURL": "./img/skillIMG/蓄力強襲.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身が4個以上のバフを所持している時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身が4個以上のバフを所持している時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身が4個以上のバフを所持している時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "騎士連合・長槍兵",
+            "No": "17",
             "hp": "310",
             "atk": "173",
             "def": "66",
@@ -17940,6 +19109,7 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/騎士連合・長槍兵.png",
+            "imageURL2": "./img/characterPortraitIMG/騎士連合・長槍兵.jpg",
             "rarity": "レア",
             "camps": [
                 "騎士連合"
@@ -18078,11 +19248,23 @@
                             "負傷"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "全盛態勢",
+                        "imgURL": "./img/skillIMG/全盛態勢.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、 無傷状態の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、 無傷状態の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、 無傷状態の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "傭兵・剣盾兵",
+            "No": "10",
             "hp": "309",
             "atk": "155",
             "def": "70",
@@ -18097,6 +19279,7 @@
             "role": "ディフェンダー",
             "weapon": "剣",
             "imageURL": "./img/characterIMG/傭兵・剣盾兵.png",
+            "imageURL2": "./img/characterPortraitIMG/傭兵・剣盾兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -18242,11 +19425,23 @@
                             "ブロック強化"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
+                    }
                 ]
             }
         },
         {
             "name": "無法者・巨斧兵",
+            "No": "4",
             "hp": "300",
             "atk": "173",
             "def": "54",
@@ -18261,6 +19456,7 @@
             "role": "ブレイカー",
             "weapon": "斧",
             "imageURL": "./img/characterIMG/無法者・巨斧兵.png",
+            "imageURL2": "./img/characterPortraitIMG/無法者・巨斧兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -18394,11 +19590,23 @@
                             "▽攻撃Lv.2"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "逆境奮迅",
+                        "imgURL": "./img/skillIMG/逆境奮迅.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、負傷状態の時、ダメージ+15%、被ダメージ-15%。<br>パッシブ：Lv.2効果、負傷状態の時、ダメージ+10%、被ダメージ-10%。<br>パッシブ：Lv.1効果、負傷状態の時、ダメージ+5%、被ダメージ-5%。"
+                    }
                 ]
             }
         },
         {
             "name": "無法者・長槍兵",
+            "No": "3",
             "hp": "291",
             "atk": "171",
             "def": "53",
@@ -18413,6 +19621,7 @@
             "role": "ブレイカー",
             "weapon": "槍",
             "imageURL": "./img/characterIMG/無法者・長槍兵.png",
+            "imageURL2": "./img/characterPortraitIMG/無法者・長槍兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -18550,11 +19759,23 @@
                         "CD": "3",
                         "desc": "物理ダメージ：単体攻撃。150%のダメージを与える。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "自由な鋭敏",
+                        "imgURL": "./img/skillIMG/自由な鋭敏.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、自身の受けたデバフが2個未満の時、ダメージ+12%、被ダメージ-12%。<br>パッシブ：Lv.2効果、自身の受けたデバフが2個未満の時、ダメージ+8%、被ダメージ-8%。<br>パッシブ：Lv.1効果、自身の受けたデバフが2個未満の時、ダメージ+4%、被ダメージ-4%。"
+                    }
                 ]
             }
         },
         {
             "name": "無法者・弩兵",
+            "No": "2",
             "hp": "244",
             "atk": "144",
             "def": "43",
@@ -18569,6 +19790,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/無法者・弩兵.png",
+            "imageURL2": "./img/characterPortraitIMG/無法者・弩兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -18705,11 +19927,23 @@
                         "CD": "-",
                         "desc": "パッシブ：被遠距離ダメージ-20%。"
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "暗影奇襲の道",
+                        "imgURL": "./img/skillIMG/暗影奇襲の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。背面攻撃時、追加ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。背面攻撃時、追加ダメージ+10%。<br>パッシブ：Lv.1効果、背面攻撃時、追加ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "無法者・弓兵",
+            "No": "1",
             "hp": "244",
             "atk": "144",
             "def": "43",
@@ -18724,6 +19958,7 @@
             "role": "ウォッチャー",
             "weapon": "弓",
             "imageURL": "./img/characterIMG/無法者・弓兵.png",
+            "imageURL2": "./img/characterPortraitIMG/無法者・弓兵.jpg",
             "rarity": "コモン",
             "camps": [
                 "漂泊者"
@@ -18872,11 +20107,23 @@
                             "トラバサミ"
                         ]
                     }
+                ],
+                "EX": [
+                    {
+                        "name": "高所制圧の道",
+                        "imgURL": "./img/skillIMG/高所制圧の道.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、攻撃力+5%。高地攻撃時、ダメージ+20%。<br>パッシブ：Lv.2効果、攻撃力+5%。高地攻撃時、ダメージ+10%。<br>パッシブ：Lv.1効果、高地攻撃時、ダメージ+10%。"
+                    }
                 ]
             }
         },
         {
             "name": "闇の光・氷の術師",
+            "No": "15",
             "hp": "299",
             "atk": "114",
             "def": "66",
@@ -18891,6 +20138,7 @@
             "role": "デストロイヤー",
             "weapon": "杖",
             "imageURL": "./img/characterIMG/闇の光・氷の術師.png",
+            "imageURL2": "./img/characterPortraitIMG/闇の光・氷の術師.jpg",
             "rarity": "レア",
             "camps": [
                 "漂泊者"
@@ -19037,6 +20285,17 @@
                             "シールド",
                             "物理シールド"
                         ]
+                    }
+                ],
+                "EX": [
+                    {
+                        "name": "砕けぬ鋼鉄の意志",
+                        "imgURL": "./img/skillIMG/砕けぬ鋼鉄の意志.png",
+                        "rangeImgURL": ".png",
+                        "type": "パッシブ",
+                        "cost": "-",
+                        "CD": "-",
+                        "desc": "パッシブ：Lv.3効果、物防+20%、被物理ダメージ-20%。<br>パッシブ：Lv.2効果、物防+20%、被物理ダメージ-10%。<br>パッシブ：Lv.1効果、物防+10%、被物理ダメージ-10%。"
                     }
                 ]
             }

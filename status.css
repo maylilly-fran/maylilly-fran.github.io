@@ -13,6 +13,21 @@
         background-color: #407577;
     }
 
+    .skillbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .skillbtn:hover {
+        background-color: #407577;
+    }
+
     .movebtn {
         margin-top: 5px;
         padding: 5px 10px;

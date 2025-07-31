@@ -17,7 +17,8 @@
     <div style="margin-left: 30px;">
         <div class="controls">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-            <button class="statusbtn" onclick="goToNextPage()">ステータス一覧へ</button>
+            <button class="statusbtn" onclick="goToNextPage('status.html')">ステータス一覧へ</button>
+            <button class="skillbtn" onclick="goToNextPage('skill.html')">スキル一覧へ</button>
             <button class="statusInheritanceBtn" id="statusInheritanceBtn"
                 onclick="toggleInheritance()">データ引継ぎOFF</button>
         </div>
@@ -48,7 +49,7 @@
                 <option value="mdefmax-asc">魔防MAX(昇順)</option>
             </select>
             <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
-            <button class="skillbtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
+            <button class="skillFilterBtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
         </div>
         <input type="text" id="search-input" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
             style="margin-bottom: 12px; width:50%">
@@ -65,13 +66,66 @@
                 <div class="container">
                     <div class="left">
                         <div id="characterImg"></div>
-                        <div id="characterName"></div>
-                        <div id="characterRole"></div>
+                        <div id="characterName" class="container"></div>
+                        <button class="statusbtn" id="statusBtn" onclick="changeStatus(tmpCha)">⇆ 初期状態</button>
                         <div id="characterWeapon"></div>
                         <div id="characterCamp"></div>
-                        <div id="characterSpeed"></div>
-                        <button id="toggleButton" onclick="toggleAudio()" disabled>▶</button>
-                        <div id="player"></div>
+                        <!-- 物攻 と 魔攻 横並び -->
+                        <div class="containerB">
+                            <div class="bar-container" data-bar="atk">
+                                <div class="bar-wrapper">
+                                    <div class="bar-fill bar-atk" id="atkBar">
+                                        <div class="bar-label" id="atkLabel">物攻: 0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bar-container" data-bar="matk">
+                                <div class="bar-wrapper">
+                                    <div class="bar-fill bar-matk" id="matkBar">
+                                        <div class="bar-label" id="matkLabel">魔攻: 0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 物防 と 魔防 横並び -->
+                        <div class="containerB">
+                            <div class="bar-container" data-bar="def">
+                                <div class="bar-wrapper">
+                                    <div class="bar-fill bar-def" id="defBar">
+                                        <div class="bar-label" id="defLabel">物防: 0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bar-container" data-bar="mdef">
+                                <div class="bar-wrapper">
+                                    <div class="bar-fill bar-mdef" id="mdefBar">
+                                        <div class="bar-label" id="mdefLabel">魔防: 0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HP と 素早さ 横並び -->
+                        <div class="containerB">
+                            <div class="bar-container" data-bar="hp">
+                                <div class="bar-wrapper">
+                                    <div class="bar-fill bar-hp" id="hpBar">
+                                        <div class="bar-label" id="hpLabel">HP: 0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bar-container" data-bar="speed">
+                                <div class="bar-wrapper">
+                                    <div class="bar-fill bar-speed" id="speedBar">
+                                        <div class="bar-label" id="speedLabel">素早さ: 0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="right">
@@ -93,6 +147,7 @@
                         <div class="container" style="margin-top: 20px;">
                             <div id="silhouette-skill"></div>
                             <div id="ex-skill"></div>
+                            <div id="ex-skill2"></div>
                         </div>
                     </div>
                 </div>
@@ -150,12 +205,7 @@
         </div>
     </div>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        let player;
-        let isPlaying = false;
-        let currentVideoId = '';
-
         let data;
         let selectedCategories = [];
         let selectedRoles = [];
@@ -168,6 +218,7 @@
         let weapons;
         let rarities;
         let filteredData;
+        let tmpCha;
 
         const params = new URLSearchParams(location.search);
         const value = localStorage.getItem("text");
@@ -219,56 +270,24 @@
             applyFiltersAndSort();
         }
 
-
-        function loadNewVideo(character) {
-            currentVideoId = character.youtubeId;
-
-            if (player) {
-                player.loadVideoById(currentVideoId);
-            } else {
-                player = new YT.Player('player', {
-                    height: '1',
-                    width: '1',
-                    videoId: currentVideoId,
-                    playerVars: {
-                        autoplay: 0,
-                        controls: 0,
-                        modestbranding: 1,
-                        loop: 1,
-                        playlist: currentVideoId,
-                        rel: 0
-                    },
-                    events: {
-                        onReady: () => {
-                            document.getElementById('toggleButton').disabled = false;
-                        }
-                    }
-                });
-            }
-        }
-
         function showModal(character) {
-            if (character.youtubeId !== undefined) {
-                document.getElementById('toggleButton').style = "";
-                loadNewVideo(character);
-            } else document.getElementById('toggleButton').style = "display: none;";
-            document.getElementById('characterImg').innerHTML = `<img style="width: 50%" src="${character.imageURL}" alt="${character.imageURL}">`;
-            document.getElementById('characterName').innerHTML = `<h2>${character.name}</h2>`;
-            document.getElementById('characterRole').innerHTML = `${character.role}`;
+            tmpCha = character;
+            document.getElementById('characterName').innerHTML = `<img style="width: 5%; margin-right: 5px;" src="./img/roleIMG/${character.role}.avif"><h2>${character.name}</h2>`;
+            //document.getElementById('characterRole').innerHTML = `${character.role}`;
             document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
             document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
-            document.getElementById('characterSpeed').innerHTML = `素早さ : ${character.speed}`;
+            //document.getElementById('characterSpeed').innerHTML = `素早さ : ${character.speed}`;
             if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-               ((descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (descSearch.value.length !== 0 && character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-               (descSearch.value.length !== 0 && character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase()))) ) {
+                ((descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                    (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                    (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                    (descSearch.value.length !== 0 && character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                    (descSearch.value.length !== 0 && character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase())))) {
                 document.getElementById('personalityImg').innerHTML = `<img style="width: 30%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
             } else {
                 document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
             }
-            
+
             document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
             if (character.personality.common !== undefined) {
                 document.getElementById('common').innerHTML = `${character.personality.common}`;
@@ -287,10 +306,16 @@
                 document.getElementById('silhouette-skill').innerHTML = ``;
             }
             if (Array.isArray(character.skills.EX) && character.skills.EX[0] && character.skills.EX[0].name !== undefined) {
-                document.getElementById('ex-skill').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[0].imgURL}" alt="${character.skills.EX[0].imgURL}"  style="width: 50%"><br>専属EXスキル`;
+                document.getElementById('ex-skill').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[0].imgURL}" alt="${character.skills.EX[0].imgURL}"  style="width: 50%"><br>汎用EXスキル`;
                 document.getElementById('ex-skill').addEventListener('click', () => showModal2(character, 'EX', 0));
             } else {
                 document.getElementById('ex-skill').innerHTML = ``;
+            }
+            if (Array.isArray(character.skills.EX) && character.skills.EX[1] && character.skills.EX[1].name !== undefined) {
+                document.getElementById('ex-skill2').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[1].imgURL}" alt="${character.skills.EX[1].imgURL}"  style="width: 50%"><br>専用EXスキル`;
+                document.getElementById('ex-skill2').addEventListener('click', () => showModal2(character, 'EX', 1));
+            } else {
+                document.getElementById('ex-skill2').innerHTML = ``;
             }
 
             let content = '';
@@ -304,6 +329,8 @@
             document.getElementById('skill2').innerHTML = content;
             ranks.forEach(rank => addSkillContentSettings(character, rank, 1));
             modal.style.display = 'flex';
+            statusEnabled = true;
+            changeStatus(character);
         }
 
         function addSkillContent(character, content, key, index) {
@@ -313,12 +340,12 @@
             return content;
         }
 
-        function addSkillContentSettings(character,key, index) {
+        function addSkillContentSettings(character, key, index) {
             if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
                 document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                if (( character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    ( character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 && 
-                      character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()) ) ) {
+                if ((character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                    (character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 &&
+                        character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()))) {
                     document.getElementById(key + '-' + index).style = "background-color: lightcoral";
                 }
             }
@@ -354,9 +381,6 @@
 
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
-            document.getElementById('toggleButton').textContent = '▶';
-            isPlaying = false;
-            player.pauseVideo();
         });
 
         closeModal2.addEventListener('click', () => {
@@ -372,12 +396,7 @@
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                document.getElementById('toggleButton').textContent = '▶';
-                isPlaying = false;
-                player.pauseVideo();
-            }
+            if (e.target === modal) modal.style.display = 'none';
             if (e.target === modal2) modal2.style.display = 'none';
             if (e.target === modal3) modal3.style.display = 'none';
             if (e.target === modal4) modal4.style.display = 'none';
@@ -386,9 +405,6 @@
         window.addEventListener('touchend', (e) => {
             if (e.target.classList.contains('modal')) {
                 e.target.style.display = 'none';
-                document.getElementById('toggleButton').textContent = '▶';
-                isPlaying = false;
-                player.pauseVideo();
             }
             if (e.target.classList.contains('modal2')) {
                 e.target.style.display = 'none';
@@ -400,21 +416,6 @@
 
         function openModal(id) {
             document.getElementById(id).style.display = "flex";
-        }
-
-        function toggleAudio() {
-            if (!player || typeof player.getPlayerState !== 'function') return;
-            const state = player.getPlayerState();
-
-            if (state !== YT.PlayerState.PLAYING) {
-                player.playVideo();
-                isPlaying = true;
-                document.getElementById('toggleButton').textContent = '■';
-            } else {
-                player.pauseVideo();
-                isPlaying = false;
-                document.getElementById('toggleButton').textContent = '▶';
-            }
         }
 
         function renderPagination() {
@@ -474,7 +475,7 @@
                 (character?.skills?.RK3[1]?.desc.length !== 0 && character?.skills?.RK3[1]?.desc.toLowerCase().includes(words)) ||
                 (character?.skills?.RK5[0]?.desc.length !== 0 && character?.skills?.RK5[0]?.desc.toLowerCase().includes(words)) ||
                 (character?.skills?.RK5[1]?.desc.length !== 0 && character?.skills?.RK5[1]?.desc.toLowerCase().includes(words));
-            
+
             if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
                 flg = flg ||
                     (character?.skills?.RK7[0]?.desc.length !== 0 && character?.skills?.RK7[0]?.desc.toLowerCase().includes(words)) ||
@@ -496,7 +497,7 @@
                 (character?.personality?.hoshi3?.toLowerCase().includes(words)) ||
                 (character?.personality?.hoshi2?.toLowerCase().includes(words)) ||
                 (character?.personality?.hoshi1?.toLowerCase().includes(words));
-            
+
             return flg;
         }
 
@@ -533,9 +534,10 @@
                 (selectedRarities.length === 0 || selectedRarities.includes(character.rarity)) &&
                 (keywords.length === 0 || keywords.some(keyword => character.name.includes(keyword))) &&
                 (selectedCategories.length === 0 || skillTagCheck(character)) &&
-                (dKeyword.length === 0 || skillDescCheck(character,dKeyword))
+                (dKeyword.length === 0 || skillDescCheck(character, dKeyword))
             );
 
+            if (sort === 'default') filteredData.sort((a, b) => b.No - a.No);
             if (sort === 'speed-asc') filteredData.sort((a, b) => a.speed - b.speed);
             if (sort === 'speed-desc') filteredData.sort((a, b) => b.speed - a.speed);
             if (sort === 'hp-asc') filteredData.sort((a, b) => a.hp - b.hp);
@@ -636,7 +638,40 @@
             document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
         }
 
-        function goToNextPage() {
+        let statusEnabled = false;
+        function changeStatus(character) {
+            statusEnabled = !statusEnabled;
+            document.getElementById("statusBtn").innerText = statusEnabled ? "⇆ 最大レベル" : "⇆ 初期状態";
+            if (character.imageURL3 === undefined) {
+                document.getElementById('characterImg').innerHTML = `<img style="width: 50%; border-radius: 50px;" src="${character.imageURL2}" alt="${character.name}">`;
+            } else if (statusEnabled) {
+                document.getElementById('characterImg').innerHTML = `<img style="width: 50%; border-radius: 50px;" src="${character.imageURL2}" alt="${character.name}">`;
+            } else {
+                document.getElementById('characterImg').innerHTML = `<img style="width: 50%; border-radius: 50px;" src="${character.imageURL3}" alt="${character.name}">`;
+            }
+            if (statusEnabled) {
+                bars = {
+                    atk: { value: character.atk, max: 300 },
+                    matk: { value: character.matk, max: 250 },
+                    def: { value: character.def, max: 120 },
+                    mdef: { value: character.mdef, max: 120 },
+                    hp: { value: character.hp, max: 500 },
+                    speed: { value: character.speed, max: 288 }
+                };
+            } else {
+                bars = {
+                    atk: { value: character.atkmax, max: 1718 },
+                    matk: { value: character.matkmax, max: 1686 },
+                    def: { value: character.defmax, max: 718 },
+                    mdef: { value: character.mdefmax, max: 789 },
+                    hp: { value: character.hpmax, max: 4120 },
+                    speed: { value: character.speed, max: 288 }
+                };
+            }
+            runBarAnimation();
+        }
+
+        function goToNextPage(link) {
             let text = "";
             if (inheritanceEnabled) {
                 filteredData.forEach(character => {
@@ -644,7 +679,7 @@
                 });
                 localStorage.setItem("text", text);
             }
-            location.href = `status.html`;
+            location.href = `${link}`;
         }
 
         function clearAllCategories() {
@@ -666,8 +701,60 @@
             location.reload();
         }
 
-        function onYouTubeIframeAPIReady() {
+        // 各バーの設定（現在値・最大値）
+        let bars;
 
+        function getLabelName(id) {
+            if (id === "atk") return "物攻";
+            if (id === "matk") return "魔攻";
+            if (id === "def") return "物防";
+            if (id === "mdef") return "魔防";
+            if (id === "hp") return "HP";
+            if (id === "speed") return "素早さ";
+        }
+
+        // アニメーション関数
+        function animateBar(id) {
+            const bar = document.getElementById(id + 'Bar');
+            const label = document.getElementById(id + 'Label');
+            const targetValue = bars[id].value;
+            const maxValue = bars[id].max;
+            const targetPercent = Math.min((targetValue / maxValue) * 100, 100);
+            const labelName = getLabelName(id);
+
+            bar.style.width = '0%';
+            label.textContent = `${labelName}: 0`;
+
+            let currentValue = 0;
+            let currentPercent = 0;
+            const duration = 100;
+            const stepTime = 25;
+            const steps = duration / stepTime;
+            const valueStep = targetValue / steps;
+            const percentStep = targetPercent / steps;
+
+            clearInterval(bar._intervalId);
+
+            bar._intervalId = setInterval(() => {
+                currentValue += valueStep;
+                currentPercent += percentStep;
+
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    currentPercent = targetPercent;
+                    clearInterval(bar._intervalId);
+                }
+
+                bar.style.width = `${currentPercent}%`;
+                label.textContent = `${labelName}: ${Math.floor(currentValue)}`;
+            }, stepTime);
+        }
+
+        // アニメーション呼び出し
+        function runBarAnimation() {
+            for (const key in bars) {
+                animateBar(key);
+            }
         }
     </script>
 </body>

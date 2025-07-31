@@ -6,22 +6,7 @@
   <title>【鈴蘭の剣】フランなツール</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-  <style>
-    .characterbtn {
-      margin-top: 5px;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 20px;
-      font-size: 15px;
-      background-color: cadetblue;
-      color: white;
-      cursor: pointer;
-    }
-
-    .characterbtn:hover {
-      background-color: #407577;
-    }
-  </style>
+  <link rel="stylesheet" href="skill.css">
 </head>
 
 <body class="bg-gray-100 p-6">
@@ -29,15 +14,15 @@
   <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-      <button class="characterbtn" onclick="location.href='index.html'">キャラクタ一覧へ</button>
-      <button class="characterbtn" onclick="toggleSortable()" id="toggleSortBtn">並び替えOFF</button>
-      <input id="searchInput" type="text" placeholder="検索..." class="mb-4 px-4 py-2 w-full border rounded">
+      <button class="characterbtn" onclick="goToNextPage('index.html')">キャラクタ一覧へ</button>
+      <button class="statusbtn" onclick="goToNextPage('status.html')">ステータス一覧へ</button>
+      <button class="statusInheritanceBtn" id="statusInheritanceBtn" onclick="toggleInheritance()">データ引継ぎOFF</button>
+      <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
+        class="mb-4 px-4 py-2 w-full border rounded">
     </div>
 
-    <!-- ✅ ヘッダー固定に必要な max-height + overflow -->
     <div class="overflow-auto" style="max-height: 80vh;">
       <table id="csv-table" class="table-auto min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <!-- ✅ sticky header -->
         <thead class="bg-gray-200 text-gray-700 sticky top-0 z-10">
           <tr id="csv-header" class="text-left cursor-pointer"></tr>
         </thead>
@@ -46,104 +31,365 @@
     </div>
   </div>
 
-  <script>
-    let originalData = [];
-    let headers = [];
-    let sortState = { column: null, ascending: true };
-    let sortableInstance = null;
-    let sortableEnabled = false;
-    const imageColumnIndex = 1;
-    const imageColumnIndex2 = 2;
+  <!-- モーダル -->
+  <div class="modal" id="skill-modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <div id="modal-body">
+        <div class="container">
+          <div class="left">
+            <div id="skillImg" style="display: flex; justify-content: center;"></div>
+            <div id="skillName" style="margin-bottom: 5px; font-size: large;"></div>
+            <div id="skillType" style="margin-bottom: 5px;"></div>
+            <div id="skillCost" style="margin-bottom: 5px;"></div>
+            <div id="skillCD" style="margin-bottom: 5px;"></div>
+            <div id="skillDesc"></div>
+          </div>
 
-    function renderTable(data) {
-      const body = document.getElementById('csv-body');
-      body.innerHTML = data.map(row => `
+          <div class="right">
+            <div class="forCanvas">
+              <canvas id="gridCanvas"></canvas>
+            </div>
+
+            <div id="skillComment" style="margin-top: 30px;"></div>
+            <div id="skillRangeInfo" style="margin-top: 10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 10px;">スキル所持：
+          <div id="skillFrend" class="skillFrend"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="range.js"></script>
+    <script>
+      let originalData = [];
+      let filtered = [];
+      let headers = [];
+      let sortState = { column: null, ascending: true };
+      let sortableInstance = null;
+      let sortableEnabled = false;
+
+      const value = localStorage.getItem("text");
+      document.getElementById('searchInput').value = value;
+      localStorage.removeItem("text");
+
+      const modal = document.getElementById('skill-modal');
+      const closeModal = document.getElementById('close-modal');
+
+      function renderTable(data) {
+        const body = document.getElementById('csv-body');
+        body.innerHTML = data.map(row => `
         <tr class="${sortableEnabled ? 'hover:bg-gray-100 cursor-move' : 'hover:bg-gray-100 cursor-default'}">
           ${row.map((cell, colIndex) => {
-            const content = (colIndex === imageColumnIndex || colIndex === imageColumnIndex2)
-              ? `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`
-              : cell;
-            return `<td class="border-t px-4 py-2 whitespace-nowrap"><b>${content}</b></td>`;
-          }).join('')}
+          let content = ``;
+          if (colIndex === 1) {
+            content = `<img src="${cell}" alt="画像" class="h-12 object-contain" style="border-radius: 15px;">`;
+          } else if (colIndex === 2) {
+            content = getTypeClass(cell, true);
+          } else if (colIndex === 5) {
+            content = getHaveClass(cell, true);
+          } else if (colIndex > 6) {
+            return ``;
+          } else {
+            content = `<b>${cell}</b>`;
+          }
+          return `<td class="border-t px-4 py-2 whitespace-nowrap">${content}</td>`;
+        }).join('')}
         </tr>
       `).join('');
 
-      if (sortableInstance) {
-        sortableInstance.destroy();
-        sortableInstance = null;
+        if (sortableInstance) {
+          sortableInstance.destroy();
+          sortableInstance = null;
+        }
+
+        if (sortableEnabled) {
+          sortableInstance = Sortable.create(body, {
+            animation: 150,
+            ghostClass: 'bg-yellow-100',
+          });
+        }
+        setEventRow();
       }
 
-      if (sortableEnabled) {
-        sortableInstance = Sortable.create(body, {
-          animation: 150,
-          ghostClass: 'bg-yellow-100',
+      function getTypeClass(cell, selecter) {
+        const keywords = cell.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
+        let content = ``;
+        let flg = false;
+        for (const keyword of keywords) {
+          if (selecter) { if (flg) content += `<br><br>`; }
+          if (keyword === "通常攻撃") {
+            if (selecter) content += `<b class="normal">${keyword}</b>`;
+            else content += `<b class="normal" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "物理ダメージ") {
+            if (selecter) content += `<b class="physical">${keyword}</b>`;
+            else content += `<b class="physical" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "魔法ダメージ") {
+            if (selecter) content += `<b class="magic">${keyword}</b>`;
+            else content += `<b class="magic" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "貫通ダメージ") {
+            if (selecter) content += `<b class="piercing">${keyword}</b>`;
+            else content += `<b class="piercing" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "混合ダメージ") {
+            if (selecter) content += `<b class="mixed">${keyword}</b>`;
+            else content += `<b class="mixed" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "リアクション") {
+            if (selecter) content += `<b class="reaction">${keyword}</b>`;
+            else content += `<b class="reaction" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "回復") {
+            if (selecter) content += `<b class="recovery">${keyword}</b>`;
+            else content += `<b class="recovery" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "支援") {
+            if (selecter) content += `<b class="support">${keyword}</b>`;
+            else content += `<b class="support" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "パッシブ") {
+            if (selecter) content += `<b class="passive">${keyword}</b>`;
+            else content += `<b class="passive" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "陣営オーラ") {
+            if (selecter) content += `<b class="faction-aura">${keyword}</b>`;
+            else content += `<b class="faction-aura" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "オーラ") {
+            if (selecter) content += `<b class="aura">${keyword}</b>`;
+            else content += `<b class="aura" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "即時") {
+            if (selecter) content += `<b class="instant">${keyword}</b>`;
+            else content += `<b class="instant" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "デバフ") {
+            if (selecter) content += `<b class="debuff">${keyword}</b>`;
+            else content += `<b class="debuff" style="margin-right: 3px;">${keyword}</b>`;
+
+          } else if (keyword === "選択") {
+            if (selecter) content += `<b class="select">${keyword}</b>`;
+            else content += `<b class="select" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "専用EX") {
+            if (selecter) content += `<b class="only-ex">${keyword}</b>`;
+            else content += `<b class="only-ex" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "汎用EX") {
+            if (selecter) content += `<b class="other-ex">${keyword}</b>`;
+            else content += `<b class="other-ex" style="margin-right: 3px;">${keyword}</b>`;
+          }
+          flg = true;
+        }
+        return content;
+      }
+
+      function getHaveClass(cell, selecter) {
+        const keywords = cell.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
+        let content = ``;
+        let loopCount;
+        if (selecter) loopCount = 3;
+        else loopCount = keywords.length;
+
+        for (let i = 0; i < loopCount && i < keywords.length; i++) {
+          if (selecter) content += `<img src="./img/iconIMG/${keywords[i]}.png" alt="${keywords[i]}}" class="h-12 object-contain" style="border-radius: 15px; margin-bottom: 3px;">`;
+          else content += `<img src="./img/iconIMG/${keywords[i]}.png" alt="${keywords[i]}}">`;
+        }
+        if (keywords.length > 3 && selecter) {
+          content += `<b>他${keywords.length - 3}名</b>`
+        }
+        return content;
+      }
+
+      function getCommentClass(cell) {
+        const keywords = cell.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
+        let content = ``;
+        for (const keyword of keywords) {
+          if (keyword === "遠距離") {
+            content += `<b class="long-range" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "対ユニット") {
+            content += `<b class="anti-unit" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "対地面") {
+            content += `<b class="anti-ground" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "範囲攻撃") {
+            content += `<b class="area-attack" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "近接") {
+            content += `<b class="close-range" style="margin-right: 3px;">${keyword}</b>`;
+          } else if (keyword === "曲射") {
+            content += `<b class="curved-shot" style="margin-right: 3px;">${keyword}</b>`;
+          }
+        }
+        return content;
+      }
+
+      function sortTableByColumn(colIndex) {
+        const ascending = sortState.column === colIndex ? !sortState.ascending : true;
+        sortState = { column: colIndex, ascending };
+
+        originalData.sort((a, b) => {
+          const aVal = a[colIndex] ?? '';
+          const bVal = b[colIndex] ?? '';
+          return ascending
+            ? aVal.localeCompare(bVal, 'ja', { numeric: true })
+            : bVal.localeCompare(aVal, 'ja', { numeric: true });
         });
-      }
-    }
 
-    function sortTableByColumn(colIndex) {
-      const ascending = sortState.column === colIndex ? !sortState.ascending : true;
-      sortState = { column: colIndex, ascending };
-
-      originalData.sort((a, b) => {
-        const aVal = a[colIndex] ?? '';
-        const bVal = b[colIndex] ?? '';
-        return ascending
-          ? aVal.localeCompare(bVal, 'ja', { numeric: true })
-          : bVal.localeCompare(aVal, 'ja', { numeric: true });
-      });
-
-      applyFilterAndRender();
-      updateHeaderIndicators();
-    }
-
-    function updateHeaderIndicators() {
-      const headerRow = headers.map((title, index) => {
-        const isSorted = sortState.column === index;
-        const arrow = isSorted ? (sortState.ascending ? '▲' : '▼') : '';
-        return `<th onclick="sortTableByColumn(${index})" class="px-4 py-2 whitespace-nowrap hover:bg-gray-300">${title} ${arrow}</th>`;
-      }).join('');
-      document.getElementById('csv-header').innerHTML = headerRow;
-    }
-
-    function applyFilterAndRender() {
-      const keyword = document.getElementById('searchInput').value.toLowerCase();
-      const filtered = originalData.filter(row =>
-        row.some(cell => cell.toLowerCase().includes(keyword))
-      );
-      renderTable(filtered);
-    }
-
-    function toggleSortable() {
-      sortableEnabled = !sortableEnabled;
-      document.getElementById("toggleSortBtn").innerText = sortableEnabled ? "並び替えON" : "並び替えOFF";
-      renderTable(originalData);
-    }
-
-    function reloadPage() {
-      location.reload();
-    }
-
-    fetch('status.csv')
-      .then(res => {
-        if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
-        return res.text();
-      })
-      .then(csv => {
-        const lines = csv.trim().split('\n').map(l => l.split(','));
-        headers = lines[0];
-        originalData = lines.slice(1);
+        applyFilterAndRender();
         updateHeaderIndicators();
-        renderTable(originalData);
-      })
-      .catch(err => {
-        document.getElementById('csv-body').innerHTML = `
+      }
+
+      function updateHeaderIndicators() {
+        const headerRow = headers.map((title, index) => {
+          const isSorted = sortState.column === index;
+          const arrow = isSorted ? (sortState.ascending ? '▲' : '▼') : '';
+          if (index <= 6) {
+            return `<th onclick="sortTableByColumn(${index})" class="px-4 py-2 whitespace-nowrap hover:bg-gray-300">${title} ${arrow}</th>`;
+          }
+        }).join('');
+        document.getElementById('csv-header').innerHTML = headerRow;
+      }
+
+      function applyFilterAndRender() {
+        const keywordInput = document.getElementById('searchInput').value.toLowerCase();
+        const keywords = keywordInput.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
+
+        if (keywords.length === 0) {
+          filtered = originalData;
+          renderTable(filtered);
+          return;
+        }
+
+        filtered = originalData.filter(row => {
+          let flg = false;
+          for (const keyword of keywords) {
+            flg = flg || row.some(cell => cell.toLowerCase().includes(keyword))
+          }
+          return flg;
+        });
+        renderTable(filtered);
+      }
+
+      function reloadPage() {
+        location.reload();
+      }
+
+      fetch('skill.csv')
+        .then(res => {
+          if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
+          return res.text();
+        })
+        .then(csv => {
+          const lines = csv.trim().split('\n').map(l => l.split(','));
+          headers = lines[0];
+          originalData = lines.slice(1);
+          updateHeaderIndicators();
+          applyFilterAndRender();
+        })
+        .catch(err => {
+          document.getElementById('csv-body').innerHTML = `
           <tr><td class="p-4 text-red-500" colspan="100%">${err.message}</td></tr>
         `;
+        });
+
+      document.getElementById('searchInput').addEventListener('input', applyFilterAndRender);
+
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
       });
 
-    document.getElementById('searchInput').addEventListener('input', applyFilterAndRender);
-  </script>
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+
+      window.addEventListener('touchend', (e) => {
+        if (e.target.classList.contains('modal')) {
+          e.target.style.display = 'none';
+        }
+      }, { passive: true });
+
+      function setEventRow() {
+        document.querySelectorAll("#csv-table tbody tr").forEach(function (row, index) {
+          row.addEventListener("click", function () {
+            showModal(index);
+          });
+        });
+      }
+
+      function getRangeInfo(index) {
+        let content = ``;
+        /* range.js側で設定
+        highlightRange = {
+          min: Number(filtered[index][7]),
+          max: Number(filtered[index][8])
+        };
+        range = Number(filtered[index][9]);
+        useSquareRange = (filtered[index][10] === "1");
+        useSquareRRange = (filtered[index][11] === "1");
+        useRectRange = (filtered[index][12] === "1");
+        useLineRange = (filtered[index][13] === "1");
+        useLineRRange = (filtered[index][14] === "1");
+        lowhighLimit = {
+          min: Number(filtered[index][15]),
+          max: Number(filtered[index][16])
+        };
+        lowhighRangeLimit = {
+          min: Number(filtered[index][17]),
+          max: Number(filtered[index][18])
+        };
+        */
+
+        if (highlightRange.min !== 0 || highlightRange.max !== 0) {
+          if(useRectRange) content += `<b>射程： ${highlightRange.min} - ${range % 10}<br>`;
+          else content += `<b>射程： ${highlightRange.min} - ${highlightRange.max}<br>`;
+        }
+        if (lowhighLimit.min !== 0 || lowhighLimit.max !== 0) {
+          content += `<b>射程高低差： ↓${lowhighLimit.min} - ↑${lowhighLimit.max}<br>`;
+        }
+        if (lowhighRangeLimit.min !== 0 || lowhighRangeLimit.max !== 0) {
+          content += `<b>範囲高低差： ↓${lowhighRangeLimit.min} - ↑${lowhighRangeLimit.max}<br>`;
+        }
+        return content;
+      }
+
+      function showModal(index) {
+        document.getElementById('skillImg').innerHTML = `<img src="${filtered[index][1]}">`;
+        document.getElementById('skillName').innerHTML = `${filtered[index][0]}`;
+        document.getElementById('skillType').innerHTML = `${getTypeClass(filtered[index][2], false)}`;
+        document.getElementById('skillCost').innerHTML = `コスト：${filtered[index][3]}`;
+        document.getElementById('skillCD').innerHTML = `CD：${filtered[index][4]}`;
+        document.getElementById('skillDesc').innerHTML = `${filtered[index][6]}`;
+
+        //document.getElementById('skillRange').innerHTML = `<iframe id="inline-frame" width="330px" height="350px" src="./range.html" style="overflow: hidden;"></iframe>`;
+        setGridRangeValue(index);
+        document.getElementById('skillComment').innerHTML = `${getCommentClass(filtered[index][19])}`;
+        document.getElementById('skillRangeInfo').innerHTML = getRangeInfo(index);
+
+        document.getElementById('skillFrend').innerHTML = `${getHaveClass(filtered[index][5], false)}`;
+        modal.style.display = 'flex';
+      }
+
+      let inheritanceEnabled = false;
+      function toggleInheritance() {
+        inheritanceEnabled = !inheritanceEnabled;
+        document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
+      }
+
+      function goToNextPage(link) {
+        let text = "";
+        if (inheritanceEnabled) {
+          filtered.forEach(row => {
+            row.forEach((cell, colIndex) => {
+              if (colIndex === 5) text += cell + ";";
+            });
+          });
+          localStorage.setItem("text", [...new Set(text.split(";"))].join(" "));
+        }
+        location.href = `${link}`;
+      }
+    </script>
 
 </body>
 

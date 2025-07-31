@@ -13,7 +13,8 @@
     <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
         <div class="controls">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-            <button class="characterbtn" onclick="goToNextPage()">キャラクタ一覧へ</button>
+            <button class="characterbtn" onclick="goToNextPage('index.html')">キャラクタ一覧へ</button>
+            <button class="skillbtn" onclick="goToNextPage('skill.html')">スキル一覧へ</button>
             <button class="statusInheritanceBtn" id="statusInheritanceBtn"
                 onclick="toggleInheritance()">データ引継ぎOFF</button>
             <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button>
@@ -67,7 +68,6 @@
         const imageColumnIndex = 1;
         const imageColumnIndex2 = 2;
 
-        const params = new URLSearchParams(location.search);
         const value = localStorage.getItem("text");
         document.getElementById('searchInput').value = value;
         localStorage.removeItem("text");
@@ -237,7 +237,7 @@
             document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
         }
 
-        function goToNextPage() {
+        function goToNextPage(link) {
             let text = "";
             if (inheritanceEnabled) {
                 filtered.forEach(row => {
@@ -247,7 +247,7 @@
                 });
                 localStorage.setItem("text", text);
             }
-            location.href = `index.html`;
+            location.href = `${link}`;
         }
 
         function addColumn() {
