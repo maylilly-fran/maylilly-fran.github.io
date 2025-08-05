@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>【鈴蘭の剣】フランなツール</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/tarot.css">
+</head>
+
+<body>
+    <div class="controls">
+        <button class="characterbtn" onclick="goToNextPage('index.html')">キャラクタ一覧へ</button>
+        <button class="statusbtn" onclick="goToNextPage('status.html')">ステータス一覧へ</button>
+        <button class="skillbtn" onclick="goToNextPage('skill.html')">スキル一覧へ</button>
+        <button class="skillbtn" onclick="goToNextPage('equipment.html')">装備一覧へ</button>
+    </div>
+
+    <div id="table-container"></div>
+    <button id="backToTopBtn">⇪ TOP</button>
+
+    <script>
+        fetch('./data/tarot.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('データの読み込みに失敗しました');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const container = document.getElementById('table-container');
+                data.forEach(item => {
+                    const row = document.createElement('div');
+                    row.className = 'table-row';
+
+                    const imageCell = document.createElement('div');
+                    imageCell.className = 'image-cell';
+                    imageCell.innerHTML = `<img src="${item.image}" alt="画像">`;
+
+                    const commentCell = document.createElement('div');
+                    commentCell.className = 'comment-cell';
+                    commentCell.innerHTML = `
+            <div class="comment-title">${item.title}</div>
+            <div class="comment-detail"><p class="effect">効果</p>${item.comment1}</div>
+            <div class="comment-detail"><p class="level">Lv.60</p>${item.comment2}</div>
+            <div class="comment-detail2"><p class="get">入手方法</p>${item.comment3}</div>
+          `;
+                    row.appendChild(imageCell);
+                    row.appendChild(commentCell);
+                    container.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('読み込みエラー:', error);
+                document.getElementById('table-container').innerText = 'データの読み込みに失敗しました。';
+            });
+
+        function reloadPage() {
+            location.reload();
+        }
+
+        function goToNextPage(link) {
+            location.href = `${link}`;
+        }
+
+        const btn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

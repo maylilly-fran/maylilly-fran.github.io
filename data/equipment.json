@@ -1,0 +1,804 @@
+{
+    "type": [
+        "モチーフ",
+        "剣",
+        "斧",
+        "槍",
+        "杖",
+        "弓",
+        "装具"
+    ],
+    "rarity": [
+        "レジェンド",
+        "エピック",
+        "レア",
+        "コモン"
+    ],
+    "equipment": [
+        {
+            "title": "曙光",
+            "image": "./img/equipmentIMG/曙光.png",
+            "icon": "./img/iconIMG/イナンナ・鈴蘭の剣.png",
+            "type": "モチーフ装備/剣",
+            "rarity": "レジェンド",
+            "comment": "魔法範囲ダメージ+20%。支援または回復スキルを味方に発動すると、自身は曙光の力3を獲得し、同時に自身とターゲットは△攻撃Lv.2を獲得する。2ターン継続する。"
+        },
+        {
+            "title": "権弈の鋒",
+            "image": "./img/equipmentIMG/権弈の鋒.png",
+            "icon": "./img/iconIMG/ルトフィ.png",
+            "type": "モチーフ装備/剣",
+            "rarity": "レジェンド",
+            "comment": "物攻+10%。3個以上のデバフを所持する敵をアクティブ攻撃する時、クリダメ+30%。自身のターン以外の場合、追加で物攻+16%。"
+        },
+        {
+            "title": "暁月",
+            "image": "./img/equipmentIMG/暁月.png",
+            "icon": "./img/iconIMG/アイサ.png",
+            "type": "モチーフ装備/剣",
+            "rarity": "レジェンド",
+            "comment": "防御力+30%。単体に支援系のクラススキルを発動する時、自身とターゲットが同時に暁月の輝きLv.2を獲得する。毎回戦闘で最大1回発動する。暁月の輝きLv.2を所持しているターゲットを回復する時、ターゲットはランダムな1個のLv.2バフを獲得し、2ターン継続する。1体のターゲットにつき1ターンで最大1回発動する。"
+        },
+        {
+            "title": "終りなき夜の流光",
+            "image": "./img/equipmentIMG/終りなき夜の流光.png",
+            "icon": "./img/iconIMG/サフィア・夏時の約束.png",
+            "type": "モチーフ装備/剣",
+            "rarity": "レジェンド",
+            "comment": "攻撃と防御能力値+10%。味方にスキルを発動した後、2個のデバフを解除し、1個のランダムなLv.2バフ、終りなき夜の流光Lv.2を付与し、2ターン継続する。"
+        },
+        {
+            "title": "新生の刃",
+            "image": "./img/equipmentIMG/新生の刃.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。戦闘開始時、HP6%を物攻値に追加する。"
+        },
+        {
+            "title": "ヴォイドソード",
+            "image": "./img/equipmentIMG/ヴォイドソード.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "クリティカル発生率+15%。スキル発動後、1スタックの虚無を獲得する。効果：クリダメ+5%、最大6スタック。後2回目の行動終了まで継続する。"
+        },
+        {
+            "title": "豊穣のナイフ",
+            "image": "./img/equipmentIMG/豊穣のナイフ.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "行動開始時、自身が健康状態の場合、80%の確率で2ptのENを回復する。自身が瀕死状態の場合、80%の確率でHPを30%回復する。CDは3ターン。"
+        },
+        {
+            "title": "守護の決意",
+            "image": "./img/equipmentIMG/守護の決意.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。シールドを所持する場合、防御力+40%、被ダメージ-10%。"
+        },
+        {
+            "title": "エターナルフレイムソード",
+            "image": "./img/equipmentIMG/エターナルフレイムソード.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "単体アクティブ攻撃でダメージを与えた後、ターゲットに火傷を付与し、1ターンで最大1回発動する。火傷を受けた敵への与ダメージ+20%。"
+        },
+        {
+            "title": "カウンシラーズソード",
+            "image": "./img/equipmentIMG/カウンシラーズソード.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "HP+15%。単体攻撃でダメージを与えた後、ターゲットに▽移動Lv.1を付与し、1ターン継続する。"
+        },
+        {
+            "title": "首切りの曲刀",
+            "image": "./img/equipmentIMG/首切りの曲刀.png",
+            "type": "剣",
+            "rarity": "レジェンド",
+            "comment": "高地攻撃時、攻撃力+15%。"
+        },
+        {
+            "title": "決闘用の短剣",
+            "image": "./img/equipmentIMG/決闘用の短剣.png",
+            "type": "剣",
+            "rarity": "エピック",
+            "comment": "正面・側面からの攻撃を受ける時、物防+25%。"
+        },
+        {
+            "title": "儀式用の短刀",
+            "image": "./img/equipmentIMG/儀式用の短刀.png",
+            "type": "剣",
+            "rarity": "エピック",
+            "comment": "背面攻撃する時、クリティカル発生率+20%。"
+        },
+        {
+            "title": "精錬された短剣",
+            "image": "./img/equipmentIMG/精錬された短剣.png",
+            "type": "剣",
+            "rarity": "エピック",
+            "comment": "▽移動を所持する敵をアクティブ攻撃する時、物攻+15%。"
+        },
+        {
+            "title": "寒光の剣",
+            "image": "./img/equipmentIMG/寒光の剣.png",
+            "type": "剣",
+            "rarity": "レア",
+            "comment": "物攻+6%。"
+        },
+        {
+            "title": "鋭い剣",
+            "image": "./img/equipmentIMG/鋭い剣.png",
+            "type": "剣",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "鉄の剣",
+            "image": "./img/equipmentIMG/鉄の剣.png",
+            "type": "剣",
+            "rarity": "コモン",
+            "comment": "-"
+        },
+        {
+            "title": "じゅうじゅうハンマー",
+            "image": "./img/equipmentIMG/じゅうじゅうハンマー.png",
+            "icon": "./img/iconIMG/流星団.png",
+            "type": "モチーフ装備/斧",
+            "rarity": "レジェンド",
+            "comment": "物攻+5%。3マス以上離れたターゲットに単体攻撃を行う前に、追加で物攻+25%。"
+        },
+        {
+            "title": "疾風天烈剣",
+            "image": "./img/equipmentIMG/疾風天烈剣.png",
+            "icon": "./img/iconIMG/ラヴィア・初夏の記憶.png",
+            "type": "モチーフ装備/斧",
+            "rarity": "レジェンド",
+            "comment": "物攻+10%。攻撃後、自身のクリダメ+21%、効果は行動終了まで継続する。"
+        },
+        {
+            "title": "宴の巨斧",
+            "image": "./img/equipmentIMG/宴の巨斧.png",
+            "type": "斧",
+            "rarity": "レジェンド",
+            "comment": "攻撃時、ターゲットのHP割合が自身より低い場合、攻撃力+20%。任意ターゲットを倒す時、自身のHPを35%回復する。CDは1ターン。"
+        },
+        {
+            "title": "空洞の巨斧",
+            "image": "./img/equipmentIMG/空洞の巨斧.png",
+            "type": "斧",
+            "rarity": "レジェンド",
+            "comment": "防御力+10%。戦闘開始時、物防値と魔防値の10%を物攻値に追加する。"
+        },
+        {
+            "title": "狂戦士の斧",
+            "image": "./img/equipmentIMG/狂戦士の斧.png",
+            "type": "斧",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。攻撃時、ターゲットのHP割合が自身より高い場合、ターゲットの40%の防御力を無視する。"
+        },
+        {
+            "title": "正音の槌",
+            "image": "./img/equipmentIMG/正音の槌.png",
+            "type": "斧",
+            "rarity": "レジェンド",
+            "comment": "物攻+10%。攻撃前、ターゲットの2個のバフを解除する。"
+        },
+        {
+            "title": "豊穣の大斧",
+            "image": "./img/equipmentIMG/豊穣の大斧.png",
+            "type": "斧",
+            "rarity": "レジェンド",
+            "comment": "行動開始時、自身が健康状態の場合、80%の確率で2ptのENを回復する。自身が瀕死状態の場合、80%の確率でHPを30%回復する。CDは3ターン。"
+        },
+        {
+            "title": "拒絶のハンマー",
+            "image": "./img/equipmentIMG/拒絶のハンマー.png",
+            "type": "斧",
+            "rarity": "レジェンド",
+            "comment": "突撃時、ダメージ+25%。ノックバックを与える時、ターゲットのHP割合が自身より低い場合、追加で1マスノックバックする。"
+        },
+        {
+            "title": "平衡の重斧",
+            "image": "./img/equipmentIMG/平衡の重斧.png",
+            "type": "斧",
+            "rarity": "エピック",
+            "comment": "健康状態の場合、攻撃力+12%。"
+        },
+        {
+            "title": "禁魔の巨斧",
+            "image": "./img/equipmentIMG/禁魔の巨斧.png",
+            "type": "斧",
+            "rarity": "エピック",
+            "comment": "アクティブ攻撃でダメージを与えた後、ターゲットの2個のバフを解除する。CDは1ターン。"
+        },
+        {
+            "title": "破壊の斧",
+            "image": "./img/equipmentIMG/破壊の斧.png",
+            "type": "斧",
+            "rarity": "エピック",
+            "comment": "高地攻撃時、クリティカル発生率+25%。"
+        },
+        {
+            "title": "ヘビーアックス",
+            "image": "./img/equipmentIMG/ヘビーアックス.png",
+            "type": "斧",
+            "rarity": "レア",
+            "comment": "HP+8%。"
+        },
+        {
+            "title": "歴戦の鉄斧",
+            "image": "./img/equipmentIMG/歴戦の鉄斧.png",
+            "type": "斧",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "鉄の斧",
+            "image": "./img/equipmentIMG/鉄の斧.png",
+            "type": "斧",
+            "rarity": "コモン",
+            "comment": "-"
+        },
+        {
+            "title": "千軍破陣槍",
+            "image": "./img/equipmentIMG/千軍破陣槍.png",
+            "icon": "./img/iconIMG/パミーナ.png",
+            "type": "モチーフ装備/槍",
+            "rarity": "レジェンド",
+            "comment": "クリティカル率、攻撃力+10%。攻撃前、移動・突撃・ワープの合計距離が5以上の場合、クリダメ+10%、非即時スキルで攻撃後、そのスキルのCDは0になり、消費したENが還元される。この効果のCDは3ターン。"
+        },
+        {
+            "title": "ダブルハルバード",
+            "image": "./img/equipmentIMG/ダブルハルバード.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "物攻+5%。範囲攻撃時、ターゲット1体に命中するごとに、ダメージ+8%、最大24%まで。"
+        },
+        {
+            "title": "ボーンスピア",
+            "image": "./img/equipmentIMG/ボーンスピア.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "物攻+10%。単体アクティブ攻撃前、ターゲットに自身の物攻値10%の貫通ダメージを1回追加する。"
+        },
+        {
+            "title": "静寂の衛兵",
+            "image": "./img/equipmentIMG/静寂の衛兵.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "敵のアクティブ攻撃を受けた時、防御力+30%、次の攻撃の与ダメージ+25%。"
+        },
+        {
+            "title": "名もなき棍棒",
+            "image": "./img/equipmentIMG/名もなき棍棒.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "移動力+1マス。攻撃前、移動力が3マス以上の時、クリティカル発生率+15%。"
+        },
+        {
+            "title": "豊穣の長槍",
+            "image": "./img/equipmentIMG/豊穣の長槍.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "行動開始時、自身が健康状態の場合、80%の確率で2ptのENを回復する。自身が瀕死状態の場合、80%の確率でHPを30%回復する。CDは3ターン。"
+        },
+        {
+            "title": "アポカリプスサイス",
+            "image": "./img/equipmentIMG/アポカリプスサイス.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "背面攻撃する時、ダメージ+25%。"
+        },
+        {
+            "title": "飾り付きの斧槍",
+            "image": "./img/equipmentIMG/飾り付きの斧槍.png",
+            "type": "槍",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。単体攻撃される前に、攻撃と防御能力値+10%。"
+        },
+        {
+            "title": "凛とした刃槍",
+            "image": "./img/equipmentIMG/凛とした刃槍.png",
+            "type": "槍",
+            "rarity": "エピック",
+            "comment": "3個以上のデバフを所持する敵をアクティブ攻撃する時、物攻+15%。"
+        },
+        {
+            "title": "破甲の槍",
+            "image": "./img/equipmentIMG/破甲の槍.png",
+            "type": "槍",
+            "rarity": "エピック",
+            "comment": "シールドを所持する敵を攻撃する時、攻撃力+15%。"
+        },
+        {
+            "title": "衛兵の長槍",
+            "image": "./img/equipmentIMG/衛兵の長槍.png",
+            "type": "槍",
+            "rarity": "エピック",
+            "comment": "HP+12%。"
+        },
+        {
+            "title": "鋭い長槍",
+            "image": "./img/equipmentIMG/鋭い長槍.png",
+            "type": "槍",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "守護の槍",
+            "image": "./img/equipmentIMG/守護の槍.png",
+            "type": "槍",
+            "rarity": "レア",
+            "comment": "物防+12%。"
+        },
+        {
+            "title": "長槍",
+            "image": "./img/equipmentIMG/長槍.png",
+            "type": "槍",
+            "rarity": "コモン",
+            "comment": "-"
+        },
+        {
+            "title": "夢のすくい",
+            "image": "./img/equipmentIMG/夢のすくい.png",
+            "icon": "./img/iconIMG/アフラ.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "魔攻+6%。戦闘開始時、2スタックの夢の兆し・滅2、夢の兆し・生2を獲得する。クラススキルのアクティブ使用後に：回復をした場合、ターゲットのデバフを1つ解除し、自身が1スタックの夢の兆し・滅2を獲得する。貫通ダメージを与えた場合、自身が1スタックの夢の兆し・生2を獲得する。"
+        },
+        {
+            "title": "生への恋慕",
+            "image": "./img/equipmentIMG/生への恋慕.png",
+            "icon": "./img/iconIMG/フラビア.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "味方に単体支援スキルを発動した時、ランダムで1個のLv.2バフを付与し、3ターン継続する。ターゲットが召喚ユニットである場合、追加で生への恋慕Lv.2を獲得し、3ターン継続する。生への恋慕効果は1ターンで、最大1回付与する。"
+        },
+        {
+            "title": "星焼",
+            "image": "./img/equipmentIMG/星焼.png",
+            "icon": "./img/iconIMG/ルヴァタ.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "範囲ダメージ+20%、ダメージを与えてクリティカルが発生した際に100%の確率でターゲットに1回着火を付与、1ターン持続し、各ターン各ターゲットに1回のみ。行動開始時に、最も近い5マス以内の敵のいる地形パネルを強制的に燃焼パネルに変え、2ターン持続。CDは2ターン。"
+        },
+        {
+            "title": "宵闇傀儡",
+            "image": "./img/equipmentIMG/宵闇傀儡.png",
+            "icon": "./img/iconIMG/コヴァレ.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "魔攻、HP+10%。ダメージを与えた後、ターゲットに1個のランダムなLv.1デバフを付与する。デバフスキルを使用する場合、効果は以下の通り変化する：攻撃後、1個のランダムなLv.2デバフ、宵闇傀儡Lv.3を付与し、2ターン継続する。"
+        },
+        {
+            "title": "拡散プリズム",
+            "image": "./img/equipmentIMG/拡散プリズム.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "魔攻+10%。範囲攻撃発動時、ターゲットに1体命中するごとに、与魔法ダメージ、与貫通ダメージ+10%、最大20%。"
+        },
+        {
+            "title": "豊穣の杖",
+            "image": "./img/equipmentIMG/豊穣の杖.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "行動開始時、自身が健康状態の場合、80%の確率で2ptのENを回復する。自身が瀕死状態の場合、80%の確率でHPを30%回復する。CDは3ターン。"
+        },
+        {
+            "title": "フォーカススタッフ",
+            "image": "./img/equipmentIMG/フォーカススタッフ.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "無傷状態の場合、単体スキルの最大射程+1マス。単体攻撃時、魔攻+15%。"
+        },
+        {
+            "title": "再構築キューブ",
+            "image": "./img/equipmentIMG/再構築キューブ.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "回復効果+15%。味方にスキルを発動した後、追加で1個のデバフを解除する。"
+        },
+        {
+            "title": "星光の名残",
+            "image": "./img/equipmentIMG/星光の名残.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。戦闘開始時、HPの6%を魔攻値に追加する。"
+        },
+        {
+            "title": "怨念の箒",
+            "image": "./img/equipmentIMG/怨念の箒.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "範囲ダメージ+15%。アクティブ攻撃でダメージを与えた後、50%の確率でターゲットに魔攻値20%のHP流出を付与し、1ターン継続する。"
+        },
+        {
+            "title": "遺骨の杖",
+            "image": "./img/equipmentIMG/遺骨の杖.png",
+            "type": "杖",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。フィールド上に味方1名が倒されるごとに、1ptのENを回復する。1ターンで最大1回発動する。"
+        },
+        {
+            "title": "凝視のオーブ",
+            "image": "./img/equipmentIMG/凝視のオーブ.png",
+            "type": "杖",
+            "rarity": "エピック",
+            "comment": "単体攻撃時、ダメージ+15%。"
+        },
+        {
+            "title": "青墨のトーテム",
+            "image": "./img/equipmentIMG/青墨のトーテム.png",
+            "type": "杖",
+            "rarity": "エピック",
+            "comment": "回復効果+10%。"
+        },
+        {
+            "title": "爆裂の晶石クラスター",
+            "image": "./img/equipmentIMG/爆裂の晶石クラスター.png",
+            "type": "杖",
+            "rarity": "エピック",
+            "comment": "範囲ダメージ+15%。"
+        },
+        {
+            "title": "堅固な杖",
+            "image": "./img/equipmentIMG/堅固な杖.png",
+            "type": "杖",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "微光の杖",
+            "image": "./img/equipmentIMG/微光の杖.png",
+            "type": "杖",
+            "rarity": "レア",
+            "comment": "魔攻+6%。"
+        },
+        {
+            "title": "見習いの杖",
+            "image": "./img/equipmentIMG/見習いの杖.png",
+            "type": "杖",
+            "rarity": "コモン",
+            "comment": "-"
+        },
+        {
+            "title": "英霊の長弓",
+            "image": "./img/equipmentIMG/英霊の長弓.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "物攻+10%。アクティブ単体攻撃でダメージを与えた後、英霊の長弓を付与し、1ターン継続する。"
+        },
+        {
+            "title": "短射程ヘビークロスボウ",
+            "image": "./img/equipmentIMG/短射程ヘビークロスボウ.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "最小射程-1マス、与ダメージ+32%。ターゲットとの距離が1マス遠くなるごとに(隣接マスは0マス扱い)、与ダメージ-5%、最大20%。"
+        },
+        {
+            "title": "ミーティアクロスボウ",
+            "image": "./img/equipmentIMG/ミーティアクロスボウ.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "クリティカル発生率+15%。単体アクティブ攻撃でクリティカルが発生する時、100%の確率でターゲットに自身の物攻値20%の貫通ダメージを1回追加する。"
+        },
+        {
+            "title": "イリヤファイターボウ",
+            "image": "./img/equipmentIMG/イリヤファイターボウ.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "物攻+5%。自身のターン以外の場合、与ダメージ+20%。"
+        },
+        {
+            "title": "豊穣の長弓",
+            "image": "./img/equipmentIMG/豊穣の長弓.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "行動開始時、自身が健康状態の場合、80%の確率で2ptのENを回復する。自身が瀕死状態の場合、80%の確率でHPを30%回復する。CDは3ターン。"
+        },
+        {
+            "title": "流星の軌跡",
+            "image": "./img/equipmentIMG/流星の軌跡.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "物攻+5%。単体攻撃でダメージを与えた後、ターゲットにランダムなLv.1デバフ2個を付与し、2ターン継続する。"
+        },
+        {
+            "title": "ホエール・ハンター",
+            "image": "./img/equipmentIMG/ホエール・ハンター.png",
+            "type": "弓",
+            "rarity": "レジェンド",
+            "comment": "単体アクティブ攻撃でダメージを与えた後、ターゲットに感染を付与し、1ターンで最大1回発動する。感染を受けた敵への与ダメージ+20%。"
+        },
+        {
+            "title": "スチールヘビークロスボウ",
+            "image": "./img/equipmentIMG/スチールヘビークロスボウ.png",
+            "type": "弓",
+            "rarity": "エピック",
+            "comment": "攻撃前、ターゲットの25%の防御力を無視する。"
+        },
+        {
+            "title": "ハンターボウ",
+            "image": "./img/equipmentIMG/ハンターボウ.png",
+            "type": "弓",
+            "rarity": "エピック",
+            "comment": "ダメージを与えた後、50%の確率でターゲットに▽移動Lv.1を付与し、1ターン継続する。"
+        },
+        {
+            "title": "ウィルダの長弓",
+            "image": "./img/equipmentIMG/ウィルダの長弓.png",
+            "type": "弓",
+            "rarity": "エピック",
+            "comment": "単体攻撃前、ターゲットとの距離が4マス以上の時、クリティカル発生率+25%。"
+        },
+        {
+            "title": "精巧な木の弓",
+            "image": "./img/equipmentIMG/精巧な木の弓.png",
+            "type": "弓",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "精密な弓",
+            "image": "./img/equipmentIMG/精密な弓.png",
+            "type": "弓",
+            "rarity": "レア",
+            "comment": "クリティカル発生率+12%。"
+        },
+        {
+            "title": "木の弓",
+            "image": "./img/equipmentIMG/木の弓.png",
+            "type": "弓",
+            "rarity": "コモン",
+            "comment": "-"
+        },
+        {
+            "title": "禁息のリング",
+            "image": "./img/equipmentIMG/禁息のリング.png",
+            "icon": "./img/iconIMG/ニーティア.png",
+            "type": "モチーフ装備/装具",
+            "rarity": "レジェンド",
+            "comment": "物攻+5%。アクティブ通常攻撃前、追加で物攻+15%。次の行動開始まで継続する。"
+        },
+        {
+            "title": "檻の仮面",
+            "image": "./img/equipmentIMG/檻の仮面.png",
+            "icon": "./img/iconIMG/エストラ.png",
+            "type": "モチーフ装備/装具",
+            "rarity": "レジェンド",
+            "comment": "攻撃と防御能力値+6%。HP30%相当の魔法シールドを所持するごとに、追加で攻撃と防御能力値+3%。最大9%まで。"
+        },
+        {
+            "title": "血晶石の御守",
+            "image": "./img/equipmentIMG/血晶石の御守.png",
+            "icon": "./img/iconIMG/トリスタ.png",
+            "type": "モチーフ装備/装具",
+            "rarity": "レジェンド",
+            "comment": "魔法ダメージ+10%。魔法範囲ダメージ+20%。瀕死状態の場合、効果は魔法ダメージ+20%、魔法範囲ダメージ+40%に変化する。"
+        },
+        {
+            "title": "守護正義の盾",
+            "image": "./img/equipmentIMG/守護正義の盾.png",
+            "icon": "./img/iconIMG/ティードン.png",
+            "type": "モチーフ装備/装具",
+            "rarity": "レジェンド",
+            "comment": "物理シールドを所持する場合、攻撃と防御能力値+12%。行動開始時、自身物防値120%の物理シールドを獲得し、CDは2ターン。"
+        },
+        {
+            "title": "バーニングストーン",
+            "image": "./img/equipmentIMG/バーニングストーン.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】燎原：即時。ターゲット範囲2マス以内の敵全員に20%のHPの火属性貫通ダメージを与える。1戦で最大2回発動する。CDは3ターン。"
+        },
+        {
+            "title": "ナイフ射出ガントレット",
+            "image": "./img/equipmentIMG/ナイフ射出ガントレット.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】閃撃：即時。敵に15%のHPの貫通ダメージを与え、1戦で最大3回発動する。CDは1ターン。"
+        },
+        {
+            "title": "オーギュストの古いノート",
+            "image": "./img/equipmentIMG/オーギュストの古いノート.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】騎士の信念：即時。他の味方1名にランダムなLv.2バフ1個、△素早さLv.1を付与し、2ターン継続する。1戦で最大5回発動する。効果CDは2ターン。"
+        },
+        {
+            "title": "原初の砂時計",
+            "image": "./img/equipmentIMG/原初の砂時計.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "物攻、魔攻+8%。▽移動と▽素早さを無効化する。"
+        },
+        {
+            "title": "一匹狼のマント",
+            "image": "./img/equipmentIMG/一匹狼のマント.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "自身範囲3マス以内に味方がいない場合、攻撃と防御能力値+12%、クリティカル発生率+20%。"
+        },
+        {
+            "title": "ハンターの直感",
+            "image": "./img/equipmentIMG/ハンターの直感.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "警戒発動時、与ダメージ+25%。敵が警戒範囲内にスキルを発動する場合、警戒が発動する。"
+        },
+        {
+            "title": "時空の指輪",
+            "image": "./img/equipmentIMG/時空の指輪.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】空間転移：即時。自身範囲3マス以内の任意味方の背後にワープし、攻撃力+10%、1ターン継続する。1戦で最大2回発動する。CDは3ターン。戦闘開始後2ターンは使用不可。"
+        },
+        {
+            "title": "精密な照尺",
+            "image": "./img/equipmentIMG/精密な照尺.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "物攻+5%。高地攻撃時、クリティカル発生率+20%。"
+        },
+        {
+            "title": "深奥の守り",
+            "image": "./img/equipmentIMG/深奥の守り.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "正面攻撃される時、物防+25%、✗防御能力値デバフを獲得する。"
+        },
+        {
+            "title": "派手な帽子",
+            "image": "./img/equipmentIMG/派手な帽子.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "干渉無効化を獲得し、健康状態の場合、魔防+15%。"
+        },
+        {
+            "title": "晶石爆発の鎧",
+            "image": "./img/equipmentIMG/晶石爆発の鎧.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "HP+10%。反撃時、ダメージ+25%。"
+        },
+        {
+            "title": "風塵の粉",
+            "image": "./img/equipmentIMG/風塵の粉.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "被回復効果+16%、✗被回復無効化を獲得する。"
+        },
+        {
+            "title": "八味地黄丸",
+            "image": "./img/equipmentIMG/八味地黄丸.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】春の完治：即時。自身のHPを30%回復し、2個のデバフを解除する。1戦で最大2回発動する。CDは3ターン。"
+        },
+        {
+            "title": "狂気のお香",
+            "image": "./img/equipmentIMG/狂気のお香.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】狂気の目覚め：移動力+1マス、ダメージ+20%、2ターン継続する。CDは3ターン。1戦で最大2回発動する。"
+        },
+        {
+            "title": "アーカーシャ・カーテン",
+            "image": "./img/equipmentIMG/アーカーシャ・カーテン.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】タロットカーテン：即時。被魔法ダメージ-70%。3回効果可能。2ターン継続する。1戦で最大1回発動する。"
+        },
+        {
+            "title": "晶石の大盾",
+            "image": "./img/equipmentIMG/晶石の大盾.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "【アクティブスキル】晶石化：60%のHPの物理シールドを獲得し、解除不可、2ターン継続する。1戦で最大2回発動する。CDは3ターン。"
+        },
+        {
+            "title": "謎の偏析装置",
+            "image": "./img/equipmentIMG/謎の偏析装置.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "遠距離攻撃される時、被ダメージ-12%。"
+        },
+        {
+            "title": "災害の瓶",
+            "image": "./img/equipmentIMG/災害の瓶.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "【アクティブスキル】災禍：即時。敵に2個のランダムなLv.2能力値デバフを付与し、2ターン継続する。1戦で最大3回使用できる。CDは2ターン。"
+        },
+        {
+            "title": "常磐の飾り",
+            "image": "./img/equipmentIMG/常磐の飾り.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "回復を受ける時、ランダムなLv.2能力値バフ1個を獲得し、2ターン継続する。"
+        },
+        {
+            "title": "叱責の仮面",
+            "image": "./img/equipmentIMG/叱責の仮面.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "被魔法ダメージ-30%。CDは2ターン。"
+        },
+        {
+            "title": "風替わりな上着",
+            "image": "./img/equipmentIMG/風替わりな上着.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "被物理ダメージ-30%。CDは2ターン。"
+        },
+        {
+            "title": "シンクロ・メイル",
+            "image": "./img/equipmentIMG/シンクロ・メイル.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "健康状態の場合、被ダメージ-10%。"
+        },
+        {
+            "title": "グレーのネックレス",
+            "image": "./img/equipmentIMG/グレーのネックレス.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "アクティブ攻撃される前に、相手に2個のランダムなLv.1デバフを付与し、2ターン継続する。CDは2ターン。"
+        },
+        {
+            "title": "棘の指輪",
+            "image": "./img/equipmentIMG/棘の指輪.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "負傷状態の場合、攻撃力+12%。"
+        },
+        {
+            "title": "六味飲",
+            "image": "./img/equipmentIMG/六味飲.png",
+            "type": "装具",
+            "rarity": "エピック",
+            "comment": "【アクティブスキル】春の治療：即時。HPを45%回復し、1戦で最大1回発動する。"
+        },
+        {
+            "title": "狼牙の首飾り",
+            "image": "./img/equipmentIMG/狼牙の首飾り.png",
+            "type": "装具",
+            "rarity": "レア",
+            "comment": "物攻+6%。"
+        },
+        {
+            "title": "ヘビーガントレット",
+            "image": "./img/equipmentIMG/ヘビーガントレット.png",
+            "type": "装具",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "焦げた魔女の帽子",
+            "image": "./img/equipmentIMG/焦げた魔女の帽子.png",
+            "type": "装具",
+            "rarity": "レア",
+            "comment": "魔防+12%。"
+        },
+        {
+            "title": "ブロンズネックレス",
+            "image": "./img/equipmentIMG/ブロンズネックレス.png",
+            "type": "装具",
+            "rarity": "レア",
+            "comment": "-"
+        },
+        {
+            "title": "アイアンガントレット",
+            "image": "./img/equipmentIMG/アイアンガントレット.png",
+            "type": "装具",
+            "rarity": "コモン",
+            "comment": "-"
+        },
+        {
+            "title": "アイアンネックレス",
+            "image": "./img/equipmentIMG/アイアンネックレス.png",
+            "type": "装具",
+            "rarity": "コモン",
+            "comment": "-"
+        }
+    ]
+}

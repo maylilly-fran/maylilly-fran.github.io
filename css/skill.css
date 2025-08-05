@@ -1,0 +1,309 @@
+    .characterbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .characterbtn:hover {
+        background-color: #407577;
+    }
+
+    .tarotbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .tarotbtn:hover {
+        background-color: #407577;
+    }
+
+    .equipmentbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .equipmentbtn:hover {
+        background-color: #407577;
+    }
+
+    /* モーダルスタイル */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-size: small;
+    }
+
+    @media (max-width: 768px) {
+        .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80px;
+        max-height: 85%;
+        text-align: center;
+        position: relative;
+        overflow: auto;
+        }
+    }
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 60%;
+        max-height: 85%;
+        text-align: center;
+        position: relative;
+        overflow: auto;
+    }
+
+    .modal-content img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skillFrend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+
+    .skillFrend img {
+        width: 5%;
+        margin: 3px;
+    }
+
+    .left {
+        flex: 1;
+        padding: 20px;
+        overflow: auto;
+        background-color: #ffffff;
+        border-right: 1px solid #ccc;
+        font-weight: bold;
+    }
+
+    .left img {
+        width: 33%;
+    }
+
+    .right {
+        flex: 1;
+        padding: 20px;
+        overflow: auto;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .normal,
+    .curved-shot {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #ce9c50;
+    }
+
+    .physical,
+    .close-range {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #d56723;
+    }
+
+    .magic,
+    .long-range {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #dc89dc;
+    }
+
+    .piercing,
+    .anti-unit {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #43bbda;
+    }
+
+    .mixed {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #cd44f3;
+    }
+
+    .reaction,
+    .area-attack {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #fce345;
+    }
+
+    .recovery {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #95df64;
+    }
+
+    .support {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #60c9c3;
+    }
+
+    .passive {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #f79444;
+    }
+
+    .faction-aura {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #d3a35b;
+    }
+
+    .aura {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #5e81f1;
+    }
+
+    .instant,
+    .anti-ground {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #2db684;
+    }
+
+    .debuff {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #8d75a0;
+    }
+
+    .select {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #6f8ad4;
+    }
+
+    .only-ex {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #da5b5b;
+    }
+    
+    .other-ex {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #438eff;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .reloadBtn {
+        background-color: #7cdbff;
+        border-radius: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-top: 5px;
+        border: none;
+    }
+
+    .reloadBtn:hover {
+        background-color: #16a7f052;
+    }
+
+    .statusbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .statusbtn:hover {
+        background-color: #407577;
+    }
+
+    .statusInheritanceBtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .statusInheritanceBtn:hover {
+        background-color: #535353;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: 15px auto;
+        background-color: #1a1e2a;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .forCanvas {
+        width: 80%;
+        position: relative;
+        padding-top: 60%;
+    }

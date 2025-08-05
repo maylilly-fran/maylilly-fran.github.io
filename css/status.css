@@ -1,0 +1,177 @@
+    .characterbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .characterbtn:hover {
+        background-color: #407577;
+    }
+
+    .skillbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .skillbtn:hover {
+        background-color: #407577;
+    }
+
+    .tarotbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .tarotbtn:hover {
+        background-color: #407577;
+    }
+
+    .equipmentbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: cadetblue;
+        color: white;
+        cursor: pointer;
+    }
+
+    .equipmentbtn:hover {
+        background-color: #407577;
+    }
+
+
+    .movebtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .movebtn:hover {
+        background-color: #535353;
+    }
+
+    .highlightbtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .highlightbtn:hover {
+        background-color: #535353;
+    }
+
+    .addColumnBtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .addColumnBtn:hover {
+        background-color: #535353;
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .controls2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .reloadBtn {
+        background-color: #7cdbff;
+        border-radius: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-top: 5px;
+        border: none;
+    }
+
+    .reloadBtn:hover {
+        background-color: #16a7f052;
+    }
+
+    .statusInheritanceBtn {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .statusInheritanceBtn:hover {
+        background-color: #535353;
+    }
+
+    #backToTopBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        left: auto;
+        padding: 12px 16px;
+        background: #222;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    #backToTopBtn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    #backToTopBtn:hover {
+        background: #444;
+        transform: translateY(-3px);
+    }

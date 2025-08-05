@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>【鈴蘭の剣】フランなツール</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/equipment.css">
+</head>
+
+<body>
+    <div class="controls">
+        <button class="characterbtn" onclick="goToNextPage('index.html')">キャラクタ一覧へ</button>
+        <button class="statusbtn" onclick="goToNextPage('status.html')">ステータス一覧へ</button>
+        <button class="skillbtn" onclick="goToNextPage('skill.html')">スキル一覧へ</button>
+        <button class="tarotbtn" onclick="goToNextPage('tarot.html')">タロット一覧へ</button>
+    </div>
+
+    <div id="typefilter" class="controls2"></div>
+    <div id="rarityfilter" class="controls"></div>
+    <div id="table-container"></div>
+
+    <button id="backToTopBtn">⇪ TOP</button>
+
+    <script>
+        let data;
+        let filteredData;
+        let equipment;
+        let type;
+        let rarity;
+
+        let typeArr = [false, false, false, false, false, false, false];
+        let rarityArr = [false, false, false, false];
+
+        loadData();
+        async function loadData() {
+            try {
+                const response = await fetch('./data/equipment.json');
+                data = await response.json();
+
+                onDataReady();
+            } catch (error) {
+                console.error('データ取得失敗:', error);
+            }
+        }
+
+        function onDataReady() {
+            equipment = data.equipment;
+            type = data.type;
+            rarity = data.rarity;
+
+            // 初期表示
+            renderfilterList();
+            applyFilters();
+        }
+
+        function render() {
+            const container = document.getElementById('table-container');
+            container.innerHTML = ``;
+            filteredData.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'table-row';
+
+                const imageCell = document.createElement('div');
+                imageCell.className = 'image-cell';
+                imageCell.innerHTML = item.icon === undefined ? `<img src="${item.image}" alt="画像">` : `<img src="${item.image}" alt="画像"><img src="${item.icon}" alt="画像" style="border-radius: 40px; max-width: 100px;">`;
+
+                const commentCell = document.createElement('div');
+                commentCell.className = 'comment-cell';
+                commentCell.innerHTML = `
+            <div class="comment-title">${item.title}</div>
+            <div class="comment-detail"><p class="get">タイプ</p>${item.type}</div>
+            <div class="comment-detail2"><p class="effect">星5効果</p>${item.comment}</div>
+          `;
+                row.appendChild(imageCell);
+                row.appendChild(commentCell);
+                container.appendChild(row);
+            });
+        }
+
+        function renderfilterList() {
+            document.getElementById('typefilter').innerHTML = type.map((cat, index) => `<button id="tf${index}" class="typefilterbtn" onclick="clickTypeFilter('tf',${index})">${cat}</button>`).join('');
+            document.getElementById('rarityfilter').innerHTML = rarity.map((cat, index) => `<button id="rf${index}"class="rarityfilterbtn" onclick="clickTypeFilter('rf',${index})">${cat}</button>`).join('');
+        }
+
+        function applyFilters() {
+            let typeFlg = typeArr.every(value => value === false);
+            let rarityFlg = rarityArr.every(value => value === false);
+
+            filteredData = equipment.filter(equip =>
+                (
+                    ((typeArr[0] && equip.type.includes('モチーフ')) || typeFlg) ||
+                    ((typeArr[1] && equip.type.includes('剣')) || typeFlg) ||
+                    ((typeArr[2] && equip.type.includes('斧')) || typeFlg) ||
+                    ((typeArr[3] && equip.type.includes('槍')) || typeFlg) ||
+                    ((typeArr[4] && equip.type.includes('杖')) || typeFlg) ||
+                    ((typeArr[5] && equip.type.includes('弓')) || typeFlg) ||
+                    ((typeArr[6] && equip.type.includes('装具')) || typeFlg)
+                ) &&
+                (
+                    ((rarityArr[0] && equip.rarity.includes('レジェンド')) || rarityFlg) ||
+                    ((rarityArr[1] && equip.rarity.includes('エピック')) || rarityFlg) ||
+                    ((rarityArr[2] && equip.rarity.includes('レア')) || rarityFlg) ||
+                    ((rarityArr[3] && equip.rarity.includes('コモン')) || rarityFlg)
+                )
+            );
+            render();
+        }
+
+        function clickTypeFilter(str, index) {
+            let flg;
+
+            if (str === 'tf') {
+                typeArr[index] = !typeArr[index];
+                flg = typeArr.every(value => value === false);
+
+                typeArr.forEach((value, idx) => {
+                    const target = document.getElementById(str + idx);
+                    if (!target) return;
+
+                    if (flg) {
+                        target.style.backgroundColor = '#aeee90';
+                    } else {
+                        target.style.backgroundColor = value ? '#aeee90' : '#959696';
+                    }
+                });
+            } else {
+                rarityArr[index] = !rarityArr[index];
+                flg = rarityArr.every(value => value === false);
+
+                rarityArr.forEach((value, idx) => {
+                    const target = document.getElementById(str + idx);
+                    if (!target) return;
+
+                    if (flg) {
+                        target.style.backgroundColor = '#b1f2f7';
+                    } else {
+                        target.style.backgroundColor = value ? '#b1f2f7' : '#959696';
+                    }
+                });
+            }
+            applyFilters();
+        }
+
+
+        function reloadPage() {
+            location.reload();
+        }
+
+        function goToNextPage(link) {
+            location.href = `${link}`;
+        }
+
+        const btn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

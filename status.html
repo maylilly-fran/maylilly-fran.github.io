@@ -6,20 +6,22 @@
     <title>【鈴蘭の剣】フランなツール</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-    <link rel="stylesheet" href="status.css">
+    <link rel="stylesheet" href="./css/status.css">
 </head>
 
 <body class="bg-gray-100 p-6">
     <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
         <div class="controls">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-            <button class="characterbtn" onclick="goToNextPage('index.html')">キャラクタ一覧へ</button>
-            <button class="skillbtn" onclick="goToNextPage('skill.html')">スキル一覧へ</button>
+            <button class="characterbtn" onclick="goToNextPage('index.html',true)">キャラクタ一覧へ</button>
+            <button class="skillbtn" onclick="goToNextPage('skill.html',true)">スキル一覧へ</button>
             <button class="statusInheritanceBtn" id="statusInheritanceBtn"
                 onclick="toggleInheritance()">データ引継ぎOFF</button>
-            <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button>
+            <!-- <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button> -->
             <button class="highlightbtn" onclick="toggleHighlight()" id="toggleHighlightBtn">フィルタモード</button>
             <button class="addColumnBtn" onclick="addColumn()">列を追加</button>
+            <button class="tarotbtn" onclick="goToNextPage('tarot.html',false)">タロット一覧へ</button>
+            <button class="equipmentbtn" onclick="goToNextPage('equipment.html',false)">装備一覧へ</button>
         </div>
 
         <div class="controls2">
@@ -58,6 +60,8 @@
             </table>
         </div>
     </div>
+
+    <button id="backToTopBtn">⇪ TOP</button>
 
     <script>
         let filtered = [];
@@ -237,9 +241,9 @@
             document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
         }
 
-        function goToNextPage(link) {
+        function goToNextPage(link,flg) {
             let text = "";
-            if (inheritanceEnabled) {
+            if (inheritanceEnabled && flg) {
                 filtered.forEach(row => {
                     row.forEach((cell, colIndex) => {
                         if (colIndex === 0) text += cell + " ";
@@ -260,7 +264,7 @@
         }
 
         // CSV 読み込み
-        fetch('status.csv')
+        fetch('./data/status.csv')
             .then(res => {
                 if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
                 return res.text();
@@ -281,6 +285,20 @@
         document.getElementById('gtInput').addEventListener('input', applyFilterAndRender);
         document.getElementById('gtltFilter').addEventListener('change', applyFilterAndRender);
         document.getElementById('or-and').addEventListener('change', applyFilterAndRender);
+
+        const btn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 

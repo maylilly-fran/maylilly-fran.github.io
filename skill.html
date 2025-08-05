@@ -6,7 +6,7 @@
   <title>【鈴蘭の剣】フランなツール</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-  <link rel="stylesheet" href="skill.css">
+  <link rel="stylesheet" href="./css/skill.css">
 </head>
 
 <body class="bg-gray-100 p-6">
@@ -14,9 +14,11 @@
   <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-      <button class="characterbtn" onclick="goToNextPage('index.html')">キャラクタ一覧へ</button>
-      <button class="statusbtn" onclick="goToNextPage('status.html')">ステータス一覧へ</button>
+      <button class="characterbtn" onclick="goToNextPage('index.html',true)">キャラクタ一覧へ</button>
+      <button class="statusbtn" onclick="goToNextPage('status.html',true)">ステータス一覧へ</button>
       <button class="statusInheritanceBtn" id="statusInheritanceBtn" onclick="toggleInheritance()">データ引継ぎOFF</button>
+      <button class="tarotbtn" onclick="goToNextPage('tarot.html',false)">タロット一覧へ</button>
+      <button class="equipmentbtn" onclick="goToNextPage('equipment.html',false)">装備一覧へ</button>
       <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
         class="mb-4 px-4 py-2 w-full border rounded">
     </div>
@@ -62,7 +64,7 @@
       </div>
     </div>
 
-    <script src="range.js"></script>
+    <script src="./js/range.js"></script>
     <script>
       let originalData = [];
       let filtered = [];
@@ -276,7 +278,7 @@
         location.reload();
       }
 
-      fetch('skill.csv')
+      fetch('./data/skill.csv')
         .then(res => {
           if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
           return res.text();
@@ -342,7 +344,7 @@
         */
 
         if (highlightRange.min !== 0 || highlightRange.max !== 0) {
-          if(useRectRange) content += `<b>射程： ${highlightRange.min} - ${range % 10}<br>`;
+          if (useRectRange) content += `<b>射程： ${highlightRange.min} - ${range % 10}<br>`;
           else content += `<b>射程： ${highlightRange.min} - ${highlightRange.max}<br>`;
         }
         if (lowhighLimit.min !== 0 || lowhighLimit.max !== 0) {
@@ -377,9 +379,9 @@
         document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
       }
 
-      function goToNextPage(link) {
+      function goToNextPage(link,flg) {
         let text = "";
-        if (inheritanceEnabled) {
+        if (inheritanceEnabled && flg) {
           filtered.forEach(row => {
             row.forEach((cell, colIndex) => {
               if (colIndex === 5) text += cell + ";";

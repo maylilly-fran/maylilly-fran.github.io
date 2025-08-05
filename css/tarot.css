@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.characterbtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+}
+
+.characterbtn:hover {
+    background-color: #407577;
+}
+
+.statusbtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+}
+
+.statusbtn:hover {
+    background-color: #407577;
+}
+
+.skillbtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+}
+
+.skillbtn:hover {
+    background-color: #407577;
+}
+
+.tarotbtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+}
+
+.tarotbtn:hover {
+    background-color: #407577;
+}
+
+.equipmentbtn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: cadetblue;
+    color: white;
+    cursor: pointer;
+}
+
+.equipmentbtn:hover {
+    background-color: #407577;
+}
+
+p {
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    padding: 4px;
+    border-radius: 30px;
+    width: 15%;
+    text-align: center;
+}
+
+.effect {
+    background-color: #c1f8ff;
+}
+
+.level {
+    background-color: #f79aa9;
+}
+
+.get {
+    background-color: #d9fdaa;
+}
+
+#table-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-cell {
+    flex: 0 0 120px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.image-cell img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.comment-cell {
+    flex: 1;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.comment-title {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.comment-detail {
+    color: #555;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+
+.comment-detail2 {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    left: auto;
+    padding: 12px 16px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTopBtn:hover {
+    background: #444;
+    transform: translateY(-3px);
+}
+
+/* スマホ対応: 768px以下なら縦並び・画像中央 */
+@media (max-width: 768px) {
+    p {
+        width: 25%;
+    }
+
+    .table-row {
+        flex-direction: column;
+    }
+
+    .image-cell {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .image-cell img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .comment-cell {
+        padding: 10px;
+    }
+}

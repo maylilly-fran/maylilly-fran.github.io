@@ -3,24 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>鈴蘭の剣:フランなツール</title>
+    <title>【鈴蘭の剣】フランなツール</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" href="favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <div style="margin-left: 30px;">
         <div class="controls">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-            <button class="statusbtn" onclick="goToNextPage('status.html')">ステータス一覧へ</button>
-            <button class="skillbtn" onclick="goToNextPage('skill.html')">スキル一覧へ</button>
+            <button class="statusbtn" onclick="goToNextPage('status.html',true)">ステータス一覧へ</button>
+            <button class="skillbtn" onclick="goToNextPage('skill.html',true)">スキル一覧へ</button>
             <button class="statusInheritanceBtn" id="statusInheritanceBtn"
                 onclick="toggleInheritance()">データ引継ぎOFF</button>
+            <button class="tarotbtn" onclick="goToNextPage('tarot.html',false)">タロット一覧へ</button>
+            <button class="equipmentbtn" onclick="goToNextPage('equipment.html',false)">装備一覧へ</button>
         </div>
         <div class="controls">
             <select id="sort-order" style="border-radius: 10px;">
@@ -247,7 +249,7 @@
         loadData();
         async function loadData() {
             try {
-                const response = await fetch('./data.json');
+                const response = await fetch('./data/data.json');
                 data = await response.json();
 
                 onDataReady();
@@ -671,9 +673,9 @@
             runBarAnimation();
         }
 
-        function goToNextPage(link) {
+        function goToNextPage(link, flg) {
             let text = "";
-            if (inheritanceEnabled) {
+            if (inheritanceEnabled && flg) {
                 filteredData.forEach(character => {
                     text += character.name + " ";
                 });
