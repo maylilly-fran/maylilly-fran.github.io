@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .controls2 {
@@ -20,6 +20,18 @@ body {
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
+}
+
+.reloadBtn {
+    background-color: #7cdbff;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+    border: none;
+}
+
+.reloadBtn:hover {
+    background-color: #16a7f052;
 }
 
 .characterbtn {
@@ -201,13 +213,13 @@ p {
     border: none;
     border-radius: 20px;
     font-size: 15px;
-    background-color: #b1f2f7;
+    background-color: #f7ddb1;
     color: #000000;
     cursor: pointer;
 }
 
 .rarityfilterbtn:hover {
-    background-color: #80dce2;
+    background-color: #e2b480;
 }
 
 #backToTopBtn {

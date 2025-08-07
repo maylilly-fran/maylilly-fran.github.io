@@ -13,15 +13,14 @@
     <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
         <div class="controls">
             <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-            <button class="characterbtn" onclick="goToNextPage('index.html',true)">キャラクタ一覧へ</button>
+      <button class="reloadBtn" onclick="goToNextPage('./',false)">🏠</button>
+            <button class="characterbtn" onclick="goToNextPage('character.html',true)">キャラクタ一覧へ</button>
             <button class="skillbtn" onclick="goToNextPage('skill.html',true)">スキル一覧へ</button>
             <button class="statusInheritanceBtn" id="statusInheritanceBtn"
                 onclick="toggleInheritance()">データ引継ぎOFF</button>
             <!-- <button class="movebtn" onclick="toggleSortable()" id="toggleSortBtn">行並び替えOFF</button> -->
             <button class="highlightbtn" onclick="toggleHighlight()" id="toggleHighlightBtn">フィルタモード</button>
             <button class="addColumnBtn" onclick="addColumn()">列を追加</button>
-            <button class="tarotbtn" onclick="goToNextPage('tarot.html',false)">タロット一覧へ</button>
-            <button class="equipmentbtn" onclick="goToNextPage('equipment.html',false)">装備一覧へ</button>
         </div>
 
         <div class="controls2">

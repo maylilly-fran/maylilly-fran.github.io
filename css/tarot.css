@@ -10,7 +10,19 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.reloadBtn {
+    background-color: #7cdbff;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+    border: none;
+}
+
+.reloadBtn:hover {
+    background-color: #16a7f052;
 }
 
 .characterbtn {

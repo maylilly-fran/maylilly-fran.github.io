@@ -14,11 +14,10 @@
   <div class="max-w-6xl mx-auto" style="max-width: 80rem;">
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-      <button class="characterbtn" onclick="goToNextPage('index.html',true)">キャラクタ一覧へ</button>
+      <button class="reloadBtn" onclick="goToNextPage('./',false)">🏠</button>
+      <button class="characterbtn" onclick="goToNextPage('character.html',true)">キャラクタ一覧へ</button>
       <button class="statusbtn" onclick="goToNextPage('status.html',true)">ステータス一覧へ</button>
       <button class="statusInheritanceBtn" id="statusInheritanceBtn" onclick="toggleInheritance()">データ引継ぎOFF</button>
-      <button class="tarotbtn" onclick="goToNextPage('tarot.html',false)">タロット一覧へ</button>
-      <button class="equipmentbtn" onclick="goToNextPage('equipment.html',false)">装備一覧へ</button>
       <input id="searchInput" type="text" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
         class="mb-4 px-4 py-2 w-full border rounded">
     </div>

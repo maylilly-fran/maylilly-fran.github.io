@@ -4,761 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <title>【鈴蘭の剣】フランなツール</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" href="favicon.ico">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <style>
+        #result {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-<body>
-    <div style="margin-left: 30px;">
-        <div class="controls">
-            <button class="reloadBtn" onclick="reloadPage()">🔄</button>
-            <button class="statusbtn" onclick="goToNextPage('status.html',true)">ステータス一覧へ</button>
-            <button class="skillbtn" onclick="goToNextPage('skill.html',true)">スキル一覧へ</button>
-            <button class="statusInheritanceBtn" id="statusInheritanceBtn"
-                onclick="toggleInheritance()">データ引継ぎOFF</button>
-            <button class="tarotbtn" onclick="goToNextPage('tarot.html',false)">タロット一覧へ</button>
-            <button class="equipmentbtn" onclick="goToNextPage('equipment.html',false)">装備一覧へ</button>
+<body class="bg-gray-200 min-h-screen flex flex-col items-center justify-center p-6">
+
+    <h1 class="text-4xl font-bold text-gray-800 mb-8" style="font-family: 'M PLUS Rounded 1c', sans-serif;">
+        フランなツール
+    </h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+
+        <div onclick="jumpTo('character.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-green-50 transition">
+            <img id="slotImage1" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">キャラクタ</span>
         </div>
-        <div class="controls">
-            <select id="sort-order" style="border-radius: 10px;">
-                <option value="default">並び順：デフォルト</option>
-                <option value="speed-desc">素早さ(降順)</option>
-                <option value="speed-asc">素早さ(昇順)</option>
-                <option value="hp-desc">HP(降順)</option>
-                <option value="hp-asc">HP(昇順)</option>
-                <option value="atk-desc">物攻(降順)</option>
-                <option value="atk-asc">物攻(昇順)</option>
-                <option value="def-desc">物防(降順)</option>
-                <option value="def-asc">物防(昇順)</option>
-                <option value="matk-desc">魔攻(降順)</option>
-                <option value="matk-asc">魔攻(昇順)</option>
-                <option value="mdef-desc">魔防(降順)</option>
-                <option value="mdef-asc">魔防(昇順)</option>
-                <option value="hpmax-desc">HPMAX(降順)</option>
-                <option value="hpmax-asc">HPMAX(昇順)</option>
-                <option value="atkmax-desc">物攻MAX(降順)</option>
-                <option value="atkmax-asc">物攻MAX(昇順)</option>
-                <option value="defmax-desc">物防MAX(降順)</option>
-                <option value="defmax-asc">物防MAX(昇順)</option>
-                <option value="matkmax-desc">魔攻MAX(降順)</option>
-                <option value="matkmax-asc">魔攻MAX(昇順)</option>
-                <option value="mdefmax-desc">魔防MAX(降順)</option>
-                <option value="mdefmax-asc">魔防MAX(昇順)</option>
-            </select>
-            <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
-            <button class="skillFilterBtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
+
+        <div onclick="jumpTo('status.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-blue-50 transition">
+            <img id="slotImage2" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">ステータス</span>
         </div>
-        <input type="text" id="search-input" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
-            style="margin-bottom: 12px; width:50%">
-    </div>
 
-    <div class="grid" id="product-grid"></div>
-    <div class="pagination" id="pagination"></div>
-
-    <!-- モーダル -->
-    <div class="modal" id="product-modal">
-        <div class="modal-content">
-            <span class="close" id="close-modal">&times;</span>
-            <div id="modal-body">
-                <div class="container">
-                    <div class="left">
-                        <div id="characterImg"></div>
-                        <div id="characterName" class="container"></div>
-                        <button class="statusbtn" id="statusBtn" onclick="changeStatus(tmpCha)">⇆ 初期状態</button>
-                        <div id="characterWeapon"></div>
-                        <div id="characterCamp"></div>
-                        <!-- 物攻 と 魔攻 横並び -->
-                        <div class="containerB">
-                            <div class="bar-container" data-bar="atk">
-                                <div class="bar-wrapper">
-                                    <div class="bar-fill bar-atk" id="atkBar">
-                                        <div class="bar-label" id="atkLabel">物攻: 0</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bar-container" data-bar="matk">
-                                <div class="bar-wrapper">
-                                    <div class="bar-fill bar-matk" id="matkBar">
-                                        <div class="bar-label" id="matkLabel">魔攻: 0</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 物防 と 魔防 横並び -->
-                        <div class="containerB">
-                            <div class="bar-container" data-bar="def">
-                                <div class="bar-wrapper">
-                                    <div class="bar-fill bar-def" id="defBar">
-                                        <div class="bar-label" id="defLabel">物防: 0</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bar-container" data-bar="mdef">
-                                <div class="bar-wrapper">
-                                    <div class="bar-fill bar-mdef" id="mdefBar">
-                                        <div class="bar-label" id="mdefLabel">魔防: 0</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- HP と 素早さ 横並び -->
-                        <div class="containerB">
-                            <div class="bar-container" data-bar="hp">
-                                <div class="bar-wrapper">
-                                    <div class="bar-fill bar-hp" id="hpBar">
-                                        <div class="bar-label" id="hpLabel">HP: 0</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bar-container" data-bar="speed">
-                                <div class="bar-wrapper">
-                                    <div class="bar-fill bar-speed" id="speedBar">
-                                        <div class="bar-label" id="speedLabel">素早さ: 0</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="right">
-                        <div id="personalityImg"></div>
-                        <div id="personalityTitle"></div>
-                        <div id="common"></div>
-                        <div class="tab-buttons">
-                            <div class="tab-button active" data-tab="hoshi5">☆5</div>
-                            <div class="tab-button" data-tab="hoshi4">☆4</div>
-                            <div class="tab-button" data-tab="hoshi3">☆3</div>
-                            <div class="tab-button" data-tab="hoshi2">☆2</div>
-                            <div class="tab-button" data-tab="hoshi1">☆1</div>
-                        </div>
-                        <div class="tab-content active" id="hoshi5" style="text-align: left"></div>
-                        <div class="tab-content" id="hoshi4" style="text-align: left"></div>
-                        <div class="tab-content" id="hoshi3" style="text-align: left"></div>
-                        <div class="tab-content" id="hoshi2" style="text-align: left"></div>
-                        <div class="tab-content" id="hoshi1" style="text-align: left"></div>
-                        <div class="container" style="margin-top: 20px;">
-                            <div id="silhouette-skill"></div>
-                            <div id="ex-skill"></div>
-                            <div id="ex-skill2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="padding: 10px;">
-                    <div class="container">
-                        <div id="skill1"></div>
-                    </div>
-                    <div class="container">
-                        <div id="skill2"></div>
-                    </div>
-                </div>
-            </div>
+        <div onclick="jumpTo('skill.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-yellow-50 transition">
+            <img id="slotImage3" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">スキル</span>
         </div>
-    </div>
 
-    <!-- モーダル2 -->
-    <div class="modal" id="skill-modal">
-        <div class="modal-content">
-            <span class="close" id="close-modal2">&times;</span>
-            <div id="skill-pict"></div>
+        <div onclick="jumpTo('equipment.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-pink-50 transition">
+            <img id="slotImage4" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">装備</span>
         </div>
-    </div>
 
-    <!-- モーダル3 -->
-    <div class="modal" id="categoryModal">
-        <div class="modal-content">
-            <span class="close" id="close-modal3">&times;</span>
-            <h3>📒スキル説明文からフィルタ</h3>
-            <input type="text" id="descSearch" placeholder="フィルタする文言を入力" oninput="applyFiltersAndSort()">
-            <h3>📎スキルタグを選択してフィルタ</h3>
-            <div style="margin: 0.5rem 0;">
-                <input type="text" id="categorySearch" placeholder="スキルタグ検索" oninput="renderCategoryList()">
-                <button style="background-color: deeppink;" onclick="clearAllCategories()">リセット</button>
-            </div>
-            <div id="categoryList"></div>
+        <div onclick="jumpTo('tarot.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-purple-50 transition">
+            <img id="slotImage5" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">タロット</span>
         </div>
-    </div>
 
-    <!-- モーダル4 -->
-    <div class="modal" id="filterModal">
-        <div class="modal-content">
-            <span class="close" id="close-modal4">&times;</span>
-            <h3>フィルタを選択</h3>
-            <div style="margin: 0.5rem 0;">
-                <button style="background-color: deeppink;" onclick="clearAllFilters()">リセット</button>
-            </div>
-            <h4 style="border-bottom: 1px solid #ccc;">ロール</h4>
-            <div id="roleList"></div>
-            <h4 style="border-bottom: 1px solid #ccc;">陣営</h4>
-            <div id="campList"></div>
-            <h4 style="border-bottom: 1px solid #ccc;">装備</h4>
-            <div id="weaponList"></div>
-            <h4 style="border-bottom: 1px solid #ccc;">レアリティ</h4>
-            <div id="rarityList"></div>
+        <div onclick="jumpTo('preparing.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-red-50 transition">
+            <img id="slotImage6" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">ビルド管理</span>
         </div>
+
+        <div onclick="jumpTo('other.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-teal-50 transition">
+            <img id="slotImage7" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">物置</span>
+        </div>
+
+        <div onclick="jumpTo('aboutme.html')"
+            class="cursor-pointer bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center hover:bg-orange-50 transition">
+            <img id="slotImage8" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+            <span class="text-xl font-semibold text-gray-700">About Me</span>
+        </div>
+
+        <div class="bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center" style="justify-content: center;">
+            <img id="slotImage9" src="" alt="画像" style="width: 30%; border-radius: 20px;" />
+        </div>
+
     </div>
 
     <script>
-        let data;
-        let selectedCategories = [];
-        let selectedRoles = [];
-        let selectedCamps = [];
-        let selectedWeapons = [];
-        let selectedRarities = [];
-        let categories;
-        let roles;
-        let camps;
-        let weapons;
-        let rarities;
-        let filteredData;
-        let tmpCha;
-
-        const params = new URLSearchParams(location.search);
-        const value = localStorage.getItem("text");
-        document.getElementById('search-input').value = value;
-        localStorage.removeItem("text");
-
-        const searchInput = document.getElementById('search-input');
-        const sortOrder = document.getElementById('sort-order');
-        const grid = document.getElementById('product-grid');
-        const pagination = document.getElementById('pagination');
-        const modal = document.getElementById('product-modal');
-        const modal2 = document.getElementById('skill-modal');
-        const modal3 = document.getElementById('categoryModal');
-        const modal4 = document.getElementById('filterModal');
-        const modalBody = document.getElementById('modal-body');
-        const closeModal = document.getElementById('close-modal');
-        const closeModal2 = document.getElementById('close-modal2');
-        const closeModal3 = document.getElementById('close-modal3');
-        const closeModal4 = document.getElementById('close-modal4');
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
-        const descSearch = document.getElementById('descSearch');
-        const ITEMS_PER_PAGE = 90;
-        let currentPage = 1;
-
-        loadData();
-        async function loadData() {
-            try {
-                const response = await fetch('./data/data.json');
-                data = await response.json();
-
-                onDataReady();
-            } catch (error) {
-                console.error('データ取得失敗:', error);
-            }
+        function jumpTo(page) {
+            window.location.href = page;
         }
 
-        function onDataReady() {
-            filteredData = structuredClone(data.characters);
-            categories = data.skilltags;
-            roles = data.roles;
-            camps = data.camps;
-            weapons = data.weapons;
-            rarities = data.rarities;
+        const images = [
+            "./img/topIMG/001.png",
+            "./img/topIMG/002.png",
+            "./img/topIMG/003.png",
+            "./img/topIMG/004.png",
+            "./img/topIMG/005.png",
+            "./img/topIMG/006.png",
+            "./img/topIMG/007.png",
+            "./img/topIMG/008.png",
+            "./img/topIMG/009.png",
+            "./img/topIMG/010.png",
+            "./img/topIMG/011.png",
+            "./img/topIMG/012.png",
+            "./img/topIMG/013.png",
+            "./img/topIMG/014.png",
+            "./img/topIMG/015.png",
+            "./img/topIMG/016.png",
+        ];
 
-            // 初期表示
-            renderfilterList();
-            renderCategoryList();
-            applyFiltersAndSort();
+        document.getElementById('slotImage1').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage2').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage3').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage4').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage5').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage6').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage7').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage8').src =images[Math.floor(Math.random() * images.length)];
+        document.getElementById('slotImage9').src =images[Math.floor(Math.random() * images.length)];
+
+        let intervalId;
+
+        function spinSlot() {
+            const img = document.getElementById('slotImage');
+
+            // 高速で画像を切り替えるアニメーション開始
+            intervalId = setInterval(() => {
+                const randIndex = Math.floor(Math.random() * images.length);
+                img.src = images[randIndex];
+            }, 100); // 0.1秒ごとに画像変更
+
+            // 2〜4秒の間でランダム停止
+            const stopAfter = Math.floor(Math.random() * 2000) + 2000; // 2000〜4000ms
+            setTimeout(() => {
+                clearInterval(intervalId); // アニメーション停止
+
+                // 停止後の画像をランダムで選ぶ
+                const finalIndex = Math.floor(Math.random() * images.length);
+                img.src = images[finalIndex];
+            }, stopAfter);
         }
 
-        function showModal(character) {
-            tmpCha = character;
-            document.getElementById('characterName').innerHTML = `<img style="width: 5%; margin-right: 5px;" src="./img/roleIMG/${character.role}.avif"><h2>${character.name}</h2>`;
-            //document.getElementById('characterRole').innerHTML = `${character.role}`;
-            document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
-            document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
-            //document.getElementById('characterSpeed').innerHTML = `素早さ : ${character.speed}`;
-            if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                ((descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase())))) {
-                document.getElementById('personalityImg').innerHTML = `<img style="width: 30%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
-            } else {
-                document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
-            }
+        //spinSlot();
 
-            document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
-            if (character.personality.common !== undefined) {
-                document.getElementById('common').innerHTML = `${character.personality.common}`;
-            } else {
-                document.getElementById('common').innerHTML = ``;
-            }
-            document.getElementById('hoshi5').innerHTML = `${character.personality.hoshi5}`;
-            document.getElementById('hoshi4').innerHTML = `${character.personality.hoshi4}`;
-            document.getElementById('hoshi3').innerHTML = `${character.personality.hoshi3}`;
-            document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
-            document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
-            if (Array.isArray(character.skills.silhouetteSkill) && character.skills.silhouetteSkill[0] && character.skills.silhouetteSkill[0].name !== undefined) {
-                document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}" style="width: 50%"><br>シルエットスキル`;
-                document.getElementById('silhouette-skill').addEventListener('click', () => showModal2(character, 'silhouetteSkill', 0));
-            } else {
-                document.getElementById('silhouette-skill').innerHTML = ``;
-            }
-            if (Array.isArray(character.skills.EX) && character.skills.EX[0] && character.skills.EX[0].name !== undefined) {
-                document.getElementById('ex-skill').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[0].imgURL}" alt="${character.skills.EX[0].imgURL}"  style="width: 50%"><br>汎用EXスキル`;
-                document.getElementById('ex-skill').addEventListener('click', () => showModal2(character, 'EX', 0));
-            } else {
-                document.getElementById('ex-skill').innerHTML = ``;
-            }
-            if (Array.isArray(character.skills.EX) && character.skills.EX[1] && character.skills.EX[1].name !== undefined) {
-                document.getElementById('ex-skill2').innerHTML = `<img id="ex" class="skill" src="${character.skills.EX[1].imgURL}" alt="${character.skills.EX[1].imgURL}"  style="width: 50%"><br>専用EXスキル`;
-                document.getElementById('ex-skill2').addEventListener('click', () => showModal2(character, 'EX', 1));
-            } else {
-                document.getElementById('ex-skill2').innerHTML = ``;
-            }
-
-            let content = '';
-            ranks = ['initial', 'RK1', 'RK3', 'RK5', 'RK7', 'RK9', 'RK11'];
-            ranks.forEach(rank => content = addSkillContent(character, content, rank, 0));
-            document.getElementById('skill1').innerHTML = content;
-            ranks.forEach(rank => addSkillContentSettings(character, rank, 0));
-
-            content = '';
-            ranks.forEach(rank => content = addSkillContent(character, content, rank, 1));
-            document.getElementById('skill2').innerHTML = content;
-            ranks.forEach(rank => addSkillContentSettings(character, rank, 1));
-            modal.style.display = 'flex';
-            statusEnabled = true;
-            changeStatus(character);
-        }
-
-        function addSkillContent(character, content, key, index) {
-            if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
-                content += `<img id="${key}-${index}" class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">`;
-            }
-            return content;
-        }
-
-        function addSkillContentSettings(character, key, index) {
-            if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
-                document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                if ((character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 &&
-                        character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()))) {
-                    document.getElementById(key + '-' + index).style = "background-color: lightcoral";
-                }
-            }
-        }
-
-        function showModal2(character, key, index) {
-            document.getElementById('skill-pict').innerHTML = `
-              <img class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">
-              <h2>${character.skills[key][index].name}</h2>
-              <div>タイプ：${character.skills[key][index].type}</div>
-              <div>コスト：${character.skills[key][index].cost}</div>
-              <div>CD：${character.skills[key][index].CD}</div>
-              <div>${character.skills[key][index].desc}</div>
-              `;
-            modal2.style.display = 'flex';
-        }
-
-        // イベント登録
-        tabButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // タブボタンの切り替え
-                tabButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // コンテンツの切り替え
-                const target = btn.getAttribute('data-tab');
-                tabContents.forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(target).classList.add('active');
-            });
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        closeModal2.addEventListener('click', () => {
-            modal2.style.display = 'none';
-        });
-
-        closeModal3.addEventListener('click', () => {
-            modal3.style.display = 'none';
-        });
-
-        closeModal4.addEventListener('click', () => {
-            modal4.style.display = 'none';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) modal.style.display = 'none';
-            if (e.target === modal2) modal2.style.display = 'none';
-            if (e.target === modal3) modal3.style.display = 'none';
-            if (e.target === modal4) modal4.style.display = 'none';
-        });
-
-        window.addEventListener('touchend', (e) => {
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none';
-            }
-            if (e.target.classList.contains('modal2')) {
-                e.target.style.display = 'none';
-            }
-        }, { passive: true });
-
-        searchInput.addEventListener('input', applyFiltersAndSort);
-        sortOrder.addEventListener('change', applyFiltersAndSort);
-
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-
-        function renderPagination() {
-            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-            pagination.innerHTML = '';
-
-            for (let i = 1; i <= totalPages; i++) {
-                const btn = document.createElement('button');
-                btn.textContent = i;
-                if (i === currentPage) btn.disabled = true;
-                btn.addEventListener('click', () => {
-                    currentPage = i;
-                    render();
-                });
-                pagination.appendChild(btn);
-            }
-        }
-
-        function skillTagCheck(character) {
-            let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-
-            if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
-                flg = flg ||
-                    (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-            }
-            if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
-                flg = flg ||
-                    (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-            }
-            if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
-                flg = flg ||
-                    (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
-            }
-            if (Array.isArray(character.personality.tags)) {
-                flg = flg ||
-                    (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag)));
-            }
-            return flg;
-        }
-
-        function skillDescCheck(character, words) {
-            let flg = (character?.skills?.initial[0]?.desc.length !== 0 && character?.skills?.initial[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.initial[1]?.desc.length !== 0 && character?.skills?.initial[1]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK1[0]?.desc.length !== 0 && character?.skills?.RK1[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK1[1]?.desc.length !== 0 && character?.skills?.RK1[1]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK3[0]?.desc.length !== 0 && character?.skills?.RK3[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK3[1]?.desc.length !== 0 && character?.skills?.RK3[1]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK5[0]?.desc.length !== 0 && character?.skills?.RK5[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK5[1]?.desc.length !== 0 && character?.skills?.RK5[1]?.desc.toLowerCase().includes(words));
-
-            if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
-                flg = flg ||
-                    (character?.skills?.RK7[0]?.desc.length !== 0 && character?.skills?.RK7[0]?.desc.toLowerCase().includes(words)) ||
-                    (character?.skills?.RK7[1]?.desc.length !== 0 && character?.skills?.RK7[1]?.desc.toLowerCase().includes(words));
-            }
-            if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
-                flg = flg ||
-                    (character?.skills?.RK9[0]?.desc.length !== 0 && character?.skills?.RK9[0]?.desc.toLowerCase().includes(words)) ||
-                    (character?.skills?.RK9[1]?.desc.length !== 0 && character?.skills?.RK9[1]?.desc.toLowerCase().includes(words));
-            }
-            if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
-                flg = flg ||
-                    (character?.skills?.RK11[0]?.desc.length !== 0 && character?.skills?.RK11[0]?.desc.toLowerCase().includes(words)) ||
-                    (character?.skills?.RK11[1]?.desc.length !== 0 && character?.skills?.RK11[1]?.desc.toLowerCase().includes(words));
-            }
-            flg = flg ||
-                (character?.personality?.hoshi5?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi4?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi3?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi2?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi1?.toLowerCase().includes(words));
-
-            return flg;
-        }
-
-        function render() {
-            const start = (currentPage - 1) * ITEMS_PER_PAGE;
-            const end = start + ITEMS_PER_PAGE;
-            const pageItems = filteredData.slice(start, end);
-
-            grid.innerHTML = '';
-            pageItems.forEach(character => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-          <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 70%">
-          <div style="font-size: small">${character.name}</div>
-        `;
-                card.addEventListener('click', () => showModal(character));
-                grid.appendChild(card);
-            });
-
-            renderPagination();
-        }
-
-        function applyFiltersAndSort() {
-            const sort = sortOrder.value;
-            const keywordInput = searchInput.value.toLowerCase();
-            const keywords = keywordInput.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
-            const dKeyword = descSearch.value.toLowerCase();
-
-            filteredData = data.characters.filter(character =>
-                (selectedRoles.length === 0 || selectedRoles.includes(character.role)) &&
-                (selectedCamps.length === 0 || character.camps.some(camp => selectedCamps.includes(camp))) &&
-                (selectedWeapons.length === 0 || selectedWeapons.includes(character.weapon)) &&
-                (selectedRarities.length === 0 || selectedRarities.includes(character.rarity)) &&
-                (keywords.length === 0 || keywords.some(keyword => character.name.includes(keyword))) &&
-                (selectedCategories.length === 0 || skillTagCheck(character)) &&
-                (dKeyword.length === 0 || skillDescCheck(character, dKeyword))
-            );
-
-            if (sort === 'default') filteredData.sort((a, b) => b.No - a.No);
-            if (sort === 'speed-asc') filteredData.sort((a, b) => a.speed - b.speed);
-            if (sort === 'speed-desc') filteredData.sort((a, b) => b.speed - a.speed);
-            if (sort === 'hp-asc') filteredData.sort((a, b) => a.hp - b.hp);
-            if (sort === 'hp-desc') filteredData.sort((a, b) => b.hp - a.hp);
-            if (sort === 'atk-asc') filteredData.sort((a, b) => a.atk - b.atk);
-            if (sort === 'atk-desc') filteredData.sort((a, b) => b.atk - a.atk);
-            if (sort === 'def-asc') filteredData.sort((a, b) => a.def - b.def);
-            if (sort === 'def-desc') filteredData.sort((a, b) => b.def - a.def);
-            if (sort === 'matk-asc') filteredData.sort((a, b) => a.matk - b.matk);
-            if (sort === 'matk-desc') filteredData.sort((a, b) => b.matk - a.matk);
-            if (sort === 'mdef-asc') filteredData.sort((a, b) => a.mdef - b.mdef);
-            if (sort === 'mdef-desc') filteredData.sort((a, b) => b.mdef - a.mdef);
-            if (sort === 'hpmax-asc') filteredData.sort((a, b) => a.hpmax - b.hpmax);
-            if (sort === 'hpmax-desc') filteredData.sort((a, b) => b.hpmax - a.hpmax);
-            if (sort === 'atkmax-asc') filteredData.sort((a, b) => a.atkmax - b.atkmax);
-            if (sort === 'atkmax-desc') filteredData.sort((a, b) => b.atkmax - a.atkmax);
-            if (sort === 'defmax-asc') filteredData.sort((a, b) => a.defmax - b.defmax);
-            if (sort === 'defmax-desc') filteredData.sort((a, b) => b.defmax - a.defmax);
-            if (sort === 'matkmax-asc') filteredData.sort((a, b) => a.matkmax - b.matkmax);
-            if (sort === 'matkmax-desc') filteredData.sort((a, b) => b.matkmax - a.matkmax);
-            if (sort === 'mdefmax-asc') filteredData.sort((a, b) => a.mdefmax - b.mdefmax);
-            if (sort === 'mdefmax-desc') filteredData.sort((a, b) => b.mdefmax - a.mdefmax);
-
-            currentPage = 1;
-            render();
-        }
-
-        function renderCategoryList() {
-            const filter = categorySearch.value.toLowerCase();
-            categoryList.innerHTML = categories
-                .filter(cat => cat.toLowerCase().includes(filter))
-                .map(cat => `<div class="category-item ${selectedCategories.includes(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`).join('');
-        }
-
-        function toggleCategory(cat) {
-            const index = selectedCategories.indexOf(cat);
-            if (index >= 0) {
-                selectedCategories.splice(index, 1);
-            } else {
-                selectedCategories.push(cat);
-            }
-            renderCategoryList();
-            applyFiltersAndSort();
-        }
-
-        function renderfilterList() {
-            roleList.innerHTML = roles
-                .map(cat => `<div class="category-item ${selectedRoles.includes(cat) ? 'active' : ''}" onclick="toggleFilter('${cat}','role')">${cat}</div>`).join('');
-            campList.innerHTML = camps
-                .map(cat => `<div class="category-item ${selectedCamps.includes(cat) ? 'active' : ''}" onclick="toggleFilter('${cat}','camp')">${cat}</div>`).join('');
-            weaponList.innerHTML = weapons
-                .map(cat => `<div class="category-item ${selectedWeapons.includes(cat) ? 'active' : ''}" onclick="toggleFilter('${cat}','weapon')">${cat}</div>`).join('');
-            rarityList.innerHTML = rarities
-                .map(cat => `<div class="category-item ${selectedRarities.includes(cat) ? 'active' : ''}" onclick="toggleFilter('${cat}','rarity')">${cat}</div>`).join('');
-        }
-
-        function toggleFilter(cat, key) {
-            if (key === 'role') {
-                let index = selectedRoles.indexOf(cat);
-                if (index >= 0) {
-                    selectedRoles.splice(index, 1);
-                } else {
-                    selectedRoles.push(cat);
-                }
-            }
-            if (key === 'camp') {
-                let index = selectedCamps.indexOf(cat);
-                if (index >= 0) {
-                    selectedCamps.splice(index, 1);
-                } else {
-                    selectedCamps.push(cat);
-                }
-            }
-            if (key === 'weapon') {
-                let index = selectedWeapons.indexOf(cat);
-                if (index >= 0) {
-                    selectedWeapons.splice(index, 1);
-                } else {
-                    selectedWeapons.push(cat);
-                }
-            }
-            if (key === 'rarity') {
-                let index = selectedRarities.indexOf(cat);
-                if (index >= 0) {
-                    selectedRarities.splice(index, 1);
-                } else {
-                    selectedRarities.push(cat);
-                }
-            }
-
-            renderfilterList();
-            applyFiltersAndSort();
-        }
-
-        let inheritanceEnabled = false;
-        function toggleInheritance() {
-            inheritanceEnabled = !inheritanceEnabled;
-            document.getElementById("statusInheritanceBtn").innerText = inheritanceEnabled ? "データ引継ぎON" : "データ引継ぎOFF";
-        }
-
-        let statusEnabled = false;
-        function changeStatus(character) {
-            statusEnabled = !statusEnabled;
-            document.getElementById("statusBtn").innerText = statusEnabled ? "⇆ 最大レベル" : "⇆ 初期状態";
-            if (character.imageURL3 === undefined) {
-                document.getElementById('characterImg').innerHTML = `<img style="width: 50%; border-radius: 50px;" src="${character.imageURL2}" alt="${character.name}">`;
-            } else if (statusEnabled) {
-                document.getElementById('characterImg').innerHTML = `<img style="width: 50%; border-radius: 50px;" src="${character.imageURL2}" alt="${character.name}">`;
-            } else {
-                document.getElementById('characterImg').innerHTML = `<img style="width: 50%; border-radius: 50px;" src="${character.imageURL3}" alt="${character.name}">`;
-            }
-            if (statusEnabled) {
-                bars = {
-                    atk: { value: character.atk, max: 300 },
-                    matk: { value: character.matk, max: 250 },
-                    def: { value: character.def, max: 120 },
-                    mdef: { value: character.mdef, max: 120 },
-                    hp: { value: character.hp, max: 500 },
-                    speed: { value: character.speed, max: 288 }
-                };
-            } else {
-                bars = {
-                    atk: { value: character.atkmax, max: 1718 },
-                    matk: { value: character.matkmax, max: 1686 },
-                    def: { value: character.defmax, max: 718 },
-                    mdef: { value: character.mdefmax, max: 789 },
-                    hp: { value: character.hpmax, max: 4120 },
-                    speed: { value: character.speed, max: 288 }
-                };
-            }
-            runBarAnimation();
-        }
-
-        function goToNextPage(link, flg) {
-            let text = "";
-            if (inheritanceEnabled && flg) {
-                filteredData.forEach(character => {
-                    text += character.name + " ";
-                });
-                localStorage.setItem("text", text);
-            }
-            location.href = `${link}`;
-        }
-
-        function clearAllCategories() {
-            selectedCategories = [];
-            renderCategoryList();
-            applyFiltersAndSort()
-        }
-
-        function clearAllFilters() {
-            selectedRoles = [];
-            selectedCamps = [];
-            selectedWeapons = [];
-            selectedRarities = [];
-            renderfilterList();
-            applyFiltersAndSort();
-        }
-
-        function reloadPage() {
-            location.reload();
-        }
-
-        // 各バーの設定（現在値・最大値）
-        let bars;
-
-        function getLabelName(id) {
-            if (id === "atk") return "物攻";
-            if (id === "matk") return "魔攻";
-            if (id === "def") return "物防";
-            if (id === "mdef") return "魔防";
-            if (id === "hp") return "HP";
-            if (id === "speed") return "素早さ";
-        }
-
-        // アニメーション関数
-        function animateBar(id) {
-            const bar = document.getElementById(id + 'Bar');
-            const label = document.getElementById(id + 'Label');
-            const targetValue = bars[id].value;
-            const maxValue = bars[id].max;
-            const targetPercent = Math.min((targetValue / maxValue) * 100, 100);
-            const labelName = getLabelName(id);
-
-            bar.style.width = '0%';
-            label.textContent = `${labelName}: 0`;
-
-            let currentValue = 0;
-            let currentPercent = 0;
-            const duration = 100;
-            const stepTime = 25;
-            const steps = duration / stepTime;
-            const valueStep = targetValue / steps;
-            const percentStep = targetPercent / steps;
-
-            clearInterval(bar._intervalId);
-
-            bar._intervalId = setInterval(() => {
-                currentValue += valueStep;
-                currentPercent += percentStep;
-
-                if (currentValue >= targetValue) {
-                    currentValue = targetValue;
-                    currentPercent = targetPercent;
-                    clearInterval(bar._intervalId);
-                }
-
-                bar.style.width = `${currentPercent}%`;
-                label.textContent = `${labelName}: ${Math.floor(currentValue)}`;
-            }, stepTime);
-        }
-
-        // アニメーション呼び出し
-        function runBarAnimation() {
-            for (const key in bars) {
-                animateBar(key);
-            }
-        }
     </script>
+
 </body>
 
 </html>
