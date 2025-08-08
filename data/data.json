@@ -2570,6 +2570,7 @@
             "imageURL": "./img/characterIMG/ホーマ.png",
             "imageURL2": "./img/characterPortraitIMG/ホーマ.jpg",
             "imageURL3": "./img/characterPortraitIMG/ホーマ覚醒.jpg",
+            "rarity": "レジェンド",
             "camps": [
                 "漂泊者",
                 "侵略如火"
