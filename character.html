@@ -50,7 +50,7 @@
                 <option value="mdefmax-asc">魔防MAX(昇順)</option>
             </select>
             <button class="filterbtn" onclick="openModal('filterModal')">デフォルトフィルタ</button>
-            <button class="skillFilterBtn" onclick="openModal('categoryModal')">スキルフィルタ(β版)</button>
+            <button class="skillFilterBtn" onclick="openModal('categoryModal')">スキルフィルタ</button>
         </div>
         <input type="text" id="search-input" placeholder="検索...[スペース、カンマ、セミコロンのいずれかで複数条件の検索が可能]"
             style="margin-bottom: 12px; width:50%">
@@ -278,7 +278,11 @@
             document.getElementById('characterWeapon').innerHTML = `${character.weapon}`;
             document.getElementById('characterCamp').innerHTML = `${character.camps.join(' / ')}`;
             //document.getElementById('characterSpeed').innerHTML = `素早さ : ${character.speed}`;
-            if (Array.isArray(character.personality.tags) && (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+            if ((selectedCategories.some(word => character?.personality?.hoshi5.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi4.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi3.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi2.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi1.includes(word))) ||
                 ((descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
                     (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
                     (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
@@ -344,7 +348,7 @@
         function addSkillContentSettings(character, key, index) {
             if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
                 document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                if ((character?.skills[key][index]?.tags !== 0 && character?.skills[key][index]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
+                if ((selectedCategories.some(word => character?.skills[key][index]?.desc.includes(word))) ||
                     (character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 &&
                         character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()))) {
                     document.getElementById(key + '-' + index).style = "background-color: lightcoral";
@@ -436,34 +440,37 @@
         }
 
         function skillTagCheck(character) {
-            let flg = (character?.skills?.initial[0]?.tags !== 0 && character?.skills?.initial[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.initial[1]?.tags !== 0 && character?.skills?.initial[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK1[0]?.tags !== 0 && character?.skills?.RK1[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK1[1]?.tags !== 0 && character?.skills?.RK1[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK3[0]?.tags !== 0 && character?.skills?.RK3[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK3[1]?.tags !== 0 && character?.skills?.RK3[1]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK5[0]?.tags !== 0 && character?.skills?.RK5[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                (character?.skills?.RK5[1]?.tags !== 0 && character?.skills?.RK5[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+            let flg = (character?.skills?.initial[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.initial[0]?.desc.includes(word))) ||
+                (character?.skills?.initial[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.initial[1]?.desc.includes(word))) ||
+                (character?.skills?.RK1[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK1[0]?.desc.includes(word))) ||
+                (character?.skills?.RK1[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK1[1]?.desc.includes(word))) ||
+                (character?.skills?.RK3[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK3[0]?.desc.includes(word))) ||
+                (character?.skills?.RK3[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK3[1]?.desc.includes(word))) ||
+                (character?.skills?.RK5[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK5[0]?.desc.includes(word))) ||
+                (character?.skills?.RK5[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK5[1]?.desc.includes(word)));
 
             if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK7[0]?.tags !== 0 && character?.skills?.RK7[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills?.RK7[1]?.tags !== 0 && character?.skills?.RK7[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+                    (selectedCategories.some(word => character?.skills?.RK7[0]?.desc.includes(word))) ||
+                    (selectedCategories.some(word => character?.skills?.RK7[1]?.desc.includes(word)));
             }
             if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK9[0]?.tags !== 0 && character?.skills?.RK9[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills?.RK9[1]?.tags !== 0 && character?.skills?.RK9[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+                    (selectedCategories.some(word => character?.skills?.RK9[0]?.desc.includes(word))) ||
+                    (selectedCategories.some(word => character?.skills?.RK9[1]?.desc.includes(word)));
             }
             if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK11[0]?.tags !== 0 && character?.skills?.RK11[0]?.tags?.some(tag => selectedCategories?.includes(tag))) ||
-                    (character?.skills?.RK11[1]?.tags !== 0 && character?.skills?.RK11[1]?.tags?.some(tag => selectedCategories?.includes(tag)));
+                    (selectedCategories.some(word => character?.skills?.RK11[0]?.desc.includes(word))) ||
+                    (selectedCategories.some(word => character?.skills?.RK11[1]?.desc.includes(word)));
             }
-            if (Array.isArray(character.personality.tags)) {
-                flg = flg ||
-                    (character?.personality?.tags?.some(tag => selectedCategories?.includes(tag)));
-            }
+            flg = flg ||
+                (selectedCategories.some(word => character?.personality?.hoshi5?.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi4?.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi3?.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi2?.includes(word))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi1?.includes(word)));
+
             return flg;
         }
 
@@ -563,6 +570,7 @@
             if (sort === 'mdefmax-desc') filteredData.sort((a, b) => b.mdefmax - a.mdefmax);
 
             currentPage = 1;
+
             render();
         }
 
@@ -685,6 +693,7 @@
 
         function clearAllCategories() {
             selectedCategories = [];
+            categorySearch.value = "";
             renderCategoryList();
             applyFiltersAndSort()
         }
