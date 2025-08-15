@@ -147,6 +147,14 @@
             "comment": "-"
         },
         {
+            "title": "大槌「昇竜」",
+            "image": "./img/equipmentIMG/大槌「昇竜」.png",
+            "icon": "./img/iconIMG/リゴ.png",
+            "type": "モチーフ装備/斧",
+            "rarity": "レジェンド",
+            "comment": "範囲攻撃、反撃、先制が発動した時、ターゲット1体に命中するごとに、与物理ダメージ+10%、最大30%。反撃、先制回数+1。15%のHPドレインを発生させる。"
+        },
+        {
             "title": "旅のよきお仲間",
             "image": "./img/equipmentIMG/旅のよきお仲間.png",
             "icon": "./img/iconIMG/ココア.png",
