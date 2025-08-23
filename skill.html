@@ -34,13 +34,13 @@
 
   <!-- モーダル -->
   <div class="modal" id="skill-modal">
-    <div class="modal-content">
+    <div class="modal-content" id="modal-content">
       <span class="close" id="close-modal">&times;</span>
       <div id="modal-body">
-        <div class="container">
-          <div class="left">
+        <div class="container" id="container">
+          <div class="left" id="left">
             <div id="skillImg" style="display: flex; justify-content: center;"></div>
-            <div id="skillName" style="margin-bottom: 5px; font-size: large;"></div>
+            <div id="skillName" style="margin-bottom: 5px; font-size: 1.4rem;"></div>
             <div id="skillType" style="margin-bottom: 5px;"></div>
             <div id="skillCost" style="margin-bottom: 5px;"></div>
             <div id="skillCD" style="margin-bottom: 5px;"></div>
@@ -48,7 +48,7 @@
           </div>
 
           <div class="right">
-            <div class="forCanvas">
+            <div class="forCanvas" id="forCanvas">
               <canvas id="gridCanvas"></canvas>
             </div>
 
@@ -56,14 +56,16 @@
             <div id="skillRangeInfo" style="margin-top: 10px;"></div>
           </div>
         </div>
+      </div>
 
-        <div style="margin-top: 10px;">スキル所持：
-          <div id="skillFrend" class="skillFrend"></div>
-        </div>
+      <div style="margin-top: 10px;">スキル所持：
+        <div id="skillFrend" class="skillFrend"></div>
       </div>
     </div>
   </div>
-  
+  </div>
+  <div id="tooltip" role="tooltip" class="tooltip" aria-hidden="true"></div>
+
   <script src="./js/range.js"></script>
   <script>
     let originalData = [];
@@ -72,6 +74,8 @@
     let sortState = { column: null, ascending: true };
     let sortableInstance = null;
     let sortableEnabled = false;
+    let skilltags;
+    let data;
 
     const value = localStorage.getItem("text");
     document.getElementById('searchInput').value = value;
@@ -79,6 +83,39 @@
 
     const modal = document.getElementById('skill-modal');
     const closeModal = document.getElementById('close-modal');
+
+    function isSmartphone() {
+      return /iPhone|iPod|Android.*Mobile|Windows Phone/.test(navigator.userAgent);
+    }
+
+    function updateLayout() {
+      const forCanvas = document.getElementById("forCanvas");
+      const left = document.getElementById("left");
+      const modalContent = document.getElementById("modal-content");
+      const container = document.getElementById("container");
+
+      if (isSmartphone()) {
+        forCanvas.classList.add("mobile");
+        forCanvas.classList.remove("PC");
+        left.classList.add("mobile");
+        left.classList.remove("PC");
+        modalContent.classList.add("mobile");
+        modalContent.classList.remove("PC");
+        container.classList.add("mobile");
+        container.classList.remove("PC");
+      } else {
+        forCanvas.classList.add("PC");
+        forCanvas.classList.remove("mobile");
+        modalContent.classList.add("PC");
+        modalContent.classList.remove("mobile");
+        left.classList.add("PC");
+        left.classList.remove("mobile");
+        modalContent.classList.add("PC");
+        modalContent.classList.remove("mobile");
+        container.classList.add("PC");
+        container.classList.remove("mobile");
+      }
+    }
 
     function renderTable(data) {
       const body = document.getElementById('csv-body');
@@ -278,23 +315,40 @@
       location.reload();
     }
 
-    fetch('./data/skill.csv')
-      .then(res => {
-        if (!res.ok) throw new Error('CSVファイルの読み込みに失敗しました');
-        return res.text();
-      })
-      .then(csv => {
-        const lines = csv.trim().split('\n').map(l => l.split(','));
-        headers = lines[0];
-        originalData = lines.slice(1);
-        updateHeaderIndicators();
-        applyFilterAndRender();
-      })
-      .catch(err => {
-        document.getElementById('csv-body').innerHTML = `
-          <tr><td class="p-4 text-red-500" colspan="100%">${err.message}</td></tr>
-        `;
-      });
+    loadData();
+    async function loadData() {
+      try {
+        const [res1, res2] = await Promise.all([
+          fetch('./data/skill.csv'),
+          fetch('./data/skilltag.json')
+        ]);
+
+        const [csv1, json1] = await Promise.all([
+          res1.text(),
+          res2.json()
+        ]);
+
+        data = csv1;
+        skilltags = json1;
+        onDataReady();
+      } catch (error) {
+        console.error('データ取得失敗:', error);
+      }
+    }
+
+    function onDataReady() {
+      regex = new RegExp(skilltags.sort((a, b) => b.name.length - a.name.length).map(tag => escapeRegExp(tag.name)).join("|"), "g");
+
+      const lines = data.trim().split('\n').map(l => l.split(','));
+      headers = lines[0];
+      originalData = lines.slice(1);
+      updateHeaderIndicators();
+      applyFilterAndRender();
+    }
+
+    function escapeRegExp(str) {
+      return str.replace(/[*+?^${}()|[\]\\]/g, '\\$&');
+    }
 
     document.getElementById('searchInput').addEventListener('input', applyFilterAndRender);
 
@@ -362,7 +416,7 @@
       document.getElementById('skillType').innerHTML = `${getTypeClass(filtered[index][2], false)}`;
       document.getElementById('skillCost').innerHTML = `コスト：${filtered[index][3]}`;
       document.getElementById('skillCD').innerHTML = `CD：${filtered[index][4]}`;
-      document.getElementById('skillDesc').innerHTML = `${filtered[index][6]}`;
+      document.getElementById('skillDesc').innerHTML = `<p class="sentence">${filtered[index][6].replace(regex, match => `<span class="word" tabindex="0" aria-describedby="tooltip" data-tooltip="${match}">${match}</span>`)}</p>`;
 
       //document.getElementById('skillRange').innerHTML = `<iframe id="inline-frame" width="330px" height="350px" src="./range.html" style="overflow: hidden;"></iframe>`;
       setGridRangeValue(index);
@@ -371,6 +425,8 @@
 
       document.getElementById('skillFrend').innerHTML = `${getHaveClass(filtered[index][5], false)}`;
       modal.style.display = 'flex';
+      updateLayout();
+      addEventSkillTags();
     }
 
     let inheritanceEnabled = false;
@@ -392,6 +448,7 @@
       location.href = `${link}`;
     }
   </script>
+  <script src="./js/skilltag.js"></script>
 
 </body>
 

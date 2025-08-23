@@ -18,9 +18,18 @@ select {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 0fr));
     gap: 15px;
     justify-content: center;
+}
+
+.grid.PC {
+    font-size: 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 0fr));
+}
+
+.grid.mobile {
+    font-size: 0.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 0fr));
 }
 
 .card {
@@ -28,7 +37,6 @@ select {
     border-radius: 10px;
     text-align: center;
     padding: 10px;
-    font-size: 20px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -68,11 +76,18 @@ select {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    width: 60%;
     max-height: 85%;
     text-align: center;
     position: relative;
     overflow: auto;
+}
+
+.modal-content.PC {
+    width: 60%;
+}
+
+.modal-content.mobile {
+    width: 90%;
 }
 
 .modal-content img {
@@ -94,20 +109,24 @@ select {
     align-items: center;
 }
 
+.container.PC {
+    flex-direction: row;
+}
+
+.container.mobile {
+    flex-direction: column;
+}
+
 .left,
 .right {
     flex: 1;
     padding: 20px;
     overflow: auto;
-}
-
-.left {
     background-color: #ffffff;
-    border-right: 1px solid #ccc;
-}
-
-.right {
-    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .tab-buttons {
@@ -332,6 +351,12 @@ button:hover {
     margin-bottom: 5px;
 }
 
+.containerSEE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .bar-container {
     display: inline-block;
     cursor: pointer;
@@ -350,14 +375,30 @@ button:hover {
     user-select: none;
 }
 
+.bar-label.PC {
+    font-size: 11px;
+}
+
+.bar-label.mobile {
+    font-size: 18px;
+}
+
 .bar-wrapper {
     position: relative;
-    width: 120px;
-    height: 15px;
     background: #ffffff;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.bar-wrapper.PC {
+    width: 120px;
+    height: 15px;
+}
+
+.bar-wrapper.mobile {
+    width: 250px;
+    height: 25px;
 }
 
 .bar-fill {
@@ -391,4 +432,170 @@ button:hover {
 
 .bar-speed {
     background: linear-gradient(145deg, #aee7f7, #82edfe);
+}
+
+
+.sentence {
+    line-height: 1.8;
+}
+
+.word {
+    position: relative;
+    cursor: pointer;
+    color: var(--accent);
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
+    border-radius: 6px;
+    padding: 0 4px;
+}
+
+.word:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -110%);
+    background: var(--tooltip-bg);
+    color: var(--text);
+    border: 1px solid var(--tooltip-border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s ease, transform .15s ease;
+    z-index: 99999;
+    background-color: whitesmoke;
+    max-width: 500px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.tooltip.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -120%);
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--tooltip-bg);
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #1a1e2a;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.forCanvas {
+    position: relative;
+    padding-top: 60%;
+}
+
+.forCanvas.mobile {
+    width: 100%;
+}
+
+.forCanvas.PC {
+    width: 80%;
+}
+
+
+.normal,
+.curved-shot {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #ce9c50;
+}
+
+.physical,
+.close-range {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #d56723;
+}
+
+.magic,
+.long-range {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #dc89dc;
+}
+
+.piercing,
+.anti-unit {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #43bbda;
+}
+
+.mixed {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #cd44f3;
+}
+
+.reaction,
+.area-attack {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #fce345;
+}
+
+.recovery {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #95df64;
+}
+
+.support {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #60c9c3;
+}
+
+.passive {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #f79444;
+}
+
+.faction-aura {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #d3a35b;
+}
+
+.aura {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #5e81f1;
+}
+
+.instant,
+.anti-ground {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #2db684;
 }

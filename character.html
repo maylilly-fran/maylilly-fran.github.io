@@ -61,10 +61,10 @@
 
     <!-- モーダル -->
     <div class="modal" id="product-modal">
-        <div class="modal-content">
+        <div class="modal-content" id="modal-content">
             <span class="close" id="close-modal">&times;</span>
             <div id="modal-body">
-                <div class="container">
+                <div class="container" id="container">
                     <div class="left">
                         <div id="characterImg"></div>
                         <div id="characterName" class="container"></div>
@@ -140,12 +140,12 @@
                             <div class="tab-button" data-tab="hoshi2">☆2</div>
                             <div class="tab-button" data-tab="hoshi1">☆1</div>
                         </div>
-                        <div class="tab-content active" id="hoshi5" style="text-align: left"></div>
+                        <div class="tab-content active" id="hoshi5" style="text-align: left;"></div>
                         <div class="tab-content" id="hoshi4" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi3" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi2" style="text-align: left"></div>
                         <div class="tab-content" id="hoshi1" style="text-align: left"></div>
-                        <div class="container" style="margin-top: 20px;">
+                        <div class="containerSEE" style="margin-top: 20px;">
                             <div id="silhouette-skill"></div>
                             <div id="ex-skill"></div>
                             <div id="ex-skill2"></div>
@@ -166,12 +166,25 @@
 
     <!-- モーダル2 -->
     <div class="modal" id="skill-modal">
-        <div class="modal-content">
+        <div class="modal-content" id="modal-content2">
             <span class="close" id="close-modal2">&times;</span>
-            <div id="skill-pict"></div>
+            <div id="modal-body">
+                <div class="container" id="container2">
+                    <div class="left" id="left">
+                        <div id="skill-pict"></div>
+                    </div>
+                    <div class="right">
+                        <div class="forCanvas" id="forCanvas">
+                            <canvas id="gridCanvas"></canvas>
+                        </div>
+
+                        <div id="skillComment" style="margin-top: 30px;"></div>
+                        <div id="skillRangeInfo" style="margin-top: 10px;"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <!-- モーダル3 -->
     <div class="modal" id="categoryModal">
         <div class="modal-content">
@@ -206,6 +219,8 @@
         </div>
     </div>
 
+    <div id="tooltip" role="tooltip" class="tooltip" aria-hidden="true"></div>
+    <script src="./js/range.js"></script>
     <script>
         let data;
         let selectedCategories = [];
@@ -220,6 +235,9 @@
         let rarities;
         let filteredData;
         let tmpCha;
+        let regex;
+        let filtered;
+        let replaceWords = {};
 
         const params = new URLSearchParams(location.search);
         const value = localStorage.getItem("text");
@@ -245,16 +263,86 @@
         const ITEMS_PER_PAGE = 90;
         let currentPage = 1;
 
+        function isSmartphone() {
+            return /iPhone|iPod|Android.*Mobile|Windows Phone/.test(navigator.userAgent);
+        }
+
+        function updateLayout(num) {
+            const forCanvas = document.getElementById("forCanvas");
+            const modalContent = document.querySelectorAll('.modal-content');
+            const container = document.getElementById("container");
+            const container2 = document.getElementById("container2");
+            const barWrapper = document.querySelectorAll('.bar-wrapper');
+            const barLabel = document.querySelectorAll('.bar-label');
+
+            if (isSmartphone()) {
+                if (num === 1) {
+                    grid.classList.add("mobile");
+                    grid.classList.remove("PC");
+                }
+                if (num === 2) {
+                    modalContent.forEach(bar => bar.classList.add("mobile"));
+                    modalContent.forEach(bar => bar.classList.remove("PC"));
+                    container.classList.add("mobile");
+                    container.classList.remove("PC");
+                    container2.classList.add("mobile");
+                    container2.classList.remove("PC");
+                    barWrapper.forEach(bar => bar.classList.add("mobile"));
+                    barWrapper.forEach(bar => bar.classList.remove("PC"));
+                    barLabel.forEach(bar => bar.classList.add("mobile"));
+                    barLabel.forEach(bar => bar.classList.remove("PC"));
+                    forCanvas.classList.add("mobile");
+                    forCanvas.classList.remove("PC");
+                }
+
+            } else {
+                if (num === 1) {
+                    grid.classList.add("PC");
+                    grid.classList.remove("mobile");
+                }
+                if (num === 2) {
+                    modalContent.forEach(bar => bar.classList.add("PC"));
+                    modalContent.forEach(bar => bar.classList.remove("mobile"));
+                    container.classList.add("PC");
+                    container.classList.remove("mobile");
+                    container2.classList.add("PC");
+                    container2.classList.remove("mobile");
+                    barWrapper.forEach(bar => bar.classList.add("PC"));
+                    barWrapper.forEach(bar => bar.classList.remove("mobile"));
+                    barLabel.forEach(bar => bar.classList.add("PC"));
+                    barLabel.forEach(bar => bar.classList.remove("mobile"));
+                    forCanvas.classList.add("PC");
+                    forCanvas.classList.remove("mobile");
+                }
+            }
+        }
+
         loadData();
         async function loadData() {
             try {
-                const response = await fetch('./data/data.json');
-                data = await response.json();
+                const [res1, res2, res3] = await Promise.all([
+                    fetch('./data/data.json'),
+                    fetch('./data/skilltag.json'),
+                    fetch('./data/skill.csv')
+                ]);
 
+                const [json1, json2, csv1] = await Promise.all([
+                    res1.json(),
+                    res2.json(),
+                    res3.text()
+                ]);
+
+                data = json1;
+                skilltags = json2;
+                filtered = csv1.trim().split('\n').map(l => l.split(',')).slice(1);
                 onDataReady();
             } catch (error) {
                 console.error('データ取得失敗:', error);
             }
+        }
+
+        function escapeRegExp(str) {
+            return str.replace(/[*+?^${}()|[\]\\]/g, '\\$&');
         }
 
         function onDataReady() {
@@ -265,10 +353,13 @@
             weapons = data.weapons;
             rarities = data.rarities;
 
+            regex = new RegExp(skilltags.sort((a, b) => b.name.length - a.name.length).map(tag => escapeRegExp(tag.name)).join("|"), "g");
+
             // 初期表示
             renderfilterList();
             renderCategoryList();
             applyFiltersAndSort();
+            updateLayout(1);
         }
 
         function showModal(character) {
@@ -283,27 +374,37 @@
                 (selectedCategories.some(word => character?.personality?.hoshi3.includes(word))) ||
                 (selectedCategories.some(word => character?.personality?.hoshi2.includes(word))) ||
                 (selectedCategories.some(word => character?.personality?.hoshi1.includes(word))) ||
-                ((descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
-                    (descSearch.value.length !== 0 && character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase())))) {
-                document.getElementById('personalityImg').innerHTML = `<img style="width: 30%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+                (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi5,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi4,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi3,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi2,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi1,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (descSearch.value.length !== 0 && character?.personality?.hoshi5?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                (descSearch.value.length !== 0 && character?.personality?.hoshi4?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                (descSearch.value.length !== 0 && character?.personality?.hoshi3?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                (descSearch.value.length !== 0 && character?.personality?.hoshi2?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                (descSearch.value.length !== 0 && character?.personality?.hoshi1?.toLowerCase().includes(descSearch.value.toLowerCase())) ||
+                (descSearch.value.length !== 0 && replaceRegex(character?.personality?.hoshi5.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(descSearch.value.toLowerCase()))) ||
+                (descSearch.value.length !== 0 && replaceRegex(character?.personality?.hoshi4.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(descSearch.value.toLowerCase()))) ||
+                (descSearch.value.length !== 0 && replaceRegex(character?.personality?.hoshi3.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(descSearch.value.toLowerCase()))) ||
+                (descSearch.value.length !== 0 && replaceRegex(character?.personality?.hoshi2.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(descSearch.value.toLowerCase()))) ||
+                (descSearch.value.length !== 0 && replaceRegex(character?.personality?.hoshi1.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(descSearch.value.toLowerCase())))) {
+                document.getElementById('personalityImg').innerHTML = `<img style="width: 80%; background-color: lightcoral" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
             } else {
-                document.getElementById('personalityImg').innerHTML = `<img style="width: 30%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
+                document.getElementById('personalityImg').innerHTML = `<img style="width: 80%" src="${character.personality.imageURL}" alt="${character.personality.imageURL}">`;
             }
 
             document.getElementById('personalityTitle').innerHTML = `<h2>${character.personality.title}</h2>`;
             if (character.personality.common !== undefined) {
-                document.getElementById('common').innerHTML = `${character.personality.common}`;
+                document.getElementById('common').innerHTML = `<p class="sentence">${character.personality.common.replace(regex, match => `<span class="word" tabindex="0" aria-describedby="tooltip" data-tooltip="${match}">${match}</span>`)}</p>`;
             } else {
                 document.getElementById('common').innerHTML = ``;
             }
-            document.getElementById('hoshi5').innerHTML = `${character.personality.hoshi5}`;
-            document.getElementById('hoshi4').innerHTML = `${character.personality.hoshi4}`;
-            document.getElementById('hoshi3').innerHTML = `${character.personality.hoshi3}`;
-            document.getElementById('hoshi2').innerHTML = `${character.personality.hoshi2}`;
-            document.getElementById('hoshi1').innerHTML = `${character.personality.hoshi1}`;
+            document.getElementById('hoshi5').innerHTML = `${replaceRegex(character.personality.hoshi5,1)}`;
+            document.getElementById('hoshi4').innerHTML = `${replaceRegex(character.personality.hoshi4,1)}`;
+            document.getElementById('hoshi3').innerHTML = `${replaceRegex(character.personality.hoshi3,1)}`;
+            document.getElementById('hoshi2').innerHTML = `${replaceRegex(character.personality.hoshi2,1)}`;
+            document.getElementById('hoshi1').innerHTML = `${replaceRegex(character.personality.hoshi1,1)}`;
             if (Array.isArray(character.skills.silhouetteSkill) && character.skills.silhouetteSkill[0] && character.skills.silhouetteSkill[0].name !== undefined) {
                 document.getElementById('silhouette-skill').innerHTML = `<img id="silhouette" class="skill" src="${character.skills.silhouetteSkill[0].imgURL}" alt="${character.skills.silhouetteSkill[0].imgURL}" style="width: 50%"><br>シルエットスキル`;
                 document.getElementById('silhouette-skill').addEventListener('click', () => showModal2(character, 'silhouetteSkill', 0));
@@ -336,6 +437,8 @@
             modal.style.display = 'flex';
             statusEnabled = true;
             changeStatus(character);
+            addEventSkillTags();
+            updateLayout(2);
         }
 
         function addSkillContent(character, content, key, index) {
@@ -348,24 +451,90 @@
         function addSkillContentSettings(character, key, index) {
             if (Array.isArray(character.skills[key]) && character.skills[key][index] && character.skills[key][index].name !== undefined) {
                 document.getElementById(key + '-' + index).addEventListener('click', () => showModal2(character, key, index));
-                if ((selectedCategories.some(word => character?.skills[key][index]?.desc.includes(word))) ||
+                if ((selectedCategories.some(word => character?.skills[key][index]?.desc.includes(word)) || 
+                     selectedCategories.some(word => replaceRegex(character?.skills[key][index]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
                     (character?.skills[key][index]?.desc.length !== 0 && descSearch.value.length !== 0 &&
-                        character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()))) {
+                     (character?.skills[key][index]?.desc.toLowerCase().includes(descSearch.value.toLowerCase()) ||
+                      replaceRegex(character?.skills[key][index]?.desc.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(descSearch.value.toLowerCase())) ))) {
                     document.getElementById(key + '-' + index).style = "background-color: lightcoral";
                 }
             }
         }
 
+        function getCommentClass(cell) {
+            const keywords = cell.split(/[\s;,]+/).map(k => k.trim()).filter(k => k !== '');
+            let content = ``;
+            for (const keyword of keywords) {
+                if (keyword === "遠距離") {
+                    content += `<b class="long-range" style="margin-right: 3px;">${keyword}</b>`;
+                } else if (keyword === "対ユニット") {
+                    content += `<b class="anti-unit" style="margin-right: 3px;">${keyword}</b>`;
+                } else if (keyword === "対地面") {
+                    content += `<b class="anti-ground" style="margin-right: 3px;">${keyword}</b>`;
+                } else if (keyword === "範囲攻撃") {
+                    content += `<b class="area-attack" style="margin-right: 3px;">${keyword}</b>`;
+                } else if (keyword === "近接") {
+                    content += `<b class="close-range" style="margin-right: 3px;">${keyword}</b>`;
+                } else if (keyword === "曲射") {
+                    content += `<b class="curved-shot" style="margin-right: 3px;">${keyword}</b>`;
+                }
+            }
+            return content;
+        }
+
+        function getRangeInfo(index) {
+            let content = ``;
+            if (highlightRange.min !== 0 || highlightRange.max !== 0) {
+                if (useRectRange) content += `射程： ${highlightRange.min} - ${range % 10}<br>`;
+                else content += `射程： ${highlightRange.min} - ${highlightRange.max}<br>`;
+            }
+            if (lowhighLimit.min !== 0 || lowhighLimit.max !== 0) {
+                content += `射程高低差： ↓${lowhighLimit.min} - ↑${lowhighLimit.max}<br>`;
+            }
+            if (lowhighRangeLimit.min !== 0 || lowhighRangeLimit.max !== 0) {
+                content += `範囲高低差： ↓${lowhighRangeLimit.min} - ↑${lowhighRangeLimit.max}<br>`;
+            }
+            return content;
+        }
+
+        function getSkillDataIndex(name) {
+            let rowIndex = -1;
+
+            for (let i = 0; i < filtered.length; i++) {
+                if (filtered[i][0] === name) {
+                    rowIndex = i;
+                    break;
+                }
+            }
+            return rowIndex;
+        }
+
+        function replaceRegex(word, mode) {
+            const found = [];
+            if (mode === 1) {
+                return word.replace(regex, match => `<span class="word" tabindex="0" aria-describedby="tooltip" data-tooltip="${match}">${match}</span>`);
+            } else {
+                word.replace(regex, match => found.push(match));
+                return found;
+            }
+        }
+
         function showModal2(character, key, index) {
             document.getElementById('skill-pict').innerHTML = `
-              <img class="skill" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">
+              <img class="skill" style="width:30%" src="${character.skills[key][index].imgURL}" alt="${character.skills[key][index].imgURL}">
               <h2>${character.skills[key][index].name}</h2>
               <div>タイプ：${character.skills[key][index].type}</div>
               <div>コスト：${character.skills[key][index].cost}</div>
               <div>CD：${character.skills[key][index].CD}</div>
-              <div>${character.skills[key][index].desc}</div>
+              <div><p class="sentence">${replaceRegex(character.skills[key][index].desc, 1)}</p></div>
               `;
+            const sIndex = getSkillDataIndex(character.skills[key][index].name);
+            setGridRangeValue(sIndex);
+            document.getElementById('skillComment').innerHTML = `${getCommentClass(filtered[sIndex][19])}`;
+            document.getElementById('skillRangeInfo').innerHTML = getRangeInfo(sIndex);
             modal2.style.display = 'flex';
+            addEventSkillTags();
+            updateLayout(2);
         }
 
         // イベント登録
@@ -420,6 +589,7 @@
         sortOrder.addEventListener('change', applyFiltersAndSort);
 
         function openModal(id) {
+            updateLayout(2);
             document.getElementById(id).style.display = "flex";
         }
 
@@ -440,71 +610,71 @@
         }
 
         function skillTagCheck(character) {
-            let flg = (character?.skills?.initial[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.initial[0]?.desc.includes(word))) ||
-                (character?.skills?.initial[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.initial[1]?.desc.includes(word))) ||
-                (character?.skills?.RK1[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK1[0]?.desc.includes(word))) ||
-                (character?.skills?.RK1[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK1[1]?.desc.includes(word))) ||
-                (character?.skills?.RK3[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK3[0]?.desc.includes(word))) ||
-                (character?.skills?.RK3[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK3[1]?.desc.includes(word))) ||
-                (character?.skills?.RK5[0]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK5[0]?.desc.includes(word))) ||
-                (character?.skills?.RK5[1]?.desc !== undefined && selectedCategories.some(word => character?.skills?.RK5[1]?.desc.includes(word)));
+            let flg = (character?.skills?.initial[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.initial[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.initial[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.initial[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.initial[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.initial[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.RK1[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK1[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK1[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.RK1[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK1[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK1[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.RK3[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK3[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK3[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.RK3[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK3[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK3[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.RK5[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK5[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK5[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
+                (character?.skills?.RK5[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK5[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK5[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))));
 
             if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
                 flg = flg ||
-                    (selectedCategories.some(word => character?.skills?.RK7[0]?.desc.includes(word))) ||
-                    (selectedCategories.some(word => character?.skills?.RK7[1]?.desc.includes(word)));
+                    (selectedCategories.some(word => character?.skills?.RK7[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK7[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                    (selectedCategories.some(word => character?.skills?.RK7[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK7[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
             }
             if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
                 flg = flg ||
-                    (selectedCategories.some(word => character?.skills?.RK9[0]?.desc.includes(word))) ||
-                    (selectedCategories.some(word => character?.skills?.RK9[1]?.desc.includes(word)));
+                    (selectedCategories.some(word => character?.skills?.RK9[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK9[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                    (selectedCategories.some(word => character?.skills?.RK9[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK9[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
             }
             if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
                 flg = flg ||
-                    (selectedCategories.some(word => character?.skills?.RK11[0]?.desc.includes(word))) ||
-                    (selectedCategories.some(word => character?.skills?.RK11[1]?.desc.includes(word)));
+                    (selectedCategories.some(word => character?.skills?.RK11[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK11[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                    (selectedCategories.some(word => character?.skills?.RK11[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK11[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
             }
             flg = flg ||
-                (selectedCategories.some(word => character?.personality?.hoshi5?.includes(word))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi4?.includes(word))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi3?.includes(word))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi2?.includes(word))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi1?.includes(word)));
+                (selectedCategories.some(word => character?.personality?.hoshi5?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi5,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi4?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi4,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi3?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi3,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi2?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi2,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi1?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi1,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
 
             return flg;
         }
 
         function skillDescCheck(character, words) {
-            let flg = (character?.skills?.initial[0]?.desc.length !== 0 && character?.skills?.initial[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.initial[1]?.desc.length !== 0 && character?.skills?.initial[1]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK1[0]?.desc.length !== 0 && character?.skills?.RK1[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK1[1]?.desc.length !== 0 && character?.skills?.RK1[1]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK3[0]?.desc.length !== 0 && character?.skills?.RK3[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK3[1]?.desc.length !== 0 && character?.skills?.RK3[1]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK5[0]?.desc.length !== 0 && character?.skills?.RK5[0]?.desc.toLowerCase().includes(words)) ||
-                (character?.skills?.RK5[1]?.desc.length !== 0 && character?.skills?.RK5[1]?.desc.toLowerCase().includes(words));
+            let flg = (character?.skills?.initial[0]?.desc.length !== 0 && (character?.skills?.initial[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.initial[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.initial[1]?.desc.length !== 0 && (character?.skills?.initial[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.initial[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.RK1[0]?.desc.length !== 0 && (character?.skills?.RK1[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK1[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.RK1[1]?.desc.length !== 0 && (character?.skills?.RK1[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK1[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.RK3[0]?.desc.length !== 0 && (character?.skills?.RK3[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK3[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.RK3[1]?.desc.length !== 0 && (character?.skills?.RK3[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK3[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.RK5[0]?.desc.length !== 0 && (character?.skills?.RK5[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK5[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                (character?.skills?.RK5[1]?.desc.length !== 0 && (character?.skills?.RK5[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK5[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
 
             if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK7[0]?.desc.length !== 0 && character?.skills?.RK7[0]?.desc.toLowerCase().includes(words)) ||
-                    (character?.skills?.RK7[1]?.desc.length !== 0 && character?.skills?.RK7[1]?.desc.toLowerCase().includes(words));
+                    (character?.skills?.RK7[0]?.desc.length !== 0 && (character?.skills?.RK7[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK7[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                    (character?.skills?.RK7[1]?.desc.length !== 0 && (character?.skills?.RK7[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK7[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
             }
             if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK9[0]?.desc.length !== 0 && character?.skills?.RK9[0]?.desc.toLowerCase().includes(words)) ||
-                    (character?.skills?.RK9[1]?.desc.length !== 0 && character?.skills?.RK9[1]?.desc.toLowerCase().includes(words));
+                    (character?.skills?.RK9[0]?.desc.length !== 0 && (character?.skills?.RK9[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK9[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                    (character?.skills?.RK9[1]?.desc.length !== 0 && (character?.skills?.RK9[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK9[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
             }
             if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK11[0]?.desc.length !== 0 && character?.skills?.RK11[0]?.desc.toLowerCase().includes(words)) ||
-                    (character?.skills?.RK11[1]?.desc.length !== 0 && character?.skills?.RK11[1]?.desc.toLowerCase().includes(words));
+                    (character?.skills?.RK11[0]?.desc.length !== 0 && (character?.skills?.RK11[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK11[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
+                    (character?.skills?.RK11[1]?.desc.length !== 0 && (character?.skills?.RK11[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK11[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
             }
             flg = flg ||
-                (character?.personality?.hoshi5?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi4?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi3?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi2?.toLowerCase().includes(words)) ||
-                (character?.personality?.hoshi1?.toLowerCase().includes(words));
+                (character?.personality?.hoshi5?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi5.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
+                (character?.personality?.hoshi4?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi4.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
+                (character?.personality?.hoshi3?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi3.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
+                (character?.personality?.hoshi2?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi2.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
+                (character?.personality?.hoshi1?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi1.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)));
 
             return flg;
         }
@@ -518,9 +688,10 @@
             pageItems.forEach(character => {
                 const card = document.createElement('div');
                 card.className = 'card';
+                card.id = 'card';
                 card.innerHTML = `
           <img src="${character.imageURL}" alt="${character.imageURL}" style="width: 70%">
-          <div style="font-size: small">${character.name}</div>
+          <div>${character.name}</div>
         `;
                 card.addEventListener('click', () => showModal(character));
                 grid.appendChild(card);
@@ -767,6 +938,7 @@
             }
         }
     </script>
+    <script src="./js/skilltag.js"></script>
 </body>
 
 </html>
