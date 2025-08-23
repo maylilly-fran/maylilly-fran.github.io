@@ -443,7 +443,7 @@ button:hover {
     position: relative;
     cursor: pointer;
     color: var(--accent);
-    border-bottom: 1px dotted currentColor;
+    border-bottom: 2px dotted currentColor;
     text-decoration: none;
     text-underline-offset: 4px;
     padding: 0 4px;
