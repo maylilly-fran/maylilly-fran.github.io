@@ -362,6 +362,14 @@
             "comment": "-"
         },
         {
+            "title": "マジックスプーン",
+            "image": "./img/equipmentIMG/マジックスプーン.png",
+            "icon": "./img/iconIMG/マルシル.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "魔攻+5%、範囲ダメージ+15%。アクティブ範囲攻撃後、2マス再移動でき、CDは2ターン。"
+        },
+        {
             "title": "パラドックスクリスタルチェーン",
             "image": "./img/equipmentIMG/パラドックスクリスタルチェーン.png",
             "icon": "./img/iconIMG/モモ.png",
