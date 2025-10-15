@@ -600,6 +600,14 @@
             "comment": "-"
         },
         {
+            "title": "鳴心輝晶",
+            "image": "./img/equipmentIMG/鳴心輝晶.png",
+            "icon": "./img/iconIMG/クリデンザ.png",
+            "type": "モチーフ装備/装具",
+            "rarity": "レジェンド",
+            "comment": "支援：即時、自身40%の現HPを犠牲にし、1ptのENを回復する。アクティブに非即時スキルを使用した後、3マス再移動できる。1戦で最大4回発動し、CDは1ターン。"
+        },
+        {
             "title": "原野の調味料入れ",
             "image": "./img/equipmentIMG/原野の調味料入れ.png",
             "icon": "./img/iconIMG/ファリン.png",
