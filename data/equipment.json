@@ -147,6 +147,14 @@
             "comment": "-"
         },
         {
+            "title": "黒炎の斧鉞「スルト」",
+            "image": "./img/equipmentIMG/黒炎の斧鉞「スルト」.png",
+            "icon": "./img/iconIMG/キャメロット.png",
+            "type": "モチーフ装備/斧",
+            "rarity": "レジェンド",
+            "comment": "最大HP+20%。装着者が自身に物理シールドを与えた場合、△攻撃Lv. 2、劫火を獲得する。効果：範囲物理ダメージ+20%(2ターン)。"
+        },
+        {
             "title": "大槌「昇竜」",
             "image": "./img/equipmentIMG/大槌「昇竜」.png",
             "icon": "./img/iconIMG/リゴ.png",
