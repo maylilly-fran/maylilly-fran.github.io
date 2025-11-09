@@ -608,6 +608,14 @@
             "comment": "-"
         },
         {
+            "title": "血色の幽羽",
+            "image": "./img/equipmentIMG/血色の幽羽.png",
+            "icon": "./img/iconIMG/イセリンド.png",
+            "type": "モチーフ装備/装具",
+            "rarity": "レジェンド",
+            "comment": "自身が1ターンで最初にアイテムまたは発動アイテムを作ると、2ptのENを回復し、攻撃と防御能力値+15%、次回の行動開始前まで継続する。"
+        },
+        {
             "title": "鳴心輝晶",
             "image": "./img/equipmentIMG/鳴心輝晶.png",
             "icon": "./img/iconIMG/クリデンザ.png",
