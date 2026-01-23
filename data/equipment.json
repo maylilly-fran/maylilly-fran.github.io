@@ -16,6 +16,22 @@
     ],
     "equipment": [
         {
+            "title": "ウィッチャーの剣",
+            "image": "./img/equipmentIMG/ウィッチャーの剣.png",
+            "icon": "./img/iconIMG/ゲラルト.png",
+            "type": "モチーフ装備/剣",
+            "rarity": "レジェンド",
+            "comment": "任意の印スキルを使用する前に、自身の攻撃と防御能力値+32%、次回の行動開始前まで継続する。"
+        },
+        {
+            "title": "ジルエアエル",
+            "image": "./img/equipmentIMG/ジルエアエル.png",
+            "icon": "./img/iconIMG/シリ.png",
+            "type": "モチーフ装備/剣",
+            "rarity": "レジェンド",
+            "comment": "ワープまたはチャージ効果を発動すると、次の攻撃スキルの与ダメージ+25%。・スキルが暗闇を切り裂く閃光の場合、追加でターゲット1体を選択でき、追加で与ダメージ+25%。・スキルがノヴァの場合、追加で2マス先にノックバックし、追加で与ダメージ+25%。"
+        },
+        {
             "title": "曙光",
             "image": "./img/equipmentIMG/曙光.png",
             "icon": "./img/iconIMG/イナンナ・鈴蘭の剣.png",
@@ -145,6 +161,14 @@
             "type": "剣",
             "rarity": "コモン",
             "comment": "-"
+        },
+        {
+            "title": "超重装強襲巨刃",
+            "image": "./img/equipmentIMG/超重装強襲巨刃.png",
+            "icon": "./img/iconIMG/フルアーマーマイサ.png",
+            "type": "モチーフ装備/斧",
+            "rarity": "レジェンド",
+            "comment": "最大HP+20%、ダメージと貫通ダメージ+10%。自身の協同号令スキルが味方の協同応答を発動する前、ターゲットに超重装強襲Lv.3 (1ターン) を付与する。"
         },
         {
             "title": "黒炎の斧鉞「スルト」",
@@ -368,6 +392,22 @@
             "type": "槍",
             "rarity": "コモン",
             "comment": "-"
+        },
+        {
+            "title": "黒曜石の首飾り",
+            "image": "./img/equipmentIMG/黒曜石の首飾り.png",
+            "icon": "./img/iconIMG/イェネファー.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "魔法ダメージ+16%、回復効果+12%。魔法強化スキルを使用する前に、黒曜石の首飾りLv.4(2ターン)を獲得する。"
+        },
+        {
+            "title": "恐れずの炎",
+            "image": "./img/equipmentIMG/恐れずの炎.png",
+            "icon": "./img/iconIMG/トリス.png",
+            "type": "モチーフ装備/杖",
+            "rarity": "レジェンド",
+            "comment": "氷属性または火属性のスキルを所持する場合、クリダメ+20%。永火の調和を発動すると、追加でクリダメ+20%ダメージ。"
         },
         {
             "title": "諸悪滅浄の光",
@@ -606,6 +646,13 @@
             "type": "弓",
             "rarity": "コモン",
             "comment": "-"
+        },
+        {
+            "title": "狡猾の影",
+            "image": "./img/equipmentIMG/狡猾の影.png",
+            "type": "装具",
+            "rarity": "レジェンド",
+            "comment": "攻撃と防御能力値+8%。1回行動障害を無効化し、効果CDは2ターン。"
         },
         {
             "title": "血色の幽羽",
