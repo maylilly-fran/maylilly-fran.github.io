@@ -196,6 +196,7 @@
                 <input type="text" id="categorySearch" placeholder="スキルタグ検索" oninput="renderCategoryList()">
                 <button style="background-color: deeppink;" onclick="clearAllCategories()">リセット</button>
             </div>
+            <input type="checkbox" id="tagCheck">スキルタグの説明文までフィルタ対象にする
             <div id="categoryList"></div>
         </div>
     </div>
@@ -260,6 +261,7 @@
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabContents = document.querySelectorAll('.tab-content');
         const descSearch = document.getElementById('descSearch');
+        const tagCheck = document.getElementById('tagCheck');
         const ITEMS_PER_PAGE = 90;
         let currentPage = 1;
 
@@ -588,6 +590,8 @@
         searchInput.addEventListener('input', applyFiltersAndSort);
         sortOrder.addEventListener('change', applyFiltersAndSort);
 
+        tagCheck.addEventListener('change',applyFiltersAndSort);
+
         function openModal(id) {
             updateLayout(2);
             document.getElementById(id).style.display = "flex";
@@ -610,71 +614,71 @@
         }
 
         function skillTagCheck(character) {
-            let flg = (character?.skills?.initial[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.initial[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.initial[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.initial[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.initial[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.initial[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.RK1[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK1[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK1[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.RK1[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK1[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK1[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.RK3[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK3[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK3[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.RK3[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK3[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK3[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.RK5[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK5[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK5[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))))) ||
-                (character?.skills?.RK5[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK5[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK5[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))));
+            let flg = (character?.skills?.initial[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.initial[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.initial[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.initial[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.initial[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.initial[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.RK1[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK1[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK1[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.RK1[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK1[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK1[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.RK3[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK3[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK3[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.RK3[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK3[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK3[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.RK5[0]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK5[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK5[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked))) ||
+                (character?.skills?.RK5[1]?.desc !== undefined && (selectedCategories.some(word => character?.skills?.RK5[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK5[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))) && tagCheck.checked)));
 
             if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
                 flg = flg ||
-                    (selectedCategories.some(word => character?.skills?.RK7[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK7[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                    (selectedCategories.some(word => character?.skills?.RK7[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK7[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
+                    (selectedCategories.some(word => character?.skills?.RK7[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK7[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                    (selectedCategories.some(word => character?.skills?.RK7[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK7[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked)));
             }
             if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
                 flg = flg ||
-                    (selectedCategories.some(word => character?.skills?.RK9[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK9[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                    (selectedCategories.some(word => character?.skills?.RK9[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK9[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
+                    (selectedCategories.some(word => character?.skills?.RK9[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK9[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                    (selectedCategories.some(word => character?.skills?.RK9[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK9[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked)));
             }
             if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
                 flg = flg ||
-                    (selectedCategories.some(word => character?.skills?.RK11[0]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK11[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                    (selectedCategories.some(word => character?.skills?.RK11[1]?.desc.includes(word)) || selectedCategories.some(word => replaceRegex(character?.skills?.RK11[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
+                    (selectedCategories.some(word => character?.skills?.RK11[0]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK11[0]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                    (selectedCategories.some(word => character?.skills?.RK11[1]?.desc.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.skills?.RK11[1]?.desc,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked)));
             }
             flg = flg ||
-                (selectedCategories.some(word => character?.personality?.hoshi5?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi5,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi4?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi4,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi3?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi3,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi2?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi2,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)))) ||
-                (selectedCategories.some(word => character?.personality?.hoshi1?.includes(word)) || selectedCategories.some(word => replaceRegex(character?.personality?.hoshi1,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word))));
+                (selectedCategories.some(word => character?.personality?.hoshi5?.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi5,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi4?.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi4,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi3?.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi3,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi2?.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi2,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked))) ||
+                (selectedCategories.some(word => character?.personality?.hoshi1?.includes(word)) || (selectedCategories.some(word => replaceRegex(character?.personality?.hoshi1,2).some(repWord => skilltags.find(tag => tag.name === repWord).text.includes(word)) && tagCheck.checked)));
 
             return flg;
         }
 
         function skillDescCheck(character, words) {
-            let flg = (character?.skills?.initial[0]?.desc.length !== 0 && (character?.skills?.initial[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.initial[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.initial[1]?.desc.length !== 0 && (character?.skills?.initial[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.initial[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.RK1[0]?.desc.length !== 0 && (character?.skills?.RK1[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK1[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.RK1[1]?.desc.length !== 0 && (character?.skills?.RK1[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK1[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.RK3[0]?.desc.length !== 0 && (character?.skills?.RK3[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK3[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.RK3[1]?.desc.length !== 0 && (character?.skills?.RK3[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK3[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.RK5[0]?.desc.length !== 0 && (character?.skills?.RK5[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK5[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                (character?.skills?.RK5[1]?.desc.length !== 0 && (character?.skills?.RK5[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK5[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
+            let flg = (character?.skills?.initial[0]?.desc.length !== 0 && (character?.skills?.initial[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.initial[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.initial[1]?.desc.length !== 0 && (character?.skills?.initial[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.initial[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.RK1[0]?.desc.length !== 0 && (character?.skills?.RK1[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK1[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.RK1[1]?.desc.length !== 0 && (character?.skills?.RK1[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK1[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.RK3[0]?.desc.length !== 0 && (character?.skills?.RK3[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK3[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.RK3[1]?.desc.length !== 0 && (character?.skills?.RK3[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK3[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.RK5[0]?.desc.length !== 0 && (character?.skills?.RK5[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK5[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                (character?.skills?.RK5[1]?.desc.length !== 0 && (character?.skills?.RK5[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK5[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) ));
 
             if (Array.isArray(character.skills.RK7) && character.skills.RK7[0] && character.skills.RK7[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK7[0]?.desc.length !== 0 && (character?.skills?.RK7[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK7[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                    (character?.skills?.RK7[1]?.desc.length !== 0 && (character?.skills?.RK7[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK7[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
+                    (character?.skills?.RK7[0]?.desc.length !== 0 && (character?.skills?.RK7[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK7[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                    (character?.skills?.RK7[1]?.desc.length !== 0 && (character?.skills?.RK7[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK7[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) ));
             }
             if (Array.isArray(character.skills.RK9) && character.skills.RK9[0] && character.skills.RK9[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK9[0]?.desc.length !== 0 && (character?.skills?.RK9[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK9[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                    (character?.skills?.RK9[1]?.desc.length !== 0 && (character?.skills?.RK9[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK9[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
+                    (character?.skills?.RK9[0]?.desc.length !== 0 && (character?.skills?.RK9[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK9[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                    (character?.skills?.RK9[1]?.desc.length !== 0 && (character?.skills?.RK9[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK9[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) ));
             }
             if (Array.isArray(character.skills.RK11) && character.skills.RK11[0] && character.skills.RK11[0].name !== undefined) {
                 flg = flg ||
-                    (character?.skills?.RK11[0]?.desc.length !== 0 && (character?.skills?.RK11[0]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK11[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) )) ||
-                    (character?.skills?.RK11[1]?.desc.length !== 0 && (character?.skills?.RK11[1]?.desc.toLowerCase().includes(words) || replaceRegex(character?.skills?.RK11[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) ));
+                    (character?.skills?.RK11[0]?.desc.length !== 0 && (character?.skills?.RK11[0]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK11[0]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) )) ||
+                    (character?.skills?.RK11[1]?.desc.length !== 0 && (character?.skills?.RK11[1]?.desc.toLowerCase().includes(words) || (replaceRegex(character?.skills?.RK11[1]?.desc,2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked) ));
             }
             flg = flg ||
-                (character?.personality?.hoshi5?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi5.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
-                (character?.personality?.hoshi4?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi4.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
-                (character?.personality?.hoshi3?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi3.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
-                (character?.personality?.hoshi2?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi2.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words))) ||
-                (character?.personality?.hoshi1?.toLowerCase().includes(words) || replaceRegex(character?.personality?.hoshi1.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)));
+                (character?.personality?.hoshi5?.toLowerCase().includes(words) || (replaceRegex(character?.personality?.hoshi5.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked)) ||
+                (character?.personality?.hoshi4?.toLowerCase().includes(words) || (replaceRegex(character?.personality?.hoshi4.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked)) ||
+                (character?.personality?.hoshi3?.toLowerCase().includes(words) || (replaceRegex(character?.personality?.hoshi3.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked)) ||
+                (character?.personality?.hoshi2?.toLowerCase().includes(words) || (replaceRegex(character?.personality?.hoshi2.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked)) ||
+                (character?.personality?.hoshi1?.toLowerCase().includes(words) || (replaceRegex(character?.personality?.hoshi1.toLowerCase(),2).some(word => skilltags.find(tag => tag.name === word).text.includes(words)) && tagCheck.checked));
 
             return flg;
         }
